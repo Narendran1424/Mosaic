@@ -1,0 +1,220 @@
+@use "../base/reset";
+@use "../abstracts/index" as *;
+@use "../layout/index" as *;
+@use"../components/filter-bar" as *;
+
+.artist-section {
+  display: flex;
+  justify-content: space-between;
+  padding: clamp(25px, $fs-45px, $fs-45px) clamp(20px, $fs-100px, $fs-100px)
+    clamp(35px, $fs-110px, $fs-110px) clamp(20px, $fs-85px, $fs-85px);
+  .left-wrapper {
+    width: 47.59%;
+    .content-container {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(25px, $fs-65px, $fs-65px);
+      h2 {
+        color: $black;
+        font-size: clamp(40px, $fs-110px, $fs-110px);
+        line-height: 1.15;
+        margin-bottom: clamp(10px, $fs-20px, $fs-20px);
+        font-weight: 400;
+        .indent {
+          padding-left: clamp(15px, $fs-35px, $fs-35px);
+          display: inline-block;
+        }
+        .highlight {
+          background-color: $black;
+          color: $white;
+          padding: 6px clamp(15px, $fs-35px, $fs-35px);
+          padding-right: clamp(15px, $fs-40px, $fs-40px);
+          display: inline-block;
+        }
+      }
+      .artist-btn-container {
+        display: flex;
+        gap: clamp(15px, $fs-28px, $fs-28px);
+        align-self: flex-end;
+        padding-right: clamp(10px, $fs-20px, $fs-20px);
+        button {
+          border: 2px solid transparent;
+          border-radius: 50px;
+          background-color: transparent;
+          color: $grey-63;
+          font-size: clamp(15px, $fs-22px, $fs-22px);
+          padding: 5px clamp(15px, $fs-30px, $fs-30px);
+        }
+        button:hover {
+          border: 2px solid $black;
+          color: $black;
+        }
+      }
+    }
+    .hover-wrapper {
+      padding-top: 5%;
+      padding-left: 4.23%;
+      display: none;
+      .header-wrapper {
+        .header {
+          display: flex;
+          align-items: center;
+          gap: clamp(15px, $fs-35px, $fs-35px);
+          h2 {
+            font-size: clamp(25px, $fs-74px, $fs-74px);
+            color: $black-0c;
+            font-weight: 600;
+          }
+          .connect-btn {
+            border: 1px solid $black;
+            border-radius: 50px;
+            background-color: transparent;
+            color: $black;
+            font-size: clamp(15px, $fs-19px, $fs-19px);
+            padding: 5px clamp(15px, $fs-20px, $fs-20px);
+            cursor: pointer;
+            &:hover {
+              background-color: $black;
+              color: $white;
+            }
+          }
+        }
+        .bio-text {
+          margin-top: 2px;
+          font-size: clamp(14px, $fs-20px, $fs-20px);
+          color: $black-e6;
+          line-height: 1.3;
+          width: 80%;
+          margin-bottom: clamp(10px, $fs-20px, $fs-20px);
+        }
+        .mutual-wrapper {
+          padding-top: clamp(15px, $fs-30px, $fs-30px);
+          display: flex;
+          flex-direction: column;
+          border-top: 1px solid $grey-e6;
+          gap: 4px;
+          .count {
+            font-size: clamp(14px, $fs-20px, $fs-20px);
+            color: $black-0c;
+            margin-bottom: 0;
+            font-weight: 600;
+            line-height: 1;
+          }
+          .members {
+            font-size: clamp(13px, $fs-15px, $fs-15px);
+            color: $black-80;
+            margin-bottom: 0;
+          }
+        }
+      }
+      .artist-profile {
+        padding-top: clamp(15px, $fs-41px, $fs-41px);
+        .artist-media {
+          display: flex;
+          gap: clamp(15px, $fs-25px, $fs-25px);
+          .img-wrapper {
+            width: 57.95%;
+            height: clamp(250px, $fs-576px, $fs-576px);
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+          .artist-tags {
+            display: flex;
+            flex-direction: column;
+            gap: clamp(10px, $fs-15px, $fs-15px);
+            .tag {
+              background-color: $white-80;
+              padding: 4px clamp(10px, $fs-22px, $fs-22px);
+              border: 1px solid $grey;
+              color: $black-e6;
+              font-size: clamp(14px, $fs-17px, $fs-17px);
+              border-radius: 20px;
+              text-align: center;
+              width: fit-content;
+              &:hover {
+                background-color: $black;
+                color: $white;
+                cursor: default;
+              }
+            }
+          }
+        }
+        .artist-details {
+          display: flex;
+          gap: clamp(15px, $fs-45px, $fs-45px);
+          margin-top: clamp(15px, $fs-35px, $fs-35px);
+          .detail-wrapper {
+            display: flex;
+            gap: clamp(15px, $fs-45px, $fs-45px);
+            .detail-item {
+              text-align: center;
+              .count {
+                font-size: clamp(16px, $fs-26px, $fs-26px);
+                color: $black-0c;
+                margin-bottom: 0;
+                font-weight: 600;
+                line-height: 1;
+              }
+              .text {
+                font-size: clamp(14px, $fs-17px, $fs-17px);
+                color: $black-80;
+                margin-bottom: 0;
+              }
+            }
+          }
+          .see-more-link {
+            display: inline-flex;
+            align-items: center;
+            gap: clamp(12px, $fs-25px, $fs-25px);
+            font-size: clamp(13px, $fs-20px, $fs-20px);
+            color: $black-0c;
+            text-decoration: none;
+            font-weight: 500;
+            img {
+              width: clamp(23px, $fs-60px, $fs-60px);
+            }
+            &:hover {
+              img {
+                font-weight: 600;
+                filter: brightness(1.2);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .artist-card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: clamp(12px, $fs-27px, $fs-27px);
+    grid-row-gap: clamp(25px, $fs-70px, $fs-70px);
+    width: 40.75%;
+    .artist-card {
+      .img-wrapper {
+        height: clamp(160px, $fs-280px, $fs-280px);
+        img {
+          display: block;
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      h3 {
+        font-size: clamp(15px, $fs-22px, $fs-22px);
+        margin-top: 14px;
+        margin-bottom: 3px;
+        color: $black-f2;
+      }
+      p {
+        color: $black-80;
+        margin-bottom: 0;
+        font-size: clamp(13px, $fs-16px, $fs-16px);
+      }
+    }
+  }
+}

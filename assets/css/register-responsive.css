@@ -1,0 +1,1112 @@
+@media screen and (max-width: 1600px) {
+  .register-form-section .card-wrapper .card-container .img-card {
+    grid-row: span calc(max(13.5vw, 205px) / 1px);
+  }
+  .register-form-section .card-wrapper .card-container .h-145 {
+    grid-row: span calc(max(7.5vw, 116px) / 1px);
+  }
+  .register-form-section .card-wrapper .card-container .h-115 {
+    grid-row: span calc(max(5.98vw, 89px) / 1px);
+  }
+  .register-form-section .step .action-btn-container button {
+    padding: 11px clamp(15px, 2.61vw, 2.61vw);
+  }
+  .register-form-section .step-1 .form-container .form-group .input-wrapper label {
+    font-size: 13px;
+  }
+  .register-form-section .step-1 .form-container .form-group .input-wrapper .checkbox-label {
+    font-size: 14px;
+  }
+  .register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker-calendar .days {
+    grid-row-gap: 13px;
+    margin-top: 13px;
+    margin-bottom: 17px;
+  }
+  .register-form-section .step-1 .form-container .form-group .input-wrapper .date-btn-group {
+    margin-bottom: 13px;
+    margin-top: -5px;
+  }
+  .register-form-section .step-3 .login-btn {
+    padding: 11px clamp(15px, 2.2vw, 2.2vw);
+  }
+  .register-form-section .step-4 .checkbox-wrapper .checkbox-group {
+    gap: 12px;
+  }
+  .register-form-section .step-4 .checkbox-wrapper .checkbox-group input[type=radio] {
+    scale: 1.4;
+  }
+  .register-form-section .step-4 .chip-container {
+    column-gap: 12px;
+    padding: clamp(30px, 4.4vw, 4.4vw) clamp(30px, 6.25vw, 6.25vw);
+  }
+  .register-form-section .step-5 .chip-container {
+    column-gap: 14px;
+  }
+  .register-form-section .step-5 .chip-container .chip {
+    padding: 8px clamp(20px, 2vw, 2vw);
+  }
+  .register-form-section .step-5 .chip-container .chip.p-sm {
+    padding: 8px clamp(10px, 0.989vw, 0.989vw);
+  }
+  .register-form-section .step-5 .chip-container .chip.p-md {
+    padding: 8px clamp(15px, 1.45vw, 1.45vw);
+  }
+  .register-form-section .step-6 .form-wrapper .form-container .form-group .input-wrapper label {
+    font-size: 13px;
+  }
+  .register-form-section .step-6 .form-wrapper .form-container .form-group .photo-wrapper label {
+    font-size: clamp(14px, 1.25vw, 1.25vw);
+  }
+  .register-form-section .step-6 .form-wrapper .form-container .form-group .resume-wrapper label {
+    font-size: clamp(14px, 1.25vw, 1.25vw);
+  }
+  .register-form-section .step-6 .form-wrapper .form-container .form-group .resume-wrapper .add-img {
+    width: 12px;
+  }
+  .register-form-section .step-6 .form-wrapper .form-container .form-group .resume-wrapper .opt-text {
+    font-size: 13px;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group label {
+    font-size: 15px;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container .content-container p {
+    font-size: 13px;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container .content-container p:first-of-type {
+    width: 180px;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container .content-container p:last-of-type {
+    width: 160px;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container .content-container.simple-container p:last-of-type {
+    width: 130px;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container.p-sm .content-container p:last-of-type {
+    width: 135px;
+  }
+  .register-form-section .step-10 .content-wrapper .content-container .chip-container {
+    width: clamp(590px, 39.3vw, 39.3vw);
+  }
+  .register-form-section .step-10 .content-wrapper .content-container .chip-container .chip {
+    padding: 9px clamp(15px, 1.05vw, 1.05vw);
+  }
+  .register-form-section .step-11 .card-container .card {
+    width: 30%;
+    padding: clamp(14px, 0.93vw, 0.93vw);
+  }
+  .register-form-section .step-11 .card-container .card p {
+    font-size: 13px;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .register-form-section .card-wrapper .card-container .img-card {
+    grid-row: span calc(max(13.5vw, 180px) / 1px);
+  }
+  .register-form-section .card-wrapper .card-container .h-145 {
+    grid-row: span calc(max(7.5vw, 100px) / 1px);
+  }
+  .register-form-section .card-wrapper .card-container .h-115 {
+    grid-row: span calc(max(5.98vw, 80px) / 1px);
+  }
+  .register-form-section .step .progress-bar {
+    height: 8px;
+  }
+  .register-form-section .step .progress-bar .progress-fill {
+    height: 8px;
+  }
+  .register-form-section .step .action-btn-container button {
+    padding: 9px clamp(15px, 2.61vw, 2.61vw);
+  }
+  .register-form-section .step-1 .form-container .form-group .input-wrapper label {
+    font-size: 12px;
+  }
+  .register-form-section .step-1 .form-container .form-group .input-wrapper .checkbox-label {
+    font-size: 13px;
+  }
+  .register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker-calendar .days {
+    grid-row-gap: 12px;
+    margin-top: 12px;
+    margin-bottom: 14px;
+  }
+  .register-form-section .step-2 .email-verify-wrapper .form-group .input-wrapper label {
+    font-size: 13px;
+  }
+  .register-form-section .step-3 .login-btn {
+    padding: 10px clamp(20px, 2.2vw, 2.2vw);
+  }
+  .register-form-section .step-4 .checkbox-wrapper .checkbox-group {
+    gap: 10px;
+  }
+  .register-form-section .step-4 .checkbox-wrapper .checkbox-group input[type=radio] {
+    scale: 1.2;
+  }
+  .register-form-section .step-4 .chip-container {
+    column-gap: 11px;
+    padding: clamp(30px, 4.4vw, 4.4vw) clamp(30px, 5.75vw, 5.75vw);
+  }
+  .register-form-section .step-5 .chip-container {
+    column-gap: 12px;
+    padding: clamp(30px, 4.4vw, 4.4vw) clamp(30px, 9.6vw, 9.6vw);
+  }
+  .register-form-section .step-5 .chip-container .chip {
+    padding: 7px clamp(20px, 2.067vw, 2.067vw);
+  }
+  .register-form-section .step-5 .chip-container .chip.p-sm {
+    padding: 7px clamp(10px, 0.93vw, 0.93vw);
+  }
+  .register-form-section .step-5 .chip-container .chip.p-md {
+    padding: 7px clamp(15px, 1.45vw, 1.45vw);
+  }
+  .register-form-section .step-6 .form-wrapper .form-container .form-group .input-wrapper label {
+    font-size: 12px;
+  }
+  .register-form-section .step-6 .form-wrapper .form-container .form-group .photo-wrapper label {
+    font-size: clamp(15px, 1.25vw, 1.25vw);
+  }
+  .register-form-section .step-6 .form-wrapper .form-container .form-group .resume-wrapper label {
+    font-size: clamp(15px, 1.25vw, 1.25vw);
+  }
+  .register-form-section .step-6 .form-wrapper .form-container .form-group .resume-wrapper .add-img {
+    width: 11px;
+  }
+  .register-form-section .step-6 .form-wrapper .form-container .form-group .resume-wrapper .opt-text {
+    font-size: 12px;
+  }
+  .register-form-section .step-7 .form-container .form-group .input-wrapper .input-container {
+    padding: 5px;
+  }
+  .register-form-section .step-7 .form-container .form-group .input-wrapper .input-container .add-label {
+    width: 19px;
+    height: 19px;
+  }
+  .register-form-section .step-7 .form-container .form-group .input-wrapper label {
+    font-size: 12px;
+  }
+  .register-form-section .step-7 .form-container .form-group .input-wrapper .upload-group label .img-wrapper .add-img {
+    width: 10px;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group label {
+    font-size: 14px;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container {
+    padding-right: 4%;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container input[type=range] {
+    padding-left: 0;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container .content-container p {
+    font-size: 12px;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container .content-container p.center-text {
+    padding-right: 6.7%;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container .content-container p:first-of-type {
+    width: 170px;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container .content-container p:last-of-type {
+    width: 150px;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container .content-container.simple-container p:last-of-type {
+    width: 120px;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container .content-container.simple-container p.center-text {
+    padding-right: 10.5%;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container.p-sm {
+    padding-right: 3%;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container.p-sm .content-container input {
+    width: 92.914%;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container.p-sm .content-container p.center-text {
+    padding-right: 11.4%;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container.p-sm .content-container p:last-of-type {
+    width: 125px;
+  }
+  .register-form-section .step-10 .content-wrapper .content-container ul li {
+    padding: 2px;
+  }
+  .register-form-section .step-10 .content-wrapper .content-container .chip-container {
+    width: clamp(550px, 39.3vw, 39.3vw);
+  }
+  .register-form-section .step-10 .content-wrapper .content-container .chip-container .chip {
+    font-size: 13px;
+    padding: 8px clamp(12px, 1.05vw, 1.05vw);
+  }
+  .register-form-section .step-11 .card-container {
+    gap: clamp(15px, 1.8vw, 1.8vw);
+  }
+  .register-form-section .step-11 .card-container .card {
+    width: 31.2%;
+    border-radius: 6px;
+    padding: 11px;
+  }
+  .register-form-section .step-11 .card-container .card h3 {
+    margin: clamp(15px, 1.304vw, 1.304vw) 0 9px;
+    width: 92%;
+  }
+  .register-form-section .step-11 .card-container .card p {
+    font-size: 12px;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .register-form-section .card-wrapper .card-container .img-card {
+    grid-row: span calc(max(13.5vw, 188px) / 1px);
+  }
+  .register-form-section .card-wrapper .card-container .h-145 {
+    grid-row: span calc(max(7.5vw, 110px) / 1px);
+  }
+  .register-form-section .card-wrapper .card-container .h-115 {
+    grid-row: span calc(max(5.98vw, 78px) / 1px);
+  }
+  .register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker .datepicker-calendar .days {
+    grid-row-gap: 10px;
+    margin-top: 11px;
+    margin-bottom: 12px;
+  }
+  .register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker .datepicker-calendar .day {
+    font-size: 10px;
+  }
+  .register-form-section .step-2 .header {
+    margin-bottom: clamp(20px, 6.51vw, 6.51vw);
+  }
+  .register-form-section .step-2 .email-verify-wrapper .email-text {
+    padding: 0 20%;
+  }
+  .register-form-section .step-3 .login-btn {
+    padding: 9px clamp(20px, 2.2vw, 2.2vw);
+  }
+  .register-form-section .step-5 .chip-container {
+    column-gap: 10px;
+    padding: clamp(30px, 4.4vw, 4.4vw) clamp(30px, 9.23vw, 9.23vw);
+  }
+  .register-form-section .step-5 .chip-container .chip {
+    padding: 7px clamp(20px, 2vw, 2vw);
+  }
+  .register-form-section .step-5 .chip-container .chip.p-sm {
+    padding: 7px clamp(10px, 0.93vw, 0.93vw);
+  }
+  .register-form-section .step-5 .chip-container .chip.p-md {
+    padding: 7px clamp(15px, 1.45vw, 1.45vw);
+  }
+  .register-form-section .step-8 .form-container {
+    padding-inline: clamp(20px, 10%, 10%);
+  }
+  .register-form-section .step-8 .form-container .form-group .input-wrapper label {
+    font-size: 12px;
+    line-height: 1.2;
+  }
+  .register-form-section .step-8 .form-container .form-group .input-wrapper input[type=checkbox] {
+    width: 13px;
+    height: 13px;
+    border-radius: 3px;
+  }
+  .register-form-section .step-8 .form-container .form-group .input-wrapper input[type=checkbox]:checked::after {
+    transform: translate(-58%, -40%) rotate(10deg);
+  }
+  .register-form-section .step-8 .form-container .form-group .input-wrapper .desc-input {
+    padding: 0;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group label {
+    font-size: 13px;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container {
+    padding-right: 4%;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container input[type=range] {
+    padding-left: 0;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 13px;
+    height: 13px;
+    margin-top: -5px;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container .content-container p {
+    font-size: 11px;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container .content-container p:first-of-type {
+    width: 160px;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container .content-container p:last-of-type {
+    width: 140px;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container .content-container.simple-container p:last-of-type {
+    width: 110px;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container.p-sm {
+    padding-right: 3%;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container.p-sm .content-container input {
+    width: 92.914%;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container.p-sm .content-container p:last-of-type {
+    width: 115px;
+  }
+  .register-form-section .step-11 .card-container {
+    gap: clamp(15px, 1.8vw, 1.8vw);
+  }
+  .register-form-section .step-11 .card-container .card {
+    width: 38%;
+    border-radius: 6px;
+    padding: 11px;
+  }
+  .register-form-section .step-11 .card-container .card h3 {
+    margin: clamp(15px, 1.304vw, 1.304vw) 0 9px;
+    width: 100%;
+  }
+  .register-form-section .step-11 .card-container .card p {
+    font-size: 12px;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .register-form-section .card-wrapper .card-container .img-card {
+    grid-row: span 168;
+  }
+  .register-form-section .card-wrapper .card-container .h-145 {
+    grid-row: span 112;
+  }
+  .register-form-section .card-wrapper .card-container .h-115 {
+    grid-row: span 74;
+  }
+  .register-form-section .card-wrapper .card-container .h-112 {
+    grid-row: span 112;
+  }
+  .register-form-section .card-wrapper .content h2 .indent {
+    padding-left: 10px;
+  }
+  .register-form-section .step .action-btn-container button {
+    padding: 7px clamp(15px, 2.61vw, 2.61vw);
+  }
+  .register-form-section .step-1 .form-container .form-group .input-wrapper label {
+    font-size: 11px;
+  }
+  .register-form-section .step-1 .form-container .form-group .input-wrapper .checkbox-label {
+    font-size: 12px;
+  }
+  .register-form-section .step-1 .form-container .form-group .input-wrapper input {
+    font-size: 13px;
+  }
+  .register-form-section .step-2 .header {
+    margin-bottom: clamp(20px, 5.2vw, 5.2vw);
+  }
+  .register-form-section .step-2 .email-verify-wrapper .email-text {
+    padding: 0 16%;
+  }
+  .register-form-section .step-4 .checkbox-wrapper .checkbox-group {
+    gap: 10px;
+  }
+  .register-form-section .step-4 .checkbox-wrapper .checkbox-group input[type=radio] {
+    scale: 1;
+  }
+  .register-form-section .step-4 .chip-container {
+    column-gap: 10px;
+    padding: clamp(30px, 4.4vw, 4.4vw) clamp(30px, 4.2vw, 4.2vw);
+  }
+  .register-form-section .step-4 .chip-container .chip {
+    padding: 7px clamp(20px, 2.067vw, 2.067vw);
+  }
+  .register-form-section .step-5 .chip-container {
+    column-gap: 10px;
+    padding: clamp(30px, 4.4vw, 4.4vw) clamp(30px, 7.3vw, 7.3vw);
+  }
+  .register-form-section .step-5 .chip-container .chip {
+    padding: 7px clamp(20px, 2vw, 2vw);
+  }
+  .register-form-section .step-5 .chip-container .chip.p-sm {
+    padding: 7px clamp(10px, 0.93vw, 0.93vw);
+  }
+  .register-form-section .step-5 .chip-container .chip.p-md {
+    padding: 7px clamp(15px, 1.45vw, 1.45vw);
+  }
+  .register-form-section .step-8 .form-container {
+    padding-right: 5%;
+  }
+  .register-form-section .step-8 .form-container .form-group .input-wrapper .desc-input {
+    font-size: 13px;
+    width: 245px;
+  }
+  .register-form-section .step-8 .form-container .form-group .error {
+    font-size: 11px;
+    margin-bottom: 0;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group label {
+    font-size: 13px;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container {
+    padding-right: 4%;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container input[type=range] {
+    padding-left: 0;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    margin-top: -4px;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container .content-container p {
+    font-size: 11px;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container .content-container p:first-of-type {
+    width: 150px;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container .content-container p:last-of-type {
+    width: 130px;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container .content-container.simple-container p:last-of-type {
+    padding-left: 5%;
+    width: 100px;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container.p-sm {
+    padding-right: 3%;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container.p-sm .content-container input {
+    width: 92.914%;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container.p-sm .content-container p:last-of-type {
+    width: 105px;
+  }
+  .register-form-section .step-10 .content-wrapper .content-container ul li {
+    padding: 2px;
+    width: 40px;
+    height: 40px;
+  }
+  .register-form-section .step-10 .content-wrapper .content-container ul li img {
+    width: clamp(20px, 1.65vw, 1.65vw);
+  }
+  .register-form-section .step-10 .content-wrapper .content-container ul li img.call-img {
+    width: clamp(18px, 1.4065vw, 1.4065vw);
+  }
+  .register-form-section .step-10 .content-wrapper .content-container .chip-container {
+    width: 100%;
+    padding: 0 9%;
+  }
+  .register-form-section .step-10 .content-wrapper .content-container .chip-container .chip {
+    font-size: 12px;
+    padding: 7px clamp(12px, 1.05vw, 1.05vw);
+  }
+  .register-form-section .step-11 .card-container {
+    justify-content: flex-start;
+    padding-left: 10%;
+  }
+  .register-form-section .step-11 .card-container .card {
+    padding: 10px;
+    width: 46%;
+  }
+  .register-form-section .step-11 .card-container .card h3 {
+    margin: clamp(12px, 1.304vw, 1.304vw) 0 8px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .register-form-section {
+    flex-direction: column;
+  }
+  .register-form-section .card-wrapper {
+    width: 100%;
+  }
+  .register-form-section .card-wrapper .card-container .img-card {
+    grid-row: span 120;
+  }
+  .register-form-section .card-wrapper .card-container .h-145 {
+    grid-row: span 60;
+  }
+  .register-form-section .card-wrapper .content {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .register-form-section .card-wrapper .content h2 {
+    font-size: 42px;
+  }
+  .register-form-section .card-wrapper .content h2 .indent {
+    padding-left: 10px;
+  }
+  .register-form-section .card-wrapper .content .highlight {
+    padding-left: 10px;
+  }
+  .register-form-section .step {
+    width: 100%;
+  }
+  .register-form-section .step .progress-bar .progress-fill {
+    border-radius: 5px;
+  }
+  .register-form-section .step .progress-bar {
+    border-radius: 5px;
+  }
+  .register-form-section .step .action-btn-container button {
+    padding: 6px clamp(15px, 2.61vw, 2.61vw);
+  }
+  .register-form-section .step-1 .form-container .form-group .input-wrapper label {
+    font-size: 12px;
+  }
+  .register-form-section .step-1 .form-container .form-group .input-wrapper .checkbox-label {
+    font-size: 13px;
+  }
+  .register-form-section .step-1 .form-container .form-group .input-wrapper input {
+    font-size: 14px;
+    width: 240px;
+  }
+  .register-form-section .step-2 .email-verify-wrapper .form-group .input-wrapper input {
+    width: 300px;
+  }
+  .register-form-section .step-2 .email-verify-wrapper .edit-btn-container {
+    width: 300px;
+    justify-content: space-between;
+  }
+  .register-form-section .step-3 {
+    padding: 35px 0;
+  }
+  .register-form-section .step-4 .chip-container {
+    padding: clamp(30px, 4.4vw, 4.4vw) clamp(30px, 5.2vw, 5.2vw);
+  }
+  .register-form-section .step-6 .form-wrapper .form-container .form-group .input-wrapper textarea {
+    width: 350px;
+    padding: 0 15px;
+  }
+  .register-form-section .step-6 .form-wrapper .form-container .form-group .input-wrapper input {
+    padding: 0 15px;
+    width: 240px;
+  }
+  .register-form-section .step-7 .form-container .form-group .input-wrapper .input-container {
+    width: 400px;
+  }
+  .register-form-section .step-8 .form-container {
+    padding-inline: 4.3%;
+  }
+  .register-form-section .step-8 .form-container .form-group .input-wrapper label {
+    font-size: 13px;
+  }
+  .register-form-section .step-8 .form-container .form-group .input-wrapper .desc-input {
+    font-size: 14px;
+    width: 100%;
+    min-width: 270px;
+  }
+  .register-form-section .step-10 .content-wrapper .content-container ul li {
+    padding: 2px;
+    width: 40px;
+    height: 40px;
+  }
+  .register-form-section .step-10 .content-wrapper .content-container ul li img {
+    width: clamp(20px, 1.65vw, 1.65vw);
+  }
+  .register-form-section .step-10 .content-wrapper .content-container ul li img.call-img {
+    width: clamp(18px, 1.4065vw, 1.4065vw);
+  }
+  .register-form-section .step-10 .content-wrapper .content-container .chip-container {
+    width: 100%;
+    padding: 0;
+    gap: 8px;
+  }
+  .register-form-section .step-10 .content-wrapper .content-container .chip-container .chip {
+    font-size: 12px;
+    padding: 7px clamp(12px, 1.05vw, 1.05vw);
+  }
+  .register-form-section .step-11 .card-container {
+    justify-content: center;
+    padding-left: 0%;
+    gap: 20px;
+  }
+  .register-form-section .step-11 .card-container .card {
+    padding: 12px;
+    width: 45%;
+  }
+  .register-form-section .step-11 .card-container .card h3 {
+    margin: clamp(12px, 1.304vw, 1.304vw) 0 8px;
+  }
+  .register-form-section .step-11 .card-container .card p {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .register-form-section {
+    flex-direction: column;
+  }
+  .register-form-section .card-wrapper {
+    width: 100%;
+  }
+  .register-form-section .card-wrapper .card-container .img-card {
+    grid-row: span 100;
+  }
+  .register-form-section .card-wrapper .card-container .h-145 {
+    grid-row: span 50;
+  }
+  .register-form-section .card-wrapper .content {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .register-form-section .card-wrapper .content h2 {
+    font-size: 42px;
+  }
+  .register-form-section .card-wrapper .content h2 .indent {
+    padding-left: 10px;
+  }
+  .register-form-section .card-wrapper .content .highlight {
+    padding-left: 10px;
+  }
+  .register-form-section .step .action-btn-container button {
+    padding: 5px clamp(15px, 2.61vw, 2.61vw);
+  }
+  .register-form-section .step-1 .form-container .form-group .input-wrapper .checkbox-label {
+    font-size: 12px;
+  }
+  .register-form-section .step-2 .email-verify-wrapper .email-text {
+    padding: 0 11%;
+  }
+  .register-form-section .step-2 .email-verify-wrapper .form-group .input-wrapper input {
+    width: 300px;
+  }
+  .register-form-section .step-2 .email-verify-wrapper .edit-btn-container {
+    width: 300px;
+    justify-content: space-between;
+  }
+  .register-form-section .step-3 {
+    padding: 25px 0;
+  }
+  .register-form-section .step-3 .sub-text {
+    font-size: 14px;
+  }
+  .register-form-section .step-4 .chip-container {
+    padding: clamp(30px, 4.4vw, 4.4vw) clamp(20px, 5.2vw, 5.2vw);
+  }
+  .register-form-section .step-5 h2 {
+    margin: clamp(25px, 2.5vw, 2.5vw) 0 clamp(25px, 6.25vw, 6.25vw);
+  }
+  .register-form-section .step-5 .chip-container {
+    column-gap: 10px;
+    padding: clamp(20px, 4.4vw, 4.4vw) clamp(25px, 5.2vw, 5.2vw);
+  }
+  .register-form-section .step-5 .chip-container .chip {
+    padding: 7px clamp(20px, 2.067vw, 2.067vw);
+  }
+  .register-form-section .step-5 .chip-container .chip.p-sm {
+    padding: 7px clamp(10px, 0.93vw, 0.93vw);
+  }
+  .register-form-section .step-5 .chip-container .chip.p-md {
+    padding: 7px clamp(15px, 1.45vw, 1.45vw);
+  }
+  .register-form-section .step-8 .form-container {
+    padding-inline: 3%;
+  }
+  .register-form-section .step-8 .form-container .form-group .input-wrapper > div {
+    width: 100%;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group label {
+    font-size: 13px;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container input[type=range] {
+    padding-left: 0;
+    align-self: center;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container .content-container p {
+    font-size: 11px;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container .content-container p:first-of-type {
+    width: 160px;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container .content-container p.center-text {
+    padding-right: 3%;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container .content-container p:last-of-type {
+    width: 140px;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container .content-container.simple-container p:last-of-type {
+    width: 110px;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container .content-container.simple-container p.center-text {
+    padding-right: 8.8%;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container.p-sm {
+    padding-right: 0%;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container.p-sm .content-container input {
+    width: 95%;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container.p-sm .content-container p.center-text {
+    padding-right: 7.7%;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container.p-sm .content-container p:last-of-type {
+    width: 115px;
+  }
+  .register-form-section .step-11 .card-container {
+    justify-content: center;
+    padding-left: 0%;
+    gap: 18px;
+  }
+  .register-form-section .step-11 .card-container .card {
+    padding: 12px;
+    width: 47%;
+  }
+  .register-form-section .step-11 .card-container .card h3 {
+    font-size: 15px;
+    margin: clamp(12px, 1.304vw, 1.304vw) 0 8px;
+  }
+  .register-form-section .step-11 .card-container .card p {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .register-form-section .card-wrapper .card-container .img-card {
+    grid-row: span 90;
+  }
+  .register-form-section .card-wrapper .card-container .h-145 {
+    grid-row: span 45;
+  }
+  .register-form-section .card-wrapper .content h2 {
+    font-size: 40px;
+  }
+  .register-form-section .card-wrapper .content h2 .indent {
+    padding-left: 10px;
+  }
+  .register-form-section .step .action-btn-container button {
+    padding: 4px clamp(15px, 2.61vw, 2.61vw);
+  }
+  .register-form-section .step-1 .form-header {
+    font-size: 24px;
+  }
+  .register-form-section .step-1 .form-container .form-group .input-wrapper label {
+    font-size: 12px;
+  }
+  .register-form-section .step-1 .form-container .form-group .input-wrapper .checkbox-label {
+    font-size: 12px;
+  }
+  .register-form-section .step-1 .form-container .form-group .input-wrapper input {
+    font-size: 14px;
+    width: 280px;
+  }
+  .register-form-section .step-2 .email-verify-wrapper .email-text {
+    padding: 0 7%;
+  }
+  .register-form-section .step-4 h2 {
+    font-size: 26px;
+  }
+  .register-form-section .step-4 .checkbox-wrapper .checkbox-group {
+    gap: 10px;
+  }
+  .register-form-section .step-4 .checkbox-wrapper .checkbox-group input[type=radio] {
+    scale: 1;
+  }
+  .register-form-section .step-4 .chip-container {
+    column-gap: 10px;
+    padding: clamp(30px, 4.4vw, 4.4vw) 0;
+  }
+  .register-form-section .step-4 .chip-container .chip {
+    padding: 6px clamp(20px, 2.067vw, 2.067vw);
+  }
+  .register-form-section .step-5 .chip-container {
+    column-gap: 8px;
+    padding: clamp(15px, 4.4vw, 4.4vw) 0;
+  }
+  .register-form-section .step-5 .chip-container .chip {
+    padding: 6px 16px;
+  }
+  .register-form-section .step-5 .chip-container .chip.p-sm {
+    padding: 6px 10px;
+  }
+  .register-form-section .step-5 .chip-container .chip.p-md {
+    padding: 6px 12px;
+  }
+  .register-form-section .step-6 .form-wrapper .form-container .form-group .input-wrapper textarea {
+    padding: 0 10px;
+  }
+  .register-form-section .step-6 .form-wrapper .form-container .form-group .input-wrapper input {
+    padding: 0 10px;
+  }
+  .register-form-section .step-6 .form-wrapper .form-container .form-group .resume-wrapper .opt-text {
+    font-size: 11px;
+  }
+  .register-form-section .step-7 .form-container .form-group .input-wrapper .input-container {
+    width: 360px;
+  }
+  .register-form-section .step-8 .form-container {
+    padding-inline: 1%;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group label {
+    font-size: 13px;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container input[type=range] {
+    width: 100%;
+    padding-left: 0;
+    align-self: center;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container .content-container p {
+    font-size: 11px;
+    line-clamp: 3;
+    text-overflow: ellipsis;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container .content-container p:first-of-type {
+    width: 150px;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container .content-container p.center-text {
+    padding-right: 3%;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container .content-container p:last-of-type {
+    width: 120px;
+    font-size: 11px;
+    line-clamp: 3;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: 43px;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container .content-container.simple-container p:last-of-type {
+    padding-left: 0;
+    width: 70px;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container .content-container.simple-container p.center-text {
+    padding-right: 8.8%;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container.p-sm {
+    padding-right: 0%;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container.p-sm .content-container input {
+    width: 100%;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container.p-sm .content-container p.center-text {
+    padding-right: 7.7%;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container.p-sm .content-container p:last-of-type {
+    width: 115px;
+  }
+  .register-form-section .step-10 .content-wrapper .content-container h3 {
+    font-size: 15px;
+  }
+  .register-form-section .step-10 .content-wrapper .content-container ul li {
+    width: 38px;
+    height: 38px;
+  }
+  .register-form-section .step-10 .content-wrapper .content-container ul li img {
+    width: clamp(18px, 1.65vw, 1.65vw);
+  }
+  .register-form-section .step-10 .content-wrapper .content-container ul li img.call-img {
+    width: clamp(17px, 1.4065vw, 1.4065vw);
+  }
+  .register-form-section .step-11 h2 {
+    font-size: 27px;
+  }
+  .register-form-section .step-11 .card-container {
+    gap: 18px;
+  }
+  .register-form-section .step-11 .card-container .card {
+    padding: 12px;
+    width: 100%;
+  }
+  .register-form-section .step-11 .card-container .card h3 {
+    font-size: 15px;
+    margin: clamp(12px, 1.304vw, 1.304vw) 0 8px;
+  }
+  .register-form-section .step-11 .card-container .card p {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 390px) {
+  .register-form-section .card-wrapper .content h2 {
+    font-size: 36px;
+  }
+  .register-form-section .card-wrapper .content h2 .indent {
+    padding-left: 10px;
+  }
+  .register-form-section .step .action-btn-container button {
+    padding: 3px clamp(15px, 2.61vw, 2.61vw);
+  }
+  .register-form-section .step-1 .form-header {
+    font-size: 24px;
+  }
+  .register-form-section .step-1 .form-container .form-group .input-wrapper label {
+    font-size: 12px;
+  }
+  .register-form-section .step-1 .form-container .form-group .input-wrapper .checkbox-label {
+    font-size: 11px;
+  }
+  .register-form-section .step-1 .form-container .form-group .input-wrapper input {
+    font-size: 14px;
+    width: 270px;
+  }
+  .register-form-section .step-1 .form-container .form-group .input-wrapper input[type=checkbox] {
+    width: 14px;
+    height: 14px;
+    border-radius: 2px;
+  }
+  .register-form-section .step-1 .form-container .form-group .input-wrapper input[type=checkbox]:after {
+    font-size: 10px;
+  }
+  .register-form-section .step-1 .form-container .form-group .input-wrapper .checkbox-container {
+    gap: 8px;
+    padding: 0 25px;
+    align-items: flex-start;
+  }
+  .register-form-section .step-2 .email-verify-wrapper .email-text {
+    padding: 0;
+    width: 87.5%;
+  }
+  .register-form-section .step-2 .email-verify-wrapper .form-group .input-wrapper input {
+    width: 280px;
+  }
+  .register-form-section .step-2 .email-verify-wrapper .edit-btn-container {
+    width: 280px;
+    justify-content: space-between;
+  }
+  .register-form-section .step-3 {
+    padding: 25px 20px;
+  }
+  .register-form-section .step-3 .text {
+    margin-bottom: 15px;
+  }
+  .register-form-section .step-3 .sub-text {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+  .register-form-section .step-3 .login-btn {
+    font-size: 13px;
+  }
+  .register-form-section .step-4 h2 {
+    font-size: clamp(21px, 6.3vw, 24px);
+  }
+  .register-form-section .step-4 .chip-container {
+    padding: 30px 0;
+    column-gap: 8px;
+  }
+  .register-form-section .step-4 .chip-container .chip {
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 20px;
+  }
+  .register-form-section .step-5 .chip-container .chip {
+    padding: 5px 14px;
+  }
+  .register-form-section .step-5 .chip-container .chip.p-sm {
+    padding: 5px 8px;
+  }
+  .register-form-section .step-5 .chip-container .chip.p-md {
+    padding: 5px 10px;
+  }
+  .register-form-section .step-6 h2 {
+    font-size: 26px;
+  }
+  .register-form-section .step-6 .form-wrapper .form-container .form-group .input-wrapper textarea, .register-form-section .step-6 .form-wrapper .form-container .form-group .input-wrapper input {
+    width: clamp(280px, 81vw, 81vw);
+  }
+  .register-form-section .step-6 .form-wrapper .form-container .form-group .resume-wrapper label {
+    font-size: 14px;
+  }
+  .register-form-section .step-6 .form-wrapper .form-container .form-group .photo-wrapper label {
+    font-size: 14px;
+  }
+  .register-form-section .step-7 h2 {
+    font-size: 26px;
+  }
+  .register-form-section .step-7 .form-container .form-group .input-wrapper .input-container {
+    width: clamp(280px, 81vw, 81vw);
+  }
+  .register-form-section .step-8 h2 {
+    font-size: 26px;
+  }
+  .register-form-section .step-8 .form-container {
+    padding-inline: 0;
+  }
+  .register-form-section .step-8 .form-container .form-group .input-wrapper {
+    gap: 8px;
+  }
+  .register-form-section .step-8 .form-container .form-group .input-wrapper label {
+    font-size: 12px;
+  }
+  .register-form-section .step-8 .form-container .form-group .input-wrapper .desc-input {
+    min-width: 100%;
+  }
+  .register-form-section .step-9 h2 {
+    font-size: 26px;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group label {
+    font-size: 13px;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container input[type=range] {
+    width: 100%;
+    padding-left: 0;
+    align-self: center;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container .content-container {
+    gap: 15px;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container .content-container p {
+    font-size: 11px;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container .content-container p:first-of-type {
+    max-width: 120px;
+    line-clamp: 3;
+    overflow: hidden;
+    height: 43px;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container .content-container p.center-text {
+    padding-right: 0%;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container .content-container p:last-of-type {
+    max-width: 120px;
+    font-size: 11px;
+    line-clamp: 3;
+    overflow: hidden;
+    height: 43px;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container .content-container.simple-container {
+    gap: 15px;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container .content-container.simple-container p:last-of-type {
+    padding-left: 0;
+    max-width: 120px;
+    width: 115px;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container .content-container.simple-container p.center-text {
+    padding-right: 0%;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container .content-container.introvert-container p:last-of-type {
+    text-align: left;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container.p-sm {
+    padding-right: 0%;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container.p-sm .content-container {
+    gap: 15px;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container.p-sm .content-container input {
+    width: 100%;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container.p-sm .content-container p.center-text {
+    padding-right: 0%;
+  }
+  .register-form-section .step-9 .form-wrapper .form-group .input-container.p-sm .content-container p:last-of-type {
+    max-width: 142px;
+  }
+  .register-form-section .step-10 .content-wrapper .content-container h3 {
+    font-size: 14px;
+  }
+  .register-form-section .step-10 .content-wrapper .content-container ul li {
+    width: 37px;
+    height: 37px;
+  }
+  .register-form-section .step-10 .content-wrapper .content-container ul li img {
+    width: 17px;
+  }
+  .register-form-section .step-10 .content-wrapper .content-container ul li img.call-img {
+    width: 16px;
+  }
+  .register-form-section .step-11 h2 {
+    font-size: clamp(22px, 6.25vw, 6.25vw);
+  }
+}
+
+/*# sourceMappingURL=register-responsive.css.map */

@@ -1,0 +1,192 @@
+@media screen and (max-width: 1600px) {
+  .header .header-actions .header-icons .notify-wrapper span {
+    right: -5px;
+    top: -3px;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .header nav ul {
+    padding-top: 0px;
+  }
+  .header .logo-container {
+    width: 23%;
+  }
+  .header .header-actions .profile-container {
+    gap: 12px;
+  }
+  .header .header-actions .header-icons .notify-wrapper span {
+    right: -4px;
+    top: -2px;
+  }
+  .project-section .content-wrapper .project-form .form-group .input-wrapper input, .project-section .content-wrapper .project-form .form-group .input-wrapper textarea {
+    padding-bottom: 5px;
+  }
+  .project-section .content-wrapper .project-form .form-group .input-wrapper .chip-container .chip {
+    padding: 6px clamp(20px, 2vw, 2vw);
+  }
+}
+@media screen and (max-width: 1200px) {
+  .header .header-actions .profile-container {
+    gap: 10px;
+  }
+  .header .header-actions .header-icons .notify-wrapper span {
+    right: -5px;
+    top: 0px;
+  }
+  .project-section .content-wrapper .project-form .form-group .input-wrapper .chip-container .chip {
+    padding: 5px clamp(20px, 2vw, 2vw);
+  }
+}
+@media screen and (max-width: 1024px) {
+  .header {
+    padding: clamp(10px, 1.75vw, 1.75vw) clamp(20px, 5.2vw, 5.2vw) clamp(10px, 1.65vw, 1.65vw);
+  }
+  .header .logo-container {
+    width: 20%;
+  }
+  .header .header-actions .header-icons .notify-wrapper span {
+    right: -6px;
+    font-size: 9px;
+    width: 15px;
+    height: 15px;
+  }
+  .project-section h2 {
+    margin-bottom: 0;
+  }
+  .project-section .content-wrapper {
+    padding: clamp(25px, 5vw, 5vw) clamp(10px, 2.61vw, 2.61vw);
+  }
+  .project-section .content-wrapper .project-form .form-group .input-wrapper .chip-container .chip {
+    padding: 5px clamp(18px, 2vw, 2vw);
+  }
+  .project-section .content-wrapper .project-form .post-project-btn {
+    border-width: 2px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .header {
+    padding: clamp(14px, 1.75vw, 1.75vw) clamp(20px, 5.2vw, 5.2vw);
+  }
+  .header .logo-container {
+    width: 21%;
+  }
+  .header .header-actions .header-icons .notify-wrapper span {
+    right: -6px;
+    width: 14px;
+    height: 14px;
+  }
+  .project-section {
+    padding: clamp(25px, 2.45vw, 2.45vw) clamp(20px, 5.75vw, 5.75vw) 10px clamp(20px, 5.2vw, 5.2vw);
+  }
+  .project-section h2 {
+    font-size: 28px;
+  }
+  .project-section .content-wrapper {
+    padding: clamp(20px, 4.2vw, 4.2vw) 0px clamp(10px, 4.2vw, 4.2vw);
+  }
+  .project-section .content-wrapper .project-form .form-group .input-wrapper label, .project-section .content-wrapper .project-form .form-group .input-wrapper .label {
+    font-size: 16px;
+  }
+  .project-section .content-wrapper .project-form .form-group .input-wrapper input, .project-section .content-wrapper .project-form .form-group .input-wrapper textarea {
+    font-size: clamp(14px, 2vw, 2vw);
+  }
+}
+@media screen and (max-width: 600px) {
+  .header .logo-container {
+    width: auto;
+  }
+  .header .header-actions .header-icons .search-btn {
+    display: none;
+  }
+  .header .header-actions .profile-container .user-info p {
+    display: none;
+  }
+  .header nav {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 0;
+    box-shadow: rgba(150, 150, 150, 0.2) 0px 2px 5px 1px;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+  }
+  .header nav ul {
+    flex-direction: column;
+  }
+  .header nav ul li {
+    padding: 16px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .header nav ul li:last-child {
+    border-bottom: none;
+  }
+  .header nav.active {
+    display: block;
+    top: 100%;
+    transform: translateY(0);
+  }
+  .header .nav-control-btn {
+    display: inline;
+  }
+  .header .menu-btn {
+    opacity: 1;
+    pointer-events: all;
+  }
+  .header .menu-btn img {
+    width: 22px;
+  }
+  .project-section {
+    padding: clamp(20px, 2.45vw, 2.45vw) clamp(20px, 5.75vw, 5.75vw) 10px clamp(20px, 5.2vw, 5.2vw);
+  }
+  .project-section .breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+    padding-right: 7px;
+  }
+  .project-section .breadcrumb .breadcrumb-item + .breadcrumb-item {
+    padding-left: 7px;
+  }
+  .project-section .content-wrapper .project-form .form-group .input-wrapper label, .project-section .content-wrapper .project-form .form-group .input-wrapper .label {
+    font-size: 16px;
+  }
+  .project-section .content-wrapper .project-form .form-group .input-wrapper .label {
+    margin-bottom: 10px;
+  }
+  .project-section .content-wrapper .project-form .form-group .input-wrapper input, .project-section .content-wrapper .project-form .form-group .input-wrapper textarea {
+    font-size: clamp(14px, 2vw, 2vw);
+  }
+}
+@media screen and (max-width: 480px) {
+  .project-section .content-wrapper .project-form .form-group .input-wrapper label {
+    font-size: 15px;
+  }
+  .project-section .content-wrapper .project-form .form-group .input-wrapper input, .project-section .content-wrapper .project-form .form-group .input-wrapper textarea {
+    font-size: 13px;
+  }
+  .project-section .content-wrapper .project-form .form-group .input-wrapper .chip-container .chip {
+    padding: 4px 15px;
+  }
+  .project-section .content-wrapper .project-form .form-group .photo-wrapper .add-img {
+    width: 11px;
+  }
+  .project-section .content-wrapper .project-form .post-project-btn {
+    margin-top: 15px;
+    margin-inline: unset;
+  }
+}
+@media screen and (max-width: 390px) {
+  .project-section h2 {
+    font-size: 26px;
+  }
+  .project-section .content-wrapper .project-form .form-group .input-wrapper .chip-container .chip {
+    padding: 4px 15px;
+    font-size: 12px;
+  }
+  .project-section .content-wrapper .project-form .post-project-btn {
+    margin-top: 10px;
+  }
+}
+
+/*# sourceMappingURL=post-project-responsive.css.map */

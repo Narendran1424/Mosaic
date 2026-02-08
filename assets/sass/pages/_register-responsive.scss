@@ -1,0 +1,1537 @@
+@use "../abstracts/variables" as *;
+
+@media screen and (max-width:1600px){
+    .register-form-section{
+        .card-wrapper{
+                .card-container{
+                .img-card{
+                    grid-row: span calc(max($fs-250px, 205px)/1px);
+        
+                }
+                .h-145{
+                    grid-row: span calc(max($fs-145px, 116px)/1px);
+                }
+                .h-115{
+                    grid-row: span calc(max($fs-115px,89px)/1px);
+                }
+            }
+        }
+        .step{
+            .action-btn-container button{
+                padding: 11px clamp(15px, $fs-50px, $fs-50px);
+            }
+        }
+        .step-1{
+            .form-container{
+                .form-group .input-wrapper{
+                    label{
+                        font-size: 13px;
+                    }
+                    .checkbox-label{
+                        font-size: 14px;
+                    }
+                    .datepicker-calendar
+                        .days {
+                            grid-row-gap: 13px;
+                            margin-top: 13px;
+                            margin-bottom: 17px;
+                    }
+                    .date-btn-group {
+                        margin-bottom: 13px;
+                        margin-top: -5px;
+                    }
+                }
+            }
+        }
+        .step-3 .login-btn{
+            padding: 11px clamp(15px, $fs-42px, $fs-42px);
+        }
+        .step-4{
+            .checkbox-wrapper{
+                .checkbox-group{
+                    gap: 12px;
+                    input[type="radio"]{
+                        scale: 1.4;
+                    }
+                }
+            }
+            .chip-container{
+                column-gap: 12px;
+                padding: clamp(30px, $fs-85px, $fs-85px)  clamp(30px, $fs-120px, $fs-120px);
+            }
+        }
+        .step-5{
+            .chip-container{
+                column-gap: 14px;
+                .chip{
+                    padding: 8px clamp(20px, $fs-38px, $fs-38px);
+                }
+                .chip.p-sm{
+                    padding: 8px clamp(10px, $fs-19px, $fs-19px);
+                }
+                .chip.p-md{
+                    padding: 8px clamp(15px, $fs-28px, $fs-28px);
+                }
+            }
+        }
+        .step-6{
+            .form-wrapper .form-container{
+                .form-group{
+                    .input-wrapper label{
+
+                        font-size: 13px;
+                    }
+                    .photo-wrapper label{
+                        font-size: clamp(14px, 1.25vw, 1.25vw);
+                    }
+                    .resume-wrapper{
+                        label{
+                            font-size: clamp(14px, 1.25vw, 1.25vw);
+                        }
+                        .add-img{
+                            width: 12px;
+                        }
+                        .opt-text{
+                            font-size: 13px;
+                        }
+                    } 
+                } 
+                
+            }
+        }
+        .step-9{
+            .form-wrapper .form-group{
+                label{
+                    font-size: 15px;
+                }
+                .input-container{
+                    .content-container{
+                        p{
+                            font-size: 13px;
+                        }
+                        p:first-of-type{
+                            width: 180px;
+                        }
+                        p:last-of-type{
+                            width: 160px;
+                        }
+                        
+                    } 
+                    .content-container.simple-container{
+                        p:last-of-type{
+                            width: 130px;
+                        }
+                    }
+                }
+                .input-container.p-sm{
+                    .content-container{
+                        p:last-of-type{
+                            width: 135px;
+                        }
+                    }
+                }
+            } 
+        }
+        .step-10{
+            .content-wrapper{
+                .content-container{
+                    .chip-container{
+                        width: clamp(590px, $fs-750px,$fs-750px);
+                        .chip{
+                            padding: 9px clamp(15px, $fs-20px, $fs-20px);
+                        }
+                    }
+                }
+            }
+        }
+        .step-11{
+            .card-container .card{
+                width: 30%;
+                padding:clamp(14px, $fs-18px, $fs-18px);
+                p{
+                    font-size: 13px;
+                    width: 100%;
+                }
+
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1400px){
+    .register-form-section{
+        .card-wrapper{
+                .card-container{
+
+                .img-card{
+                    grid-row: span calc(max($fs-250px, 180px)/1px);
+        
+                }
+                .h-145{
+                    grid-row: span calc(max($fs-145px, 100px)/1px);
+                }
+                .h-115{
+                    grid-row: span calc(max($fs-115px,80px)/1px);
+                }
+            }
+        }
+        .step{
+            .progress-bar{
+                height: 8px;
+                .progress-fill{
+                    height: 8px;
+                }
+            }
+            .action-btn-container button{
+                padding: 9px clamp(15px, $fs-50px, $fs-50px);
+            }
+        }
+        .step-1{
+            .form-container{
+                .form-group .input-wrapper{
+                    label{
+                        font-size: 12px;
+                    }
+                    .checkbox-label{
+                        font-size: 13px;
+                    }
+                    .datepicker-calendar
+                    .days {
+                        grid-row-gap: 12px;
+                        margin-top: 12px;
+                        margin-bottom: 14px;
+                    }
+                }
+            }
+        }
+        .step-2{
+            .email-verify-wrapper{
+                .form-group{
+                    .input-wrapper label{
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+        .step-3 .login-btn{
+            padding: 10px clamp(20px, $fs-42px, $fs-42px);
+        }
+        .step-4{
+            
+            .checkbox-wrapper{
+                .checkbox-group{
+                    gap: 10px;
+                    input[type="radio"]{
+                        scale: 1.2;
+                    }
+                }
+            }
+            .chip-container{
+                column-gap: 11px;
+                padding: clamp(30px, $fs-85px, $fs-85px)  clamp(30px, $fs-110px, $fs-110px);
+            }
+        }
+        .step-5{
+            .chip-container{
+                column-gap: 12px;
+                padding: clamp(30px, $fs-85px, $fs-85px)  clamp(30px, $fs-184px, $fs-184px);
+        
+                .chip{
+                    padding: 7px clamp(20px, $fs-40px, $fs-40px);
+                }
+                .chip.p-sm{
+                    padding: 7px clamp(10px, $fs-18px, $fs-18px);
+                }
+                .chip.p-md{
+                    padding: 7px clamp(15px, $fs-28px, $fs-28px);
+                }
+            }
+        }
+         .step-6{
+            .form-wrapper .form-container{
+                .form-group{
+                    .input-wrapper label{
+                        font-size: 12px;
+                    }
+                    .photo-wrapper label{
+                        font-size: clamp(15px, 1.25vw, 1.25vw);
+                    }
+                    .resume-wrapper{
+                        label{
+                            font-size: clamp(15px, 1.25vw, 1.25vw);
+                        }
+                        .add-img{
+                            width: 11px;
+                        }
+                        .opt-text{
+                            font-size: 12px;
+                        }
+                    } 
+                } 
+                
+            }
+        }
+        .step-7{
+            .form-container .form-group{
+                .input-wrapper{
+                    .input-container{
+                        padding: 5px;
+                        .add-label{
+                            width: 19px;
+                            height: 19px;
+                        }
+                    }
+                    label{
+                        font-size: 12px;
+                    }
+                    .upload-group label 
+                    .img-wrapper .add-img{
+                        width: 10px;
+                    }
+                } 
+            }
+        }
+        .step-9{
+            .form-wrapper .form-group{
+                label{
+                    font-size: 14px;
+                }
+                .input-container{
+                    padding-right: 4%;
+                    input[type="range"]{
+                        padding-left: 0;
+                    }
+                    .content-container{
+                        p{
+                            font-size: 12px;
+                        }
+                        p.center-text{
+                            padding-right: 6.7%;
+                        }
+                        p:first-of-type{
+                            width: 170px;
+                        }
+                        p:last-of-type{
+                            width: 150px;
+                        }
+                        
+                    } 
+                    .content-container.simple-container{
+                        p:last-of-type{
+                            width: 120px;
+                        }
+                        p.center-text{
+                            padding-right: 10.5%;
+                        }
+                    }
+                }
+                .input-container.p-sm{
+                     padding-right: 3%;
+                    .content-container{
+                        input{
+                            width: 92.914%;
+                        }
+                        p.center-text{
+                            padding-right: 11.4%;
+                        }
+                        p:last-of-type{
+                            width: 125px;
+                        }
+                    }
+                }
+            } 
+        }
+        .step-10{
+            .content-wrapper{
+                .content-container{
+                    ul li{
+                        padding: 2px;
+                    }
+                    .chip-container{
+                        width: clamp(550px, $fs-750px,$fs-750px);
+                        
+                        .chip{
+                            font-size: 13px;
+                            padding: 8px clamp(12px, $fs-20px, $fs-20px);
+                        }
+                    }
+                }
+            }
+        }
+        .step-11{
+            .card-container{
+                gap: clamp(15px, $fs-35px, $fs-35px);
+                .card{
+                    width: 31.2%;
+                    border-radius: 6px;
+                    padding: 11px;
+                    h3{
+                        margin: clamp(15px, $fs-25px, $fs-25px) 0 9px;
+                        width: 92%;
+                    }
+                    p{
+                        font-size: 12px;
+                        width: 100%;
+                    }       
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1200px){
+    .register-form-section{
+        .card-wrapper{
+                .card-container{
+
+                .img-card{
+                    grid-row: span calc(max($fs-250px, 188px)/1px);
+        
+                }
+                .h-145{
+                    grid-row: span calc(max($fs-145px, 110px)/1px);
+                }
+                .h-115{
+                    grid-row: span calc(max($fs-115px,78px)/1px);
+                }
+            }
+        }
+        .step-1 .form-container .form-group 
+        .input-wrapper .datepicker 
+        .datepicker-calendar{
+            .days{
+                grid-row-gap: 10px;
+                margin-top: 11px;
+                margin-bottom: 12px;
+            }
+            .day {
+                font-size: 10px;
+            }
+        } 
+        .step-2{
+            .header{
+                margin-bottom: clamp(20px, $fs-125px, $fs-125px);
+            }
+            .email-verify-wrapper .email-text{
+                padding: 0 20%;
+            }
+        }
+        .step-3 .login-btn{
+            padding: 9px clamp(20px, $fs-42px, $fs-42px);
+        }
+        .step-5{
+            .chip-container{
+                column-gap: 10px;
+                padding: clamp(30px, $fs-85px, $fs-85px)  clamp(30px, $fs-177px, $fs-177px);
+        
+                .chip{
+                    padding: 7px clamp(20px, $fs-38px, $fs-38px);
+                }
+                .chip.p-sm{
+                    padding: 7px clamp(10px, $fs-18px, $fs-18px);
+                }
+                .chip.p-md{
+                    padding: 7px clamp(15px, $fs-28px, $fs-28px);
+                }
+            }
+        }
+        .step-8{
+            .form-container{
+                padding-inline: clamp(20px, 10%, 10%);
+                .form-group
+                .input-wrapper{
+                    label{
+                        font-size: 12px;
+                        line-height: 1.2;
+                    }
+                    input[type="checkbox"]{
+                        width: 13px;
+                        height: 13px;
+                        border-radius: 3px;
+                    }
+                    input[type="checkbox"]:checked::after{
+                        transform: translate(-58%, -40%) rotate(10deg);
+                    }
+                    .desc-input{
+                        padding: 0;
+                    }
+                }
+            }
+        }
+        .step-9{
+            .form-wrapper .form-group{
+                label{
+                    font-size: 13px;
+                }
+                .input-container{
+                    padding-right: 4%;
+                    input[type="range"]{
+                        padding-left: 0;
+                    }
+                    input[type="range"]::-webkit-slider-thumb{
+                        -webkit-appearance: none; 
+                        width: 13px;
+                        height: 13px;
+                        margin-top: -5px;
+                    }
+                    .content-container{
+                        p{
+                            font-size: 11px;
+                        }
+                        p:first-of-type{
+                            width: 160px;
+                        }
+                        p:last-of-type{
+                            width: 140px;
+                        }
+                        
+                    } 
+                    .content-container.simple-container{
+                        p:last-of-type{
+                            width: 110px;
+                        }
+                    }
+                }
+                .input-container.p-sm{
+                     padding-right: 3%;
+                    .content-container{
+                        input{
+                            width: 92.914%;
+                        }
+                        p:last-of-type{
+                            width: 115px;
+                        }
+                    }
+                }
+            } 
+        }
+        .step-11{
+            .card-container{
+                gap: clamp(15px, $fs-35px, $fs-35px);
+                .card{
+                    width: 38%;
+                    border-radius: 6px;
+                    padding: 11px;
+                    h3{
+                        margin: clamp(15px, $fs-25px, $fs-25px) 0 9px;
+                        width: 100%;
+                    }
+                    p{
+                        font-size: 12px;
+                        width: 100%;
+                    }       
+                }
+            }
+        }
+        
+    }
+}
+
+@media screen and (max-width:1024px){
+    .register-form-section{
+        .card-wrapper{
+            .card-container{
+                .img-card{
+                    grid-row: span 168;
+                }
+                .h-145{
+                    grid-row: span 112;
+                }
+                .h-115{
+                    grid-row: span 74;
+                }
+                .h-112{
+                    grid-row:span 112;
+                }
+            } 
+            .content h2 .indent{
+                padding-left: 10px;
+            }
+        }
+        .step{
+            .action-btn-container button{
+                padding: 7px clamp(15px, $fs-50px, $fs-50px);
+            }
+        }
+        .step-1{
+            .form-container{
+                .form-group .input-wrapper{
+                    label{
+                        font-size: 11px;
+                    }
+                    .checkbox-label{
+                        font-size: 12px;
+                    }
+                    input{
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+         .step-2{
+            .header{
+                margin-bottom: clamp(20px, $fs-100px, $fs-100px);
+            }
+            .email-verify-wrapper .email-text{
+                padding: 0 16%;
+            }
+        }
+        .step-4{
+            .checkbox-wrapper{
+                .checkbox-group{
+                    gap: 10px;
+                    input[type="radio"]{
+                        scale: 1;
+                    }
+                }
+            }
+            .chip-container{
+                column-gap: 10px;
+                padding: clamp(30px, $fs-85px, $fs-85px)  clamp(30px, $fs-80px, $fs-80px);
+                .chip{
+                    padding: 7px clamp(20px, $fs-40px, $fs-40px);
+                }
+            }
+        }
+        .step-5{
+            .chip-container{
+                column-gap: 10px;
+                padding: clamp(30px, $fs-85px, $fs-85px)  clamp(30px, $fs-140px, $fs-140px);
+        
+                .chip{
+                    padding: 7px clamp(20px, $fs-38px, $fs-38px);
+                }
+                .chip.p-sm{
+                    padding: 7px clamp(10px, $fs-18px, $fs-18px);
+                }
+                .chip.p-md{
+                    padding: 7px clamp(15px, $fs-28px, $fs-28px);
+                }
+            }
+        }
+        .step-8{
+            .form-container{
+                padding-right: 5%;
+                .form-group{
+                    .input-wrapper .desc-input{
+                        font-size: 13px;
+                        width: 245px;
+                    }
+                    .error{
+                        font-size: 11px;
+                        margin-bottom: 0;
+                    }
+                }
+            } 
+        }
+        .step-9{
+            .form-wrapper .form-group{
+                label{
+                    font-size: 13px;
+                }
+                .input-container{
+                    padding-right: 4%;
+                    input[type="range"]{
+                        padding-left: 0;
+                    }
+                     input[type="range"]::-webkit-slider-thumb{
+                        -webkit-appearance: none; 
+                        width: 12px;
+                        height: 12px;
+                        margin-top: -4px;
+                     }
+                    .content-container{
+                        p{
+                            font-size: 11px;
+                        }
+                        p:first-of-type{
+                            width: 150px;
+                        }
+                        p:last-of-type{
+                            width: 130px;
+                        }
+                        
+                    } 
+                    .content-container.simple-container{
+                        p:last-of-type{
+                            padding-left: 5%;
+                            width: 100px;
+                        }
+                    }
+                }
+                .input-container.p-sm{
+                     padding-right: 3%;
+                    .content-container{
+                        input{
+                            width: 92.914%;
+                        }
+                        p:last-of-type{
+                            width: 105px;
+                        }
+                    }
+                }
+            } 
+        }
+        .step-10{
+            .content-wrapper{
+                .content-container{
+                    ul li{
+                            padding: 2px;
+                            width: 40px;
+                            height: 40px;
+                            img{
+                            width:clamp(20px, $fs-32px, $fs-32px);
+                
+                        }
+                        img.call-img{
+                            width:clamp(18px, $fs-27px, $fs-27px);
+                        }
+                        }
+                    .chip-container{
+                        width: 100%;
+                        padding: 0 9%;
+                        .chip{
+                            font-size: 12px;
+                            padding: 7px clamp(12px, $fs-20px, $fs-20px);
+                        }
+                    }
+                }
+            }
+        }
+        .step-11{
+            .card-container{
+                justify-content: flex-start;
+                padding-left: 10%;
+                .card{
+                    padding: 10px;
+                    width: 46%;
+                    h3{
+                        margin: clamp(12px, $fs-25px, $fs-25px) 0 8px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:768px){
+    .register-form-section{
+        flex-direction: column;
+        .card-wrapper{
+            width: 100%;
+            .card-container{
+                .img-card{
+                    grid-row: span 120;
+                }
+                .h-145{
+                    grid-row: span 60;
+                }
+            } 
+            .content{
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                h2{
+                    font-size: 42px;
+                    .indent{
+                        padding-left: 10px;
+                    }
+                }
+                .highlight{
+                    padding-left: 10px;
+                }
+            }
+        
+        }
+        .step{
+            width: 100%;
+            .progress-bar{
+                .progress-fill{
+                    border-radius: 5px;
+                }
+                border-radius: 5px;
+            }
+            .action-btn-container button{
+                padding: 6px clamp(15px, $fs-50px, $fs-50px);
+            }
+        }
+        .step-1{
+            .form-container{
+                .form-group .input-wrapper{
+                    label{
+                        font-size: 12px;
+                    }
+                    .checkbox-label{
+                        font-size: 13px;
+                    }
+                    input{
+                        font-size: 14px;
+                        width: 240px;
+                    }
+                }
+            }
+            
+
+        }
+        .step-2{
+            .email-verify-wrapper {
+                .form-group{
+                    .input-wrapper input{
+                        width: 300px;
+                    }
+                }
+                .edit-btn-container{
+                    width: 300px;
+                    justify-content: space-between;
+                }
+            }
+        }
+        .step-3{
+            padding: 35px 0;
+        }
+        .step-4{
+            .chip-container{
+                padding: clamp(30px, $fs-85px, $fs-85px)  clamp(30px, $fs-100px, $fs-100px);
+            }
+        }
+        .step-6{
+            .form-wrapper .form-container{
+                .form-group .input-wrapper{
+                    textarea{
+                        width: 350px;
+                        padding: 0 15px;
+                    }
+                    input{
+                        padding: 0 15px;
+                        width: 240px;
+                    }
+                } 
+            }
+        }
+        .step-7{
+            .form-container .form-group 
+            .input-wrapper .input-container{
+                width: 400px;
+            }
+        }
+        .step-8{
+            .form-container{
+                padding-inline: 4.3%;
+                .form-group .input-wrapper{
+                    label{
+                        font-size: 13px;
+                    }
+                    .desc-input{
+                        font-size: 14px;
+                        width: 100%;
+                        min-width: 270px;
+                    }
+                } 
+            }
+        }
+        .step-10{
+            .content-wrapper{
+                .content-container{
+                    ul li{
+                            padding: 2px;
+                            width: 40px;
+                            height: 40px;
+                            img{
+                            width:clamp(20px, $fs-32px, $fs-32px);
+                
+                        }
+                        img.call-img{
+                            width:clamp(18px, $fs-27px, $fs-27px);
+                        }
+                        }
+                    .chip-container{
+                        width: 100%;
+                        padding: 0;
+                        gap: 8px;
+                        .chip{
+                            font-size: 12px;
+                            padding: 7px clamp(12px, $fs-20px, $fs-20px);
+                        }
+                    }
+                }
+            }
+        }
+        .step-11{
+            .card-container{
+                justify-content: center;
+                padding-left: 0%;
+                gap: 20px;
+                .card{
+                    padding: 12px;
+                    width: 45%;
+                    h3{
+                        margin: clamp(12px, $fs-25px, $fs-25px) 0 8px;
+                       
+                    }
+                    p{
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width:600px){
+    .register-form-section{
+        flex-direction: column;
+        .card-wrapper{
+            width: 100%;
+            .card-container{
+                .img-card{
+                    grid-row: span 100;
+                }
+                .h-145{
+                    grid-row: span 50;
+                }
+            } 
+            .content{
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                h2{
+                    font-size: 42px;
+                    .indent{
+                        padding-left: 10px;
+                    }
+                }
+                .highlight{
+                    padding-left: 10px;
+                }
+            }
+        
+        }
+        .step{
+            .action-btn-container button{
+                padding: 5px clamp(15px, $fs-50px, $fs-50px);
+            } 
+        }
+        .step-1{
+            .form-container{
+                .form-group .input-wrapper{
+                    .checkbox-label{
+                        font-size: 12px;
+                    }
+    
+                }
+            }
+           
+        }
+        .step-2{
+            .email-verify-wrapper {
+                .email-text{
+                    padding: 0 11%;
+                }
+                .form-group{
+                    .input-wrapper input{
+                        width: 300px;
+                    }
+                }
+                .edit-btn-container{
+                    width: 300px;
+                    justify-content: space-between;
+                }
+            }
+        }
+        .step-3{
+            padding: 25px 0;
+            .sub-text{
+                font-size: 14px;
+            }
+        }
+        .step-4{
+            .chip-container{
+                padding: clamp(30px, $fs-85px, $fs-85px)  clamp(20px, $fs-100px, $fs-100px);
+            }
+        }
+        .step-5{
+            h2{
+                margin: clamp(25px, $fs-48px, $fs-48px) 0 clamp(25px, $fs-120px, $fs-120px);
+            }
+            
+            .chip-container{
+                column-gap: 10px;
+                padding: clamp(20px, $fs-85px, $fs-85px)  clamp(25px, $fs-100px, $fs-100px);
+        
+                .chip{
+                    padding: 7px clamp(20px, $fs-40px, $fs-40px);
+                }
+                .chip.p-sm{
+                    padding: 7px clamp(10px, $fs-18px, $fs-18px);
+                }
+                .chip.p-md{
+                    padding: 7px clamp(15px, $fs-28px, $fs-28px);
+                }
+            }
+        }
+        .step-8 {
+            .form-container{
+                padding-inline: 3%;
+                .form-group 
+                .input-wrapper
+                >div{
+                    width: 100%;
+                }
+                
+            }   
+        }
+        .step-9{
+            .form-wrapper .form-group{
+                label{
+                    font-size: 13px;
+                }
+                .input-container{
+                    padding-right: 0;
+                    padding-left: 0;
+                    input[type="range"]{
+                        padding-left: 0;
+                        align-self: center;
+                    }
+                    .content-container{
+                        p{
+                            font-size: 11px;
+                        }
+                        p:first-of-type{
+                            width: 160px;
+                        }
+                        p.center-text{
+                            padding-right: 3%;
+                        }
+                        p:last-of-type{
+                            width: 140px;
+                        }
+                        
+                    } 
+                    .content-container.simple-container{
+                        p:last-of-type{
+                            width: 110px;
+                        }
+                        p.center-text{
+                            padding-right: 8.8%;
+                        }
+                    }
+                }
+                .input-container.p-sm{
+                     padding-right: 0%;
+                    .content-container{
+                        input{
+                            width: 95%;
+                        }
+                        p.center-text{
+                            padding-right: 7.7%;
+                        }
+                        p:last-of-type{
+                            width: 115px;
+                        }
+                    }
+                }
+            } 
+        }
+        .step-11{
+            .card-container{
+                justify-content: center;
+                padding-left: 0%;
+                gap: 18px;
+                .card{
+                    padding: 12px;
+                    width: 47%;
+                    h3{
+                        font-size: 15px;
+                        margin: clamp(12px, $fs-25px, $fs-25px) 0 8px;
+                       
+                    }
+                    p{
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+        
+    }
+}
+@media screen and (max-width:480px){
+    .register-form-section{
+        .card-wrapper{
+            .card-container{
+                .img-card{
+                    grid-row: span 90;
+                }
+                .h-145{
+                    grid-row: span 45;
+                }
+            } 
+            .content{
+                h2{
+                    font-size: 40px;
+                    .indent{
+                        padding-left: 10px;
+                    }
+                }
+            }
+        
+        }
+        .step{
+            .action-btn-container button{
+                padding: 4px clamp(15px, $fs-50px, $fs-50px);
+            }
+        }
+        .step-1{
+            .form-header{
+                font-size: 24px;
+            }
+            .form-container{
+                .form-group .input-wrapper{
+                    label{
+                        font-size: 12px;
+                    }
+                    .checkbox-label{
+                        font-size: 12px;
+                    }
+                    input{
+                        font-size: 14px;
+                        width: 280px;
+                    }
+                }
+            }
+        }
+        .step-2{
+            .email-verify-wrapper {
+                .email-text{
+                    padding: 0 7%;
+                }
+            }
+        }
+        .step-4{
+            h2{
+                font-size: 26px;
+            }
+            .checkbox-wrapper{
+                .checkbox-group{
+                    gap: 10px;
+                    input[type="radio"]{
+                        scale: 1;
+                    }
+                }
+            }
+            .chip-container{
+                column-gap: 10px;
+                padding: clamp(30px, $fs-85px, $fs-85px)  0;
+                .chip{
+                    padding: 6px clamp(20px, $fs-40px, $fs-40px);
+                }
+            }
+        }
+        .step-5{
+         .chip-container{
+                column-gap: 8px;
+                padding: clamp(15px, $fs-85px, $fs-85px)  0;
+        
+                .chip{
+                    padding: 6px 16px;
+                }
+                .chip.p-sm{
+                    padding: 6px 10px;
+                }
+                .chip.p-md{
+                    padding: 6px 12px;
+                }
+            }
+        }
+         .step-6{
+            .form-wrapper .form-container{
+                .form-group{
+                    .input-wrapper{
+                        textarea{
+                            padding: 0 10px;
+                        }
+                        input{
+                            padding: 0 10px;
+                        }
+                    } 
+                    .resume-wrapper .opt-text{
+                        font-size: 11px;
+                    }
+                } 
+            }
+        }
+        .step-7{
+            .form-container .form-group 
+            .input-wrapper .input-container{
+                width: 360px;
+            }
+        }
+        .step-8 {
+            .form-container{
+                padding-inline: 1%;
+            }   
+        }
+        .step-9{
+            .form-wrapper .form-group{
+                label{
+                    font-size: 13px;
+                }
+                .input-container{
+                    padding-right: 0;
+                    padding-left: 0;
+                    input[type="range"]{
+                        width: 100%;
+                        padding-left: 0;
+                        align-self: center;
+                    }
+                    .content-container{
+                        p{
+                            font-size: 11px;
+                            line-clamp: 3;
+                            text-overflow: ellipsis;
+                            // overflow: hidden;
+                        }
+                        p:first-of-type{
+                            width: 150px;
+                        }
+                        p.center-text{
+                            padding-right: 3%;
+                        }
+                        p:last-of-type{
+                            width: 120px;
+                              font-size: 11px;
+                            line-clamp: 3;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            height: 43px;
+                        }
+                        
+                    } 
+                    .content-container.simple-container{
+                        p:last-of-type{
+                            padding-left: 0;
+                            width: 70px;
+                        }
+                        p.center-text{
+                            padding-right: 8.8%;
+                        }
+                    }
+                }
+                .input-container.p-sm{
+                     padding-right: 0%;
+                    .content-container{
+                        input{
+                            width: 100%;
+                        }
+                        p.center-text{
+                            padding-right: 7.7%;
+                        }
+                        p:last-of-type{
+                            width: 115px;
+                        }
+                    }
+                }
+            } 
+        }
+        .step-10{
+            .content-wrapper{
+                .content-container{
+                    h3{
+                        font-size: 15px;
+                    }
+                    ul li{
+                        width: 38px;
+                        height: 38px;
+                        img{
+                            width:clamp(18px, $fs-32px, $fs-32px);
+                
+                        }
+                        img.call-img{
+                            width:clamp(17px, $fs-27px, $fs-27px);
+                        }
+                    }
+                   
+                }
+            }
+        }
+        .step-11{
+            h2{
+                font-size: 27px;
+            }
+            .card-container{
+                gap: 18px;
+                .card{
+                    padding: 12px;
+                    width: 100%;
+                    h3{
+                        font-size: 15px;
+                        margin: clamp(12px, $fs-25px, $fs-25px) 0 8px;
+                       
+                    }
+                    p{
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+        
+    }
+}
+
+@media screen and (max-width:390px){
+    .register-form-section{
+        .card-wrapper{
+            .content{
+                h2{
+                    font-size: 36px;
+                    .indent{
+                        padding-left: 10px;
+                    }
+                }
+            }
+        
+        }
+        .step{
+            .action-btn-container button{
+                padding: 3px clamp(15px, $fs-50px, $fs-50px);
+            }
+        }
+        .step-1{
+            .form-header{
+                font-size: 24px;
+            }
+            .form-container{
+                .form-group .input-wrapper{
+                    label{
+                        font-size: 12px;
+                    }
+                    .checkbox-label{
+                        font-size: 11px;
+                    }
+                    input{
+                        font-size: 14px;
+                        width: 270px;
+                    }
+                    input[type="checkbox"]{
+                        width: 14px;
+                        height: 14px;
+                        border-radius: 2px;
+                    }
+                     input[type="checkbox"]:after{
+                        font-size: 10px;
+                     }
+                    .checkbox-container{
+                        gap: 8px;
+                        padding:0 25px;
+                        align-items: flex-start;
+                    }
+                }
+            }   
+        }
+
+        .step-2{
+            .email-verify-wrapper {
+                .email-text{
+                    padding: 0;
+                    width: 87.5%;
+                }
+                .form-group{
+                    .input-wrapper input{
+                        width: 280px;
+                    }
+                }
+                .edit-btn-container{
+                    width: 280px;
+                    justify-content: space-between;
+                }
+            }
+        }
+        .step-3{
+            padding: 25px 20px;
+            .text{
+                margin-bottom: 15px;
+            }
+            .sub-text{
+                font-size: 13px;
+                margin-bottom: 20px;
+            }
+            .login-btn{
+                font-size: 13px;
+            }
+        }
+        .step-4{
+            h2{
+                font-size: clamp(21px, 6.3vw, 24px);
+            }
+            .chip-container{
+                padding: 30px 0;
+                column-gap: 8px;
+                .chip{
+                    padding: 5px 10px;
+                    font-size: 12px;
+                    border-radius: 20px;
+                }
+            }
+        }
+        .step-5{
+            .chip-container{
+                .chip{
+                    padding: 5px 14px;
+                }
+                .chip.p-sm {
+                    padding: 5px 8px;
+                }
+                .chip.p-md{
+                    padding: 5px 10px;
+                }
+                
+            }
+        }
+        .step-6{
+            h2{
+                font-size: 26px;
+            }
+            .form-wrapper .form-container{
+                .form-group{
+                     .input-wrapper textarea,.input-wrapper input{
+                        width: clamp(280px, $fs-1550px, $fs-1550px);
+                    }
+                    .resume-wrapper label{
+                        font-size: 14px;
+                    }
+                    .photo-wrapper label{
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+        .step-7{
+            h2{
+                font-size: 26px;
+            }
+            .form-container .form-group 
+            .input-wrapper .input-container{
+                width: clamp(280px, $fs-1550px, $fs-1550px);
+            }
+        }
+        .step-8 {
+            h2{
+                font-size: 26px;
+            }
+            .form-container{
+                padding-inline: 0;
+                .form-group .input-wrapper {
+                    gap: 8px;
+                    label{
+                        font-size: 12px;
+                    }
+                    .desc-input{
+                        min-width: 100%;
+                    }
+                    
+                }
+            }   
+        }
+        .step-9{
+            h2{
+                font-size: 26px;
+            }
+            .form-wrapper .form-group{
+                label{
+                    font-size: 13px;
+                }
+                .input-container{
+                    padding-right: 0;
+                    padding-left: 0;
+                    input[type="range"]{
+                        width: 100%;
+                        padding-left: 0;
+                        align-self: center;
+                    }
+                    .content-container{
+                        gap: 15px;
+                        p{
+                            font-size: 11px;
+                         
+                        }
+                        p:first-of-type{
+                            max-width: 120px;
+                            line-clamp: 3;
+                            overflow: hidden;
+                            height: 43px;
+                        }
+                        p.center-text{
+                            padding-right: 0%;
+                        }
+                        p:last-of-type{
+                            max-width: 120px;
+                            font-size: 11px;
+                            line-clamp: 3;
+                            overflow: hidden;
+                            height: 43px;
+                        }
+                        
+                    } 
+                    .content-container.simple-container{
+                        gap: 15px;
+                        p:last-of-type{
+                            padding-left: 0;
+                            max-width: 120px;
+                            width: 115px;
+                        }
+                        p.center-text{
+                            padding-right: 0%;
+                        }
+                    }
+                     .content-container.introvert-container{
+                         p:last-of-type{
+                            text-align: left;
+                        }
+                    }
+                }
+                .input-container.p-sm{
+                    padding-right: 0%;
+                    .content-container{
+                        gap: 15px;
+                        input{
+                            width: 100%;
+                        }
+                        p.center-text{
+                            padding-right: 0%;
+                        }
+                        p:last-of-type{
+                            max-width: 142px;
+                        }
+                    }
+                }
+            } 
+        }
+        .step-10{
+            .content-wrapper{
+                .content-container{
+                    h3{
+                        font-size: 14px;
+                    }
+                    ul li{
+                        width: 37px;
+                        height: 37px;
+                        img{
+                            width: 17px;
+                
+                        }
+                        img.call-img{
+                            width:16px;
+                        }
+                    }
+                   
+                }
+            }
+        }
+         .step-11{
+            h2{
+                font-size: clamp(22px, $fs-120px, $fs-120px);
+            }
+        }
+        
+    }
+}

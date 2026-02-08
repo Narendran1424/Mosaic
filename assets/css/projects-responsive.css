@@ -1,0 +1,135 @@
+@media screen and (max-width: 1600px) {
+  .projects .projects-header .post-project-btn {
+    padding: 8px clamp(16px, 1.9vw, 1.9vw);
+  }
+  .projects .projects-card-container .grid-column .project-card .card-footer p img {
+    width: clamp(18px, 1.25vw, 1.25vw);
+  }
+  .projects .projects-card-container .grid-column .project-card .card-footer p img.location {
+    width: clamp(14px, 0.989vw, 0.989vw);
+  }
+}
+@media screen and (max-width: 1400px) {
+  .projects .projects-header .post-project-btn {
+    padding: 7px clamp(16px, 1.9vw, 1.9vw);
+  }
+  .projects .projects-card-container .grid-column .project-card .card-title {
+    font-size: clamp(16px, 1.5vw, 1.5vw);
+  }
+  .projects .projects-card-container .grid-column .project-card .card-footer p img {
+    width: clamp(16px, 1.25vw, 1.25vw);
+  }
+  .projects .projects-card-container .grid-column .project-card .card-footer p img.location {
+    width: clamp(12px, 0.989vw, 0.989vw);
+  }
+}
+@media screen and (max-width: 1200px) {
+  .projects .projects-card-container .grid-column .project-card .card-title {
+    font-size: clamp(16px, 1.5vw, 1.5vw);
+  }
+  .projects .projects-card-container .grid-column .project-card .card-text {
+    font-size: 13px;
+  }
+  .projects .projects-card-container .grid-column .project-card .card-footer p {
+    font-size: 13px;
+  }
+  .projects .projects-card-container .grid-column .project-card .card-footer p img {
+    width: clamp(16px, 1.25vw, 1.25vw);
+  }
+  .projects .projects-card-container .grid-column .project-card .card-footer p img.location {
+    width: clamp(12px, 0.989vw, 0.989vw);
+  }
+}
+@media screen and (max-width: 1024px) {
+  .filter-section {
+    padding: clamp(25px, 4.4vw, 4.4vw) clamp(20px, 4.2vw, 4.2vw) 0;
+  }
+  .projects {
+    padding: 10px clamp(20px, 4.2vw, 4.2vw);
+  }
+  .projects .projects-header .show-text {
+    font-size: 14px;
+  }
+  .projects .projects-header .post-project-btn {
+    font-size: 13px;
+    padding: 6px clamp(18px, 1.9vw, 1.9vw);
+  }
+  .projects .projects-card-container {
+    display: block;
+    column-count: 3;
+  }
+  .projects .projects-card-container .grid-column {
+    display: contents;
+  }
+  .projects .projects-card-container .grid-column .project-card {
+    break-inside: avoid;
+    margin-bottom: clamp(24px, 2.61vw, 2.61vw);
+  }
+  .projects .projects-card-container .grid-column .project-card .card-title {
+    font-size: clamp(16px, 1.5vw, 1.5vw);
+  }
+  .projects .projects-card-container .grid-column .project-card .card-text {
+    font-size: 12px;
+  }
+  .projects .projects-card-container .grid-column .project-card .card-footer p {
+    font-size: 12px;
+  }
+  .projects .projects-card-container .grid-column .project-card .card-footer p img {
+    width: clamp(16px, 1.25vw, 1.25vw);
+  }
+  .projects .projects-card-container .grid-column .project-card .card-footer p img.location {
+    width: clamp(12px, 0.989vw, 0.989vw);
+  }
+  .projects .projects-card-container .grid-column-4 {
+    flex-direction: row;
+    grid-column: span 3;
+  }
+}
+@media screen and (max-width: 768px) {
+  .projects {
+    padding: 8px clamp(20px, 4.2vw, 4.2vw);
+  }
+  .projects .projects-card-container {
+    display: block;
+    column-count: 2;
+  }
+  .projects .projects-card-container .grid-column .project-card .card-header {
+    height: 32.03vw;
+  }
+  .projects .projects-card-container .grid-column .project-card .card-header.h-sm {
+    height: clamp(110px, 21.355vw, 21.355vw);
+  }
+}
+@media screen and (max-width: 600px) {
+  .projects {
+    padding: 0px clamp(20px, 4.4vw, 4.4vw);
+  }
+}
+@media screen and (max-width: 480px) {
+  .projects .projects-header .show-text {
+    font-size: 13px;
+  }
+  .projects .projects-header .post-project-btn {
+    font-size: 12px;
+    padding: 5px 16px;
+  }
+  .projects .projects-card-container {
+    column-count: 1;
+  }
+  .projects .projects-card-container .grid-column .project-card .card-header, .projects .projects-card-container .grid-column .project-card .card-header.h-sm {
+    height: auto;
+  }
+  .projects .projects-card-container .grid-column .project-card .card-header img, .projects .projects-card-container .grid-column .project-card .card-header.h-sm img {
+    aspect-ratio: 1/0.7;
+  }
+  .projects .projects-card-container .grid-column .project-card .card-text {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 390px) {
+  .projects .projects-card-container .grid-column .project-card .card-footer {
+    justify-content: space-between;
+  }
+}
+
+/*# sourceMappingURL=projects-responsive.css.map */

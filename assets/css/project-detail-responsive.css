@@ -1,0 +1,550 @@
+@media screen and (max-width: 1600px) {
+  .intro-section .content-container h2 {
+    letter-spacing: 1.2px;
+  }
+  .intro-section .content-container .apply-btn {
+    padding: 11px clamp(20px, 2.61vw, 2.61vw);
+  }
+  .project-detail-section .project-detail-container .project-detail {
+    gap: 13px;
+  }
+  .project-skills .skill-wrapper {
+    gap: 20.5%;
+  }
+  .project-skills .skill-wrapper .chip-wrapper h3 {
+    padding-left: 9px;
+  }
+  .project-skills .skill-wrapper .chip-wrapper .chip-container {
+    column-gap: 13px;
+  }
+  .project-skills .skill-wrapper .chip-wrapper-1 {
+    width: 58.5%;
+  }
+  .content-container .desc-1 {
+    padding-left: 7px;
+  }
+  .content-container p {
+    padding-left: 7px;
+  }
+  .recommended-projects .content-wrapper .project-card-container .project-card .desc {
+    margin-top: 13px;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .intro-section .content-container h2 {
+    letter-spacing: 1px;
+  }
+  .intro-section .content-container .apply-btn {
+    padding: 10px clamp(20px, 2.61vw, 2.61vw);
+  }
+  .project-detail-section .project-detail-container .project-detail .project-info .label {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+  .project-detail-section .project-detail-container .project-detail {
+    gap: 12px;
+  }
+  .project-skills .skill-wrapper {
+    gap: 21%;
+  }
+  .project-skills .skill-wrapper .chip-wrapper h3 {
+    padding-left: 8px;
+  }
+  .project-skills .skill-wrapper .chip-wrapper .chip-container {
+    column-gap: 12px;
+  }
+  .project-skills .skill-wrapper .chip-wrapper .chip-container .chip {
+    padding: 6px clamp(20px, 1.9vw, 1.9vw);
+  }
+  .project-skills .skill-wrapper .chip-wrapper-1 {
+    width: 59%;
+  }
+  .content-container .desc-1 {
+    padding-left: 6px;
+  }
+  .content-container p {
+    padding-left: 6px;
+  }
+  .project-skills::after {
+    height: 3px;
+  }
+  .recommended-projects .content-wrapper {
+    gap: clamp(30px, 2.9vw, 2.9vw);
+  }
+  .recommended-projects .content-wrapper .project-card-container {
+    gap: clamp(30px, 2.9vw, 2.9vw);
+  }
+  .recommended-projects .content-wrapper .project-card-container .project-card .desc {
+    margin-top: 12px;
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .intro-section .content-container h2 {
+    letter-spacing: 0.5px;
+  }
+  .intro-section .content-container .apply-btn {
+    padding: 9px clamp(20px, 2.61vw, 2.61vw);
+  }
+  .project-detail-section .project-detail-container .project-detail .project-info .label {
+    font-size: 14px;
+    margin-bottom: 6px;
+  }
+  .project-detail-section .project-detail-container .project-detail {
+    gap: 11px;
+  }
+  .project-skills .skill-wrapper {
+    gap: 22%;
+  }
+  .project-skills .skill-wrapper .chip-wrapper h3 {
+    padding-left: 7px;
+  }
+  .project-skills .skill-wrapper .chip-wrapper .chip-container {
+    column-gap: 11px;
+  }
+  .project-skills .skill-wrapper .chip-wrapper-1 {
+    width: 60.5%;
+  }
+  .content-container .desc-1 {
+    padding-left: 5px;
+  }
+  .content-container p {
+    padding-left: 5px;
+  }
+  .recommended-projects .content-wrapper {
+    gap: clamp(25px, 2.61vw, 2.61vw);
+  }
+  .recommended-projects .content-wrapper .project-card-container {
+    width: 84.5%;
+    gap: clamp(25px, 2.61vw, 2.61vw);
+  }
+}
+@media screen and (max-width: 1024px) {
+  .intro-section {
+    padding: clamp(25px, 2.45vw, 2.45vw) clamp(20px, 5.2vw, 5.2vw) 10px;
+  }
+  .intro-section .content-container {
+    gap: clamp(20px, 15.22vw, 15.22vw);
+  }
+  .intro-section .content-container h2 {
+    letter-spacing: normal;
+  }
+  .intro-section .content-container .desc {
+    padding-left: 0;
+    font-size: 16px;
+  }
+  .intro-section .content-container .apply-btn {
+    padding: 7px clamp(20px, 2.61vw, 2.61vw);
+  }
+  .project-detail-section .project-detail-container {
+    padding: clamp(30px, 2.5vw, 2.5vw) clamp(30px, 6.8vw, 6.8vw);
+    gap: 7.5vw;
+  }
+  .project-detail-section .project-detail-container .project-detail .project-info .label {
+    font-size: 13px;
+    margin-bottom: 5px;
+  }
+  .project-detail-section .project-detail-container .project-detail {
+    gap: 8px;
+  }
+  .project-detail-section .project-detail-container .price {
+    letter-spacing: 1px;
+  }
+  .project-skills {
+    padding: 10px clamp(20px, 6.25vw, 5.2vw) 20px clamp(20px, 5.2vw, 5.2vw);
+  }
+  .project-skills .skill-wrapper {
+    gap: 10%;
+    justify-content: space-between;
+  }
+  .project-skills .skill-wrapper .chip-wrapper h3 {
+    padding-left: 5px;
+  }
+  .project-skills .skill-wrapper .chip-wrapper .chip-container {
+    column-gap: 10px;
+  }
+  .project-skills .skill-wrapper .chip-wrapper .chip-container .chip {
+    padding: 5px clamp(20px, 1.9vw, 1.9vw);
+  }
+  .project-skills .skill-wrapper .chip-wrapper-1 {
+    width: 76%;
+  }
+  .project-skills .content-container .desc-1 {
+    padding-left: 5px;
+  }
+  .project-skills .content-container p {
+    padding-left: 5px;
+  }
+  .recommended-projects {
+    padding: clamp(25px, 3.4vw, 3.4vw) clamp(20px, 5.2vw, 5.2vw) clamp(40px, 4.69vw, 4.69vw);
+  }
+  .recommended-projects h2 {
+    text-align: center;
+  }
+  .recommended-projects .content-wrapper {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .recommended-projects .content-wrapper .project-card-container {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .intro-section {
+    padding: clamp(20px, 2.45vw, 2.45vw) clamp(20px, 4.2vw, 4.2vw) 0px;
+  }
+  .intro-section .content-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .intro-section .content-container .desc {
+    padding-left: 0;
+    font-size: 16px;
+  }
+  .intro-section .content-container .apply-container {
+    text-align: center;
+    margin-bottom: 18px;
+  }
+  .intro-section .content-container .apply-btn {
+    padding: 5px 22px;
+  }
+  .project-detail-section {
+    padding: 25px 0;
+  }
+  .project-detail-section .project-detail-container {
+    padding: clamp(28px, 2.5vw, 2.5vw) 10%;
+    gap: 25px;
+    flex-wrap: wrap;
+  }
+  .project-detail-section .project-detail-container .project-detail {
+    gap: 8px;
+    flex: 1 1 calc(50% - 12.5px);
+    width: 100%;
+    justify-self: end;
+  }
+  .project-detail-section .project-detail-container .project-detail .project-info .label {
+    font-size: 13px;
+    margin-bottom: 5px;
+  }
+  .project-detail-section .project-detail-container .date-container {
+    justify-content: flex-end;
+  }
+  .project-detail-section .project-detail-container .price {
+    flex: 1 1 calc(50% - 12.5px);
+    text-align: right;
+    letter-spacing: 1px;
+  }
+  .project-detail-section .project-detail-container .price span {
+    width: 93px;
+    display: inline-block;
+  }
+  .project-skills {
+    padding: 10px clamp(20px, 6.25vw, 5.2vw) 0px clamp(20px, 5.2vw, 5.2vw);
+  }
+  .project-skills .skill-wrapper {
+    gap: 10%;
+    justify-content: space-between;
+  }
+  .project-skills .skill-wrapper .chip-wrapper h3 {
+    padding-left: 5px;
+  }
+  .project-skills .skill-wrapper .chip-wrapper .chip-container {
+    column-gap: 10px;
+  }
+  .project-skills .skill-wrapper .chip-wrapper .chip-container .chip {
+    padding: 5px clamp(20px, 1.9vw, 1.9vw);
+  }
+  .project-skills .skill-wrapper .chip-wrapper-1 {
+    width: 76%;
+  }
+  .project-skills .content-container {
+    padding: clamp(20px, 6.25vw, 6.25vw) 0 clamp(30px, 5.2vw, 5.2vw);
+  }
+  .project-skills .content-container .desc-1 {
+    padding-left: 5px;
+  }
+  .project-skills .content-container p {
+    padding-left: 5px;
+  }
+  .project-skills .content-container .btn-container {
+    margin-top: clamp(30px, 5.2vw, 5.2vw);
+  }
+  .project-skills::after {
+    height: 2px;
+  }
+  .recommended-projects {
+    padding: clamp(25px, 3.4vw, 3.4vw) clamp(20px, 5.2vw, 5.2vw) clamp(40px, 4.69vw, 4.69vw);
+  }
+  .recommended-projects h2 {
+    text-align: center;
+  }
+  .recommended-projects .content-wrapper {
+    gap: 35px;
+  }
+  .recommended-projects .content-wrapper .project-card-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 600px) {
+  .intro-section {
+    padding: clamp(20px, 2.45vw, 2.45vw) clamp(20px, 4.2vw, 4.2vw) 0px;
+  }
+  .intro-section .content-container {
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 20px;
+  }
+  .intro-section .content-container h2 {
+    font-size: 28px;
+    text-align: center;
+  }
+  .intro-section .content-container .desc {
+    padding-left: 0;
+    font-size: 15px;
+  }
+  .intro-section .content-container .apply-container {
+    margin-bottom: 10px;
+  }
+  .intro-section .content-container .apply-btn {
+    padding: 5px 26px;
+    font-size: 16px;
+  }
+  .project-detail-section {
+    padding: 20px 0;
+  }
+  .project-detail-section .img-wrapper img {
+    object-fit: cover;
+    aspect-ratio: 1/0.37;
+  }
+  .project-detail-section .project-detail-container {
+    padding: clamp(28px, 2.5vw, 2.5vw) clamp(20px, 4.2vw, 4.2vw);
+    gap: 25px;
+    flex-wrap: wrap;
+  }
+  .project-detail-section .project-detail-container .project-detail {
+    gap: 8px;
+    flex: 1 1 calc(50% - 12.5px);
+    width: 100%;
+    justify-self: end;
+  }
+  .project-detail-section .project-detail-container .project-detail .project-info .label {
+    font-size: 13px;
+    margin-bottom: 5px;
+  }
+  .project-detail-section .project-detail-container .date-container {
+    justify-content: flex-end;
+  }
+  .project-detail-section .project-detail-container .price {
+    flex: 1 1 calc(50% - 12.5px);
+    text-align: right;
+    letter-spacing: 0.5px;
+    font-size: 24px;
+  }
+  .project-detail-section .project-detail-container .price span {
+    width: 98px;
+    display: inline-block;
+  }
+  .project-skills {
+    padding: 10px clamp(20px, 4.2vw, 4.2vw) 0px;
+  }
+  .project-skills .skill-wrapper {
+    gap: 25px;
+    flex-direction: column;
+  }
+  .project-skills .skill-wrapper .chip-wrapper h3 {
+    padding-left: 0px;
+  }
+  .project-skills .skill-wrapper .chip-wrapper .chip-container .chip {
+    padding: 5px clamp(20px, 1.9vw, 1.9vw);
+  }
+  .project-skills .skill-wrapper .chip-wrapper-1 {
+    width: 100%;
+  }
+  .project-skills .content-container {
+    padding: clamp(20px, 6.25vw, 6.25vw) 0 clamp(30px, 5.2vw, 5.2vw);
+  }
+  .project-skills .content-container .desc-1 {
+    padding-left: 0px;
+    font-size: 19px;
+  }
+  .project-skills .content-container p {
+    padding-left: 0px;
+    font-size: 14px;
+  }
+  .project-skills .content-container .btn-container {
+    margin-top: clamp(30px, 5.2vw, 5.2vw);
+  }
+  .recommended-projects {
+    padding: clamp(25px, 3.4vw, 3.4vw) clamp(20px, 4.2vw, 4.2vw) clamp(40px, 4.69vw, 4.69vw);
+  }
+  .recommended-projects h2 {
+    font-size: 24px;
+    text-align: center;
+  }
+  .recommended-projects .content-wrapper {
+    gap: 30px;
+  }
+  .recommended-projects .content-wrapper .project-card-container {
+    gap: 20px;
+  }
+  .recommended-projects .content-wrapper .project-card-container .project-card .desc {
+    margin-top: 10px;
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .intro-section {
+    padding: clamp(20px, 2.45vw, 2.45vw) clamp(20px, 4.2vw, 4.2vw) 0px;
+  }
+  .intro-section .content-container {
+    padding-top: 15px;
+  }
+  .intro-section .content-container h2 {
+    font-size: 27px;
+    margin-bottom: 5px;
+  }
+  .intro-section .content-container .desc {
+    margin-bottom: 15px;
+  }
+  .intro-section .content-container .apply-btn {
+    font-size: 15px;
+  }
+  .project-detail-section .img-wrapper img {
+    aspect-ratio: 1/0.39;
+  }
+  .project-detail-section .project-detail-container {
+    padding: 25px clamp(20px, 4.2vw, 4.2vw);
+  }
+  .project-detail-section .project-detail-container .project-detail .project-info .label {
+    font-size: 12px;
+  }
+  .project-detail-section .project-detail-container .project-detail .project-info .text {
+    font-size: 13px;
+  }
+  .project-detail-section .project-detail-container .price {
+    font-size: 24px;
+  }
+  .project-detail-section .project-detail-container .price span {
+    width: 90px;
+  }
+  .project-skills .skill-wrapper .chip-wrapper .chip-container {
+    column-gap: 8px;
+  }
+  .project-skills .content-container {
+    padding: clamp(20px, 6.25vw, 6.25vw) 0 clamp(30px, 5.2vw, 5.2vw);
+  }
+  .project-skills .content-container .desc-1 {
+    font-size: 19px;
+  }
+  .project-skills .content-container p {
+    font-size: 14px;
+  }
+  .project-skills .content-container .btn-container .apply-project-btn {
+    border-width: 2px;
+  }
+  .recommended-projects h2 {
+    font-size: 23px;
+  }
+  .recommended-projects .content-wrapper {
+    gap: 25px;
+  }
+  .recommended-projects .content-wrapper .project-card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .recommended-projects .content-wrapper .project-card-container .project-card .desc {
+    margin-top: 9px;
+  }
+}
+@media screen and (max-width: 390px) {
+  .intro-section .content-container {
+    gap: 10px;
+    padding-top: 10px;
+  }
+  .intro-section .content-container h2 {
+    font-size: clamp(23px, 6.8vw, 26px);
+    margin-bottom: 0px;
+  }
+  .intro-section .content-container .desc {
+    font-size: clamp(13px, 3.6vw, 14px);
+  }
+  .intro-section .content-container .apply-btn {
+    padding: 6px 28px;
+    width: 100%;
+  }
+  .project-detail-section {
+    padding: 20px 0;
+  }
+  .project-detail-section .img-wrapper {
+    height: 160px;
+  }
+  .project-detail-section .img-wrapper img {
+    height: 100%;
+    object-fit: cover;
+  }
+  .project-detail-section .project-detail-container {
+    padding: 20px;
+    gap: 20px;
+  }
+  .project-detail-section .project-detail-container .project-detail {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .project-detail-section .project-detail-container .project-detail .project-info .label {
+    font-size: 11px;
+  }
+  .project-detail-section .project-detail-container .date-container {
+    justify-content: flex-start;
+  }
+  .project-detail-section .project-detail-container .price {
+    font-size: 22px;
+    text-align: left;
+    margin-left: unset;
+  }
+  .project-detail-section .project-detail-container .price span {
+    width: auto;
+  }
+  .project-skills .skill-wrapper .chip-wrapper .chip-container {
+    column-gap: 6px;
+  }
+  .project-skills .skill-wrapper .chip-wrapper .chip-container .chip {
+    padding: 4px 14px;
+  }
+  .project-skills .content-container .desc-1 {
+    font-size: clamp(15px, 4.69vw, 18px);
+  }
+  .project-skills .content-container p {
+    font-size: clamp(12px, 3.4vw, 13px);
+  }
+  .project-skills .content-container .btn-container {
+    margin-top: 25px;
+  }
+  .project-skills .content-container .btn-container .apply-project-btn {
+    border-width: 2px;
+    font-size: clamp(15px, 4.2vw, 16px);
+  }
+  .recommended-projects {
+    padding: clamp(25px, 3.4vw, 3.4vw) clamp(20px, 4.2vw, 4.2vw) clamp(40px, 4.69vw, 4.69vw);
+  }
+  .recommended-projects h2 {
+    font-size: 22px;
+  }
+  .recommended-projects .content-wrapper {
+    gap: 25px;
+  }
+  .recommended-projects .content-wrapper .project-card-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .recommended-projects .content-wrapper .project-card-container .project-card .img-wrapper {
+    height: auto;
+  }
+  .recommended-projects .content-wrapper .project-card-container .project-card .img-wrapper img {
+    aspect-ratio: 1/0.7;
+  }
+  .recommended-projects .content-wrapper .project-card-container .project-card .desc {
+    font-size: 14px;
+  }
+}
+
+/*# sourceMappingURL=project-detail-responsive.css.map */

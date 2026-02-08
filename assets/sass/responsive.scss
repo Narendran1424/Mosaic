@@ -1,0 +1,874 @@
+@use "./abstracts/variables" as *;
+@use "./abstracts/colors" as *;
+
+@media screen and (max-width:1600px){
+    .login-overlay .login-container .authenticate-toast-container {
+            padding: 12px 18px;
+            gap: 40px;
+        img{
+            width: 20px;
+        }
+        &.show {
+            top: $fs-47px;
+        }
+    }
+    .register-overlay .register-wrapper{
+        .register-body-container
+        .register-card-container{
+            .register-card .card-border{
+                .border-rect{
+                    stroke-dasharray: 8 6;
+                }
+            }
+            .register-card  .register-card-btn{
+                padding: 9px 0;
+            }
+        }
+    }
+        
+    .plan-overlay{
+        .action-btn-container button{
+            padding: 9px clamp(15px, $fs-31px, $fs-31px);
+        }
+    }
+    
+}
+
+@media screen and (max-width:1400px){
+    .intro-section .intro-wrapper{
+        .intro-container .explore-btn{
+            padding: 7px clamp(25px,$fs-32px,$fs-32px);
+            
+        }
+    }
+    .collaborate-section{
+        .slider-wrapper{
+            .slider-indicator-container .progress-bar{
+                height: 6px;
+            }
+            .slider-indicator-container .progress-fill{
+                height: 6px;
+            }
+        }
+    }
+    .newsletter-section{
+        .form-wrapper .email-input{
+            border: none;
+            width: 86%;
+        }
+    }
+    .login-overlay .login-container{
+        .login-form .checkbox-wrapper{
+            .checkbox-group input[type="checkbox"]{
+                border-radius: 3px;
+            }
+        }
+        .authenticate-toast-container {
+                padding: 12px 16px;
+            img{
+                width: 18px;
+            }
+            &.show {
+                top: clamp(15px,$fs-45px, $fs-45px);
+            }
+        }
+    }
+    .register-overlay{
+        .register-wrapper{
+        .register-body-container
+            .register-card-container{
+                .register-card{
+                     border-radius: 18px;
+                }
+                .register-card .card-border{
+                    .border-rect{
+                        stroke-dasharray: 7 5;
+                    }
+                }
+                .register-card  .register-card-btn{
+                    padding: 8px 0;
+                }
+            }
+        }
+    }
+    .plan-overlay{
+        .action-btn-container
+        button{
+            padding: 7px clamp(15px, $fs-31px, $fs-31px);
+            
+        }
+    }
+}
+
+
+@media screen and (max-width:1200px){
+    .testimonial-section{
+        .carousel-indicators{
+            bottom: 19%;
+        }
+        .carousel-inner .carousel-caption{
+            padding:clamp(30px, $fs-60px, $fs-60px)  clamp(35px, $fs-91px, $fs-91px);
+            background-color: rgb(114 114 114 / 40%);
+            bottom: 27%;
+        }
+    }
+    .login-overlay .login-container{
+        width: 45%;
+        .login-form .checkbox-wrapper{
+            .checkbox-text{
+                font-size: 12px;
+            }
+        }
+    }
+}
+@media screen and (max-width:1024px){
+    .intro-section{
+        padding:clamp(25px, $fs-80px, $fs-80px) clamp(20px, $fs-75px, $fs-75px);
+         .intro-wrapper{ 
+            .intro-container{
+                .explore-btn{
+                    padding: 6px clamp(25px,$fs-32px,$fs-32px);
+                }
+            }
+            .card-wrapper{
+                .card-container{
+                    .card-title{
+                        right: -35%;
+                    }
+                    .card-title-3{
+                        right: -25.5%;
+                    }
+                }
+            }
+        }
+    }
+    .collaborate-section{
+        padding:clamp(30px, $fs-90px, $fs-90px) clamp(30px, $fs-75px, $fs-75px) clamp(25px, $fs-60px, $fs-60px);
+        .collaborate-left-wrapper{
+            .category-list{
+                .category-list-item{
+                    padding: clamp(15px, $fs-25px, $fs-25px) 0;
+                }
+                
+            }
+        }
+        .slider-wrapper{
+            .slider-container .slider{
+                    flex: 0 0 32%;
+                    width: 32%;
+                    height: clamp(174px, $fs-400px,$fs-400px);
+                }
+            }
+        }
+    .faq-section{
+        padding: clamp(30px, $fs-80px, $fs-80px) 0 clamp(15px, $fs-25px, $fs-25px);
+        .accordion-container{
+            padding:$fs-60px $fs-184px;
+        }
+    }
+     .testimonial-section{
+         .carousel-indicators{
+            bottom: 16%;
+        }
+         .carousel-inner .carousel-caption{
+            padding:clamp(30px, $fs-55px, $fs-55px)  clamp(35px, $fs-75px, $fs-75px);
+            bottom: 26%;
+        }
+    }
+    .newsletter-section{
+        .form-wrapper{
+            padding-bottom: 6px;
+            margin: 0 clamp(30px, $fs-292px, $fs-292px);
+            .email-input{
+                border: none;
+                width: 83%;
+            }
+        }
+    }
+    
+    .login-overlay .login-container{
+        width: 55%;
+        .login-form .checkbox-wrapper{
+            .checkbox-text{
+                font-size: 12px;
+            }
+        }
+        .authenticate-toast-container {
+            padding: 8px 15px;
+
+            img{
+                width: 17px;
+            }
+
+        }
+    }
+    .register-overlay{
+        .register-wrapper{
+            padding:clamp(20px, $fs-23px, $fs-23px) clamp(25px,$fs-100px, $fs-100px);
+            .register-body-container{
+                .register-card-container{
+                    .register-card{
+                        border-radius: 18px;
+                    }
+                    .register-card .card-border{
+                        .border-rect{
+                            stroke-dasharray: 7 5;
+                        }
+                    }
+                    .register-card  .register-card-btn{
+                        padding: 7px 0;
+                    }
+                }
+                
+                
+            } 
+        }
+        
+    }
+    .plan-overlay{
+        .plan-header{
+            line-height: 1.3;
+        }
+        .plan-wrapper{
+            padding:clamp(20px, $fs-23px, $fs-23px) clamp(25px,$fs-100px, $fs-100px);
+            .plan-body-container{
+                .plan-card-container{
+                    .plan-card{
+                        width: 270px;
+                        border-radius: 12px;
+                    }
+                }
+            }
+        }
+        .action-btn-container
+        button{
+            padding: 6px clamp(15px, $fs-31px, $fs-31px);
+        }
+        
+    }
+}
+
+@media screen and (max-width:768px){
+    .intro-section{
+        padding: 25px;
+        .intro-wrapper{
+            flex-direction: column;
+            gap: 35px;
+            .intro-container .explore-btn{
+                margin-top: 12px;
+            }
+            
+            .card-wrapper{
+                width: 100%;
+                .card-container{
+                    .card-title{
+                       right: clamp(-50px, $fs-138px, -50px);
+                    }
+                    .card-title-3{
+                        right: clamp(-36px, $fs-100px, -36px);
+                    }
+                    .card-desc{
+                        right: 19px;
+                    }
+                }
+            }
+
+        }
+        .count-wrapper{
+            padding:clamp(30px,$fs-90px,$fs-90px) 0;
+            grid-template-columns: repeat(3,1fr);
+            grid-column-gap:17px;
+            grid-row-gap: 17px;
+            grid-template-rows: repeat(2,1fr);
+            .count-container{
+                border-radius: 5px;
+            }
+        }
+        .who-we-are-wrapper .desc{
+            padding: 0 20px;
+            margin-bottom: 0;
+        }
+    }
+    .faq-section{
+        padding: clamp(30px, $fs-80px, $fs-80px) 0 clamp(15px, $fs-25px, $fs-25px);
+        .accordion-container{
+            padding:$fs-60px 25px;
+        }
+    }
+    .collaborate-section{
+        padding:clamp(30px, $fs-90px, $fs-90px) clamp(25px, $fs-60px, $fs-60px) clamp(25px, $fs-60px, $fs-60px);
+        .collaborate-left-wrapper{
+            width:clamp(150px, $fs-355px, $fs-355px);
+            .collaborate-header{
+                font-size: clamp(15px, $fs-42px, $fs-42px);
+            }
+        }
+        .slider-wrapper{
+            width: $fs-1324px;
+            .slider-container .slider{
+                flex: 0 0 31.4%;
+                width: 31.4%;
+            }
+            .slider-indicator-container .progress-bar{
+                width: 83%;
+            }
+        }    
+    }
+    .testimonial-section{
+        .carousel-indicators{
+            right: 25px;
+            left: 25px;
+            bottom: 10%;
+        }
+        .carousel-inner .carousel-caption{
+            padding:clamp(25px, $fs-55px, $fs-55px)  clamp(20px, $fs-38px, $fs-38px);
+            right: 25px;
+            left: 25px;
+            bottom: 20%;
+        }
+    }
+    .newsletter-section{
+        padding: clamp(30px, $fs-184px, $fs-184px) clamp(30px, $fs-120px, $fs-120px)  clamp(20px, $fs-184px, $fs-184px);
+        .form-wrapper{
+            padding-bottom: 5px;
+            margin: 0 clamp(30px, $fs-250px, $fs-250px);
+        }
+        .bg-text{
+            top: 20%;
+        }
+    }
+    
+    .login-overlay .login-container{
+        width: 65%;
+        .login-form .checkbox-wrapper{
+            .checkbox-group input[type="checkbox"]::after{
+                transform: translate(-50%, -50%) rotate(10deg);
+            }
+        }
+        .authenticate-toast-container {
+            padding: 8px 15px;
+            font-size: 13px;
+            img{
+                width: 16px;
+            }
+        }
+    }
+    .register-overlay{
+        .register-wrapper{
+            padding:clamp(20px, $fs-23px, $fs-23px) clamp(25px,$fs-100px, $fs-100px);
+            .register-body-container{
+                .register-card-container{
+                    .register-card{
+                        border-radius: 18px;
+                    }
+                    .register-card .card-border{
+                        .border-rect{
+                            stroke-dasharray: 7 5;
+                        }
+                    }
+                    .register-card  .register-card-btn{
+                        padding: 7px 0;
+                    }
+                }
+            } 
+        }
+        
+    }
+    .plan-overlay{
+        .plan-wrapper{
+            padding:clamp(20px, $fs-23px, $fs-23px) clamp(25px,$fs-100px, $fs-100px);
+            .plan-body-container{
+                .plan-card-container{
+                    .plan-card{
+                        width: 270px;
+                        border-radius: 12px;
+                    }
+                }
+            }
+        }
+        .action-btn-container
+        button{
+            padding: 6px clamp(15px, $fs-31px, $fs-31px);
+        }
+        
+    }
+}
+
+@media screen and (max-width:600px){
+    .intro-section{
+        padding: 25px 20px;
+        .intro-wrapper .intro-container{
+            margin: 0;
+        }
+        .intro-wrapper  .card-wrapper{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            height: auto;
+            justify-content: space-between;
+            gap: 12px;
+            .card-container{
+                flex: 0 0 calc(50% - 12px);
+                height: 280px;
+            }
+            .card-container-3{
+                margin: 12px auto 0;
+            }
+        }
+        .who-we-are-wrapper .desc{
+            padding: 10px 0;
+        }
+    }
+    .collaborate-section{
+        padding:clamp(30px, $fs-90px, $fs-90px) clamp(20px, $fs-41px, $fs-41px) clamp(25px, $fs-60px, $fs-60px);
+        .collaborate-left-wrapper{
+            .category-list{
+                .category-list-item{
+                    padding: clamp(15px, $fs-25px, $fs-25px) 0;
+                }
+            }
+        }
+        .slider-wrapper{
+            width: 68vw;
+            .slider-container .slider{
+                flex: 0 0 48%;
+                width: 48%;
+                height: clamp(174px, $fs-400px,$fs-400px);
+            }
+        }
+    }
+    .faq-section{
+        .accordion-container{
+            padding:$fs-60px 20px;
+        }
+    }
+    
+    .testimonial-section{
+        .carousel-indicators{
+            left: 20px;
+            right: 20px;
+            bottom: -0.5%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .carousel-inner
+        .carousel-caption{
+            padding:clamp(25px, $fs-55px, $fs-55px)  clamp(20px, $fs-38px, $fs-38px);
+            bottom: 12%;
+            right: 20px;
+            left: 20px
+        }
+        
+    }
+    .newsletter-section{
+        padding: clamp(30px, $fs-184px, $fs-184px) clamp(30px, $fs-120px, $fs-120px)  clamp(20px, $fs-184px, $fs-184px);
+        .form-wrapper{
+            margin: 0 clamp(20px, $fs-100px, $fs-100px);
+        }
+        .bg-text{
+            letter-spacing: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+   
+    .login-overlay .login-container{
+        width: 80%;
+        padding: 25px 20px;
+        .login-form input{
+            padding: 11px 0;
+        }
+        .submit-btn{
+            padding: 10px 0;
+        }
+        .authenticate-toast-container{
+            width: 80%;
+            text-wrap: wrap;
+        }
+    }
+    .register-overlay{
+        .register-header{
+            padding:clamp(20px, $fs-58px, $fs-58px) 20px 10px,;
+        }
+        .register-wrapper{
+            padding:clamp(15px, $fs-23px, $fs-23px) 20px;
+            .register-header-container{
+                .user-header{
+                    font-size: 28px;
+                }
+                .sub-header{
+                    font-size: 13px;
+                }
+                .close-btn .close-img{
+                    width: 14px;
+                }
+            }
+
+            .register-body-container{
+                .register-card-container{
+                    gap: clamp(20px, $fs-100px, $fs-100px);
+                    .register-card{
+                        border-radius: 10px;
+                        width: 50%;
+                        img{
+                            width: 100%;
+                        }
+                    }
+                    .register-card .card-border{
+                        .border-rect{
+                            stroke-dasharray: 5 4;
+                        }
+                    }
+                    .register-card  .register-card-btn{
+                        padding: 6px 0;
+                    }
+                }
+                
+            } 
+        }
+    }
+    .plan-overlay{
+        .plan-wrapper{
+            padding:clamp(15px, $fs-23px, $fs-23px) 20px;
+            .plan-body-container{
+                .plan-card-container{
+                    flex-direction: column;
+                    align-items: center;
+                    .plan-card{
+                        width: 70%;
+                    }
+                }
+            }
+        }
+        .plan-header{
+            font-size: 28px;
+            padding-bottom: 20px;
+        }
+    }
+}
+
+@media screen and (max-width:480px){
+    .intro-section{
+        .intro-wrapper
+            .card-wrapper{
+                flex-direction: column;
+                gap: 20px;
+            .card-container{
+                flex: none;
+                width: 100%;
+                height: 240px;
+                .card-desc{
+                    font-size: 15px;
+                }
+            }
+            .card-container-3{
+                margin: 0;
+            }
+        }
+        
+        
+        .count-wrapper{
+            grid-template-columns: repeat(2,1fr);
+            grid-template-rows: repeat(2,1fr);
+            .count-container.count-container{
+                padding: clamp(12px, $fs-42px, $fs-42px);
+                .count{
+                    font-size: 30px;
+                } 
+            }
+        }
+        .who-we-are-wrapper .desc{
+            padding: 10px 0px;
+        }
+            
+    }
+    .collaborate-section{
+        .collaborate-left-wrapper{
+            width: 140px;
+        }
+        .slider-wrapper{
+            width: calc(100% - 160px);
+            .slider-container 
+            .slider{
+                flex: 0 0 100%;
+                width: 100%;
+                height: clamp(176px, $fs-400px,$fs-400px);
+                img{
+                    object-fit: cover;
+                }
+            }
+            .slider-indicator-container{
+                .slider-btn-container button img {
+                    width: 17px;
+                    height: 17px;
+                }
+            } 
+            .slider-indicator-container{
+                padding-top: 15px;
+                flex-direction: column;
+                gap: 15px;
+                .progress-bar{
+                    width: 100%;
+                    height: 5px;
+                }
+                .progress-fill{
+                    height: 5px;
+                }
+            }
+        }
+    }
+     .testimonial-section{
+        .carousel-indicators{
+            left: 20px;
+            right: 20px;
+            bottom: -4px;
+        }
+        .carousel-inner
+        .carousel-caption{
+            padding:20px;
+            right: 20px;
+            left: 20px;
+        }
+    }
+    .newsletter-section{
+        padding: clamp(30px, $fs-184px, $fs-184px) clamp(30px, $fs-120px, $fs-120px)  clamp(20px, $fs-184px, $fs-184px);
+        .form-wrapper{
+            margin: 0 clamp(20px, $fs-100px, $fs-100px);
+        }
+        .bg-text{
+            letter-spacing: 0px;
+            left: 50%;
+            font-size: 56px;
+            transform: translateX(-50%);
+        }
+    }
+    
+    .login-overlay .login-container{
+        width: 87.5%;
+        .login-form input{
+            padding: 11px 0;
+            border-radius: 30px;
+        }
+        .submit-btn{
+            padding: 10px 0;
+            border-radius: 30px;
+        }
+        .social-link-container{
+            .social-link{
+                font-size: 13px;
+            }
+            .social-link::after{
+                padding-inline:5px;
+            }
+        }
+        .authenticate-toast-container{
+            width: 87.5%;
+            text-wrap: wrap;
+        }
+    }
+     .register-overlay{
+        .register-header{
+            padding:15px 20px 10px;
+        }
+        .register-wrapper{
+            padding:10px 20px;
+            .register-header-container{
+                .user-header{
+                    font-size: 26px;
+                }
+                .sub-header{
+                    font-size: 12px;
+                }
+                .close-btn{
+                    font-size: 13px;
+                    gap: 8px;
+                    .close-img{
+                        width: 13px;
+                    }
+                } 
+            }
+            .register-body-container{
+                padding: 15px 0;
+                .register-card-container{
+                    flex-direction: column;
+                    align-items: center;
+                    gap: clamp(20px, $fs-100px, $fs-100px);
+                    .register-card{
+                        border-radius: 10px;
+                        width: 100%;
+                        img{
+                            width: 100%;
+                            aspect-ratio: 2/1.4;
+                        }
+                    }
+                    .register-card .card-border{
+                        .border-rect{
+                            stroke-dasharray: 5 4;
+                        }
+                    }
+                    .register-card  .register-card-btn{
+                        padding: 6px 0;
+                    }
+                }
+                
+            } 
+        }
+        
+    }
+    .plan-overlay{
+        .plan-wrapper{
+            padding:10px 20px;
+            .plan-body-container{
+                padding: 15px 0;
+                .plan-card-container .plan-card{
+                    width: 87%;
+                }
+            }
+        }
+        .action-btn-container button{
+            font-size: 13px;
+        }
+
+    }
+}
+
+@media screen and (max-width:390px){
+    .intro-section{
+    .count-wrapper .count-container{
+            padding: 13px;
+        }
+    }
+    .who-we-are-wrapper .desc{
+        font-size: 14px;
+    }
+        
+    .collaborate-section{
+        flex-direction: column;
+        .collaborate-left-wrapper{
+            width: 100%;
+            .collaborate-header{
+                font-size: 16px;
+            }
+            .category-list{
+                width: 50%;
+            }
+        }
+        .slider-wrapper{
+            width:100%;
+
+        }
+    }
+    .testimonial-section{
+        .carousel-inner .carousel-caption{
+            padding: 15px;
+            .content{
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
+            .testimonial-detail .desc{
+                font-size: 12px;
+            } 
+        }
+        
+    }
+    .newsletter-section{
+        padding: 50px 20px;
+        .form-wrapper{
+            width: 100%;
+            margin: 0;
+        }
+        .bg-text{
+            letter-spacing: 0px;
+            top: 50%;
+            left: 50%;
+            font-size: clamp(34px, $fs-268px, $fs-268px);
+            transform: translate(-50%,-50%);
+        }
+    }
+    
+    .login-overlay .login-container{
+        .login-form{
+            .checkbox-wrapper{
+                padding-top: 28px;
+                .checkbox-text{
+                    font-size: 11px;
+                }
+            }
+            .input-wrapper .error{
+                line-height: 1.2;
+                font-size: 11px;
+            }
+        } 
+         .authenticate-toast-container {
+            font-size: 12px;
+            img{
+                width: 15px;
+            }
+        }
+    }
+     .register-overlay{
+        .register-header{
+            padding:15px 20px 10px;
+        }
+        .register-wrapper{
+            padding:5px 20px;
+            .register-header-container{
+                .user-header{
+                    font-size: 26px;
+                }
+                .sub-header{
+                    font-size: 12px;
+                }
+                .close-btn{
+                    font-size: 13px;
+                    gap: 8px;
+                    .close-img{
+                        width: 13px;
+                    }
+                } 
+            }
+
+            .register-body-container{
+                padding:10px 0 15px;
+                .register-card-container{
+                    flex-direction: column;
+                    align-items: center;
+                    gap: clamp(20px, $fs-100px, $fs-100px);
+                    .register-card{
+                        border-radius: 10px;
+                        width: 100%;
+                        img{
+                            width: 100%;
+                            aspect-ratio:unset;
+                            height: clamp(235px, 70vw, 270px);
+                        }
+                    }
+                    .register-card .card-border{
+                        .border-rect{
+                            stroke-dasharray: 5 4;
+                        }
+                    }
+                    .register-card  .register-card-btn{
+                        padding: 6px 0;
+                    }
+                }
+            } 
+        }
+    }
+    .plan-overlay{
+        .plan-header{
+            font-size: 28px;
+        }
+        .plan-wrapper{
+            .plan-body-container{
+                padding:10px 0 15px;
+                .plan-card-container .plan-card{
+                    width: 100%;
+                    .plan-card-body ul{
+                        padding-left: 0;
+                    }
+                }
+            }
+        }
+    }
+}

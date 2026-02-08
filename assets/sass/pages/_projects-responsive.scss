@@ -1,0 +1,177 @@
+@use "../abstracts/variables" as *;
+
+@media screen and (max-width:1600px){
+    .projects{
+        .projects-header .post-project-btn{
+            padding: 8px clamp(16px, $fs-36px, $fs-36px);
+        }
+        .projects-card-container 
+        .grid-column .project-card .card-footer p{
+            img {
+                width: clamp(18px, $fs-24px, $fs-24px);
+            }
+            img.location{
+                width: clamp(14px, $fs-19px,  $fs-19px);
+            }
+            
+        } 
+    } 
+}
+
+@media screen and (max-width:1400px){
+    .projects{
+         .projects-header .post-project-btn{
+            padding: 7px clamp(16px, $fs-36px, $fs-36px);
+        }
+        .projects-card-container 
+        .grid-column .project-card{
+            .card-title{
+                font-size: clamp(16px, $fs-29px, $fs-29px);
+            }
+            .card-footer p{
+                img {
+                    width: clamp(16px, $fs-24px, $fs-24px);
+                }
+                img.location{
+                    width: clamp(12px, $fs-19px,  $fs-19px);
+                }
+            } 
+            
+        } 
+    } 
+}
+
+@media screen and (max-width:1200px){
+    .projects .projects-card-container 
+    .grid-column .project-card{
+        .card-title{
+            font-size: clamp(16px, $fs-29px, $fs-29px);
+        }
+        .card-text{
+            font-size: 13px;
+        }
+        .card-footer p{
+            font-size: 13px;
+            img {
+                width: clamp(16px, $fs-24px, $fs-24px);
+            }
+            img.location{
+                width: clamp(12px, $fs-19px,  $fs-19px);
+            }
+        } 
+        
+    } 
+}
+
+@media screen and (max-width:1024px){
+    .filter-section{
+        padding: clamp(25px, $fs-85px, $fs-85px) clamp(20px, $fs-80px, $fs-80px) 0;
+    }
+    .projects{
+        padding: 10px clamp(20px, $fs-80px, $fs-80px);
+        .projects-header{
+            .show-text{
+                font-size: 14px;
+            }
+            .post-project-btn{
+                font-size: 13px;
+                padding: 6px clamp(18px, $fs-36px, $fs-36px);
+            }
+        }
+        .projects-card-container{
+            display: block;
+            column-count: 3;
+            .grid-column{
+                    display: contents;
+                 .project-card{
+                    break-inside: avoid;
+                    margin-bottom: clamp(24px, $fs-50px, $fs-50px);
+                .card-title{
+                    font-size: clamp(16px, $fs-29px, $fs-29px);
+                }
+                .card-text{
+                    font-size: 12px;
+                }
+                .card-footer p{
+                    font-size: 12px;
+                    img {
+                        width: clamp(16px, $fs-24px, $fs-24px);
+                    }
+                    img.location{
+                        width: clamp(12px, $fs-19px,  $fs-19px);
+                    }
+                } 
+                
+            } 
+            } 
+            .grid-column-4{
+                flex-direction: row;
+                grid-column:span 3;
+            }
+        } 
+    }
+}
+
+@media screen and (max-width:768px){
+    .projects{
+        padding: 8px clamp(20px, $fs-80px, $fs-80px);
+
+        .projects-card-container{
+            display: block;
+            column-count: 2;
+            .grid-column .project-card{
+                .card-header{
+                    height: $fs-615px;
+                }
+                .card-header.h-sm{
+                    height: clamp(110px, $fs-410px, $fs-410px);
+                }
+            } 
+        }
+    }
+}
+
+@media screen and (max-width:600px){
+    .projects{
+        padding: 0px clamp(20px, $fs-85px, $fs-85px);
+    }
+}
+
+@media screen and (max-width:480px){
+    .projects{
+        .projects-header{
+            .show-text{
+                font-size: 13px;
+            }
+            .post-project-btn{
+                font-size: 12px;
+                padding: 5px 16px;
+            }
+     
+        }
+        .projects-card-container{
+            column-count: 1;
+            .grid-column .project-card{
+                .card-header,.card-header.h-sm{
+                    height: auto;
+                    img{
+                        aspect-ratio: 1/0.7;
+                    }
+                }
+                .card-text{
+                    font-size: 13px;
+                }
+            } 
+        }
+    } 
+}
+
+
+
+@media screen and (max-width:390px){
+    .projects .projects-card-container
+    .grid-column .project-card
+    .card-footer{
+        justify-content: space-between;
+    }
+}

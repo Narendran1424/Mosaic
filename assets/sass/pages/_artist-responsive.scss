@@ -1,0 +1,330 @@
+@use "../abstracts/variables" as *;
+
+@media screen and (max-width:1400px){
+    .artist-section .left-wrapper .hover-wrapper
+    .artist-profile{
+        .artist-details{
+            gap: clamp(15px, $fs-40px, $fs-40px);
+            .detail-wrapper{
+                gap: clamp(15px, $fs-40px, $fs-40px);
+                .detail-item
+                .text{
+                    font-size: 13px;
+                    margin-top: 5px;
+                } 
+            }  
+        }
+         
+    } 
+    
+}
+
+@media screen and (max-width:1200px){
+    .artist-section{ 
+        .left-wrapper .hover-wrapper
+        .artist-profile{
+            .artist-media .artist-tags .tag{
+                padding: 4px clamp(12px, $fs-22px, $fs-22px);
+            }
+            .artist-details{
+                flex-direction: column;
+                gap: 20px;
+                .detail-wrapper{
+                    .detail-item
+                    .text{
+                        margin-top: 4px;
+                    } 
+                }
+            }
+            
+        } 
+        .artist-card-container{
+            width: 42%;
+        }
+    }
+}
+
+
+@media screen and (max-width:1024px){
+    .artist-section{
+        .left-wrapper{
+          .content-container{
+            .artist-btn-container
+            button{
+                font-size: 14px;
+            }
+          }
+          .hover-wrapper{
+            .header-wrapper{
+                .header .connect-btn{
+                    padding: 4px clamp(15px, $fs-20px, $fs-20px);
+                    font-size: 14px;
+                }
+                .bio-text{
+                    width: 100%;
+                    font-size: 13px;
+                }
+            } 
+          
+            .artist-profile .artist-media
+            .artist-tags .tag{
+                    padding: 3px clamp(12px, $fs-22px, $fs-22px);
+                    font-size: 13px;
+                }
+            }
+        }
+        .artist-card-container{
+            .artist-card{
+                .img-wrapper{
+                    height: clamp(135px, $fs-280px, $fs-280px);
+                }
+                p{
+                    font-size: 12px;
+                }
+            } 
+            width: 46%;
+        }
+    } 
+}
+
+
+@media screen and (max-width:768px){
+     .artist-section{
+        flex-direction: column;
+        gap: 40px;
+        .left-wrapper{
+            width: 100%;
+          .content-container{
+            width: clamp(305px, 48%, 48%);
+            gap: clamp(20px, $fs-60px, $fs-60px);
+            .artist-btn-container{
+                padding-right: 0;
+                button{
+                    border-width: 1px;
+                }
+
+                button:hover{
+                    border-width: 1px;
+                }
+            }
+          }
+          .hover-wrapper{
+            padding-left: 0;
+            .header-wrapper{
+                .header{
+                    justify-content: space-between;
+                    h2{
+                        margin-bottom: 0;
+                    }
+                    margin-bottom: 15px;
+                } 
+                .bio-text{
+                    width: 100%;
+                    font-size: 13px;
+                }
+            } 
+          
+            .artist-profile{ 
+                .artist-media{
+                    .img-wrapper{
+                        height: clamp(250px, $fs-690px, $fs-690px);
+                    }
+                    .artist-tags .tag{
+                        padding: 4px clamp(12px, $fs-22px, $fs-22px);
+                        font-size: 13px;
+                    }
+                }
+                .artist-details{
+                    flex-direction: row;
+                    gap: clamp(15px, $fs-130px, $fs-130px);
+                    .detail-wrapper{
+                        gap: clamp(15px, $fs-130px, $fs-130px);
+                        .detail-item
+                        .text{
+                            font-size: 13px;
+                            margin-top: 5px;
+                        } 
+                    }
+                }
+            }
+          }
+        }
+        .artist-card-container{
+            width: 100%;
+            .artist-card{
+                .img-wrapper{
+                    height: clamp(140px, $fs-590px, $fs-590px);
+                }
+                p{
+                    font-size: 12px;
+                }
+            } 
+            
+        }
+    } 
+}
+
+@media screen and (max-width:600px){
+    .artist-section{
+        flex-direction: column;
+        gap: 35px;
+        .left-wrapper{
+          .content-container{
+            width: clamp(305px, 48%, 48%);
+            gap: clamp(20px, $fs-60px, $fs-60px);
+            .artist-btn-container{
+                padding-right: 0;
+                button{
+                    border-width: 1px;
+                }
+
+                button:hover{
+                    border-width: 1px;
+                }
+            }
+          }
+          .hover-wrapper{
+            .artist-profile{ 
+                .artist-media
+                    .img-wrapper{
+                        width: 65%;
+                    }
+
+                .artist-details{
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    gap: clamp(15px, $fs-70px, $fs-70px);
+                }
+            }
+          }
+        }
+        .artist-card-container{
+            width: 100%;
+            .artist-card{
+                .img-wrapper{
+                    height: clamp(140px, $fs-590px, $fs-590px);
+                }
+                p{
+                    font-size: 12px;
+                }
+            } 
+            
+        }
+    } 
+}
+
+@media screen and (max-width:480px){
+    .artist-section{
+        gap: 30px;
+        padding-bottom: 30px;
+        padding-inline:clamp(20px, $fs-100px, $fs-100px);
+        .left-wrapper{
+          .content-container{
+             h2{
+                margin-bottom: 0;
+                .indent{ 
+                    padding-left: 0;
+                }
+             } 
+            .artist-btn-container
+            button{
+                font-size: 13px;
+                padding: 4px 15px;
+            }
+          }
+           .hover-wrapper{
+            .artist-profile{ 
+                .artist-media
+                    .img-wrapper{
+                        width: 75%;
+                    }
+
+                .artist-details{
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    gap: clamp(15px, $fs-70px, $fs-70px);
+                }
+            }
+          }
+        }
+        .artist-card-container{
+            grid-template-columns: repeat(2,1fr);
+            .artist-card{
+                .img-wrapper{
+                    height: clamp(140px, $fs-640px, $fs-640px);
+                    img{
+                        object-fit: fill;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:390px){
+    .artist-section{
+        gap: 25px;
+        padding-bottom: 25px;
+        .left-wrapper{
+           
+          .content-container{
+             width: 100%;
+             h2 { 
+                font-size: 36px;
+            }
+            .artist-btn-container{
+                gap: 10px;
+            }
+          }
+          .hover-wrapper{
+            .artist-profile{ 
+                .artist-media{
+                    flex-direction: column;
+                    .img-wrapper{
+                        width: 100%;
+                        img{
+                            object-fit: fill;
+                        }
+                    }
+                    .artist-tags{
+                        flex-direction: row;
+                        flex-wrap: wrap;
+                        column-gap: clamp(15px, $fs-100px, $fs-100px);
+                        // justify-content: space-between;
+                        .tag{
+                            padding: 3px 15px;
+                        }
+                    }
+                }
+                .artist-details{
+                    margin-top: 20px;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    gap: clamp(15px, $fs-70px, $fs-70px);
+                    .detail-wrapper{
+                        justify-content: space-between;
+                        gap: clamp(15px, $fs-70px, $fs-70px);
+                        .detail-item
+                        .text{
+                            font-size: 12px;
+                            margin-top: 4px;
+                        }
+                    }
+                }
+            }
+          }
+        }
+        .artist-card-container{
+            grid-template-columns: 1fr;
+            .artist-card{
+                .img-wrapper{
+                    height: auto;
+                    img{
+                        aspect-ratio: 1/0.8;
+                       
+                    }
+                }
+            }
+        }
+    }
+}

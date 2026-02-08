@@ -1,0 +1,547 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/colors" as *;
+
+@media screen and (max-width:1600px){
+    .artist-section .artist-body-container
+        .content-wrapper .content-container{
+        .user-info{
+             margin-bottom: clamp(20px, $fs-58px, $fs-58px);
+            h2{
+                margin-top: 0;
+            }
+                .connect-btn{
+                padding: 9px clamp(15px, $fs-34px, $fs-34px);
+            }
+        } 
+        
+        .genre-container .genre {
+            padding: 5px clamp(10px, $fs-31px, $fs-31px);
+        }
+    }  
+    
+
+}
+
+@media screen and (max-width:1400px){
+    .artist-section .artist-body-container 
+    .content-wrapper .content-container
+    .user-info{
+        .connect-btn{
+            padding: 8px clamp(15px, $fs-34px, $fs-34px);
+        }
+        p .city{
+            padding-left: 8px;
+        }
+        p .artist{
+            padding-right: 8px;
+        }
+    } 
+    .portfolio-section .portfolio-body-container
+    .video-container {
+        width: 46%;
+    }
+    .personality-section{
+        h2{
+            padding-left: 8px;
+        }
+        .content-wrapper 
+        .right-wrapper .form-group .input-container 
+        .content-container{
+            p{
+                font-size: 13px;
+            }
+            p:first-of-type{
+                width: 170px;
+            }
+            p:last-of-type{
+                width: 150px;
+            }
+        } 
+        .connect-btn-container{
+            .connect-btn{
+                border-width: 2px;
+            }
+            .connect-btn:hover{
+                border-width: 2px;
+            }
+            
+        }
+        
+
+    } 
+     
+}
+
+@media screen and (max-width:1200px){
+    .artist-section{
+        padding: clamp(25px, $fs-47px, $fs-47px) clamp(20px, $fs-91px, $fs-91px) clamp(20px, $fs-100px, $fs-100px);
+        .artist-header-container{
+            padding-right: 0;
+        }
+        .artist-body-container{
+            .left-wrapper{
+                width: 28%;
+            }
+            .content-wrapper{
+                padding-right: 0;
+                .content-container{
+                    .user-info h2{
+                        line-height: 1.3;
+                    }
+                    .user-info p{
+                        line-height: 1.2;
+                    }
+                    .bio-wrapper h3{
+                        margin-bottom: 7px;
+
+                    }
+                }
+            }
+        } 
+    } 
+    .workstyle-section{
+        padding: clamp(25px, $fs-75px, $fs-75px) clamp(25px, $fs-91px, $fs-91px) clamp(20px, $fs-100px, $fs-100px);
+    }
+    .portfolio-section{
+       
+        padding: clamp(25px, $fs-75px, $fs-75px) clamp(25px, $fs-91px, $fs-91px) clamp(20px, $fs-100px, $fs-100px);
+        .portfolio-body-container
+        .video-container {
+            width: 52%;
+        }
+    } 
+    .personality-section{
+         h2{
+            padding-left: 6px;
+        }
+        padding: clamp(25px, $fs-75px, $fs-75px) clamp(25px, $fs-91px, $fs-91px) clamp(20px, $fs-100px, $fs-100px);
+        .content-wrapper{
+            .left-wrapper{
+                width: 31%;
+                p{
+                    font-size: 13px;
+                    width: 100%;
+                }
+                .along-text{
+                    width: 100%;
+                }
+                .collab-text{
+                    width: 100%;    
+                }
+            }
+            .right-wrapper .form-group{
+                label{
+                    font-size: 14px;
+                }
+                .input-container{
+                    input[type="range"]::-webkit-slider-thumb{
+                        -webkit-appearance: none; 
+                        width: 13px;
+                        height: 13px;
+                        margin-top: -5px;
+                    }
+                    .content-container p{
+                        font-size: 12px;
+                    }
+                    
+                } 
+            
+            } 
+                
+        } 
+        
+    }
+    .featured-section{
+        padding: clamp(25px, $fs-47px, $fs-47px) clamp(20px, $fs-91px, $fs-91px) clamp(20px, $fs-100px, $fs-100px);
+    }
+}
+
+@media screen and (max-width:1024px){
+    .artist-section{
+        padding-bottom: 0;
+        .artist-body-container{
+            .left-wrapper{
+                width: 30%;
+            }
+            .content-wrapper{
+                padding-left: 2.5%;
+                .content-container{
+                    .bio-wrapper::after{
+                        height: 0;
+                    }
+                    .user-stat-container{
+                        border-top: 1px solid $grey-e6;
+                        .user-stat .stat-text{
+                            font-size: 13px;
+                        }
+                    }
+                } 
+            }
+            
+        } 
+    }
+    .portfolio-section{
+        .portfolio-header{
+            justify-content: flex-start;
+            align-items: center;
+            h2{
+                margin: 0 auto;
+            }
+        }
+        .portfolio-body-container{
+            padding-top: 40px;
+            .video-container {
+                padding-top: 0;
+                width: 70%;
+            }
+            .social-links-contianer{
+            ul
+            li img{
+                width: clamp(28px, $fs-67px, $fs-67px);
+            }
+        }
+                 
+            
+        }
+    }
+    .workstyle-section{
+        flex-direction: column;
+        gap:40px;
+        padding: clamp(25px, $fs-75px, $fs-75px) clamp(20px, $fs-120px, $fs-120px) clamp(25px, $fs-91px, $fs-91px) clamp(20px, $fs-100px, $fs-100px);
+        h2{
+            text-align: center;
+        }
+        .works-container{
+            width: 100%;
+        }
+    }
+    .personality-section{
+        h2{
+            padding-left: 0;
+            text-align: center;
+        }
+     .content-wrapper{
+        flex-direction: column;
+        .left-wrapper{
+            width: 100%;
+            padding-inline: 10%;
+            .collab-header{
+                width: 85%;
+            }
+            p{
+                font-size: 13px;
+                width: 100%;
+            }
+            .along-text{
+                width: 100%;
+            }
+            .collab-text{
+                width: 100%;    
+            }
+        } 
+        .right-wrapper{
+            width: 100%;
+            padding-inline: 10%;
+            .form-group 
+            .input-container input[type="range"]::-webkit-slider-thumb{
+                -webkit-appearance: none; 
+                width: 12px;
+                height: 12px;
+                margin-top: -4px;
+            }
+        } 
+    }
+    }
+    .featured-section{
+        h2{
+            text-align: center;
+            margin-top: 0;
+        }
+        .content-wrapper{
+            flex-direction: column;
+            gap: 40px;
+            .artist-card-container{
+                width: 100% ;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:768px){
+    .artist-section{
+        .artist-body-container{
+            .left-wrapper{
+                min-width: 210px;
+                width: 40%;
+                .artist-img{
+                    height: clamp(260px, $fs-615px, $fs-615px)
+                }
+            }
+            flex-direction: column;
+            .content-wrapper{
+                padding-left: 0;
+
+                .content-container{
+                    .user-stat-container{
+                        .user-stat{
+                            flex: 1;
+                        }
+                    }
+                    .genre-container{
+                        padding-top: 15px;
+                        .genre{
+                            flex: 1;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .workstyle-section{
+     .works-container{
+        gap: 10px;
+        .work{
+            h3{
+                font-size: 15px;
+            }
+            p{
+                font-size: 13px;
+            }
+        }   
+     } 
+    }
+    .portfolio-section .portfolio-body-container {
+        flex-direction: column;
+        padding-top: 20px;
+        .video-container {
+            width: 100%;
+            padding-top: 20px;
+            .video{
+                .video-img-container{
+                    height: clamp(140px, $fs-590px, $fs-590px);
+                    .artist-img{
+                        object-fit: fill;
+                    }
+                }
+            }
+        }
+    }
+    .personality-section{
+        .content-wrapper{
+            .left-wrapper, .right-wrapper{
+                padding-inline: 0;
+            }
+        }
+    }
+    .featured-section{
+        .content-wrapper .artist-card-container{
+            grid-template-columns: repeat(4,1fr);
+            .artist-card .img-wrapper{
+               height: clamp(140px, $fs-590px, $fs-590px);
+            }
+        }
+    }
+     
+}
+
+@media screen and (max-width:600px){
+    .workstyle-section{
+        gap: 30px;
+        .works-container{
+            flex-wrap: wrap;
+            row-gap: 30px;
+            .work{
+                flex: 40%;
+            }
+        }
+    }
+    .portfolio-section .portfolio-body-container {
+        .video-container {
+            grid-template-columns: repeat(2,1fr);
+            .video{
+                .video-title{
+                    font-size: 14px;
+                }
+                .date{
+                    font-size: 12px;
+                }
+                .video-img-container{
+                    img{
+                        object-fit: fill;
+                    }
+                }
+            }
+        }
+    }
+    .featured-section{
+        .content-wrapper .artist-card-container{
+            grid-template-columns: repeat(2,1fr);
+        }
+    }
+}
+
+
+@media  screen and (max-width:480px) {
+    .artist-section .artist-body-container
+     .content-wrapper .content-container{
+        .user-stat-container {
+            flex-wrap: wrap;
+            .user-stat {
+                flex: 50%;
+                margin-bottom: 10px;
+            }
+            .user-stat:nth-of-type(2){
+                border-right: none;
+                padding-right: 0;
+            }
+        }
+        .genre-container {
+            flex-wrap: wrap;
+            gap: 20px;
+            .genre {
+                flex: 1 1 35%;
+            }
+        }
+    } 
+
+    .personality-section .content-wrapper{
+        .left-wrapper .collab-header{
+            width: 100%;
+        }
+        .right-wrapper .form-group .input-container 
+        .content-container{
+            p{
+                font-size: 12px;
+            }
+            p:first-of-type{
+                width: 120px;
+            }
+            p:last-of-type{
+                width: 130px;
+            }
+        }
+    } 
+}
+
+@media screen and (max-width: 390px) {
+    .artist-section{
+        .artist-header-container{
+            align-items: center;
+            padding-bottom: 10px;
+            .breadcrumb{
+                margin-bottom: 0;
+            }
+            .btn-container{
+                button img{
+                    height: 17px;
+                }
+            }
+        }
+        .artist-body-container{
+            .left-wrapper{
+                width: 100%;
+            }
+            .content-wrapper .content-container{
+                .user-info{
+                    h2 span{
+                        display: block;
+                    }
+                    .connect-btn{
+                        padding: 6px 15px;
+                        border-width: 1px;
+                    }
+                }
+                .bio-wrapper p{
+                    font-size: 13px;
+                }
+                .user-stat-container {
+                    flex-direction: column;
+                    gap: 20px;
+                    .user-stat {
+                        padding-inline: 0;
+                        border-right: none;
+                    
+                    }
+                    .user-stat:nth-of-type(2){
+                        border-right: none;
+                        padding-right: 0;
+                    }
+                }
+                .genre-container {
+                    flex-wrap: wrap;
+                    
+                    .genre {
+                        flex: 1 1 35%;
+                    }
+                }
+            } 
+        }
+    }
+   
+    .workstyle-section{
+        gap: 25px;
+        .works-container{
+            flex-direction: column;
+            .work{
+                p{
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+    .portfolio-section{
+        .portfolio-header{
+            flex-direction: column;
+            .video-count{
+                margin-left: auto;
+                padding-top: 10px;
+                font-size: 13px;
+            }
+        }
+        .portfolio-body-container {
+            .social-links-contianer ul{
+                justify-content: center;
+            }
+            .video-container {
+                grid-template-columns: 1fr;
+                .video{
+                    .video-img-container{
+                        height: auto;
+                        img{
+                            aspect-ratio: 1/0.8;
+                        }
+                    }
+                }
+            }
+        }
+    }
+      .personality-section .content-wrapper{
+        .left-wrapper{
+            h3{
+                font-size: 16px;
+            }
+            p{
+                font-size: 12px;
+            }
+        } 
+        .right-wrapper .form-group .input-container 
+        .content-container{
+            p{
+                font-size: 11px;
+            }
+        }
+    } 
+    .featured-section{
+        .content-wrapper .artist-card-container{
+            grid-template-columns:  1fr;
+            .artist-card .img-wrapper{
+               height: auto;
+               img{
+                aspect-ratio: 1/0.8;
+                object-fit: fill;
+               }
+            }
+        }
+    }
+}

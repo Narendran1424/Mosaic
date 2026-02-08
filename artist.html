@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./assets/images/favicon.png" />
+    <link rel="stylesheet" href="./assets/css/artist.css" />
+    <link rel="stylesheet" href="./assets/css/artist-responsive.css" />
+    <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css" />
+    <title>Mosaic | Artists</title>
+  </head>
+  <body>
+    <header class="landing-header">
+      <div class="logo-container">
+        <a href="./index.html" class="logo"
+          ><img src="./assets/images/logo.webp" alt="logo"
+        /></a>
+      </div>
+      <div class="header-actions">
+        <button
+          aria-label="Close Menu"
+          type="button"
+          class="nav-control-btn close-btn"
+        >
+          <img src="./assets/images/close.png" alt="close" />
+        </button>
+        <div class="search-container">
+          <button type="button" class="search-btn action-btn">
+            <img
+              src="./assets/images/search-header.png"
+              class="search-img"
+              alt="search"
+            />
+          </button>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="./artist.html" class="nav-link active">Artists</a></li>
+            <li><a href="./projects.html" class="nav-link">Projects</a></li>
+          </ul>
+        </nav>
+        <button type="button" class="login-btn-1 login-btn">Login</button>
+        <button type="button" class="action-btn">
+          <img src="./assets/images/app.png" class="app-img" alt="app" />
+        </button>
+      </div>
+      <button class="nav-control-btn menu-btn">
+        <img src="./assets/images/menu.png" alt="menu" />
+      </button>
+    </header>
+    <main>
+      <section class="filter-section">
+        <div class="filter-content-container">
+          <div class="filter-wrapper">
+            <button type="button" class="filter-btn">
+              <img src="./assets/images/filter.webp" alt="filter" />Filters
+            </button>
+            <div class="filter-dropdown">
+              <ul class="main-menu">
+                <li class="menu-item">
+                  <div class="text-uppercase">
+                    <img src="./assets/images/music.webp" alt="music" /> Music
+                    <img
+                      src="./assets/images/downarrow.webp"
+                      class="down-arrow"
+                      alt="downarrow"
+                    />
+                  </div>
+                  <ul class="sub-menu">
+                    <li class="submenu-item">
+                      <div>
+                        Categories
+                        <img
+                          src="./assets/images/downarrow.webp"
+                          class="down-arrow"
+                          alt="downarrow"
+                        />
+                      </div>
+                      <ul class="child-menu">
+                        <li>singer</li>
+                        <li>composer</li>
+                        <li>songwriter</li>
+                        <li>rapper</li>
+                        <li>vocalist</li>
+                        <li>instrumentalist</li>
+                        <li>producer</li>
+                        <li>audio engineer</li>
+                        <li>studio musician</li>
+                        <li>other</li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <ul class="sub-menu">
+                    <li class="submenu-item">
+                      <div>
+                        Genre
+                        <img
+                          src="./assets/images/downarrow.webp"
+                          class="down-arrow"
+                          alt="downarrow"
+                        />
+                      </div>
+                      <ul class="child-menu">
+                        <li>Pop</li>
+                        <li>hiphop</li>
+                        <li>EDM</li>
+                        <li>world</li>
+                        <li>folk</li>
+                        <li>R&B</li>
+                        <li>classical</li>
+                        <li>world</li>
+                        <li>rock</li>
+                        <li>other</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li class="menu-item">
+                  <div class="text-uppercase">
+                    <img
+                      src="./assets/images/dance.webp"
+                      class="dance"
+                      alt="dance"
+                    />
+                    Dance
+                    <img
+                      src="./assets/images/downarrow.webp"
+                      class="down-arrow"
+                      alt="downarrow"
+                    />
+                  </div>
+                  <ul class="sub-menu">
+                    <li class="submenu-item">
+                      <div>
+                        Categories
+                        <img
+                          src="./assets/images/downarrow.webp"
+                          class="down-arrow"
+                          alt="downarrow"
+                        />
+                      </div>
+                    </li>
+                  </ul>
+                  <ul class="sub-menu">
+                    <li class="submenu-item">
+                      <div>
+                        Genre
+                        <img
+                          src="./assets/images/downarrow.webp"
+                          class="down-arrow"
+                          alt="downarrow"
+                        />
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+
+                <li class="menu-item">
+                  <div class="text-uppercase">
+                    <img
+                      src="./assets/images/flim.webp"
+                      class="flim"
+                      alt="flim"
+                    />
+                    Film
+                    <img
+                      src="./assets/images/downarrow.webp"
+                      class="down-arrow"
+                      alt="downarrow"
+                    />
+                  </div>
+                  <ul class="sub-menu">
+                    <li class="submenu-item">
+                      <div>
+                        Categories
+                        <img
+                          src="./assets/images/downarrow.webp"
+                          class="down-arrow"
+                          alt="downarrow"
+                        />
+                      </div>
+                    </li>
+                  </ul>
+                  <ul class="sub-menu">
+                    <li class="submenu-item">
+                      <div>
+                        Genre
+                        <img
+                          src="./assets/images/downarrow.webp"
+                          class="down-arrow"
+                          alt="downarrow"
+                        />
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="search-wrapper">
+            <div class="search-input-container">
+              <label for="search"
+                ><img src="./assets/images/search.webp" alt="search"
+              /></label>
+              <input
+                type="text"
+                name="search"
+                id="search"
+                placeholder="Search..."
+              />
+            </div>
+          </div>
+          <div class="sort-wrapper">
+            <div class="sort-btn-wrapper">
+              <button type="button" class="sort-btn">
+                <img src="./assets/images/sortby.webp" alt="sortby" />Sort By
+              </button>
+              <img
+                src="./assets/images/downarrow.webp"
+                class="arrow-img"
+                alt="downarrow"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="artist-section">
+        <div class="left-wrapper">
+          <div class="content-container">
+            <h2>
+              <span class="indent">Network</span><br />
+              <span class="indent">with artists</span><br />
+              <span class="indent">and reach</span><br />
+              <span class="indent">out for</span><br />
+              <span class="highlight">Collaboration.</span>
+            </h2>
+            <div class="artist-btn-container">
+              <button type="button" class="register-artist-btn">
+                Register As Artist
+              </button>
+              <button type="button" class="recruit-artist-btn">
+                Recruit Artist
+              </button>
+            </div>
+          </div>
+          <div class="hover-wrapper">
+            <div class="content">
+              <div class="header-wrapper">
+                <div class="header">
+                  <h2>Rose Mary</h2>
+                  <button type="button" class="connect-btn">Connect</button>
+                </div>
+                <p class="bio-text">
+                  Current NYU Tish Student Who Loves to Sing R&B Classics like
+                  Fugees and Alica Keys.
+                </p>
+                <div class="mutual-wrapper">
+                  <p class="count">52 Mutuals</p>
+                  <p class="members">Mark Cota, Judy Xu cind 20,584 Others</p>
+                </div>
+              </div>
+              <div class="artist-profile">
+                <div class="artist-media">
+                  <div class="img-wrapper">
+                    <img
+                      src="./assets/images/artist/artistimg1.webp"
+                      alt="artistimg1"
+                    />
+                  </div>
+                  <div class="artist-tags">
+                    <span class="tag">Pop</span>
+                    <span class="tag">Hip Hop</span>
+                    <span class="tag">Blues</span>
+                    <span class="tag">Classical</span>
+                    <span class="tag">World</span>
+                  </div>
+                </div>
+                <div class="artist-details">
+                  <div class="detail-wrapper">
+                    <div class="detail-item">
+                      <p class="count">152+</p>
+                      <p class="text">Connections</p>
+                    </div>
+                    <div class="detail-item">
+                      <p class="count">12</p>
+                      <p class="text">Projects Worked On</p>
+                    </div>
+                    <div class="detail-item">
+                      <p class="count">02</p>
+                      <p class="text">Reference</p>
+                    </div>
+                  </div>
+
+                  <a href="#" class="see-more-link text-uppercase"
+                    >See More <img src="./assets/images/arrow.webp" alt="arrow"
+                  /></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="artist-card-container">
+          <a href="./artist-detail.html" class="artist-card">
+            <div class="img-wrapper">
+              <img
+                src="./assets/images/artist/artistimg1.webp"
+                alt="artistimg1"
+              />
+            </div>
+            <h3>Rosaline</h3>
+            <p>Guitarist</p>
+          </a>
+          <a href="./artist-detail.html" class="artist-card">
+            <div class="img-wrapper">
+              <img
+                src="./assets/images/artist/artistimg2.webp"
+                alt="artistimg2"
+              />
+            </div>
+            <h3>Rosaline</h3>
+            <p>Guitarist</p>
+          </a>
+          <a href="./artist-detail.html" class="artist-card">
+            <div class="img-wrapper">
+              <img
+                src="./assets/images/artist/artistimg3.webp"
+                alt="artistimg3"
+              />
+            </div>
+            <h3>Rosaline</h3>
+            <p>Guitarist</p>
+          </a>
+
+          <a href="./artist-detail.html" class="artist-card">
+            <div class="img-wrapper">
+              <img
+                src="./assets/images/artist/artistimg4.webp"
+                alt="artistimg4"
+              />
+            </div>
+            <h3>Rosaline</h3>
+            <p>Guitarist</p>
+          </a>
+          <a href="./artist-detail.html" class="artist-card">
+            <div class="img-wrapper">
+              <img
+                src="./assets/images/artist/artistimg5.webp"
+                alt="artistimg5"
+              />
+            </div>
+            <h3>Rosaline</h3>
+            <p>Guitarist</p>
+          </a>
+
+          <a href="./artist-detail.html" class="artist-card">
+            <div class="img-wrapper">
+              <img
+                src="./assets/images/artist/artistimg6.webp"
+                alt="artistimg6"
+              />
+            </div>
+            <h3>Rosaline</h3>
+            <p>Guitarist</p>
+          </a>
+          <a href="./artist-detail.html" class="artist-card">
+            <div class="img-wrapper">
+              <img
+                src="./assets/images/artist/artistimg7.webp"
+                alt="artistimg7"
+              />
+            </div>
+            <h3>Rosaline</h3>
+            <p>Guitarist</p>
+          </a>
+          <a href="./artist-detail.html" class="artist-card">
+            <div class="img-wrapper">
+              <img
+                src="./assets/images/artist/artistimg8.webp"
+                alt="artistimg1"
+              />
+            </div>
+            <h3>Rosaline</h3>
+            <p>Guitarist</p>
+          </a>
+          <a href="./artist-detail.html" class="artist-card">
+            <div class="img-wrapper">
+              <img
+                src="./assets/images/artist/artistimg9.webp"
+                alt="artistimg1"
+              />
+            </div>
+            <h3>Rosaline</h3>
+            <p>Guitarist</p>
+          </a>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-content-wrapper">
+        <div class="footer-content-container">
+          <div class="content">
+            <img
+              src="./assets/images/footerlogo.webp"
+              class="footer-logo"
+              alt="footer-logo"
+            />
+            <p>
+              Joining The Mosaic was a game-changer for me as a freelance
+              Guitarist. Not only did I find exciting projects to work on, but I
+              also connected with amazing collaborators who shared my creative
+              vision.
+            </p>
+          </div>
+          <div class="quick-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="get-app">
+            <h3>Get the App Now!</h3>
+            <ul>
+              <li>
+                <a href="#"
+                  ><img
+                    src="./assets/images/googleplay.webp"
+                    alt="playstore"
+                    class="playstore-img"
+                /></a>
+              </li>
+              <li>
+                <a href="#"
+                  ><img
+                    src="./assets/images/appstore.webp"
+                    alt="appstore"
+                    class="appstore-img"
+                /></a>
+              </li>
+            </ul>
+          </div>
+          <div class="qr-container">
+            <img
+              src="./assets/images/qrcode.webp"
+              class="qr-img"
+              alt="qr code"
+            />
+          </div>
+        </div>
+        <div class="get-started">
+          <p class="header" class="text-uppercase">Connect & Collaborate</p>
+          <div class="content">
+            <p>Be discoverd by leading agencies</p>
+            <img
+              src="./assets/images/footerpattern.webp"
+              class="pattern-img"
+              alt="footer pattern"
+            />
+            <p class="text-capitalize">land dream projects</p>
+          </div>
+          <button type="button" class="start-btn text-capitalize">
+            get started
+          </button>
+        </div>
+      </div>
+      <div class="copyright-container">
+        <p class="text-capitalize text">
+          copyrights &copy; &nbsp;mosaic inc 3034. all rights reserved.
+        </p>
+        <div>
+          <a href="#" class="text-capitalize">terms & conditions</a>
+          <a href="#" class="text-capitalize">privacy policy</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

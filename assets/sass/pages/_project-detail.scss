@@ -1,0 +1,264 @@
+@use "../base/reset";
+@use "../abstracts/index" as *;
+@use "../layout/index" as *;
+
+.intro-section{
+    padding: clamp(25px, $fs-47px, $fs-47px) clamp(20px, $fs-120px, $fs-120px) 10px clamp(20px, $fs-100px, $fs-100px);
+    .breadcrumb{
+        margin-bottom: clamp(10px, $fs-17px, $fs-17px);
+        .breadcrumb-item,a{
+            font-size: clamp(13px, $fs-20px, $fs-20px);
+            color: $black-3f;
+        }
+        .breadcrumb-item+.breadcrumb-item::before{
+            padding-right: 10px;
+        }
+        .breadcrumb-item+.breadcrumb-item {
+            padding-left: 9px;
+        }
+        .breadcrumb-item.active{
+            color: $black-66;
+        }
+    }
+    .content-container{
+        display: flex;
+        align-items: center;
+        gap: clamp(20px, $fs-311px, $fs-311px);
+        justify-content: space-between;
+        padding-top: clamp(20px, $fs-87px, $fs-87px);
+
+        h2{
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            font-size: clamp(29px, $fs-85px, $fs-85px);
+            color: $black-0c;
+            line-height: 1.29;
+
+        }
+        .desc{
+            font-size:  clamp(17px, $fs-26px, $fs-26px);
+            font-family: 'Poppins', sans-serif;
+            color: $black-0c;
+            font-weight: 500;
+            margin-bottom: clamp(20px, $fs-52px, $fs-52px);
+        }
+        .apply-btn{
+            border-radius: 50px;
+            font-size: clamp(17px, $fs-26px, $fs-26px);
+            padding: 12px clamp(20px, $fs-50px, $fs-50px);
+            background-color: $black;
+            color: $white;
+            border: 1px solid $black;
+            &:hover{
+                background-color: transparent;
+                color: $black;
+            }
+        }
+    }
+   
+}
+
+.project-detail-section{
+    padding: clamp(30px, $fs-72px, $fs-72px) 0;
+    .img-wrapper{
+        width: 100%;
+        img{
+            width: 100%;
+        }
+    }
+    .project-detail-container{
+        background-color: $white-f5;
+        display: flex;
+        gap: $fs-174px;
+        padding: clamp(30px, $fs-48px, $fs-48px) clamp(30px, $fs-190px, $fs-190px);
+        .project-detail{
+            display: flex;
+            align-items: flex-end;
+            gap: 14px;
+            img{
+                width: clamp(26px, $fs-49px, $fs-49px);
+            }
+            img.date-img{
+                width: clamp(26px, $fs-48px, $fs-48px);
+            }
+            img.location-img{
+                width: clamp(22px, $fs-39px, $fs-39px);
+            }
+            .project-info{
+                p{
+                    margin-bottom: 0;
+                    line-height: 1;
+                }
+                .label{
+                    font-size: 15px;
+                    margin-bottom: 7px;
+                    color: $grey;
+                    font-weight: 300;
+                }
+                .text{
+                    font-size: clamp(14px, $fs-22px, $fs-22px);
+                    font-weight: 500;
+                    color: $black-0c;
+                }
+            }
+        }
+        .price{
+            align-self: center;
+            margin-left: auto;
+            font-size: clamp(25px, $fs-50px, $fs-50px);
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-bottom: 0;
+            line-height: 1;
+        }
+    }
+}
+
+.project-skills{
+    padding: 10px  clamp(20px, $fs-120px, $fs-120px) 20px clamp(20px, $fs-100px, $fs-100px);
+    position: relative;
+    .skill-wrapper{
+        display: flex;
+        gap: 20.9%;
+        .chip-wrapper{
+            h3{
+                font-weight: 400;
+                padding-left: 10px;
+                font-size: clamp(17px, $fs-27px, $fs-27px);
+                color: $black-e6;
+                margin-bottom: clamp(10px, $fs-18px, $fs-18px);
+            }
+            .chip-container{
+                display: flex;
+                column-gap: 14px;
+                row-gap: clamp(10px, $fs-18px, $fs-18px);
+                flex-wrap: wrap;
+                .chip{
+                    font-size: clamp(13px, $fs-26px, $fs-26px);
+                    border: 1px solid $black-99;
+                    border-radius: 50px;
+                    color: $black-e6;
+                    padding: 7px clamp(20px, $fs-36px, $fs-36px);
+                    text-transform: capitalize;
+                }
+                .chip:hover{
+                    background-color: $black;
+                    color: $white;
+                    cursor: default;
+
+                }
+            }
+        }
+        .chip-wrapper-1{
+            width: 58%;
+        }
+    }
+    .content-container{
+        padding:clamp(20px, $fs-120px, $fs-120px) 0;
+        .desc-1{
+            color: $black-0c;
+            line-height: 1.28;
+            padding-left: 8px;
+            font-weight: 600;
+            font-size: clamp(20px, $fs-41px, $fs-41px);
+            letter-spacing: 0.27px;
+        }
+        p{
+            color: $grey;
+            font-weight: 300;
+            font-size: clamp(15px, $fs-26px, $fs-26px);
+            margin-bottom: clamp(15px, $fs-30px, $fs-30px);
+            padding-left: 8px;
+            line-height: 1.45;
+        }
+        .btn-container{
+            display: flex;
+            justify-content: center;
+            margin-top: clamp(10px, $fs-91px, $fs-91px);
+            .apply-project-btn{
+                font-size: clamp(17px, $fs-39px, $fs-39px);
+                padding: clamp(10px, $fs-18px, $fs-18px) clamp(40px, $fs-115px, $fs-115px);
+                border-radius: 50px;
+                background-color: $white;
+                color: $black;
+                border: 3px solid $black;
+                font-weight: 500;
+                
+                &:hover{
+                    background-color: $black;
+                    color: $white;
+                }
+            }
+        }
+        
+    }
+}
+
+.project-skills::after{
+    position: absolute;
+    content: '';
+    bottom: 0;
+    background-color:  $grey-e6;
+    height: 4px;
+    left: clamp(20px, $fs-110px, $fs-110px);
+    right: clamp(20px, $fs-110px, $fs-110px);
+}
+
+.recommended-projects{
+    padding: clamp(25px, $fs-65px, $fs-65px) clamp(20px, $fs-104px, $fs-104px) clamp(40px, $fs-90px, $fs-90px) clamp(20px, $fs-109px, $fs-109px);
+    h2 {
+        font-size: clamp(25px, $fs-51px, $fs-51px);
+        color: $black-0c;
+        font-weight: 600;
+        letter-spacing: 0.2px;
+        margin-bottom: clamp(25px, $fs-65px, $fs-65px);
+    }
+    .content-wrapper{
+        display: flex;
+        gap: clamp(30px, $fs-63px, $fs-63px);
+        align-items: center;
+        .project-card-container{
+            display: grid;
+            gap: clamp(30px, $fs-63px, $fs-63px);
+            grid-template-columns: repeat(5, 1fr);
+            width: 78.2%;
+            .project-card{
+                .img-wrapper{
+                    display: block;
+                    height: clamp(160px, $fs-280px, $fs-280px);
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .desc{
+                    font-size: clamp(15px, $fs-22px, $fs-22px);
+                    margin-top: 14px;
+                    margin-bottom: 3px;
+                    color: $black;
+                    font-weight: 500;
+                    line-height: 1.3;
+                }
+            }
+        }
+        .see-more-link{
+            font-size: clamp(14px, $fs-20px, $fs-20px);
+            color: $black-0c;
+            font-weight: 500;
+            display: flex;
+            gap: clamp(12px, $fs-25px, $fs-25px);
+            align-items: center;
+            position: relative;  
+            img{
+                width: clamp(23px, $fs-63px, $fs-63px);
+            }  
+            &:hover{
+                font-weight: 600;
+                img{
+                    filter: brightness(1.2);
+                }
+            }                     
+        }
+        
+    }
+}

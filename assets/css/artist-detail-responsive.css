@@ -1,0 +1,414 @@
+@media screen and (max-width: 1600px) {
+  .artist-section .artist-body-container .content-wrapper .content-container .user-info {
+    margin-bottom: clamp(20px, 3.04vw, 3.04vw);
+  }
+  .artist-section .artist-body-container .content-wrapper .content-container .user-info h2 {
+    margin-top: 0;
+  }
+  .artist-section .artist-body-container .content-wrapper .content-container .user-info .connect-btn {
+    padding: 9px clamp(15px, 1.75vw, 1.75vw);
+  }
+  .artist-section .artist-body-container .content-wrapper .content-container .genre-container .genre {
+    padding: 5px clamp(10px, 1.61vw, 1.61vw);
+  }
+}
+@media screen and (max-width: 1400px) {
+  .artist-section .artist-body-container .content-wrapper .content-container .user-info .connect-btn {
+    padding: 8px clamp(15px, 1.75vw, 1.75vw);
+  }
+  .artist-section .artist-body-container .content-wrapper .content-container .user-info p .city {
+    padding-left: 8px;
+  }
+  .artist-section .artist-body-container .content-wrapper .content-container .user-info p .artist {
+    padding-right: 8px;
+  }
+  .portfolio-section .portfolio-body-container .video-container {
+    width: 46%;
+  }
+  .personality-section h2 {
+    padding-left: 8px;
+  }
+  .personality-section .content-wrapper .right-wrapper .form-group .input-container .content-container p {
+    font-size: 13px;
+  }
+  .personality-section .content-wrapper .right-wrapper .form-group .input-container .content-container p:first-of-type {
+    width: 170px;
+  }
+  .personality-section .content-wrapper .right-wrapper .form-group .input-container .content-container p:last-of-type {
+    width: 150px;
+  }
+  .personality-section .connect-btn-container .connect-btn {
+    border-width: 2px;
+  }
+  .personality-section .connect-btn-container .connect-btn:hover {
+    border-width: 2px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .artist-section {
+    padding: clamp(25px, 2.45vw, 2.45vw) clamp(20px, 4.7vw, 4.7vw) clamp(20px, 5.2vw, 5.2vw);
+  }
+  .artist-section .artist-header-container {
+    padding-right: 0;
+  }
+  .artist-section .artist-body-container .left-wrapper {
+    width: 28%;
+  }
+  .artist-section .artist-body-container .content-wrapper {
+    padding-right: 0;
+  }
+  .artist-section .artist-body-container .content-wrapper .content-container .user-info h2 {
+    line-height: 1.3;
+  }
+  .artist-section .artist-body-container .content-wrapper .content-container .user-info p {
+    line-height: 1.2;
+  }
+  .artist-section .artist-body-container .content-wrapper .content-container .bio-wrapper h3 {
+    margin-bottom: 7px;
+  }
+  .workstyle-section {
+    padding: clamp(25px, 3.91vw, 3.91vw) clamp(25px, 4.7vw, 4.7vw) clamp(20px, 5.2vw, 5.2vw);
+  }
+  .portfolio-section {
+    padding: clamp(25px, 3.91vw, 3.91vw) clamp(25px, 4.7vw, 4.7vw) clamp(20px, 5.2vw, 5.2vw);
+  }
+  .portfolio-section .portfolio-body-container .video-container {
+    width: 52%;
+  }
+  .personality-section h2 {
+    padding-left: 6px;
+  }
+  .personality-section {
+    padding: clamp(25px, 3.91vw, 3.91vw) clamp(25px, 4.7vw, 4.7vw) clamp(20px, 5.2vw, 5.2vw);
+  }
+  .personality-section .content-wrapper .left-wrapper {
+    width: 31%;
+  }
+  .personality-section .content-wrapper .left-wrapper p {
+    font-size: 13px;
+    width: 100%;
+  }
+  .personality-section .content-wrapper .left-wrapper .along-text {
+    width: 100%;
+  }
+  .personality-section .content-wrapper .left-wrapper .collab-text {
+    width: 100%;
+  }
+  .personality-section .content-wrapper .right-wrapper .form-group label {
+    font-size: 14px;
+  }
+  .personality-section .content-wrapper .right-wrapper .form-group .input-container input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 13px;
+    height: 13px;
+    margin-top: -5px;
+  }
+  .personality-section .content-wrapper .right-wrapper .form-group .input-container .content-container p {
+    font-size: 12px;
+  }
+  .featured-section {
+    padding: clamp(25px, 2.45vw, 2.45vw) clamp(20px, 4.7vw, 4.7vw) clamp(20px, 5.2vw, 5.2vw);
+  }
+}
+@media screen and (max-width: 1024px) {
+  .artist-section {
+    padding-bottom: 0;
+  }
+  .artist-section .artist-body-container .left-wrapper {
+    width: 30%;
+  }
+  .artist-section .artist-body-container .content-wrapper {
+    padding-left: 2.5%;
+  }
+  .artist-section .artist-body-container .content-wrapper .content-container .bio-wrapper::after {
+    height: 0;
+  }
+  .artist-section .artist-body-container .content-wrapper .content-container .user-stat-container {
+    border-top: 1px solid #e6e6e6;
+  }
+  .artist-section .artist-body-container .content-wrapper .content-container .user-stat-container .user-stat .stat-text {
+    font-size: 13px;
+  }
+  .portfolio-section .portfolio-header {
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .portfolio-section .portfolio-header h2 {
+    margin: 0 auto;
+  }
+  .portfolio-section .portfolio-body-container {
+    padding-top: 40px;
+  }
+  .portfolio-section .portfolio-body-container .video-container {
+    padding-top: 0;
+    width: 70%;
+  }
+  .portfolio-section .portfolio-body-container .social-links-contianer ul li img {
+    width: clamp(28px, 3.5vw, 3.5vw);
+  }
+  .workstyle-section {
+    flex-direction: column;
+    gap: 40px;
+    padding: clamp(25px, 3.91vw, 3.91vw) clamp(20px, 6.25vw, 6.25vw) clamp(25px, 4.7vw, 4.7vw) clamp(20px, 5.2vw, 5.2vw);
+  }
+  .workstyle-section h2 {
+    text-align: center;
+  }
+  .workstyle-section .works-container {
+    width: 100%;
+  }
+  .personality-section h2 {
+    padding-left: 0;
+    text-align: center;
+  }
+  .personality-section .content-wrapper {
+    flex-direction: column;
+  }
+  .personality-section .content-wrapper .left-wrapper {
+    width: 100%;
+    padding-inline: 10%;
+  }
+  .personality-section .content-wrapper .left-wrapper .collab-header {
+    width: 85%;
+  }
+  .personality-section .content-wrapper .left-wrapper p {
+    font-size: 13px;
+    width: 100%;
+  }
+  .personality-section .content-wrapper .left-wrapper .along-text {
+    width: 100%;
+  }
+  .personality-section .content-wrapper .left-wrapper .collab-text {
+    width: 100%;
+  }
+  .personality-section .content-wrapper .right-wrapper {
+    width: 100%;
+    padding-inline: 10%;
+  }
+  .personality-section .content-wrapper .right-wrapper .form-group .input-container input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    margin-top: -4px;
+  }
+  .featured-section h2 {
+    text-align: center;
+    margin-top: 0;
+  }
+  .featured-section .content-wrapper {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .featured-section .content-wrapper .artist-card-container {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .artist-section .artist-body-container .left-wrapper {
+    min-width: 210px;
+    width: 40%;
+  }
+  .artist-section .artist-body-container .left-wrapper .artist-img {
+    height: clamp(260px, 32.03vw, 32.03vw);
+  }
+  .artist-section .artist-body-container {
+    flex-direction: column;
+  }
+  .artist-section .artist-body-container .content-wrapper {
+    padding-left: 0;
+  }
+  .artist-section .artist-body-container .content-wrapper .content-container .user-stat-container .user-stat {
+    flex: 1;
+  }
+  .artist-section .artist-body-container .content-wrapper .content-container .genre-container {
+    padding-top: 15px;
+  }
+  .artist-section .artist-body-container .content-wrapper .content-container .genre-container .genre {
+    flex: 1;
+    text-align: center;
+  }
+  .workstyle-section .works-container {
+    gap: 10px;
+  }
+  .workstyle-section .works-container .work h3 {
+    font-size: 15px;
+  }
+  .workstyle-section .works-container .work p {
+    font-size: 13px;
+  }
+  .portfolio-section .portfolio-body-container {
+    flex-direction: column;
+    padding-top: 20px;
+  }
+  .portfolio-section .portfolio-body-container .video-container {
+    width: 100%;
+    padding-top: 20px;
+  }
+  .portfolio-section .portfolio-body-container .video-container .video .video-img-container {
+    height: clamp(140px, 30.73vw, 30.73vw);
+  }
+  .portfolio-section .portfolio-body-container .video-container .video .video-img-container .artist-img {
+    object-fit: fill;
+  }
+  .personality-section .content-wrapper .left-wrapper, .personality-section .content-wrapper .right-wrapper {
+    padding-inline: 0;
+  }
+  .featured-section .content-wrapper .artist-card-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .featured-section .content-wrapper .artist-card-container .artist-card .img-wrapper {
+    height: clamp(140px, 30.73vw, 30.73vw);
+  }
+}
+@media screen and (max-width: 600px) {
+  .workstyle-section {
+    gap: 30px;
+  }
+  .workstyle-section .works-container {
+    flex-wrap: wrap;
+    row-gap: 30px;
+  }
+  .workstyle-section .works-container .work {
+    flex: 40%;
+  }
+  .portfolio-section .portfolio-body-container .video-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .portfolio-section .portfolio-body-container .video-container .video .video-title {
+    font-size: 14px;
+  }
+  .portfolio-section .portfolio-body-container .video-container .video .date {
+    font-size: 12px;
+  }
+  .portfolio-section .portfolio-body-container .video-container .video .video-img-container img {
+    object-fit: fill;
+  }
+  .featured-section .content-wrapper .artist-card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 480px) {
+  .artist-section .artist-body-container .content-wrapper .content-container .user-stat-container {
+    flex-wrap: wrap;
+  }
+  .artist-section .artist-body-container .content-wrapper .content-container .user-stat-container .user-stat {
+    flex: 50%;
+    margin-bottom: 10px;
+  }
+  .artist-section .artist-body-container .content-wrapper .content-container .user-stat-container .user-stat:nth-of-type(2) {
+    border-right: none;
+    padding-right: 0;
+  }
+  .artist-section .artist-body-container .content-wrapper .content-container .genre-container {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .artist-section .artist-body-container .content-wrapper .content-container .genre-container .genre {
+    flex: 1 1 35%;
+  }
+  .personality-section .content-wrapper .left-wrapper .collab-header {
+    width: 100%;
+  }
+  .personality-section .content-wrapper .right-wrapper .form-group .input-container .content-container p {
+    font-size: 12px;
+  }
+  .personality-section .content-wrapper .right-wrapper .form-group .input-container .content-container p:first-of-type {
+    width: 120px;
+  }
+  .personality-section .content-wrapper .right-wrapper .form-group .input-container .content-container p:last-of-type {
+    width: 130px;
+  }
+}
+@media screen and (max-width: 390px) {
+  .artist-section .artist-header-container {
+    align-items: center;
+    padding-bottom: 10px;
+  }
+  .artist-section .artist-header-container .breadcrumb {
+    margin-bottom: 0;
+  }
+  .artist-section .artist-header-container .btn-container button img {
+    height: 17px;
+  }
+  .artist-section .artist-body-container .left-wrapper {
+    width: 100%;
+  }
+  .artist-section .artist-body-container .content-wrapper .content-container .user-info h2 span {
+    display: block;
+  }
+  .artist-section .artist-body-container .content-wrapper .content-container .user-info .connect-btn {
+    padding: 6px 15px;
+    border-width: 1px;
+  }
+  .artist-section .artist-body-container .content-wrapper .content-container .bio-wrapper p {
+    font-size: 13px;
+  }
+  .artist-section .artist-body-container .content-wrapper .content-container .user-stat-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .artist-section .artist-body-container .content-wrapper .content-container .user-stat-container .user-stat {
+    padding-inline: 0;
+    border-right: none;
+  }
+  .artist-section .artist-body-container .content-wrapper .content-container .user-stat-container .user-stat:nth-of-type(2) {
+    border-right: none;
+    padding-right: 0;
+  }
+  .artist-section .artist-body-container .content-wrapper .content-container .genre-container {
+    flex-wrap: wrap;
+  }
+  .artist-section .artist-body-container .content-wrapper .content-container .genre-container .genre {
+    flex: 1 1 35%;
+  }
+  .workstyle-section {
+    gap: 25px;
+  }
+  .workstyle-section .works-container {
+    flex-direction: column;
+  }
+  .workstyle-section .works-container .work p {
+    font-size: 12px;
+  }
+  .portfolio-section .portfolio-header {
+    flex-direction: column;
+  }
+  .portfolio-section .portfolio-header .video-count {
+    margin-left: auto;
+    padding-top: 10px;
+    font-size: 13px;
+  }
+  .portfolio-section .portfolio-body-container .social-links-contianer ul {
+    justify-content: center;
+  }
+  .portfolio-section .portfolio-body-container .video-container {
+    grid-template-columns: 1fr;
+  }
+  .portfolio-section .portfolio-body-container .video-container .video .video-img-container {
+    height: auto;
+  }
+  .portfolio-section .portfolio-body-container .video-container .video .video-img-container img {
+    aspect-ratio: 1/0.8;
+  }
+  .personality-section .content-wrapper .left-wrapper h3 {
+    font-size: 16px;
+  }
+  .personality-section .content-wrapper .left-wrapper p {
+    font-size: 12px;
+  }
+  .personality-section .content-wrapper .right-wrapper .form-group .input-container .content-container p {
+    font-size: 11px;
+  }
+  .featured-section .content-wrapper .artist-card-container {
+    grid-template-columns: 1fr;
+  }
+  .featured-section .content-wrapper .artist-card-container .artist-card .img-wrapper {
+    height: auto;
+  }
+  .featured-section .content-wrapper .artist-card-container .artist-card .img-wrapper img {
+    aspect-ratio: 1/0.8;
+    object-fit: fill;
+  }
+}
+
+/*# sourceMappingURL=artist-detail-responsive.css.map */
