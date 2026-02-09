@@ -1354,3 +1354,81 @@ previewContainer.addEventListener("click", (e) => {
     videoInput.value = "";
   }
 });
+
+//Step 8
+const checkboxes = step8.querySelectorAll('.form-group input[type="checkbox"]');
+const error = step8.querySelector(".error");
+const descInputs=step8.querySelectorAll(".desc-input");
+
+checkboxes.forEach(cb => {
+  cb.addEventListener("change", handleCheck);
+});
+
+function handleCheck() {
+  const checked = step8.querySelectorAll('.form-group input[type="checkbox"]:checked');
+
+  checked.forEach(cb => {
+    const textInput = cb.closest(".input-wrapper").querySelector(".desc-input");
+    textInput.classList.add("active");
+  });
+
+  if (checked.length >= 3) {
+    checkboxes.forEach(cb => {
+      if (!cb.checked) cb.disabled = true;
+      error.textContent="";
+    });
+    continue7Btn.removeAttribute("disabled");
+  } else {
+    checkboxes.forEach(cb => cb.disabled = false);
+    descInputs.forEach(inp=>inp.classList.remove("active"));
+    continue7Btn.setAttribute("disabled", true);
+    error.textContent="Please select atleast 3 inputs"
+  }
+}
+
+function validatePersonality(){
+  const activeInputs = step8.querySelectorAll(".desc-input.active");
+  let data = [];
+  let isValid = false;
+
+  activeInputs.forEach(input => {
+    if (input.value.trim() === "") {
+      isValid = true;
+    } else {
+      const labelText = input.closest(".input-wrapper")
+        .querySelector("label").textContent;
+
+      data.push({
+        question: labelText,
+        answer: input.value.trim()
+      });
+    }
+  });
+
+  if (isValid) {
+    error.textContent = "Please fill all the input fields";
+  } else {
+    error.textContent = "";
+  }
+
+  return { isValid, data };
+}
+
+
+continue7Btn.addEventListener('click', () => {
+  const result = validatePersonality();
+
+  if (!result.isValid) {
+     let userId = sessionStorage.getItem("currentUserId");
+    if (!userId) {
+      userId = generateUserId();
+       sessionStorage.setItem("currentUserId", userId);
+    } else {
+      userId = Number(userId);
+    }
+    saveCompleteUserData(userId, "personality", result.data);
+    console.log("Stored:", result.data);
+  }
+});
+
+
