@@ -55,23 +55,28 @@
                     }
                 }
             }
-            .chip-container{
-                column-gap: 12px;
-                padding: clamp(30px, $fs-85px, $fs-85px)  clamp(30px, $fs-120px, $fs-120px);
+            .content-wrapper{
+
+            
+                .chip-container{
+                    column-gap: 12px;
+                    padding: clamp(30px, $fs-85px, $fs-85px)  clamp(30px, $fs-120px, $fs-120px) 0;
+                }
             }
         }
         .step-5{
-            .chip-container{
+           .content-wrapper .chip-container{
                 column-gap: 14px;
                 .chip{
                     padding: 8px clamp(20px, $fs-38px, $fs-38px);
+                    &.p-sm{
+                        padding: 8px clamp(10px, $fs-19px, $fs-19px);
+                    }
+                    &.p-md{
+                        padding: 8px clamp(15px, $fs-28px, $fs-28px);
+                    }
                 }
-                .chip.p-sm{
-                    padding: 8px clamp(10px, $fs-19px, $fs-19px);
-                }
-                .chip.p-md{
-                    padding: 8px clamp(15px, $fs-28px, $fs-28px);
-                }
+               
             }
         }
         .step-6{
@@ -226,25 +231,28 @@
                     }
                 }
             }
-            .chip-container{
-                column-gap: 11px;
-                padding: clamp(30px, $fs-85px, $fs-85px)  clamp(30px, $fs-110px, $fs-110px);
+            .content-wrapper{
+                .chip-container{
+                    column-gap: 11px;
+                    padding: clamp(30px, $fs-85px, $fs-85px)  clamp(30px, $fs-110px, $fs-110px) 0;
+                }
             }
         }
         .step-5{
-            .chip-container{
+            .content-wrapper .chip-container{
                 column-gap: 12px;
-                padding: clamp(30px, $fs-85px, $fs-85px)  clamp(30px, $fs-184px, $fs-184px);
+                padding: clamp(30px, $fs-85px, $fs-85px)  clamp(30px, $fs-184px, $fs-184px) 0;
         
                 .chip{
                     padding: 7px clamp(20px, $fs-40px, $fs-40px);
+                    &.p-sm{
+                        padding: 7px clamp(10px, $fs-18px, $fs-18px);
+                    }
+                    &.p-md{
+                        padding: 7px clamp(15px, $fs-28px, $fs-28px);
+                    }
                 }
-                .chip.p-sm{
-                    padding: 7px clamp(10px, $fs-18px, $fs-18px);
-                }
-                .chip.p-md{
-                    padding: 7px clamp(15px, $fs-28px, $fs-28px);
-                }
+                
             }
         }
          .step-6{
@@ -276,7 +284,7 @@
                 .input-wrapper{
                     .input-container{
                         padding: 5px;
-                        .add-label{
+                        .add-link-btn{
                             width: 19px;
                             height: 19px;
                         }
@@ -420,20 +428,25 @@
             padding: 9px clamp(20px, $fs-42px, $fs-42px);
         }
         .step-5{
-            .chip-container{
+            .content-wrapper .chip-container{
                 column-gap: 10px;
-                padding: clamp(30px, $fs-85px, $fs-85px)  clamp(30px, $fs-177px, $fs-177px);
+                padding: clamp(30px, $fs-85px, $fs-85px)  clamp(30px, $fs-177px, $fs-177px) 0;
         
                 .chip{
                     padding: 7px clamp(20px, $fs-38px, $fs-38px);
+                    &.p-sm{
+                        padding: 7px clamp(10px, $fs-18px, $fs-18px);
+                    }
+                    &.p-md{
+                        padding: 7px clamp(15px, $fs-28px, $fs-28px);
+                    }
                 }
-                .chip.p-sm{
-                    padding: 7px clamp(10px, $fs-18px, $fs-18px);
-                }
-                .chip.p-md{
-                    padding: 7px clamp(15px, $fs-28px, $fs-28px);
-                }
+                
             }
+        }
+        .step-7 .form-container .form-group .video-preview-container .video-item video{
+            height: 100px;
+            border-radius: 4px;
         }
         .step-8{
             .form-container{
@@ -585,28 +598,44 @@
                     }
                 }
             }
-            .chip-container{
-                column-gap: 10px;
-                padding: clamp(30px, $fs-85px, $fs-85px)  clamp(30px, $fs-80px, $fs-80px);
-                .chip{
-                    padding: 7px clamp(20px, $fs-40px, $fs-40px);
+            .content-wrapper{
+
+                .chip-container{
+                    column-gap: 10px;
+                    padding: clamp(30px, $fs-85px, $fs-85px)  clamp(30px, $fs-80px, $fs-80px) 0;
+                    .chip{
+                        padding: 7px clamp(20px, $fs-40px, $fs-40px);
+                    }
                 }
             }
         }
         .step-5{
-            .chip-container{
+            .content-wrapper .chip-container{
                 column-gap: 10px;
-                padding: clamp(30px, $fs-85px, $fs-85px)  clamp(30px, $fs-140px, $fs-140px);
+                padding: clamp(30px, $fs-85px, $fs-85px)  clamp(30px, $fs-140px, $fs-140px) 0;
         
                 .chip{
                     padding: 7px clamp(20px, $fs-38px, $fs-38px);
+                    &.p-sm{
+                        padding: 7px clamp(10px, $fs-18px, $fs-18px);
+                    }
+                    &.p-md{
+                        padding: 7px clamp(15px, $fs-28px, $fs-28px);
+                    }
                 }
-                .chip.p-sm{
-                    padding: 7px clamp(10px, $fs-18px, $fs-18px);
+                
+            }
+        }
+        .step-7 .form-container .form-group .video-preview-container{
+            grid-template-columns: repeat(2,1fr);
+            .video-item{
+                width: clamp(120px, $fs-340px, $fs-340px);
+                video{
+                    border-radius: 4px;
                 }
-                .chip.p-md{
-                    padding: 7px clamp(15px, $fs-28px, $fs-28px);
-                }
+            }
+            .remove-video-btn{
+                font-size: 13px;
             }
         }
         .step-8{
@@ -768,6 +797,9 @@
                         font-size: 14px;
                         width: 240px;
                     }
+                    .datepicker .date {
+                        font-size: 11px;
+                    }
                 }
             }
             
@@ -790,29 +822,57 @@
             padding: 35px 0;
         }
         .step-4{
-            .chip-container{
+
+            .content-wrapper .chip-container{
                 padding: clamp(30px, $fs-85px, $fs-85px)  clamp(30px, $fs-100px, $fs-100px);
             }
         }
         .step-6{
             .form-wrapper .form-container{
-                .form-group .input-wrapper{
-                    textarea{
-                        width: 350px;
-                        padding: 0 15px;
+                .form-group{ 
+                    .photo-wrapper .img-wrapper.active{
+                        width: 150px;
+                        height: 150px;
                     }
-                    input{
-                        padding: 0 15px;
-                        width: 240px;
+                    .resume-wrapper .img-wrapper.active {
+                        width: 35px;
+                        height: 35px;
                     }
-                } 
+                    .input-wrapper{
+                        textarea{
+                            width: 350px;
+                            padding: 0 15px;
+                        }
+                        input{
+                            padding: 0 15px;
+                            width: 240px;
+                        }
+                    } 
+                 }
             }
         }
         .step-7{
-            .form-container .form-group 
-            .input-wrapper .input-container{
-                width: 400px;
-            }
+            .form-container .form-group{
+                 .input-wrapper .input-container{
+                    width: 400px;
+                }
+                .video-preview-container{
+                    grid-template-columns: repeat(3,1fr);
+                    width: 100%;
+                    padding-left: 0px;
+
+                    .video-item{
+                        width:100%;
+                        min-width: 0;
+                        video{
+                            display: block;
+                            height: 110px;
+                            border-radius: 2px;
+                        }
+                    }
+                }
+            } 
+           
         }
         .step-8{
             .form-container{
@@ -946,7 +1006,7 @@
             }
         }
         .step-4{
-            .chip-container{
+            .content-wrapper .chip-container{
                 padding: clamp(30px, $fs-85px, $fs-85px)  clamp(20px, $fs-100px, $fs-100px);
             }
         }
@@ -955,31 +1015,57 @@
                 margin: clamp(25px, $fs-48px, $fs-48px) 0 clamp(25px, $fs-120px, $fs-120px);
             }
             
-            .chip-container{
+            .content-wrapper .chip-container{
                 column-gap: 10px;
-                padding: clamp(20px, $fs-85px, $fs-85px)  clamp(25px, $fs-100px, $fs-100px);
+                padding: clamp(20px, $fs-85px, $fs-85px)  clamp(25px, $fs-100px, $fs-100px) 0;
         
                 .chip{
                     padding: 7px clamp(20px, $fs-40px, $fs-40px);
-                }
-                .chip.p-sm{
+                    &.p-sm{
                     padding: 7px clamp(10px, $fs-18px, $fs-18px);
                 }
-                .chip.p-md{
-                    padding: 7px clamp(15px, $fs-28px, $fs-28px);
+                    &.p-md{
+                        padding: 7px clamp(15px, $fs-28px, $fs-28px);
+                    }
+                }
+                
+            }
+        }
+        .step-7{
+        .form-container .form-group
+            .video-preview-container{
+                grid-template-columns: repeat(2,1fr);
+                width: 100%;
+                padding-inline: 0px;
+                .video{
+                    border-radius: 0;
                 }
             }
+            
         }
         .step-8 {
             .form-container{
                 padding-inline: 3%;
-                .form-group 
-                .input-wrapper
-                >div{
-                    width: 100%;
-                }
-                
+                .form-group{
+                    .error{
+                        bottom: -27px;
+                        margin-bottom: 5px;
+                    }
+                    .form-wrapper
+                    .input-wrapper{
+                        >div{
+                            width: 100%;
+                        }
+                        .desc-input{
+                            width: 100%;
+                        }
+                    }
+                } 
             }   
+            .action-btn-container{
+                padding: clamp(30px, $fs-75px, $fs-75px) clamp(20px, $fs-100px, $fs-100px) clamp(20px, $fs-75px, $fs-75px);
+            }
+            
         }
         .step-9{
             .form-wrapper .form-group{
@@ -1097,6 +1183,26 @@
                         font-size: 14px;
                         width: 280px;
                     }
+                    .date-text,.datepicker{
+                        width: 280px;
+                        .datepicker-calendar .day{
+                            font-size: 11px;
+                        }
+                    }
+                    .datepicker-top{
+
+                        .month-selector .arrow{
+                            width: 20px;
+                            height: 20px;
+                            img{
+                                width: 14px;
+                            }
+                        }
+                        .tag{
+                            padding: 8px 12px;
+                            font-size: 11px;
+                        }
+                    } 
                 }
             }
         }
@@ -1119,29 +1225,36 @@
                     }
                 }
             }
-            .chip-container{
-                column-gap: 10px;
-                padding: clamp(30px, $fs-85px, $fs-85px)  0;
-                .chip{
-                    padding: 6px clamp(20px, $fs-40px, $fs-40px);
+            .content-wrapper{
+                padding-bottom: clamp(30px, $fs-85px, $fs-85px);
+                .chip-container{
+                    column-gap: 10px;
+                    padding: clamp(30px, $fs-85px, $fs-85px)  0 0;
+                    .chip{
+                        padding: 6px clamp(20px, $fs-40px, $fs-40px);
+                    }
                 }
-            }
+            } 
         }
         .step-5{
-         .chip-container{
+         .content-wrapper{
+            padding-bottom: clamp(15px, $fs-85px, $fs-85px);
+            .chip-container{
                 column-gap: 8px;
-                padding: clamp(15px, $fs-85px, $fs-85px)  0;
+                padding: clamp(15px, $fs-85px, $fs-85px)  0 0;
         
                 .chip{
                     padding: 6px 16px;
+                    &.p-sm{
+                        padding: 6px 10px;
+                    }
+                    &.p-md{
+                        padding: 6px 12px;
+                    }
                 }
-                .chip.p-sm{
-                    padding: 6px 10px;
-                }
-                .chip.p-md{
-                    padding: 6px 12px;
-                }
+                
             }
+         } 
         }
          .step-6{
             .form-wrapper .form-container{
@@ -1158,6 +1271,7 @@
                         font-size: 11px;
                     }
                 } 
+                
             }
         }
         .step-7{
@@ -1361,9 +1475,9 @@
         }
         .step-4{
             h2{
-                font-size: clamp(21px, 6.3vw, 24px);
+                font-size: clamp(20px, 6.3vw, 24px);
             }
-            .chip-container{
+            .content-wrapper .chip-container{
                 padding: 30px 0;
                 column-gap: 8px;
                 .chip{
@@ -1374,16 +1488,17 @@
             }
         }
         .step-5{
-            .chip-container{
+            .content-wrapper .chip-container{
                 .chip{
                     padding: 5px 14px;
+                     &.p-sm {
+                        padding: 5px 8px;
+                    }
+                    &.p-md{
+                        padding: 5px 10px;
+                    }
                 }
-                .chip.p-sm {
-                    padding: 5px 8px;
-                }
-                .chip.p-md{
-                    padding: 5px 10px;
-                }
+               
                 
             }
         }
@@ -1393,7 +1508,7 @@
             }
             .form-wrapper .form-container{
                 .form-group{
-                     .input-wrapper textarea,.input-wrapper input{
+                    .input-wrapper textarea,.input-wrapper input{
                         width: clamp(280px, $fs-1550px, $fs-1550px);
                     }
                     .resume-wrapper label{
@@ -1402,6 +1517,14 @@
                     .photo-wrapper label{
                         font-size: 14px;
                     }
+                    .photo-wrapper .img-wrapper.active{
+                        width: 100%;
+                        height: 200px;
+                        
+                    }
+                }
+                .photo-group.uploaded{
+                    width: 100%;
                 }
             }
         }
@@ -1409,10 +1532,27 @@
             h2{
                 font-size: 26px;
             }
-            .form-container .form-group 
-            .input-wrapper .input-container{
-                width: clamp(280px, $fs-1550px, $fs-1550px);
-            }
+            .form-container .form-group {
+                
+                .input-wrapper .input-container{
+                    width: clamp(280px, $fs-1550px, $fs-1550px);
+                }
+                .video-preview-container{
+                    grid-template-columns: 1fr;
+                    width: 100%;
+                    padding-inline: 20px;
+                    .video-info{
+                        justify-content: space-between;
+                    }
+                    .video-item video{
+                        width: 100%;
+                        height: auto;
+                        
+                    }
+                }
+            
+        }
+            
         }
         .step-8 {
             h2{

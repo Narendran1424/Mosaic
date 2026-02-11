@@ -1,5 +1,7 @@
 const body=document.body;
+
 const loginBtn1=document.querySelector(".login-btn-1");
+const logoutBtn=document.querySelector(".logout-btn")
 
 const loginOverLay=document.querySelector(".login-overlay");
 const loginContainer=document.querySelector(".login-container");
@@ -9,9 +11,18 @@ const loginPassword=loginForm.querySelector(".login-password");
 const forgotLink=loginForm.querySelector(".forgot-link");
 const loginCheck=loginForm.querySelector(".login-check");
 const loginBtn2=document.querySelector(".login-btn-2");
-const registerBtn=document.querySelector(".register-btn");
+const registerBtns=document.querySelectorAll(".register-btn");
+const logoutOverlay = document.querySelector(".logout-overlay");
+const logoutContainer = logoutOverlay.querySelector(".logout-container");
+const logoutCloseBtn = logoutContainer.querySelector(".logout-close-btn");
+const logoutContentContainer = logoutContainer.querySelector(".logout-content-container");
+const cancelLogoutBtn = logoutContainer.querySelector(".cancel-btn");
+const confirmLogoutBtn = logoutContainer.querySelector(".confirm-btn");
+const logoutSuccessContainer = logoutContainer.querySelector(".logout-success-container"
+);
 
 const registerOverlay=document.querySelector(".register-overlay");
+const resetOverlay=document.querySelector(".reset-overlay");
 
 const registerCloseBtn=registerOverlay.querySelector(".close-btn");
 const collabBtn=document.querySelector(".collaborate-btn");
@@ -22,60 +33,50 @@ const backBtn=planOverlay.querySelector(".back-btn");
 const continueBtn=planOverlay.querySelector(".continue-btn");
 const planCards=planOverlay.querySelectorAll(".plan-card");
 
-//Register Authentication
+
+function lockBody() {
+  const scrollBarWidth =
+  window.innerWidth - document.documentElement.clientWidth;
+  document.documentElement.style.setProperty(
+  "--scrollbar-width",
+  scrollBarWidth + "px"
+);
+
+ body.classList.add("not-active");
+}
+
+//Login Authentication
 
 loginBtn1.addEventListener('click',()=>{
     loginOverLay.classList.add('active');
+    loginForm.reset();
+    loginForm.querySelectorAll(".error").forEach(err=>err.textContent="");
     headerActions.classList.remove("active");
     closeBtn.classList.remove("not-active");
-    body.classList.add("not-active");
+    // body.classList.add("not-active");
+    lockBody()
 })
 
 loginOverLay.addEventListener('click',(e)=>{
     if(!e.target.closest(".login-container")){
-        loginOverLay.classList.remove('active');
+        loginOverLay.classList.remove("active");
         body.classList.remove("not-active");
     }
 })
 
 
-registerBtn.addEventListener('click',()=>{
-    window.location.href="./register.html";
-    // if(ValidateLoginForm()){
-    //     let creditinialData=[];
-    //     const loginData={
-    //         email:loginMail.value,
-    //         password:loginPassword.value,
-    //         loggedIn:loginCheck.checked,
-    //     }
-    //     if(JSON.parse(sessionStorage.getItem("loggedData"))){
-    //         const mailVal=loginMail.value;
-    //         creditinialData=JSON.parse(sessionStorage.getItem("loggedData"));
-    //         const matchedUser = creditinialData.find(user => user.email === mailVal);
-    //         if(matchedUser){
-    //             showAuthenticateToast(
-    //                 ".authenticate-toast-container",
-    //                 "error",
-    //                 "Email already found. Please register with another email!"
-    //             );
-    //         }
-            
-    //     }
-    //     else{
-    //         creditinialData.push(loginData);
-    //         sessionStorage.setItem("loggedData",JSON.stringify(creditinialData))
-    //         loginForm.reset();
-    //         showAuthenticateToast(".authenticate-toast-container","success","User Registered Successfully!");
-    //         setTimeout(() => {
-    //             registerOverlay.classList.add("active");
-    //             loginOverLay.classList.remove('active');
-    //         }, 3000);
-    //     }
 
+
+registerBtns.forEach(btn=>{
+    btn.addEventListener('click',(e)=>{
+        e.preventDefault();
+        loginOverLay.classList.remove('active');
+        resetOverlay.classList.remove("active");
+        registerOverlay.classList.add("active");
         
-        
-    // }
+    })
 })
+
 
 
 function showAuthenticateToast(toastSelector, bgcolor, message) {
@@ -92,12 +93,15 @@ function showAuthenticateToast(toastSelector, bgcolor, message) {
   }, 3000);
 }
 
-const toastCloseBtn = document.querySelector(".authenticate-toast-container img");
+const toastCloseBtns= document.querySelectorAll(".authenticate-toast-container img");
 
-toastCloseBtn.addEventListener("click", () => {
-    const toast = toastCloseBtn.parentElement.parentElement;
+toastCloseBtns.forEach(btn=>{
+    btn.addEventListener("click", () => {
+    const toast = btn.parentElement.parentElement;
     toast.classList.remove("show");
 });
+
+})
 
 
 function ValidateLoginForm(){
@@ -155,19 +159,19 @@ function generateToken(){
 
 function validatePassword(passwordVal){
     if (passwordVal === "") {
-        setError(loginPassword,"Please Enter the password");
+        setError(loginPassword,"please enter the password");
         return false;
     } else if (passwordVal.length < 8) {
-        setError(loginPassword,"Password must be at least 8 characters");
+        setError(loginPassword,"Min 8 characters required");
         return false;
     } else if (!/[A-Z]/.test(passwordVal)) {
-        setError(loginPassword,"Password must contain at least one uppercase letter");
+        setError(loginPassword,"Need atleast one uppercase letter");
         return false;
     } else if (!/[0-9]/.test(passwordVal)) {
-        setError(loginPassword,"Password must contain at least one number");
+        setError(loginPassword,"Password must contain atleast one number");
         return false;
     } else if (!/[!@#$%^&*(),.?":{}|<>]/.test(passwordVal)) {
-        setError(loginPassword,"Password must contain at least one special character");
+        setError(loginPassword,"Need  atleast one special character");
         return false;
     } else {
         setSuccess(loginPassword)
@@ -197,7 +201,7 @@ loginBtn2.addEventListener("click",()=>{
             validateLoginData();
         }
         else{
-            showAuthenticateToast(".authenticate-toast-container","error","Account not found. Please register first!");
+            showAuthenticateToast(".login-toast-container","error","Account not found. Please register first!");
         }
     }
 })
@@ -211,54 +215,179 @@ function validateLoginData(){
     );
     if (!matchedUser) {
         showAuthenticateToast(
-            ".authenticate-toast-container",
+            ".login-toast-container",
             "error",
             "Account not found. Please register first!"
         );
         return false;
     }
-    if (matchedUser.password !== passwordVal) {
+    if (matchedUser.personalDetails.password !== passwordVal) {
         showAuthenticateToast(
-            ".authenticate-toast-container",
+            ".login-toast-container",
             "error",
             "Incorrect password. Try again!"
         );
         return false;
     }
     else{
-        sessionStorage.setItem("loginToken",generateToken());
+        const loggedUser={
+            "email":mailVal,
+            "loginToken":generateToken()
+        }
+        sessionStorage.setItem("loggedUser",JSON.stringify(loggedUser));
         loginForm.reset();
+
         showAuthenticateToast(
-        ".authenticate-toast-container",
+        ".login-toast-container",
         "success",
         "Login successful!"
         );
+        setTimeout(()=>{
+            loginOverLay.classList.remove('active')
+        },3000)
+        body.classList.remove("not-active")
+        
     }
     
 }
 
 //Forgot Password function
 
-forgotLink.addEventListener('click',(e)=>{
-    e.preventDefault();
-    if(ValidateLoginForm()){
-        if(JSON.parse(sessionStorage.getItem("loggedData"))){
-            validateForgotPassWord();
-        }
-        else{
-            showAuthenticateToast(".authenticate-toast-container","error","Account not found. Please register first!");
-        }
+forgotLink.addEventListener("click",()=>{
+    loginForm.reset();
+    loginForm.querySelectorAll(".error").forEach(err=>err.textContent="");
+    loginOverLay.classList.remove("active");
+    resetOverlay.classList.add("active");
+})
+const resetMail=resetOverlay.querySelector(".reset-email");
+const resetBtn=resetOverlay.querySelector(".reset-btn");
+
+function validateResetMail(mailVal){
+    if (mailVal === "") {
+        setError(resetMail,"Please enter the email");
+       return false;
+    }
+    else if (!validateEmail(mailVal)) {
+        setError(resetMail,"Please enter the valid email");
+       return false;
+    }
+    else{
+        setSuccess(resetMail);
+        return true;
+    }
+    
+}
+
+resetMail.addEventListener('input',()=>{
+    validateResetMail(resetMail.value)
+})
+resetBtn.addEventListener('click',()=>{
+    if(validateResetMail(resetMail.value)){ 
+        showAuthenticateToast(".reset-toast-container","success","Reset link sent to your email!");
+        setTimeout(()=>{
+            resetMail.value="";
+            
+            resetOverlay.classList.remove("active");
+            body.classList.remove("not-active");
+        },2000)
+    }
+    
+    
+})
+
+resetOverlay.addEventListener('click',(e)=>{
+    if(!e.target.closest(".reset-container")){
+        resetMail.value="";
+        resetOverlay.querySelector(".error").textContent="";
+        resetOverlay.classList.remove('active');
+
+        body.classList.remove("not-active");
     }
 })
 
-function validateForgotPassWord(){
-    const mailVal=loginMail.value;
-    const loggedData=JSON.parse(sessionStorage.getItem("loggedData"));
-      const matchedUser = loggedData.find(
-        user => user.email === mailVal
-    );
+
+const loginBtn=resetOverlay.querySelector(".login-text .login-btn")
+
+loginBtn.addEventListener('click',(e)=>{
+    e.preventDefault();
+    resetMail.value="";
+    resetOverlay.querySelector(".error").textContent="";
+    resetOverlay.classList.remove('active');
+    loginOverLay.classList.add('active');
+})
+
+
+
+//logout functions
+
+logoutBtn.addEventListener("click", () => {
+    body.classList.add("not-active");
+    logoutOverlay.classList.add("active");
+      
+});
+  
+
+function closeLogout() {
+  logoutOverlay.classList.remove("active");
+  body.classList.remove("not-active");
+  logoutSuccessContainer.innerHTML = "";
+  logoutContentContainer.classList.remove("not-active");
+}
+logoutCloseBtn.addEventListener("click", () => {
+  closeLogout();
+  if(logoutContentContainer.classList.contains("not-active")){
+    window.location.href="./index.html";
+  }
+});
+
+confirmLogoutBtn.addEventListener('click',()=>{
+    if(sessionStorage.getItem("loggedUser")){
+        sessionStorage.removeItem("loggedUser");
+        logoutContentContainer.classList.add("not-active");
+        logoutSuccessContainer.innerHTML += `<h3>Logout Successful!</h3>
+        <p class="logout-msg success">You have been securely logged out. Thank you for using our service. See you soon!</p>`;
+        loginBtn1.classList.remove("not-active");
+        logoutBtn.classList.add("not-active");
+    }
+    else{
+        logoutContentContainer.classList.add("not-active");
+        logoutSuccessContainer.innerHTML = `
+          <h3>Logout Failed</h3>
+          <p class="logout-msg failed">
+            Something went wrong during logout. Please try again.
+          </p>`
+    }
+    setTimeout(() => {
+        closeLogout();
+    }, 2000);
+})
+
+
+cancelLogoutBtn.addEventListener("click", () => {
+  closeLogout();
+});
+
+logoutOverlay.addEventListener("click", (e) => {
+  if (!e.target.closest("logout-container")) {
+    closeLogout();
+  }
+});
+
+
+console.log(logoutBtn)
+function displayAuthenticationBtns(){
+    if(JSON.parse(sessionStorage.getItem("loggedUser"))){
+        logoutBtn.classList.remove("not-active");
+        loginBtn1.classList.add("not-active");
+    }
+    else{
+        loginBtn1.classList.remove("not-active");
+        logoutBtn.classList.add("not-active");
+    }
 }
 
+
+displayAuthenticationBtns();
 
 //register modals
 collabBtn.addEventListener('click',()=>{
@@ -302,4 +431,3 @@ continueBtn.addEventListener('click',()=>{
         window.location.href = "./register.html";
     }
 })
-

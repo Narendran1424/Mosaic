@@ -1,3 +1,446 @@
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/inter-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../fonts/inter-300.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Lufga";
+  src: url("../fonts/lufga-300.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Lufga";
+  src: url("../fonts/lufga-400.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Lufga";
+  src: url("../fonts/lufga-500.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Lufga";
+  src: url("../fonts/lufga-600.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Lufga";
+  src: url("../fonts/lufga-700.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/poppins-500.woff2") format("woff2");
+}
+@media screen and (max-width: 1600px) {
+  .register-overlay .register-wrapper .register-body-container .register-card-container .register-card .card-border .border-rect {
+    stroke-dasharray: 8 6;
+  }
+  .register-overlay .register-wrapper .register-body-container .register-card-container .register-card .register-card-btn {
+    padding: 9px 0;
+  }
+  .plan-overlay .action-btn-container button {
+    padding: 9px clamp(15px, 1.61vw, 1.61vw);
+  }
+  .authenticate-toast-container {
+    padding: 12px 18px;
+    gap: 40px;
+  }
+  .authenticate-toast-container img {
+    width: 20px;
+  }
+  .authenticate-toast-container.show {
+    top: 2.45vw;
+  }
+}
+@media screen and (max-width: 1400px) {
+  .login-overlay .login-container .login-form .checkbox-wrapper .checkbox-group input[type=checkbox] {
+    border-radius: 3px;
+  }
+  .register-overlay .register-wrapper .register-body-container .register-card-container .register-card {
+    border-radius: 18px;
+  }
+  .register-overlay .register-wrapper .register-body-container .register-card-container .register-card .card-border .border-rect {
+    stroke-dasharray: 7 5;
+  }
+  .register-overlay .register-wrapper .register-body-container .register-card-container .register-card .register-card-btn {
+    padding: 8px 0;
+  }
+  .plan-overlay .action-btn-container button {
+    padding: 7px clamp(15px, 1.61vw, 1.61vw);
+  }
+  .authenticate-toast-container {
+    padding: 12px 16px;
+  }
+  .authenticate-toast-container img {
+    width: 18px;
+  }
+  .authenticate-toast-container.show {
+    top: clamp(15px, 2.34vw, 2.34vw);
+  }
+}
+@media screen and (max-width: 1200px) {
+  .login-overlay .login-container {
+    width: 45%;
+  }
+  .login-overlay .login-container .login-form .checkbox-wrapper .checkbox-text {
+    font-size: 12px;
+  }
+  .reset-overlay .reset-container {
+    width: 45%;
+  }
+  .authenticate-toast-container {
+    padding: 12px 16px;
+  }
+  .authenticate-toast-container img {
+    width: 18px;
+  }
+  .authenticate-toast-container.show {
+    top: clamp(15px, 2.34vw, 2.34vw);
+  }
+}
+@media screen and (max-width: 1024px) {
+  .login-overlay .login-container {
+    width: 55%;
+  }
+  .login-overlay .login-container .login-form .checkbox-wrapper .checkbox-text {
+    font-size: 12px;
+  }
+  .register-overlay .register-wrapper {
+    padding: clamp(20px, 1.2vw, 1.2vw) clamp(25px, 5.2vw, 5.2vw);
+  }
+  .register-overlay .register-wrapper .register-body-container .register-card-container .register-card {
+    border-radius: 18px;
+  }
+  .register-overlay .register-wrapper .register-body-container .register-card-container .register-card .card-border .border-rect {
+    stroke-dasharray: 7 5;
+  }
+  .register-overlay .register-wrapper .register-body-container .register-card-container .register-card .register-card-btn {
+    padding: 7px 0;
+  }
+  .reset-overlay .reset-container {
+    width: 55%;
+  }
+  .plan-overlay .plan-header {
+    line-height: 1.3;
+  }
+  .plan-overlay .plan-wrapper {
+    padding: clamp(20px, 1.2vw, 1.2vw) clamp(25px, 5.2vw, 5.2vw);
+  }
+  .plan-overlay .plan-wrapper .plan-body-container .plan-card-container .plan-card {
+    width: 270px;
+    border-radius: 12px;
+  }
+  .plan-overlay .action-btn-container button {
+    padding: 6px clamp(15px, 1.61vw, 1.61vw);
+  }
+  .authenticate-toast-container {
+    padding: 8px 15px;
+  }
+  .authenticate-toast-container img {
+    width: 17px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .login-overlay .login-container {
+    width: 65%;
+  }
+  .login-overlay .login-container .login-form .checkbox-wrapper .checkbox-group input[type=checkbox]::after {
+    transform: translate(-50%, -50%) rotate(10deg);
+  }
+  .register-overlay .register-wrapper {
+    padding: clamp(20px, 1.2vw, 1.2vw) clamp(25px, 5.2vw, 5.2vw);
+  }
+  .register-overlay .register-wrapper .register-body-container .register-card-container .register-card {
+    border-radius: 18px;
+  }
+  .register-overlay .register-wrapper .register-body-container .register-card-container .register-card .card-border .border-rect {
+    stroke-dasharray: 7 5;
+  }
+  .register-overlay .register-wrapper .register-body-container .register-card-container .register-card .register-card-btn {
+    padding: 7px 0;
+  }
+  .reset-overlay .reset-container {
+    width: 65%;
+  }
+  .plan-overlay .plan-wrapper {
+    padding: clamp(20px, 1.2vw, 1.2vw) clamp(25px, 5.2vw, 5.2vw);
+  }
+  .plan-overlay .plan-wrapper .plan-body-container .plan-card-container .plan-card {
+    width: 270px;
+    border-radius: 12px;
+  }
+  .plan-overlay .action-btn-container button {
+    padding: 6px clamp(15px, 1.61vw, 1.61vw);
+  }
+  .authenticate-toast-container {
+    padding: 8px 15px;
+    font-size: 13px;
+  }
+  .authenticate-toast-container img {
+    width: 16px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .login-overlay .login-container {
+    width: 80%;
+    padding: 25px 20px;
+  }
+  .login-overlay .login-container .login-form input {
+    padding: 11px 0;
+  }
+  .login-overlay .login-container .submit-btn {
+    padding: 10px 0;
+  }
+  .register-overlay .register-header {
+    padding: clamp(20px, 3.04vw, 3.04vw) 20px 10px;
+  }
+  .register-overlay .register-wrapper {
+    padding: clamp(15px, 1.2vw, 1.2vw) 20px;
+  }
+  .register-overlay .register-wrapper .register-header-container .user-header {
+    font-size: 28px;
+  }
+  .register-overlay .register-wrapper .register-header-container .sub-header {
+    font-size: 13px;
+  }
+  .register-overlay .register-wrapper .register-header-container .close-btn .close-img {
+    width: 14px;
+  }
+  .register-overlay .register-wrapper .register-body-container .register-card-container {
+    gap: clamp(20px, 5.2vw, 5.2vw);
+  }
+  .register-overlay .register-wrapper .register-body-container .register-card-container .register-card {
+    border-radius: 10px;
+    width: 50%;
+  }
+  .register-overlay .register-wrapper .register-body-container .register-card-container .register-card img {
+    width: 100%;
+  }
+  .register-overlay .register-wrapper .register-body-container .register-card-container .register-card .card-border .border-rect {
+    stroke-dasharray: 5 4;
+  }
+  .register-overlay .register-wrapper .register-body-container .register-card-container .register-card .register-card-btn {
+    padding: 6px 0;
+  }
+  .reset-overlay .reset-container {
+    width: 80%;
+    padding: 25px 20px;
+  }
+  .reset-overlay .reset-container .input-wrapper input {
+    padding: 11px 0;
+  }
+  .reset-overlay .reset-container .reset-btn {
+    padding: 10px 0;
+  }
+  .plan-overlay .plan-wrapper {
+    padding: clamp(15px, 1.2vw, 1.2vw) 20px;
+  }
+  .plan-overlay .plan-wrapper .plan-body-container .plan-card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .plan-overlay .plan-wrapper .plan-body-container .plan-card-container .plan-card {
+    width: 70%;
+  }
+  .plan-overlay .plan-header {
+    font-size: 28px;
+    padding-bottom: 20px;
+  }
+  .authenticate-toast-container {
+    width: 80%;
+    text-wrap: wrap;
+  }
+}
+@media screen and (max-width: 480px) {
+  .login-overlay .login-container {
+    width: 87.5%;
+  }
+  .login-overlay .login-container .login-form input {
+    padding: 11px 0;
+    border-radius: 30px;
+  }
+  .login-overlay .login-container .submit-btn {
+    padding: 10px 0;
+    border-radius: 30px;
+  }
+  .login-overlay .login-container .social-link-container .social-link {
+    font-size: 13px;
+  }
+  .login-overlay .login-container .social-link-container .social-link::after {
+    padding-inline: 5px;
+  }
+  .register-overlay .register-header {
+    padding: 15px 20px 10px;
+  }
+  .register-overlay .register-wrapper {
+    padding: 10px 20px;
+  }
+  .register-overlay .register-wrapper .register-header-container .user-header {
+    font-size: 26px;
+  }
+  .register-overlay .register-wrapper .register-header-container .sub-header {
+    font-size: 12px;
+  }
+  .register-overlay .register-wrapper .register-header-container .close-btn {
+    font-size: 13px;
+    gap: 8px;
+  }
+  .register-overlay .register-wrapper .register-header-container .close-btn .close-img {
+    width: 13px;
+  }
+  .register-overlay .register-wrapper .register-body-container {
+    padding: 15px 0;
+  }
+  .register-overlay .register-wrapper .register-body-container .register-card-container {
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(20px, 5.2vw, 5.2vw);
+  }
+  .register-overlay .register-wrapper .register-body-container .register-card-container .register-card {
+    border-radius: 10px;
+    width: 100%;
+  }
+  .register-overlay .register-wrapper .register-body-container .register-card-container .register-card img {
+    width: 100%;
+    aspect-ratio: 2/1.4;
+  }
+  .register-overlay .register-wrapper .register-body-container .register-card-container .register-card .card-border .border-rect {
+    stroke-dasharray: 5 4;
+  }
+  .register-overlay .register-wrapper .register-body-container .register-card-container .register-card .register-card-btn {
+    padding: 6px 0;
+  }
+  .reset-overlay .reset-container {
+    width: 87.5%;
+  }
+  .reset-overlay .reset-container .input-wrapper input {
+    padding: 11px 0;
+  }
+  .reset-overlay .reset-container .reset-btn {
+    padding: 10px 0;
+  }
+  .reset-overlay .reset-container .login-text {
+    font-size: 13px;
+  }
+  .plan-overlay .plan-wrapper {
+    padding: 10px 20px;
+  }
+  .plan-overlay .plan-wrapper .plan-body-container {
+    padding: 15px 0;
+  }
+  .plan-overlay .plan-wrapper .plan-body-container .plan-card-container .plan-card {
+    width: 87%;
+  }
+  .plan-overlay .action-btn-container button {
+    font-size: 13px;
+  }
+  .authenticate-toast-container {
+    width: 87.5%;
+    text-wrap: wrap;
+  }
+}
+@media screen and (max-width: 390px) {
+  .login-overlay .login-container .login-form .checkbox-wrapper {
+    padding-top: 28px;
+  }
+  .login-overlay .login-container .login-form .checkbox-wrapper .checkbox-text {
+    font-size: 11px;
+  }
+  .login-overlay .login-container .login-form .input-wrapper .error {
+    line-height: 1.2;
+    font-size: 11px;
+  }
+  .register-overlay .register-header {
+    padding: 15px 20px 10px;
+  }
+  .register-overlay .register-wrapper {
+    padding: 5px 20px;
+  }
+  .register-overlay .register-wrapper .register-header-container .user-header {
+    font-size: 26px;
+  }
+  .register-overlay .register-wrapper .register-header-container .sub-header {
+    font-size: 12px;
+  }
+  .register-overlay .register-wrapper .register-header-container .close-btn {
+    font-size: 13px;
+    gap: 8px;
+  }
+  .register-overlay .register-wrapper .register-header-container .close-btn .close-img {
+    width: 13px;
+  }
+  .register-overlay .register-wrapper .register-body-container {
+    padding: 10px 0 15px;
+  }
+  .register-overlay .register-wrapper .register-body-container .register-card-container {
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(20px, 5.2vw, 5.2vw);
+  }
+  .register-overlay .register-wrapper .register-body-container .register-card-container .register-card {
+    border-radius: 10px;
+    width: 100%;
+  }
+  .register-overlay .register-wrapper .register-body-container .register-card-container .register-card img {
+    width: 100%;
+    aspect-ratio: unset;
+    height: clamp(235px, 70vw, 270px);
+  }
+  .register-overlay .register-wrapper .register-body-container .register-card-container .register-card .card-border .border-rect {
+    stroke-dasharray: 5 4;
+  }
+  .register-overlay .register-wrapper .register-body-container .register-card-container .register-card .register-card-btn {
+    padding: 6px 0;
+  }
+  .reset-overlay .reset-container {
+    width: 87.5%;
+  }
+  .reset-overlay .reset-container .input-wrapper .error {
+    line-height: 1.2;
+    font-size: 11px;
+  }
+  .plan-overlay .plan-header {
+    font-size: 28px;
+  }
+  .plan-overlay .plan-wrapper .plan-body-container {
+    padding: 10px 0 15px;
+  }
+  .plan-overlay .plan-wrapper .plan-body-container .plan-card-container .plan-card {
+    width: 100%;
+  }
+  .plan-overlay .plan-wrapper .plan-body-container .plan-card-container .plan-card .plan-card-body ul {
+    padding-left: 0;
+  }
+  .authenticate-toast-container {
+    font-size: 12px;
+  }
+  .authenticate-toast-container img {
+    width: 15px;
+  }
+}
 @media screen and (max-width: 1600px) {
   .artist-section .artist-body-container .content-wrapper .content-container .user-info {
     margin-bottom: clamp(20px, 3.04vw, 3.04vw);
@@ -9,12 +452,12 @@
     padding: 9px clamp(15px, 1.75vw, 1.75vw);
   }
   .artist-section .artist-body-container .content-wrapper .content-container .genre-container .genre {
-    padding: 5px clamp(10px, 1.61vw, 1.61vw);
+    padding: 5px clamp(14px, 1.61vw, 1.61vw);
   }
 }
 @media screen and (max-width: 1400px) {
   .artist-section .artist-body-container .content-wrapper .content-container .user-info .connect-btn {
-    padding: 8px clamp(15px, 1.75vw, 1.75vw);
+    padding: 8px clamp(18px, 1.75vw, 1.75vw);
   }
   .artist-section .artist-body-container .content-wrapper .content-container .user-info p .city {
     padding-left: 8px;
@@ -88,12 +531,6 @@
     font-size: 13px;
     width: 100%;
   }
-  .personality-section .content-wrapper .left-wrapper .along-text {
-    width: 100%;
-  }
-  .personality-section .content-wrapper .left-wrapper .collab-text {
-    width: 100%;
-  }
   .personality-section .content-wrapper .right-wrapper .form-group label {
     font-size: 14px;
   }
@@ -120,6 +557,9 @@
   .artist-section .artist-body-container .content-wrapper {
     padding-left: 2.5%;
   }
+  .artist-section .artist-body-container .content-wrapper .content-container .bio-wrapper p {
+    width: 100%;
+  }
   .artist-section .artist-body-container .content-wrapper .content-container .bio-wrapper::after {
     height: 0;
   }
@@ -129,12 +569,11 @@
   .artist-section .artist-body-container .content-wrapper .content-container .user-stat-container .user-stat .stat-text {
     font-size: 13px;
   }
-  .portfolio-section .portfolio-header {
-    justify-content: flex-start;
-    align-items: center;
+  .artist-section .artist-body-container .content-wrapper .content-container .genre-container {
+    width: 100%;
   }
-  .portfolio-section .portfolio-header h2 {
-    margin: 0 auto;
+  .portfolio-section .portfolio-header {
+    align-items: center;
   }
   .portfolio-section .portfolio-body-container {
     padding-top: 40px;
@@ -168,17 +607,11 @@
     width: 100%;
     padding-inline: 10%;
   }
-  .personality-section .content-wrapper .left-wrapper .collab-header {
+  .personality-section .content-wrapper .left-wrapper h3 {
     width: 85%;
   }
   .personality-section .content-wrapper .left-wrapper p {
     font-size: 13px;
-    width: 100%;
-  }
-  .personality-section .content-wrapper .left-wrapper .along-text {
-    width: 100%;
-  }
-  .personality-section .content-wrapper .left-wrapper .collab-text {
     width: 100%;
   }
   .personality-section .content-wrapper .right-wrapper {
@@ -206,7 +639,7 @@
 @media screen and (max-width: 768px) {
   .artist-section .artist-body-container .left-wrapper {
     min-width: 210px;
-    width: 40%;
+    width: 42%;
   }
   .artist-section .artist-body-container .left-wrapper .artist-img {
     height: clamp(260px, 32.03vw, 32.03vw);
@@ -238,14 +671,14 @@
   }
   .portfolio-section .portfolio-body-container {
     flex-direction: column;
-    padding-top: 20px;
+    padding-top: 10px;
   }
   .portfolio-section .portfolio-body-container .video-container {
     width: 100%;
     padding-top: 20px;
   }
   .portfolio-section .portfolio-body-container .video-container .video .video-img-container {
-    height: clamp(140px, 30.73vw, 30.73vw);
+    height: clamp(150px, 30.73vw, 30.73vw);
   }
   .portfolio-section .portfolio-body-container .video-container .video .video-img-container .artist-img {
     object-fit: fill;
@@ -261,6 +694,28 @@
   }
 }
 @media screen and (max-width: 600px) {
+  .artist-section .artist-body-container .left-wrapper {
+    width: 55%;
+  }
+  .artist-section .artist-body-container .content-wrapper .content-container .user-stat-container {
+    flex-wrap: wrap;
+    row-gap: 20px;
+  }
+  .artist-section .artist-body-container .content-wrapper .content-container .user-stat-container .user-stat {
+    flex: 50%;
+    margin-bottom: 10px;
+  }
+  .artist-section .artist-body-container .content-wrapper .content-container .user-stat-container .user-stat:nth-of-type(2) {
+    border-right: none;
+    padding-right: 0;
+  }
+  .artist-section .artist-body-container .content-wrapper .content-container .genre-container {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .artist-section .artist-body-container .content-wrapper .content-container .genre-container .genre {
+    flex: 1 1 35%;
+  }
   .workstyle-section {
     gap: 30px;
   }
@@ -288,25 +743,18 @@
   }
 }
 @media screen and (max-width: 480px) {
-  .artist-section .artist-body-container .content-wrapper .content-container .user-stat-container {
-    flex-wrap: wrap;
+  .artist-section .artist-body-container .left-wrapper {
+    width: 100%;
   }
-  .artist-section .artist-body-container .content-wrapper .content-container .user-stat-container .user-stat {
-    flex: 50%;
-    margin-bottom: 10px;
-  }
-  .artist-section .artist-body-container .content-wrapper .content-container .user-stat-container .user-stat:nth-of-type(2) {
-    border-right: none;
-    padding-right: 0;
-  }
-  .artist-section .artist-body-container .content-wrapper .content-container .genre-container {
-    flex-wrap: wrap;
+  .artist-section .artist-body-container .content-wrapper .content-container .user-info {
+    flex-direction: column;
+    align-items: flex-start;
     gap: 20px;
   }
-  .artist-section .artist-body-container .content-wrapper .content-container .genre-container .genre {
-    flex: 1 1 35%;
+  .artist-section .artist-body-container .content-wrapper .content-container .user-info .connect-btn {
+    padding: 8px 18px;
   }
-  .personality-section .content-wrapper .left-wrapper .collab-header {
+  .personality-section .content-wrapper .left-wrapper h3 {
     width: 100%;
   }
   .personality-section .content-wrapper .right-wrapper .form-group .input-container .content-container p {
@@ -330,15 +778,9 @@
   .artist-section .artist-header-container .btn-container button img {
     height: 17px;
   }
-  .artist-section .artist-body-container .left-wrapper {
-    width: 100%;
-  }
-  .artist-section .artist-body-container .content-wrapper .content-container .user-info h2 span {
-    display: block;
-  }
   .artist-section .artist-body-container .content-wrapper .content-container .user-info .connect-btn {
-    padding: 6px 15px;
-    border-width: 1px;
+    padding: 6px 18px;
+    width: 100%;
   }
   .artist-section .artist-body-container .content-wrapper .content-container .bio-wrapper p {
     font-size: 13px;
@@ -366,9 +808,6 @@
   }
   .workstyle-section .works-container {
     flex-direction: column;
-  }
-  .workstyle-section .works-container .work p {
-    font-size: 12px;
   }
   .portfolio-section .portfolio-header {
     flex-direction: column;

@@ -12,6 +12,8 @@
 <body>
     <main>
         <section class="register-form-section">
+            <!-- <div class="main-layout"> -->
+
             <div class="card-wrapper">
                 <div class="card-container">
                     <!--Row 1-->
@@ -140,7 +142,7 @@
                                     </select> -->
                                     <!-- <p id="countryDisplay" class="fake-input">+91</p> -->
 
-                                    <input type="text" id="mobile" name="mobile number">
+                                    <input type="text" id="mobile" name="mobile">
                                 <!-- </div> -->
                             </div>
                             <p class="error"></p>
@@ -149,7 +151,7 @@
 
                          <div class="form-group">
                                  <div class="input-wrapper">
-                                     <label for="email">Birth date</label>
+                                    <label for="email">Birth date</label>
                                     <div class="date-text">yyyy-mm-dd</div>
                                         <div class="datepicker">
                                             <div class="datepicker-top">
@@ -160,7 +162,13 @@
                                                 </div>
                                                 <div class="month-selector">
                                                     <button type="button" class="arrow prev-month"><img src="./assets/images/left.png" alt="left"></button>
-                                                    <span class="month-name"></span>
+                                                    <div class="year-wrapper">
+                                                        <span class="month-name"></span>
+                                                        <div class="year-select">
+                                                        <button type="button" class="year-toggle">2025 <img class="down-arrow" src="./assets/images/down-arrow.png" alt="down arrow"></button>
+                                                        <div class="year-dropdown"></div>
+                                                    </div>
+                                                    </div>
                                                     <button type="button" class="arrow next-month"><img src="./assets/images/right.png" alt="right"></button>
                                                 </div>
                                             </div>
@@ -171,7 +179,7 @@
                                                 </div>                             
                                             </div>
                                         </div>
-                                        <input type="hidden" name="birth date" class="date-input">
+                                        <input type="hidden" name="birth-date" class="date-input">
                                         <p class="error"></p>
                                     </div>
             
@@ -271,20 +279,25 @@
                             <label for="film">Film</label>
                         </div>
                     </div>
-                    <div class="chip-container artist-chip-container">
-                        <div class="chip">Singer</div>
-                        <div class="chip">Composer</div>
-                        <div class="chip">Songwriter</div>
-                        <div class="chip">DJ</div>
-                        <div class="chip">Rapper</div>
-                        <div class="chip">Vocalist</div>
-                        <div class="chip">Instrumentalist</div>
-                        <div class="chip">Producer</div>
-                        <div class="chip">Audio Engineer</div>
-                        <div class="chip">Studio Musician</div>
-                        <div class="chip">Musician</div>
-                        <div class="chip">Other</div>
+                        <div class="content-wrapper">
+                            <div class="chip-container artist-chip-container">
+                            <div class="chip">Singer</div>
+                            <div class="chip">Composer</div>
+                            <div class="chip">Songwriter</div>
+                            <div class="chip">DJ</div>
+                            <div class="chip">Rapper</div>
+                            <div class="chip">Vocalist</div>
+                            <div class="chip">Instrumentalist</div>
+                            <div class="chip">Producer</div>
+                            <div class="chip">Audio Engineer</div>
+                            <div class="chip">Studio Musician</div>
+                            <div class="chip">Musician</div>
+                            <div class="chip">Other</div>
+                        </div>
+                        <p class="error"></p>
                     </div>
+                    
+                    
                     <div class="action-btn-container">
                         <button type="button" class="back-btn">Back</button>
                         <button type="button" class="continue-btn">Continue</button>
@@ -297,7 +310,8 @@
                     </div>
                 </div>
                 <h2>Select Genre</h2>
-                 <div class="chip-container genre-chip-container">
+                <div class="content-wrapper">
+                    <div class="chip-container genre-chip-container">
                         <div class="chip">Pop</div>
                         <div class="chip">Hiphop</div>
                         <div class="chip">EDM</div>
@@ -316,6 +330,9 @@
                         <div class="chip p-md">Rock</div>
                         <div class="chip p-md">Other</div>
                     </div>
+                    <p class="error"></p>
+                </div>
+                 
                 <div class="action-btn-container">
                     <button type="button" class="back-btn">Back</button>
                     <button type="button" class="continue-btn">Continue</button>
@@ -388,12 +405,12 @@
                 <div class="form-container">
                     <div class="form-group">
                         <div class="input-wrapper">
-                            <label for="portfolio-link">Enter your portfolio links</label>
+                            <h3>Enter your portfolio links</h3>
                             <div class="portfolio-links">
                                 <div class="portfolio-link">
                                     <div class="input-container">
-                                        <input type="url" name="portfolio-link[]" class="portfolio-input" id="portfolio-link">
-                                        <label for="portfolio-link" class="add-label"><img src="./assets/images/add.webp" class="add-img" alt="add"></label>
+                                        <input type="url" name="portfolio-link[]" class="portfolio-input">
+                                        <button class="add-link-btn"><img src="./assets/images/add.webp" class="add-img" alt="add"></button>
                                     </div>  
                                     <p class="error"></p> 
                                 </div>
@@ -420,7 +437,7 @@
                     <button type="button" class="continue-btn">Continue</button>
                 </div>
             </div>
-            <div class="step step-8 active">
+            <div class="step step-8">
                 <div class="progress-bar">
                     <div class="progress-fill">
                     </div>
@@ -429,7 +446,8 @@
                 <div class="form-container">
                     <h3>Pick your top 3 and answer</h3>
                     <div class="form-group">
-                        <div class="input-wrapper">
+                        <div class="form-wrapper">
+                            <div class="input-wrapper">
                             <input type="checkbox" name="looking for" id="looking-for" value="I'm looking for">
                             <div>
                                 <label for="looking-for">I'm looking for..</label>
@@ -485,6 +503,8 @@
 
                             </div>
                         </div>
+                        </div>
+                        
                           <p class="error"></p>
                     </div>
                     
@@ -494,7 +514,7 @@
                     <button type="button" disabled class="continue-btn not-active">Continue</button>
                 </div>
             </div>
-            <div class="step step-9">
+            <div class="step step-9 ">
                 <div class="progress-bar">
                     <div class="progress-fill">
                     </div>
@@ -556,13 +576,14 @@
                             </div>
                         </div>
                     </div>
+                    <p class="error"></p>
                 </div>
                 <div class="action-btn-container">
                     <button type="button" class="back-btn">Back</button>
                     <button type="button" class="continue-btn">Continue</button>
                 </div>
             </div>
-            <div class="step step-10 ">
+            <div class="step step-10">
                 <div class="progress-bar">
                     <div class="progress-fill">
                     </div>
@@ -571,25 +592,25 @@
                 <div class="content-wrapper">
                     <div class="content-container">
                         <h3>Best way to communicate?</h3>
-                        <ul>
-                            <li><div class="icon-wrap"><img src="./assets/images/messenger.png" alt="message"></div></li>
-                            <li><div class="icon-wrap"><img src="./assets/images/whatsapp.png" alt="whatsapp"></div></li>
-                            <li><div class="icon-wrap"><img src="./assets/images/call.png" alt="call" class="call-img"></div></li>
-                            <li><div class="icon-wrap"><img src="./assets/images/more.png" alt="more"></div></li>
+                        <ul class="contact-list">
+                            <li data-item="messenger"><div class="icon-wrap"><img src="./assets/images/messenger.png" alt="message"></div></li>
+                            <li data-item="whatsapp"><div class="icon-wrap"><img src="./assets/images/whatsapp.png" alt="whatsapp"></div></li>
+                            <li data-item="phone"><div class="icon-wrap"><img src="./assets/images/call.png" alt="call" class="call-img"></div></li>
+                            <li data-item="more"><div class="icon-wrap"><img src="./assets/images/more.png" alt="more"></div></li>
                         </ul>
                     </div>
                     <div class="content-container">
                         <h3>What are your preferred working and schedules?</h3>
-                         <ul>
-                            <li><div class="icon-wrap"><img src="./assets/images/day.png" alt="day"></div></li>
-                            <li><div class="icon-wrap"><img src="./assets/images/night.png" alt="night"></div></li>
-                            <li><div class="icon-wrap"><img src="./assets/images/workstyle3.png" alt="workstyle3"></div></li>
-                            <li><div class="icon-wrap"><img src="./assets/images/workstyle4.png" alt="workstyle4"></div></li>
+                         <ul class="schedule-list">
+                            <li data-item="early bird"><div class="icon-wrap"><img src="./assets/images/day.png" alt="day"></div></li>
+                            <li data-item="night"><div class="icon-wrap"><img src="./assets/images/night.png" alt="night"></div></li>
+                            <li data-item="flexible"><div class="icon-wrap"><img src="./assets/images/flexible.png" alt="flexible.png"></div></li>
+                            <li data-item="all"><div class="icon-wrap"><img src="./assets/images/workstyle4.png" alt="workstyle4"></div></li>
                         </ul>
                     </div>
                     <div class="content-container">
                         <h3>What are your goals for collaborations</h3>
-                        <div class="chip-container">
+                        <div class="chip-container goals-container">
                             <div class="chip">Learning something new</div>
                             <div class="chip">Make money</div>
                             <div class="chip">Find a proffessional group/band</div>
@@ -600,14 +621,16 @@
                     </div>
                     <div class="content-container">
                         <h3>Best Working Style</h3>
-                        <div class="chip-container">
+                        <div class="chip-container place-container">
                             <div class="chip">In person/in studio</div>
                             <div class="chip">Asynchronous</div>
                             <div class="chip">My self</div>
                             <div class="chip">Online zoom call</div>
                         </div>
                     </div>
+                    <p class="error"></p>
                 </div>
+               
                  <div class="action-btn-container">
                     <button type="button" class="back-btn">Back</button>
                     <button type="button" class="continue-btn">Continue</button>
@@ -619,43 +642,48 @@
                     </div>
                 </div>
                 <h2>You're almost done! <br> Set your preferences now</h2>
-                <div class="card-container">
-                    <div class="card">
-                        <img src="./assets/images/publish1.png" alt="publish1">
-                        <h3>Match Make With Projects</h3>
-                        <p>Find your perfect match! Let our algorithm do the work by matching you with projects that align with your skills, interests, and availability</p>
+                <div class="content-wrapper">
+                    <div class="card-container">
+                        <div class="card publish-card" data-item="match make with projects">
+                            <img src="./assets/images/publish1.png" alt="publish1">
+                            <h3>Match Make With Projects</h3>
+                            <p>Find your perfect match! Let our algorithm do the work by matching you with projects that align with your skills, interests, and availability</p>
+                        </div>
+                        <div class="card publish-card" data-item="open for projects">
+                            <img src="./assets/images/publish2.png" alt="publish2">
+                            <h3>Open For Projects</h3>
+                            <p>Ready to collaborate? Let the world know you're open for projects! Turn on this setting to signal your availability and attract exciting opportunities</p>
+                            
+                        </div>
+                        <div class="card publish-card" data-item="send notifications">
+                            <img src="./assets/images/publish3.png" class="bell-img" alt="publish3">
+                            <h3>Send Notifications Of all New Projects</h3>
+                            <p>Stay in the loop with the lotest projects! Opt in to receive notifications for all new project postings</p>
+                        </div>
+                        <div class="card publish-card" data-item="make profile public">
+                            <img src="./assets/images/publish4.png" alt="publish4">
+                            <h3>Make My Profile Public</h3>
+                            <p>Share your creative journey with the world! Make your profile public and showcase your talent to potential coliaborators and industry enthusiasts</p>
+                        </div>
+                        <div class="card publish-card" data-item="connect me with co artists">
+                            <img src="./assets/images/publish5.png" alt="publish5">
+                            <h3>Connect Me With Co-Artists</h3>
+                            <p>Discover your creative tribel Activate this feature to connect with fellow artists and creators who share your passions and artistic vision</p>
+                        </div>
                     </div>
-                    <div class="card">
-                        <img src="./assets/images/publish2.png" alt="publish2">
-                        <h3>Open For Projects</h3>
-                        <p>Ready to collaborate? Let the world know you're open for projects! Turn on this setting to signal your availability and attract exciting opportunities</p>
-                        
-                    </div>
-                    <div class="card">
-                        <img src="./assets/images/publish3.png" class="bell-img" alt="publish3">
-                        <h3>Send Notifications Of all New Projects</h3>
-                        <p>Stay in the loop with the lotest projects! Opt in to receive notifications for all new project postings</p>
-                    </div>
-                    <div class="card">
-                        <img src="./assets/images/publish4.png" alt="publish4">
-                        <h3>Make My Profile Public</h3>
-                        <p>Share your creative journey with the world! Make your profile public and showcase your talent to potential coliaborators and industry enthusiasts</p>
-                    </div>
-                    <div class="card">
-                        <img src="./assets/images/publish5.png" alt="publish5">
-                        <h3>Connect Me With Co-Artists</h3>
-                        <p>Discover your creative tribel Activate this feature to connect with fellow artists and creators who share your passions and artistic vision</p>
-                    </div>
+                    <p class="error"></p>
                 </div>
+               
 
                 <div class="action-btn-container">
                     <button type="button" class="back-btn">Back</button>
                     <button type="button" class="continue-btn">Continue</button>
                 </div>
             </div>
+            <!-- </div> -->
         </section>
     </main>
-     <!-- <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script> -->
+     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script src="./assets/js/register.js"></script>
 </body>
 </html>

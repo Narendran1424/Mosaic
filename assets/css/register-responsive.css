@@ -35,20 +35,20 @@
   .register-form-section .step-4 .checkbox-wrapper .checkbox-group input[type=radio] {
     scale: 1.4;
   }
-  .register-form-section .step-4 .chip-container {
+  .register-form-section .step-4 .content-wrapper .chip-container {
     column-gap: 12px;
-    padding: clamp(30px, 4.4vw, 4.4vw) clamp(30px, 6.25vw, 6.25vw);
+    padding: clamp(30px, 4.4vw, 4.4vw) clamp(30px, 6.25vw, 6.25vw) 0;
   }
-  .register-form-section .step-5 .chip-container {
+  .register-form-section .step-5 .content-wrapper .chip-container {
     column-gap: 14px;
   }
-  .register-form-section .step-5 .chip-container .chip {
+  .register-form-section .step-5 .content-wrapper .chip-container .chip {
     padding: 8px clamp(20px, 2vw, 2vw);
   }
-  .register-form-section .step-5 .chip-container .chip.p-sm {
+  .register-form-section .step-5 .content-wrapper .chip-container .chip.p-sm {
     padding: 8px clamp(10px, 0.989vw, 0.989vw);
   }
-  .register-form-section .step-5 .chip-container .chip.p-md {
+  .register-form-section .step-5 .content-wrapper .chip-container .chip.p-md {
     padding: 8px clamp(15px, 1.45vw, 1.45vw);
   }
   .register-form-section .step-6 .form-wrapper .form-container .form-group .input-wrapper label {
@@ -141,21 +141,21 @@
   .register-form-section .step-4 .checkbox-wrapper .checkbox-group input[type=radio] {
     scale: 1.2;
   }
-  .register-form-section .step-4 .chip-container {
+  .register-form-section .step-4 .content-wrapper .chip-container {
     column-gap: 11px;
-    padding: clamp(30px, 4.4vw, 4.4vw) clamp(30px, 5.75vw, 5.75vw);
+    padding: clamp(30px, 4.4vw, 4.4vw) clamp(30px, 5.75vw, 5.75vw) 0;
   }
-  .register-form-section .step-5 .chip-container {
+  .register-form-section .step-5 .content-wrapper .chip-container {
     column-gap: 12px;
-    padding: clamp(30px, 4.4vw, 4.4vw) clamp(30px, 9.6vw, 9.6vw);
+    padding: clamp(30px, 4.4vw, 4.4vw) clamp(30px, 9.6vw, 9.6vw) 0;
   }
-  .register-form-section .step-5 .chip-container .chip {
+  .register-form-section .step-5 .content-wrapper .chip-container .chip {
     padding: 7px clamp(20px, 2.067vw, 2.067vw);
   }
-  .register-form-section .step-5 .chip-container .chip.p-sm {
+  .register-form-section .step-5 .content-wrapper .chip-container .chip.p-sm {
     padding: 7px clamp(10px, 0.93vw, 0.93vw);
   }
-  .register-form-section .step-5 .chip-container .chip.p-md {
+  .register-form-section .step-5 .content-wrapper .chip-container .chip.p-md {
     padding: 7px clamp(15px, 1.45vw, 1.45vw);
   }
   .register-form-section .step-6 .form-wrapper .form-container .form-group .input-wrapper label {
@@ -176,7 +176,7 @@
   .register-form-section .step-7 .form-container .form-group .input-wrapper .input-container {
     padding: 5px;
   }
-  .register-form-section .step-7 .form-container .form-group .input-wrapper .input-container .add-label {
+  .register-form-section .step-7 .form-container .form-group .input-wrapper .input-container .add-link-btn {
     width: 19px;
     height: 19px;
   }
@@ -279,18 +279,22 @@
   .register-form-section .step-3 .login-btn {
     padding: 9px clamp(20px, 2.2vw, 2.2vw);
   }
-  .register-form-section .step-5 .chip-container {
+  .register-form-section .step-5 .content-wrapper .chip-container {
     column-gap: 10px;
-    padding: clamp(30px, 4.4vw, 4.4vw) clamp(30px, 9.23vw, 9.23vw);
+    padding: clamp(30px, 4.4vw, 4.4vw) clamp(30px, 9.23vw, 9.23vw) 0;
   }
-  .register-form-section .step-5 .chip-container .chip {
+  .register-form-section .step-5 .content-wrapper .chip-container .chip {
     padding: 7px clamp(20px, 2vw, 2vw);
   }
-  .register-form-section .step-5 .chip-container .chip.p-sm {
+  .register-form-section .step-5 .content-wrapper .chip-container .chip.p-sm {
     padding: 7px clamp(10px, 0.93vw, 0.93vw);
   }
-  .register-form-section .step-5 .chip-container .chip.p-md {
+  .register-form-section .step-5 .content-wrapper .chip-container .chip.p-md {
     padding: 7px clamp(15px, 1.45vw, 1.45vw);
+  }
+  .register-form-section .step-7 .form-container .form-group .video-preview-container .video-item video {
+    height: 100px;
+    border-radius: 4px;
   }
   .register-form-section .step-8 .form-container {
     padding-inline: clamp(20px, 10%, 10%);
@@ -403,25 +407,37 @@
   .register-form-section .step-4 .checkbox-wrapper .checkbox-group input[type=radio] {
     scale: 1;
   }
-  .register-form-section .step-4 .chip-container {
+  .register-form-section .step-4 .content-wrapper .chip-container {
     column-gap: 10px;
-    padding: clamp(30px, 4.4vw, 4.4vw) clamp(30px, 4.2vw, 4.2vw);
+    padding: clamp(30px, 4.4vw, 4.4vw) clamp(30px, 4.2vw, 4.2vw) 0;
   }
-  .register-form-section .step-4 .chip-container .chip {
+  .register-form-section .step-4 .content-wrapper .chip-container .chip {
     padding: 7px clamp(20px, 2.067vw, 2.067vw);
   }
-  .register-form-section .step-5 .chip-container {
+  .register-form-section .step-5 .content-wrapper .chip-container {
     column-gap: 10px;
-    padding: clamp(30px, 4.4vw, 4.4vw) clamp(30px, 7.3vw, 7.3vw);
+    padding: clamp(30px, 4.4vw, 4.4vw) clamp(30px, 7.3vw, 7.3vw) 0;
   }
-  .register-form-section .step-5 .chip-container .chip {
+  .register-form-section .step-5 .content-wrapper .chip-container .chip {
     padding: 7px clamp(20px, 2vw, 2vw);
   }
-  .register-form-section .step-5 .chip-container .chip.p-sm {
+  .register-form-section .step-5 .content-wrapper .chip-container .chip.p-sm {
     padding: 7px clamp(10px, 0.93vw, 0.93vw);
   }
-  .register-form-section .step-5 .chip-container .chip.p-md {
+  .register-form-section .step-5 .content-wrapper .chip-container .chip.p-md {
     padding: 7px clamp(15px, 1.45vw, 1.45vw);
+  }
+  .register-form-section .step-7 .form-container .form-group .video-preview-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .register-form-section .step-7 .form-container .form-group .video-preview-container .video-item {
+    width: clamp(120px, 17.7vw, 17.7vw);
+  }
+  .register-form-section .step-7 .form-container .form-group .video-preview-container .video-item video {
+    border-radius: 4px;
+  }
+  .register-form-section .step-7 .form-container .form-group .video-preview-container .remove-video-btn {
+    font-size: 13px;
   }
   .register-form-section .step-8 .form-container {
     padding-right: 5%;
@@ -551,6 +567,9 @@
     font-size: 14px;
     width: 240px;
   }
+  .register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker .date {
+    font-size: 11px;
+  }
   .register-form-section .step-2 .email-verify-wrapper .form-group .input-wrapper input {
     width: 300px;
   }
@@ -561,8 +580,16 @@
   .register-form-section .step-3 {
     padding: 35px 0;
   }
-  .register-form-section .step-4 .chip-container {
+  .register-form-section .step-4 .content-wrapper .chip-container {
     padding: clamp(30px, 4.4vw, 4.4vw) clamp(30px, 5.2vw, 5.2vw);
+  }
+  .register-form-section .step-6 .form-wrapper .form-container .form-group .photo-wrapper .img-wrapper.active {
+    width: 150px;
+    height: 150px;
+  }
+  .register-form-section .step-6 .form-wrapper .form-container .form-group .resume-wrapper .img-wrapper.active {
+    width: 35px;
+    height: 35px;
   }
   .register-form-section .step-6 .form-wrapper .form-container .form-group .input-wrapper textarea {
     width: 350px;
@@ -574,6 +601,20 @@
   }
   .register-form-section .step-7 .form-container .form-group .input-wrapper .input-container {
     width: 400px;
+  }
+  .register-form-section .step-7 .form-container .form-group .video-preview-container {
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    padding-left: 0px;
+  }
+  .register-form-section .step-7 .form-container .form-group .video-preview-container .video-item {
+    width: 100%;
+    min-width: 0;
+  }
+  .register-form-section .step-7 .form-container .form-group .video-preview-container .video-item video {
+    display: block;
+    height: 110px;
+    border-radius: 2px;
   }
   .register-form-section .step-8 .form-container {
     padding-inline: 4.3%;
@@ -671,30 +712,48 @@
   .register-form-section .step-3 .sub-text {
     font-size: 14px;
   }
-  .register-form-section .step-4 .chip-container {
+  .register-form-section .step-4 .content-wrapper .chip-container {
     padding: clamp(30px, 4.4vw, 4.4vw) clamp(20px, 5.2vw, 5.2vw);
   }
   .register-form-section .step-5 h2 {
     margin: clamp(25px, 2.5vw, 2.5vw) 0 clamp(25px, 6.25vw, 6.25vw);
   }
-  .register-form-section .step-5 .chip-container {
+  .register-form-section .step-5 .content-wrapper .chip-container {
     column-gap: 10px;
-    padding: clamp(20px, 4.4vw, 4.4vw) clamp(25px, 5.2vw, 5.2vw);
+    padding: clamp(20px, 4.4vw, 4.4vw) clamp(25px, 5.2vw, 5.2vw) 0;
   }
-  .register-form-section .step-5 .chip-container .chip {
+  .register-form-section .step-5 .content-wrapper .chip-container .chip {
     padding: 7px clamp(20px, 2.067vw, 2.067vw);
   }
-  .register-form-section .step-5 .chip-container .chip.p-sm {
+  .register-form-section .step-5 .content-wrapper .chip-container .chip.p-sm {
     padding: 7px clamp(10px, 0.93vw, 0.93vw);
   }
-  .register-form-section .step-5 .chip-container .chip.p-md {
+  .register-form-section .step-5 .content-wrapper .chip-container .chip.p-md {
     padding: 7px clamp(15px, 1.45vw, 1.45vw);
+  }
+  .register-form-section .step-7 .form-container .form-group .video-preview-container {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    padding-inline: 0px;
+  }
+  .register-form-section .step-7 .form-container .form-group .video-preview-container .video {
+    border-radius: 0;
   }
   .register-form-section .step-8 .form-container {
     padding-inline: 3%;
   }
-  .register-form-section .step-8 .form-container .form-group .input-wrapper > div {
+  .register-form-section .step-8 .form-container .form-group .error {
+    bottom: -27px;
+    margin-bottom: 5px;
+  }
+  .register-form-section .step-8 .form-container .form-group .form-wrapper .input-wrapper > div {
     width: 100%;
+  }
+  .register-form-section .step-8 .form-container .form-group .form-wrapper .input-wrapper .desc-input {
+    width: 100%;
+  }
+  .register-form-section .step-8 .action-btn-container {
+    padding: clamp(30px, 3.91vw, 3.91vw) clamp(20px, 5.2vw, 5.2vw) clamp(20px, 3.91vw, 3.91vw);
   }
   .register-form-section .step-9 .form-wrapper .form-group label {
     font-size: 13px;
@@ -783,6 +842,23 @@
     font-size: 14px;
     width: 280px;
   }
+  .register-form-section .step-1 .form-container .form-group .input-wrapper .date-text, .register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker {
+    width: 280px;
+  }
+  .register-form-section .step-1 .form-container .form-group .input-wrapper .date-text .datepicker-calendar .day, .register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker .datepicker-calendar .day {
+    font-size: 11px;
+  }
+  .register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker-top .month-selector .arrow {
+    width: 20px;
+    height: 20px;
+  }
+  .register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker-top .month-selector .arrow img {
+    width: 14px;
+  }
+  .register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker-top .tag {
+    padding: 8px 12px;
+    font-size: 11px;
+  }
   .register-form-section .step-2 .email-verify-wrapper .email-text {
     padding: 0 7%;
   }
@@ -795,24 +871,30 @@
   .register-form-section .step-4 .checkbox-wrapper .checkbox-group input[type=radio] {
     scale: 1;
   }
-  .register-form-section .step-4 .chip-container {
-    column-gap: 10px;
-    padding: clamp(30px, 4.4vw, 4.4vw) 0;
+  .register-form-section .step-4 .content-wrapper {
+    padding-bottom: clamp(30px, 4.4vw, 4.4vw);
   }
-  .register-form-section .step-4 .chip-container .chip {
+  .register-form-section .step-4 .content-wrapper .chip-container {
+    column-gap: 10px;
+    padding: clamp(30px, 4.4vw, 4.4vw) 0 0;
+  }
+  .register-form-section .step-4 .content-wrapper .chip-container .chip {
     padding: 6px clamp(20px, 2.067vw, 2.067vw);
   }
-  .register-form-section .step-5 .chip-container {
-    column-gap: 8px;
-    padding: clamp(15px, 4.4vw, 4.4vw) 0;
+  .register-form-section .step-5 .content-wrapper {
+    padding-bottom: clamp(15px, 4.4vw, 4.4vw);
   }
-  .register-form-section .step-5 .chip-container .chip {
+  .register-form-section .step-5 .content-wrapper .chip-container {
+    column-gap: 8px;
+    padding: clamp(15px, 4.4vw, 4.4vw) 0 0;
+  }
+  .register-form-section .step-5 .content-wrapper .chip-container .chip {
     padding: 6px 16px;
   }
-  .register-form-section .step-5 .chip-container .chip.p-sm {
+  .register-form-section .step-5 .content-wrapper .chip-container .chip.p-sm {
     padding: 6px 10px;
   }
-  .register-form-section .step-5 .chip-container .chip.p-md {
+  .register-form-section .step-5 .content-wrapper .chip-container .chip.p-md {
     padding: 6px 12px;
   }
   .register-form-section .step-6 .form-wrapper .form-container .form-group .input-wrapper textarea {
@@ -972,24 +1054,24 @@
     font-size: 13px;
   }
   .register-form-section .step-4 h2 {
-    font-size: clamp(21px, 6.3vw, 24px);
+    font-size: clamp(20px, 6.3vw, 24px);
   }
-  .register-form-section .step-4 .chip-container {
+  .register-form-section .step-4 .content-wrapper .chip-container {
     padding: 30px 0;
     column-gap: 8px;
   }
-  .register-form-section .step-4 .chip-container .chip {
+  .register-form-section .step-4 .content-wrapper .chip-container .chip {
     padding: 5px 10px;
     font-size: 12px;
     border-radius: 20px;
   }
-  .register-form-section .step-5 .chip-container .chip {
+  .register-form-section .step-5 .content-wrapper .chip-container .chip {
     padding: 5px 14px;
   }
-  .register-form-section .step-5 .chip-container .chip.p-sm {
+  .register-form-section .step-5 .content-wrapper .chip-container .chip.p-sm {
     padding: 5px 8px;
   }
-  .register-form-section .step-5 .chip-container .chip.p-md {
+  .register-form-section .step-5 .content-wrapper .chip-container .chip.p-md {
     padding: 5px 10px;
   }
   .register-form-section .step-6 h2 {
@@ -1004,11 +1086,30 @@
   .register-form-section .step-6 .form-wrapper .form-container .form-group .photo-wrapper label {
     font-size: 14px;
   }
+  .register-form-section .step-6 .form-wrapper .form-container .form-group .photo-wrapper .img-wrapper.active {
+    width: 100%;
+    height: 200px;
+  }
+  .register-form-section .step-6 .form-wrapper .form-container .photo-group.uploaded {
+    width: 100%;
+  }
   .register-form-section .step-7 h2 {
     font-size: 26px;
   }
   .register-form-section .step-7 .form-container .form-group .input-wrapper .input-container {
     width: clamp(280px, 81vw, 81vw);
+  }
+  .register-form-section .step-7 .form-container .form-group .video-preview-container {
+    grid-template-columns: 1fr;
+    width: 100%;
+    padding-inline: 20px;
+  }
+  .register-form-section .step-7 .form-container .form-group .video-preview-container .video-info {
+    justify-content: space-between;
+  }
+  .register-form-section .step-7 .form-container .form-group .video-preview-container .video-item video {
+    width: 100%;
+    height: auto;
   }
   .register-form-section .step-8 h2 {
     font-size: 26px;

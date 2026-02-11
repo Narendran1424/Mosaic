@@ -1,4 +1,5 @@
 @use "../abstracts/variables" as *;
+@use "../layout/authenticate-responsive" as *;
 
 @media screen and (max-width:1600px){
     .projects{

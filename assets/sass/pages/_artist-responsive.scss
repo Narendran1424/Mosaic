@@ -1,4 +1,5 @@
 @use "../abstracts/variables" as *;
+@use "../layout/authenticate-responsive" as *;
 
 @media screen and (max-width:1400px){
     .artist-section .left-wrapper .hover-wrapper

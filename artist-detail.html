@@ -39,7 +39,8 @@
             <li><a href="#" class="nav-link">Projects</a></li>
           </ul>
         </nav>
-        <button type="button" class="login-btn-1 login-btn">Login</button>
+        <button type="button" class="login-btn-1 login-btn auth-btn">Login</button>
+        <button type="button" class="auth-btn logout-btn not-active">Logout</button>
         <button type="button" class="action-btn">
           <img src="./assets/images/app.png" class="app-img" alt="app" />
         </button>
@@ -53,8 +54,8 @@
         <div class="artist-header-container">
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item"><a href="#">Artists</a></li>
+              <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+              <li class="breadcrumb-item"><a href="./artist.html">Artists</a></li>
               <li class="breadcrumb-item active" aria-current="page">
                 Claudia Grey
               </li>
@@ -78,9 +79,9 @@
             />
             <div class="resume-wrapper">
               <img src="./assets/images/pdf.png" alt="pdf" />
-              <div class="file-inf0">
+              <div>
                 <p class="resume-text">Resume</p>
-                <p class="file-name">DOC.856.PDF(500KB)</p>
+                <p class="file-info"><span class="file-name">DOC.856.PDF</span><span>(500KB)</span></p>
               </div>
             </div>
           </div>
@@ -88,7 +89,7 @@
             <div class="content-container">
               <div class="user-info">
                 <div>
-                  <h2>Caludia Grey <span>(Female 21)</span></h2>
+                  <h2 class="username">Caludia Grey <span>(Female <span class="age">21</span>)</span></h2>
                   <p>
                     <span class="artist">Violinist</span> |
                     <span class="city">New York</span>
@@ -105,7 +106,7 @@
               </div>
               <div class="user-stat-container">
                 <div class="user-stat">
-                  <p class="count">152+</p>
+                  <p class="count connection">152+</p>
                   <p class="stat-text text-capitalize">Connections</p>
                 </div>
                 <div class="user-stat">
@@ -144,28 +145,28 @@
               />
             </div>
             <h3>Best Way to Contact</h3>
-            <p>Phone</p>
+            <p class="contact-text">Phone</p>
           </div>
           <div class="work">
             <div class="img-wrapper">
-              <img src="./assets/images/workstyle2.png" alt="workstyle2" />
+              <img src="./assets/images/workstyle2.png" class="time-img" alt="workstyle2"/>
             </div>
             <h3>Best Time to Work</h3>
-            <p>Early Bird</p>
+            <p class="time-text">Early Bird</p>
           </div>
           <div class="work">
             <div class="img-wrapper">
               <img src="./assets/images/workstyle3.png" alt="workstyle3" />
             </div>
             <h3>Motivators</h3>
-            <p>Get exposure, Make Money</p>
+            <p class="goal-text">Get exposure, Make Money</p>
           </div>
           <div class="work">
             <div class="img-wrapper">
               <img src="./assets/images/workstyle4.png" alt="workstyle4" />
             </div>
             <h3>Best Place to Work</h3>
-            <p>In Person, In Studio</p>
+            <p class="place-text">In Person, In Studio</p>
           </div>
         </div>
       </section>
@@ -313,16 +314,16 @@
             </div>
             <div class="content-container">
               <h3>We'll get along if....</h3>
-              <p class="along-text">
+              <p>
                 You're willing to experiment. I Love playing with styles,
                 riffing something different than a melody given.
               </p>
             </div>
             <div class="content-container">
-              <h3 class="collab-header">
+              <h3>
                 A Past Collab Experience that Went Well?
               </h3>
-              <p class="collab-text">
+              <p>
                 My Last album that I Worked on during the recording process. The
                 demo/production experience was so good because the producer was
                 so quick response time and let me revise/ tweak thing at the end
@@ -338,7 +339,7 @@
                 unfamiliar styles? ...</label
               >
               <div class="input-container">
-                <input type="range" name="experiment" id="experiment" />
+                <input type="range" name="experiment" id="experiment" readonly/>
                 <div class="content-container">
                   <p>Let's stick to a plan please</p>
                   <p class="center-text">Neutral</p>
@@ -352,7 +353,7 @@
                 a project done?</label
               >
               <div class="input-container">
-                <input type="range" name="focus" id="focus" />
+                <input type="range" name="focus" id="focus" readonly/>
                 <div class="content-container">
                   <p>
                     Strongly disagree (at the end of the day, deliverables
@@ -369,7 +370,7 @@
             <div class="form-group">
               <label for="introvert">Introvert or Extrovert</label>
               <div class="input-container introvert-container">
-                <input type="range" name="introvert" id="introvert" />
+                <input type="range" name="introvert" id="introvert" readonly/>
                 <div class="content-container">
                   <p>I need alone time</p>
                   <p class="center-text">Neutral</p>
@@ -382,7 +383,7 @@
                 >Better to generate a lot of ideas or focus on one?</label
               >
               <div class="input-container p-sm">
-                <input type="range" name="ideas" id="ideas" />
+                <input type="range" name="ideas" id="ideas" readonly/>
                 <div class="content-container">
                   <p>You must stick to one</p>
                   <p class="center-text">Neutral</p>
@@ -393,7 +394,7 @@
             <div class="form-group">
               <label for="simplicity">Simplicity or Complexity</label>
               <div class="input-container">
-                <input type="range" name="simplicity" id="simplicity" />
+                <input type="range" name="simplicity" id="simplicity" readonly/>
                 <div class="content-container simple-container">
                   <p>Everything must be planned and regulated</p>
                   <p class="center-text">Neutral</p>
@@ -462,6 +463,171 @@
               </div>
               <h3 class="name">Rosaline</h3>
               <p class="role">Guitarist</p>
+            </div>
+            <div class="artist-card hidden">
+              <div class="img-wrapper">
+                <img
+                  src="./assets/images/artist/artistimg6.webp"
+                  alt="artistimg6"
+                />
+              </div>
+              <h3 class="name">Rosaline</h3>
+              <p class="role">Guitarist</p>
+
+            </div>
+            <div class="artist-card hidden">
+              <div class="img-wrapper">
+                <img
+                  src="./assets/images/artist/artistimg7.webp"
+                  alt="artistimg7"
+                />
+              </div>
+              <h3 class="name">Rosaline</h3>
+              <p class="role">Guitarist</p>
+
+            </div>
+            <div class="artist-card hidden">
+              <div class="img-wrapper">
+                <img
+                  src="./assets/images/artist/artistimg8.webp"
+                  alt="artistimg8"
+                />
+              </div>
+              <h3 class="name">Rosaline</h3>
+              <p class="role">Guitarist</p>
+
+            </div>
+            <div class="artist-card hidden">
+              <div class="img-wrapper">
+                <img
+                  src="./assets/images/artist/artistimg9.webp"
+                  alt="artistimg9"
+                />
+              </div>
+              <h3 class="name">Rosaline</h3>
+              <p class="role">Guitarist</p>
+
+            </div>
+            <div class="artist-card hidden">
+              <div class="img-wrapper">
+                <img
+                  src="./assets/images/artist/artistimg10.webp"
+                  alt="artistimg10"
+                />
+              </div>
+              <h3 class="name">Rosaline</h3>
+              <p class="role">Guitarist</p>
+
+            </div>
+            <div class="artist-card hidden">
+              <div class="img-wrapper">
+                <img
+                  src="./assets/images/artist/artistimg11.webp"
+                  alt="artistimg11"
+                />
+              </div>
+              <h3 class="name">Rosaline</h3>
+              <p class="role">Guitarist</p>
+
+            </div>
+             <div class="artist-card hidden">
+              <div class="img-wrapper">
+                <img
+                  src="./assets/images/artist/artistimg12.webp"
+                  alt="artistimg12"
+                />
+              </div>
+              <h3 class="name">Rosaline</h3>
+              <p class="role">Guitarist</p>
+
+            </div>
+             <div class="artist-card hidden">
+              <div class="img-wrapper">
+                <img
+                  src="./assets/images/artist/artistimg13.webp"
+                  alt="artistimg13"
+                />
+              </div>
+              <h3 class="name">Rosaline</h3>
+              <p class="role">Guitarist</p>
+
+            </div>
+             <div class="artist-card hidden">
+              <div class="img-wrapper">
+                <img
+                  src="./assets/images/artist/artistimg14.webp"
+                  alt="artistimg14"
+                />
+              </div>
+              <h3 class="name">Rosaline</h3>
+              <p class="role">Guitarist</p>
+
+            </div>
+             <div class="artist-card hidden">
+              <div class="img-wrapper">
+                <img
+                  src="./assets/images/artist/artistimg15.webp"
+                  alt="artistimg14"
+                />
+              </div>
+              <h3 class="name">Rosaline</h3>
+              <p class="role">Guitarist</p>
+
+            </div>
+             <div class="artist-card hidden">
+              <div class="img-wrapper">
+                <img
+                  src="./assets/images/artist/artistimg16.webp"
+                  alt="artistimg16"
+                />
+              </div>
+              <h3 class="name">Rosaline</h3>
+              <p class="role">Guitarist</p>
+
+            </div>
+             <div class="artist-card hidden">
+              <div class="img-wrapper">
+                <img
+                  src="./assets/images/artist/artistimg17.webp"
+                  alt="artistimg17"
+                />
+              </div>
+              <h3 class="name">Rosaline</h3>
+              <p class="role">Guitarist</p>
+
+            </div>
+             <div class="artist-card hidden">
+              <div class="img-wrapper">
+                <img
+                  src="./assets/images/artist/artistimg18.webp"
+                  alt="artistimg18"
+                />
+              </div>
+              <h3 class="name">Rosaline</h3>
+              <p class="role">Guitarist</p>
+
+            </div>
+             <div class="artist-card hidden">
+              <div class="img-wrapper">
+                <img
+                  src="./assets/images/artist/artistimg19.webp"
+                  alt="artistimg19"
+                />
+              </div>
+              <h3 class="name">Rosaline</h3>
+              <p class="role">Guitarist</p>
+
+            </div>
+             <div class="artist-card hidden">
+              <div class="img-wrapper">
+                <img
+                  src="./assets/images/artist/artistimg20.webp"
+                  alt="artistimg20"
+                />
+              </div>
+              <h3 class="name">Rosaline</h3>
+              <p class="role">Guitarist</p>
+
             </div>
           </div>
           <a href="#" class="see-more-link text-uppercase"
@@ -549,5 +715,167 @@
         </div>
       </div>
     </footer>
+    <div class="login-overlay">
+        <div class="login-container">
+          <img src="./assets/images/logo.webp" class="logo" alt="logo">
+          <h2 class="login-header">Login</h2>
+          <form action="" class="login-form">
+            <div class="input-wrapper">
+              <div class="form-group">
+                <input type="text" name="login-email" class="login-email" placeholder="Email Address">
+              </div>
+              <p class="error"></p>
+            </div>
+            <div class="input-wrapper password-wrapper">
+              <div class="password-container">
+                <div class="form-group password-group">
+                  <input type="text" name="login-password" class="login-password" placeholder="Password">
+                </div>
+               <a href="#" class="forgot-link">Forgot Your Password?</a>
+              </div>
+                <p class="error"></p>
+            </div>
+            <div class="input-wrapper checkbox-wrapper">
+              <div class="checkbox-container">
+                <div class="form-group checkbox-group">
+                  <input type="checkbox" name="logged-in" id="logged-in" class="login-check">
+                  <label for="logged-in">Stay Logged in</label>
+                </div>
+              </div>
+                <p class="checkbox-text">By Logging in, you agree to the <a href="#">General Terms and Conditions</a> and Confirm <a href="#">the Privacy Policy</a> and <a href="#">Cookie rules.</a> </p>
+                <p class="error"></p>
+            </div>
+          </form>
+          <p class="result"></p>
+          <button type="button" class="login-btn-2 login-btn submit-btn">Login</button>
+          <button type="button" class="register-btn submit-btn">New User Registration</button>
+          <div class="social-link-container">
+            <a href="#" class="social-link text-capitalize">instagram</a>
+            <a href="#" class="social-link text-capitalize">Tik Tok</a>
+            <a href="#" class="social-link text-capitalize">Spotify</a>
+          </div>
+          <div class="authenticate-toast-container login-toast-container">
+            <p>Signup Successful!</p>
+            <span><img src="./assets/images/close-toast.png" alt="close" /></span>
+          </div>
+        </div>
+    </div>
+    <div class="register-overlay">
+      <header class="register-header">
+        <a href="./index.html" class="logo"><img src="./assets/images/logo.webp" alt="logo"></a>
+      </header>
+      <div class="register-wrapper">
+        <div class="register-header-container">
+          <div class="register-header-wrapper">
+            <h2 class="user-header">New User <br> Registration !</h2>
+            <p class="sub-header text-capitalize">choose your account type</p>
+          </div>
+          <button type="button" class="close-btn"><img src="./assets/images/close.webp" class="close-img" alt="close">Close</button>
+        </div>
+        <div class="register-body-container">
+          <div class="register-card-container">
+            <div class="register-card">
+              <svg class="card-border" viewBox="0 0 452 502" preserveAspectRatio="none">
+                <rect class="border-rect" />
+              </svg>
+              <img src="./assets/images/toCollaborate.webp" alt="toCollaborate">
+              <button class="register-card-btn collaborate-btn">To Collaborate</button>
+            </div>
+            <div class="register-card">
+              <svg class="card-border" viewBox="0 0 452 502" preserveAspectRatio="none"><rect class="border-rect" /></svg>
+              <img src="./assets/images/toPost.webp" alt="toPost">
+              <a href="./post-project.html" class="register-card-btn post-btn">To Post Projects</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="reset-overlay">
+      <div class="reset-container">
+        <img src="./assets/images/logo.webp" class="logo" alt="logo">
+          <h2 class="reset-header">Reset Password</h2>
+          <div class="input-wrapper">
+              <div class="form-group">
+                <input type="text" name="reset-email" class="reset-email" placeholder="Email Address">
+              </div>
+              <p class="error"></p>
+          </div>
+          <button class="reset-btn">Send Reset Link</button>
+
+        
+            <p class="login-text">Back to <a href="#" class="login-btn">Login</a> / <a href="#" class="register-btn">Register</a> </p>
+        
+          <div class="authenticate-toast-container reset-toast-container">
+            <p>Signup Successful!</p>
+            <span><img src="./assets/images/close-toast.png" alt="close" /></span>
+          </div>
+      </div>
+    </div>
+    <div class="logout-overlay">
+      <div class="logout-container">
+        <button class="logout-close-btn">
+          <img src="./assets/images/close.png" alt="close"/>
+        </button>
+        <div class="logout-content-container">
+          <h3>Confirm Logout</h3>
+          <p>Are you sure you want to logout?</p>
+          <div class="btn-container">
+            <button class="cancel-btn">Cancel</button>
+            <button class="confirm-btn">Logout</button>
+          </div>
+        </div>
+        <div class="logout-success-container"></div>
+      </div>
+    </div>
+    <div class="plan-overlay">
+        <a href="./index.html" class="logo"><img src="./assets/images/logo.webp" alt="logo"></a>
+      <div class="plan-wrapper">
+          <button type="button" class="close-btn"><img src="./assets/images/close.webp" class="close-img" alt="close">Close</button>
+        <div class="plan-body-container">
+          <div class="plan-container">
+            <h2 class="plan-header">Find the Plan for You</h2>
+              <div class="plan-card-container">
+                <div class="plan-card">
+                  <div class="plan-card-header">
+                    <h3 class="plan-card-title">Start</h3>
+                    <p class="plan-card-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor ut labore et dolore magna aliqua.</p>
+                  </div>
+                  <div class="plan-card-body">
+                    <p class="plan-card-text">Free Forever</p>
+                    <ul>
+                      <li>Lorem, ipsum dolor sit amet secte adipisicing elit</li>
+                      <li>sed do eiusmod tempor elit incididunt ut labore</li>
+                      <li>et dolore magna aliqua sed do</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="plan-card">
+                  <div class="plan-card-header">
+                    <h3 class="plan-card-title">Scale</h3>
+                    <p class="plan-card-subtitle">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor ut labore et dolore magna aliqua.</p>
+                  </div>
+                  <div class="plan-card-body">
+                    <p class="plan-card-text plan-card-text-2">$20<span>/month</span></p>
+                    <ul>
+                      <li>Lorem, ipsum dolor sit amet secte adipisicing elit</li>
+                      <li>sed do eiusmod tempor elit incididunt ut labore</li>
+                      <li>et dolore magna aliqua sed do</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>      
+          </div>
+        </div>
+
+      </div>
+      <div class="action-btn-container">
+          <button type="button" class="back-btn">Back</button>
+          <button type="button" class="continue-btn">Continue</button>
+        </div>
+    </div>
+    <script src="./assets/js/check-valid.js"></script>
+    <script src="./assets/js/authenticate.js"></script>
+    <script src="./assets/js/header.js"></script>
+    <script src="./assets/js/artist-detail.js"></script>
   </body>
 </html>

@@ -1,0 +1,675 @@
+@use "../abstracts/index" as *;
+
+.login-overlay{
+    position: fixed;
+    inset: 0;
+    background-color: $black-b3;
+    display: none;
+    justify-content: center;
+    min-height: 100vh;
+    overflow-y: scroll;
+    z-index: 5;
+    .login-container{
+        background-color: $white;
+        padding: clamp(25px, $fs-60px, $fs-60px) clamp(25px, $fs-70px, $fs-70px) clamp(25px, $fs-55px, $fs-55px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width:clamp(440px, 30.75%, 590px);
+        margin-top: clamp(30px, $fs-110px, $fs-110px);
+        margin-bottom: clamp(30px, $fs-110px, $fs-110px);
+        height: max-content;
+        .logo{
+            width:clamp(90px, $fs-184px, $fs-184px);
+            padding-bottom:  clamp(20px, $fs-60px, $fs-60px);
+        }
+        .login-header{
+            color: $black;
+            text-align: center;
+            padding-bottom: clamp(22px, $fs-28px, $fs-28px);
+            margin-bottom: 0;
+            font-weight: 500;
+            font-size: clamp(18px, $fs-30px, $fs-30px);
+        }
+        .login-form{
+            padding-bottom: clamp(25px,$fs-60px, $fs-60px);
+            .input-wrapper{
+                position: relative;
+                input{
+                    text-align: center;
+                    font-size: clamp(12px, $fs-18px, $fs-18px);
+                    width: 100%;
+                    outline: none;
+                    border-radius: 50px;
+                    padding: clamp(10px, $fs-16px, $fs-16px) clamp(10px, $fs-15px, $fs-15px) clamp(10px, $fs-15px, $fs-15px);
+                    border: 1px solid $grey;
+                }
+                input:-webkit-autofill {
+                    -webkit-box-shadow: 0 0 0 1000px #fff inset ;
+                    -webkit-text-fill-color: $black;
+                    transition: background-color 9999s ease-in-out 0s;
+                }
+                .error{
+                    position: absolute;
+                    margin-bottom: 0;
+                    margin:2px;
+                    color: $red-08;
+                    width: 100%;
+                    text-align: center;
+                    font-size:clamp(11px, $fs-16px, $fs-16px);
+                }
+            }
+            .password-wrapper{
+                padding-top:clamp(20px, $fs-28px, $fs-28px);
+                .forgot-link{
+                    display: block;
+                    text-align: right;
+                    color: $grey;
+                    padding-top: 12px;
+                    font-size: clamp(11px, $fs-15px, $fs-15px);
+                }
+            }
+            .checkbox-wrapper{
+                padding-top: clamp(20px, $fs-55px, $fs-55px);
+                .checkbox-group{
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    input[type="checkbox"]{
+                        appearance: none;        
+                        -webkit-appearance: none;
+                        width: clamp(15px, $fs-25px, $fs-25px);
+                        height: clamp(15px, $fs-25px, $fs-25px);
+                        border: 1px solid $black;
+                        border-radius: 5px;
+                        padding: 0;
+                        position: relative;
+                    }
+                    input[type="checkbox"]:checked {
+                        background-color: $black;
+                        border-color: $black;
+                    }
+
+                    input[type="checkbox"]:checked::after {
+                        content: "✓";                
+                        color: #fff;
+                        font-size:clamp(12px, $fs-18px, $fs-18px);
+                        font-weight: 700;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -45%) rotate(10deg);
+                        line-height: 1;
+                    }
+                    label{
+                        font-size:clamp(13px, $fs-18px, $fs-18px);
+                        font-weight: 500;
+                    }
+                }
+                .checkbox-text{
+                    color: grey;
+                    font-size:clamp(11px, $fs-15px, $fs-15px);
+                    font-weight: 500;
+                    padding-top: 12px;
+                    margin-bottom: 0;
+                    a{
+                        color: $black-e6;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+        .submit-btn{
+            text-align: center;
+            font-size: clamp(14px, $fs-20px, $fs-20px);
+            width: 100%;
+            border: 1px solid $black;
+            background-color: transparent;
+            border-radius: 50px;
+            padding: clamp(12px, $fs-15px, $fs-15px) 0;
+            background-color: transparent;
+            color: $black-f2;
+
+             &:hover{
+                background-color: $black;
+                color: $white-e6;
+                font-weight: 600;
+            }
+        }
+
+        .register-btn{
+            margin-top: clamp(15px, $fs-23px, $fs-23px);
+           
+        }
+        .social-link-container{
+            padding-top: clamp(15px, $fs-22px, $fs-22px);
+            .social-link{
+                color: $black-f2;
+                font-weight: 600;
+                font-size: clamp(14px, $fs-20px, $fs-20px);
+            }
+            .social-link::after{
+                position: relative;
+                content: '|';
+                padding-inline: 7px;
+            }
+            .social-link:last-child::after{
+                content: none;
+                padding-inline: 0px;
+            }
+        }
+               
+    }
+}
+
+.login-overlay.active{
+    display: flex;
+}
+
+.register-overlay{
+    display: none;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    min-height: 100vh;
+    z-index: 5;
+    overflow-y: auto;
+    background-color: $white;
+    .register-header{
+        padding:clamp(20px, $fs-58px, $fs-58px) clamp(20px,$fs-89px, $fs-89px) clamp(20px, $fs-52px, $fs-52px);
+        .logo{ 
+            display: inline-block;
+            img{
+                width:clamp(100px, $fs-170px, $fs-170px);
+            }
+        }
+    }
+    .register-wrapper{
+        padding:clamp(20px, $fs-23px, $fs-23px) clamp(25px,$fs-204px, $fs-204px);
+        .register-header-container{
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+
+            .user-header{
+                font-size: clamp(30px, $fs-65px, $fs-65px);
+                font-weight: 700;
+                color: $black;
+                padding-top: 6px;
+            }
+            .sub-header{
+                color: $grey;
+                font-size: clamp(14px,$fs-24px, $fs-24px);
+                font-weight: 300;
+                padding-top: 12px;
+            }
+            .close-btn{
+                font-size: clamp(16px, $fs-26px, $fs-26px);
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                font-weight: 600;
+                color: $black-0c;
+                background-color: transparent;
+                border: none;
+                .close-img{
+                    width: clamp(15px, $fs-22px, $fs-22px);
+                }
+            }
+        }
+        .register-body-container{
+            padding: clamp(20px, $fs-47px, $fs-47px) 0;
+            .register-card-container{
+                display: flex;
+                justify-content: flex-end;
+                gap: clamp(30px, $fs-100px, $fs-100px);
+                .register-card{
+                    display: flex;
+                    flex-direction: column;
+                    gap: clamp(15px, $fs-32px,$fs-32px);
+                    padding: clamp(12px, $fs-25px, $fs-25px) clamp(12px, $fs-23px, $fs-23px) clamp(15px, $fs-32px, $fs-32px); 
+                    position: relative;
+                    border-radius: 20px;
+                    .card-border {
+                        position: absolute;
+                        inset: 0;
+                        width: 100%;
+                        height: 100%;
+                        pointer-events: none;
+                        .border-rect {
+                            fill: none;
+                            stroke: rgb(192, 192, 192);
+                            stroke-width: 1;
+                            stroke-dasharray: 10 8;
+
+                            vector-effect: non-scaling-stroke;
+                            x: 1.5;
+                            y: 1.5;
+                            width: 449px;
+                            height: 500px;
+                            rx: 20;
+                            ry: 20;
+                        }
+                    }
+                    img{
+                        display: block;
+                        width: clamp(225px, $fs-390px, $fs-390px);
+                    }
+                    .register-card-btn{
+                        font-size: clamp(14px, $fs-20px, $fs-20px);
+                        text-align: center;
+                        border: 1px solid $black;
+                        color: $black;
+                        padding: 10px 0;
+                        border-radius: 50px;
+                        font-weight: 600;
+                        background-color: transparent;
+
+                        &:hover{
+                            background-color: $black;
+                            color: $white;
+                        }
+                    }
+                    
+                }
+            }
+            
+        }
+    }
+
+}
+
+.register-overlay.active{
+    display: block;
+}
+
+/*reset overlay */
+.reset-overlay{
+    position: fixed;
+    inset: 0;
+    background-color: $black-b3;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-y: scroll;
+    z-index: 5;
+    .reset-container{
+        background-color: $white;
+        padding: clamp(25px, $fs-60px, $fs-60px) clamp(25px, $fs-70px, $fs-70px) clamp(25px, $fs-55px, $fs-55px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width:clamp(440px, 30.75%, 590px);
+        margin-top: clamp(30px, $fs-110px, $fs-110px);
+        margin-bottom: clamp(30px, $fs-110px, $fs-110px);
+        height: max-content;
+        .logo{
+            width:clamp(90px, $fs-184px, $fs-184px);
+            padding-bottom:  clamp(20px, $fs-60px, $fs-60px);
+        }
+        .reset-header{
+            color: $black;
+            text-align: center;
+            padding-bottom: clamp(22px, $fs-28px, $fs-28px);
+            margin-bottom: 0;
+            font-weight: 500;
+            font-size: clamp(18px, $fs-30px, $fs-30px);
+        }
+        .input-wrapper{
+            position: relative;
+            width: 100%;
+            input{
+                text-align: center;
+                font-size: clamp(12px, $fs-18px, $fs-18px);
+                width: 100%;
+                outline: none;
+                // border-radius: 50px;
+                padding: clamp(10px, $fs-16px, $fs-16px) clamp(10px, $fs-15px, $fs-15px) clamp(10px, $fs-15px, $fs-15px);
+                border:none;
+                border-bottom: 1px solid $grey;
+            }
+            input:-webkit-autofill {
+                -webkit-box-shadow: 0 0 0 1000px #fff inset ;
+                -webkit-text-fill-color: $black;
+                transition: background-color 9999s ease-in-out 0s;
+            }
+            .error{
+                position: absolute;
+                margin-bottom: 0;
+                margin:2px;
+                color: $red-08;
+                width: 100%;
+                text-align: center;
+                font-size:clamp(11px, $fs-16px, $fs-16px);
+                margin-top: 4px;
+            }
+            
+        }
+        .reset-btn{
+            text-align: center;
+            font-size: clamp(14px, $fs-20px, $fs-20px);
+            width: 100%;
+            border: 1px solid $black;
+            background-color: transparent;
+            border-radius: 50px;
+            padding: clamp(12px, $fs-15px, $fs-15px) 0;
+            background-color: transparent;
+            color: $black-f2;
+            margin-top: clamp(20px, $fs-50px, $fs-50px);
+            &:hover{
+                background-color: $black;
+                color: $white-e6;
+                font-weight: 600;
+            }
+        }
+        .login-text{
+            padding-top: clamp(15px, $fs-22px, $fs-22px);
+            font-size: clamp(14px, $fs-22px, $fs-22px);
+            color: $black-0c;
+            a{
+                color: $black-f2;
+                font-weight: 600;
+                font-size: clamp(14px, $fs-20px, $fs-20px);
+            }
+        }
+    }
+}
+.reset-overlay.active{
+    display: flex;
+}
+
+.logout-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: $black-b3;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-y: scroll;
+    z-index: 5;
+    .logout-container {
+        background: $white;
+        padding:clamp(20px, $fs-40px, $fs-40px) clamp(20px, $fs-70px, $fs-70px);
+        max-width:clamp(400px, $fs-640px, $fs-640px);
+        min-height:clamp(175px,$fs-245px, $fs-245px);
+        width: 90%;
+        text-align: center;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .logout-close-btn{
+            border: none;
+            background-color: transparent;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+
+            img{
+                width: clamp(14px,$fs-21px, $fs-21px);
+            }
+
+        }
+    }
+    .logout-content-container{
+        h3 {
+            margin-bottom: clamp(15px, $fs-16px, $fs-16px);
+            font-size: clamp(18px, $fs-30px, $fs-30px);
+        }
+        p{
+            margin-bottom: clamp(15px, $fs-16px, $fs-16px);
+            font-size: clamp(13px, $fs-16px, $fs-16px);
+        }
+        .btn-container button {
+            margin-top:clamp(10px,$fs-20px, $fs-20px);
+            padding: clamp(6px, $fs-14px, $fs-14px) clamp(14px, $fs-26px,$fs-26px);
+            cursor: pointer;
+            border: transparent;
+            font-size: clamp(12px, $fs-16px, 16px);
+            &.confirm-btn{
+                background-color:  $black-0c;
+                color: rgb(209, 208, 208);
+                margin-left: clamp(10px, $fs-30px, $fs-30px);
+                &:hover{
+                    background-color:  $black-f2;
+                }
+            }
+            &.cancel-btn{
+                background-color:  transparent;
+                border: 1px solid $black-b3;
+                color: $black;
+                &:hover{
+                    background-color: $white-80;
+                }
+            }
+        }
+        &.not-active{
+            display: none;
+        }
+    }
+    .logout-success-container{
+        h3 {
+            margin-bottom: clamp(10px, $fs-16px, $fs-16px);
+            font-size: clamp(15px, $fs-26px, $fs-26px);
+            font-weight: 600;
+            color: $black-0c;
+        }
+        .logout-msg {
+            font-size:  clamp(13px, $fs-18px, $fs-18px);
+            line-height: 1.5;
+            margin-top: clamp(10px,$fs-19px, $fs-19px);
+            font-weight: 500;
+
+            &.success {
+                color: $green-2d;
+            }
+            &.failed{
+                color: $red-08;
+            }
+        }
+    } 
+
+    &.active {
+        display: flex;
+    }
+}
+
+/*plan overlay*/
+.plan-overlay{
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    min-height: 100vh;
+    z-index: 5;
+    overflow-y: auto;
+    background-color: $white;
+    display: none;
+    .logo{
+        display: block;
+        padding:clamp(20px, $fs-58px, $fs-58px) clamp(20px,$fs-89px, $fs-89px) clamp(20px, $fs-52px, $fs-52px);
+        img{ 
+            width:clamp(100px, $fs-170px, $fs-170px);
+        }
+    }
+    .plan-header{
+        font-size: clamp(30px, $fs-70px, $fs-70px);
+        font-weight: 700;
+        color: $black;
+        text-align: center;
+        padding-bottom: clamp(20px, $fs-80px, $fs-80px);
+        margin-bottom: 0;
+        line-height: 0.4;
+    }
+    .plan-wrapper{
+        padding:clamp(20px, $fs-23px, $fs-23px) clamp(25px,$fs-204px, $fs-204px);
+        .close-btn{
+            font-size: clamp(16px, $fs-26px, $fs-26px);
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+            gap: 12px;
+            font-weight: 600;
+            color: $black-0c;
+            background-color: transparent;
+            border: none;
+            .close-img{
+                width: clamp(15px, $fs-22px, $fs-22px);
+            }
+        }
+        .plan-body-container{
+            padding-bottom: clamp(20px, $fs-47px, $fs-47px);
+            .plan-card-container{
+                display: flex;
+                justify-content: center;
+                gap: clamp(25px, $fs-75px,$fs-75px);
+                
+                .plan-card{
+                    border: 1px solid black;
+                    border-radius: 15px;
+                    width: clamp(280px, $fs-436px, $fs-436px);
+                    padding: clamp(20px, $fs-52px, $fs-52px)  clamp(15px, $fs-40px, $fs-40px) clamp(20px, $fs-40px, $fs-40px);
+
+                    h3{
+                        text-align: center;
+                        font-size: clamp(28px, $fs-60px, $fs-60px);
+                        font-weight: 600;
+                        color:$black-0c;
+                    }
+                    .plan-card-subtitle{
+                        font-size: clamp(13px, $fs-17px, $fs-17px);
+                        color: $grey;
+                        line-height: 1.3;
+                        word-spacing: 1px;
+                        margin-bottom: clamp(15px,$fs-45px, $fs-45px);
+                        text-align: center;
+                    }
+                    
+                    .plan-card-body{
+                        .plan-card-text{
+                            font-size: clamp(24px, $fs-50px, $fs-50px);
+                            color:$black-0c;
+                            text-align: center;
+                            font-weight: 600;
+                            margin-bottom: clamp(15px, $fs-40px, $fs-40px);
+                        }
+                        .plan-card-text-2{
+                            text-align: left;
+                            padding-left: clamp(10px, $fs-25px, $fs-25px);
+                            span{
+                                font-size:clamp(14px, $fs-28px, $fs-28px);
+                            }
+                        }
+                        ul{
+                            margin-bottom: 0;
+                            padding-left: clamp(5px, $fs-22px, $fs-22px);
+                            li{
+                                position: relative;
+                                list-style: none;
+                                padding-left: clamp(15px, $fs-25px, $fs-25px);
+                                font-size: clamp(13px, $fs-17px, $fs-17px);
+                                color: $grey;
+                                margin-bottom: clamp(10px, $fs-20px, $fs-20px);
+                            }
+                            li::before{
+                                content:"";
+                                position: absolute;
+                                left: 0;
+                                top: 5px;
+                                width: clamp(10px, 0.99vw, 19px);
+                                height: clamp(9px, 0.89vw, 12px);
+                                background-image: url("../images/tick.webp");
+                                background-size: contain;
+                                background-repeat: no-repeat;
+                                filter: invert(0.6);
+
+                            }
+                            li:last-child{
+                                margin-bottom: 0;
+                            }
+                        }
+                        
+                    }
+                    &:hover,&.active{
+                        background-color: $black;
+                        cursor: default;
+                        h3{
+                            color: $white;
+                        }
+                        .plan-card-body .plan-card-text{
+                            color: $white;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+    .action-btn-container{
+        display: flex;
+        justify-content: flex-end;
+        gap:clamp(10px, $fs-18px, $fs-18px);
+        padding: 10px clamp(25px, $fs-135px, $fs-135px) clamp(30px, $fs-65px,$fs-65px); 
+        button{
+            background-color: transparent;
+            border: 2px solid transparent;
+            font-size:clamp(14px, $fs-23px, $fs-23px);
+            padding: 11px clamp(15px, $fs-31px, $fs-31px);
+            color: $black;
+            border-radius: 50px;  
+            
+            &:hover{
+                color: $white;
+                background-color: $black;
+            }
+        }
+
+        
+    }
+}
+
+.plan-overlay.active{
+    display: block;
+}
+
+/*toast */
+.authenticate-toast-container {
+            position: absolute;
+            top: -100%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #fffefe;
+            padding: 14px 25px;
+            opacity: 1;
+            transition:top 0.5s ease, opacity 0.5s ease;
+            z-index: 4;
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            font-size: clamp(14px,$fs-19px, $fs-19px);
+            text-wrap: nowrap;
+            p{
+                margin-bottom: 0;
+            }
+            img{
+                cursor: pointer;
+            }
+            &.show{
+              
+                top: $fs-50px;
+                opacity: 1;
+                
+            }
+            &.success{
+                background-color: $green-2d;
+            }
+            &.error{
+                background-color: $red-4b;
+            }
+}

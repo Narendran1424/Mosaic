@@ -39,7 +39,8 @@
             <li><a href="./projects.html" class="nav-link">Projects</a></li>
           </ul>
         </nav>
-        <button type="button" class="login-btn-1 login-btn">Login</button>
+        <button type="button" class="login-btn-1 login-btn auth-btn">Login</button>
+        <button type="button" class="logout-btn auth-btn not-active">Logout</button>
         <button type="button" class="action-btn">
           <img src="./assets/images/app.png" class="app-img" alt="app" />
         </button>
@@ -605,10 +606,10 @@
             <a href="#" class="social-link text-capitalize">Tik Tok</a>
             <a href="#" class="social-link text-capitalize">Spotify</a>
           </div>
-          <div class="authenticate-toast-container signup-toast-container">
-          <p>Signup Successful!</p>
-          <span><img src="./assets/images/close-toast.png" alt="close" /></span>
-        </div>
+          <div class="authenticate-toast-container login-toast-container">
+            <p>Signup Successful!</p>
+            <span><img src="./assets/images/close-toast.png" alt="close" /></span>
+          </div>
         </div>
     </div>
     <div class="register-overlay">
@@ -639,6 +640,43 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="reset-overlay">
+      <div class="reset-container">
+        <img src="./assets/images/logo.webp" class="logo" alt="logo">
+          <h2 class="reset-header">Reset Password</h2>
+          <div class="input-wrapper">
+              <div class="form-group">
+                <input type="text" name="reset-email" class="reset-email" placeholder="Email Address">
+              </div>
+              <p class="error"></p>
+          </div>
+          <button class="reset-btn">Send Reset Link</button>
+
+        
+            <p class="login-text">Back to <a href="#" class="login-btn">Login</a> / <a href="#" class="register-btn">Register</a> </p>
+        
+          <div class="authenticate-toast-container reset-toast-container">
+            <p>Signup Successful!</p>
+            <span><img src="./assets/images/close-toast.png" alt="close" /></span>
+          </div>
+      </div>
+    </div>
+    <div class="logout-overlay">
+      <div class="logout-container">
+        <button class="logout-close-btn">
+          <img src="./assets/images/close.png" alt="close"/>
+        </button>
+        <div class="logout-content-container">
+          <h3>Confirm Logout</h3>
+          <p>Are you sure you want to logout?</p>
+          <div class="btn-container">
+            <button class="cancel-btn">Cancel</button>
+            <button class="confirm-btn">Logout</button>
+          </div>
+        </div>
+        <div class="logout-success-container"></div>
       </div>
     </div>
     <div class="plan-overlay">
@@ -687,9 +725,11 @@
           <button type="button" class="continue-btn">Continue</button>
         </div>
     </div>
+    <script src="./assets/js/check-valid.js"></script>
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/header.js"></script>
     <script src="./assets/js/authenticate.js"></script>
+    
     <script src="./assets/bootstrap/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

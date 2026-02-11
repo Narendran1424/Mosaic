@@ -1,7 +1,9 @@
 @use "../base/reset";
 @use "../abstracts/index" as *;
 @use "../layout/index" as *;
+@use "../layout/authenticate" as *;
 @use "../components/filter-bar" as *;
+
 
 .filter-section
 .filter-content-container{

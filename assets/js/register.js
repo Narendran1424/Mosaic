@@ -1,5 +1,4 @@
 
-
 const step1=document.querySelector(".step-1");
 const step2=document.querySelector(".step-2");
 const step3=document.querySelector(".step-3");
@@ -40,69 +39,13 @@ const continue10Btn=step11.querySelector(".continue-btn");
 const userMail=step2.querySelector(".user-mail");
 const registerFormSecion=document.querySelector(".register-form-section");
 
-function scrollTop(){
-  registerFormSecion.scrollTo({top:0, behavior:"smooth"})
-}
+step1.classList.add("active");
+step11.classList.remove("active");
 
-//left wrapper
-const card1=document.querySelector(".row-5.col-3");
-const card2=document.querySelector(".row-5.col-4");
 
-const cards1=document.querySelectorAll(".row-6.col-1");
-const cards2=document.querySelectorAll(".row-6.col-2");
-if(step9.classList.contains("active")){
-  card1.classList.remove("h-145");
-  card2.classList.remove("h-145");
-  cards1.forEach(c=>c.classList.add("active"));
-}
-else{
-  card1.classList.add("h-145");
-  card2.classList.add("h-145");
-  cards1.forEach(c=>c.classList.remove("active"));
-}
-
-function addCards(){
-
-    if(window.innerWidth<=1024 && window.innerWidth>768){
-        if(step11.classList.contains("active")){
-
-            card1.classList.remove("h-145");
-            card2.classList.remove("h-145");
-            cards1.forEach(c=>{
-                c.classList.add("active")
-                c.classList.remove("h-115");
-            });
-            cards2.forEach(c=>c.classList.add("active"));
-        }
-        
-        else {
-            card1.classList.add("h-145");
-            card2.classList.add("h-145");
-            cards1.forEach(c=>{
-                c.classList.remove("active")
-                c.classList.add("h-115");
-            });
-            cards2.forEach(c=>c.classList.remove("active"));
-        }
-    }
-    else{
-        card1.classList.add("h-145");
-        card2.classList.add("h-145");
-        cards1.forEach(c=>{
-            c.classList.remove("active")
-            c.classList.add("h-115");
-        });
-        cards2.forEach(c=>c.classList.remove("active"));
-    }
-}
-addCards()
-window.addEventListener('resize', addCards);
-
-//Step 1 
+// Step 1 
 
 //Datepicker
-const dateInputs = document.querySelectorAll(".audit-form-container input[type='date']");
-
 
 const dateText=step1.querySelector(".date-text");
 
@@ -130,7 +73,8 @@ function padZero(num){
 let flag=0;
 let selectedMonth;
 let selectedDatee;
-let selectedYear;
+let selectedYear=new Date().getFullYear();
+
  const MONTHS = [
     "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
@@ -138,26 +82,57 @@ let selectedYear;
 
   const DAYS=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
  
+
 function createDatepicker(datePicker) {
   const monthNameEl = datePicker.querySelector(".month-name");
   const datesContainer = datePicker.querySelector(".dates");
   const prevBtn = datePicker.querySelector(".prev-month");
   const nextBtn = datePicker.querySelector(".next-month");
   const tags = datePicker.querySelectorAll(".tag");
-  
+  const yearToggle = datePicker.querySelector(".year-toggle");
+  const yearDropdown = datePicker.querySelector(".year-dropdown");
+
   let today = new Date();
-
   let current = new Date(today);
-
   let selectedDate = null;
 
- 
+  const START_YEAR = Number(new Date().getFullYear())-200;
+  const END_YEAR = Number(new Date().getFullYear())-3;
+
+  yearDropdown.innerHTML = "";
+
+  for (let y = START_YEAR; y <= END_YEAR; y++) {
+    const div = document.createElement("div");
+    div.className = "year-item";
+    div.textContent = y;
+
+    div.addEventListener("click", () => {
+      current.setFullYear(y);
+      selectedYear=Number(y);
+      yearToggle.innerHTML = `${y} <img class="down-arrow" src="./assets/images/down-arrow.png" alt="down arrow">`;
+      yearDropdown.classList.remove("active");
+      const datePickerCalendar=datePicker.querySelector(".datepicker-calendar");
+      datePickerCalendar.classList.remove("not-active");
+      renderCalendar();
+    });
+
+    yearDropdown.appendChild(div);
+  }
+
+  yearToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+
+    yearDropdown.classList.toggle("active");
+    const datePickerCalendar=datePicker.querySelector(".datepicker-calendar");
+    datePickerCalendar.classList.toggle("not-active");
+  });
 
   function renderCalendar() {
     const year = current.getFullYear();
     const month = current.getMonth();
 
-    monthNameEl.textContent = `${MONTHS[month]} ${year}`;
+    monthNameEl.textContent = `${MONTHS[month]}`;
+    yearToggle.innerHTML = `${year} <img class="down-arrow" src="./assets/images/down-arrow.png" alt="down arrow">`;
     datesContainer.innerHTML = "";
 
     const firstDay = new Date(year, month, 1).getDay();
@@ -183,6 +158,7 @@ function createDatepicker(datePicker) {
     }
 
     const nextDays = 42 - days.length;
+
     for (let i = 1; i <= nextDays; i++) {
       days.push({
         day: i,
@@ -196,93 +172,97 @@ function createDatepicker(datePicker) {
       btn.classList.add("date");
       btn.type = "button";
       btn.textContent = d.day;
-      
+
       if (d.faded) btn.classList.add("faded");
-       if (d.date.toDateString() === today.toDateString() &&
-        !btn.classList.contains("current-date") 
+
+      if (
+        d.date.toDateString() === today.toDateString() &&
+        !btn.classList.contains("faded")
       ) {
-       
-        if(!btn.classList.contains("faded")){
-           btn.classList.remove("current-day")
-          btn.classList.add("current-date");
-
-        }
-        
-      }
-      if (d.date.toDateString() === today.toDateString() && selectedDate === null) {
-        if(!btn.classList.contains("faded")){
-          btn.classList.add("current-day");
-        }
-        
+        btn.classList.add("current-date");
       }
 
-
-      if (selectedDate && d.date.toDateString() === selectedDate.toDateString()) {
-        if(!btn.classList.contains("faded")){
-          btn.classList.add("current-day"); 
-        }
+      if (
+        d.date.toDateString() === today.toDateString() &&
+        selectedDate === null &&
+        !btn.classList.contains("faded")
+      ) {
+        btn.classList.add("current-day");
       }
-     
+
+      if (
+        selectedDate &&
+        d.date.toDateString() === selectedDate.toDateString() &&
+        !btn.classList.contains("faded")
+      ) {
+        btn.classList.add("current-day");
+      }
+
       btn.addEventListener("click", () => {
         const allButtons = datesContainer.querySelectorAll(".date");
         selectedDate = d.date;
 
-        if (flag === 0) {
-          allButtons.forEach(b => b.classList.remove("current-date"));
-
-          allButtons.forEach((b, i) => {
-            if (b.classList.contains("current-day")) {
-              const btnDate = days[i].date;
-              if (
-                btnDate.getMonth() === current.getMonth() &&
-                btnDate.getFullYear() === current.getFullYear()
-              ) {
-                b.classList.remove("current-day");
-                b.classList.add("current-date");
-              }
-            }
-          });
-
-          flag = 1; 
-        }
-
         allButtons.forEach(b => b.classList.remove("current-day"));
         btn.classList.add("current-day");
-        getSelectedDate(datePicker)
-        validDateInput(datePicker)
+
+        getSelectedDate(datePicker);
+        validDateInput(datePicker);
         validateDetailForm();
+
         datePicker.classList.remove("active");
       });
 
       datesContainer.appendChild(btn);
     });
-
   }
 
-    prevBtn.addEventListener("click", () => {
-      current.setMonth(current.getMonth() - 1);
+  prevBtn.addEventListener("click", () => {
+    current.setMonth(current.getMonth() - 1);
+    renderCalendar();
+  });
+
+  nextBtn.addEventListener("click", () => {
+    current.setMonth(current.getMonth() + 1);
+    renderCalendar();
+  });
+
+  tags.forEach(tag => {
+    tag.addEventListener("click", () => {
+      let type = tag.dataset.type;
+
+      if (type === "today") selectedDate = new Date();
+      if (type === "yesterday") selectedDate = new Date(Date.now() - 86400000);
+      if (type === "tomorrow") selectedDate = new Date(Date.now() + 86400000);
+
+      current = new Date(selectedDate);
       renderCalendar();
     });
+  });
 
-    nextBtn.addEventListener("click", () => {
-      current.setMonth(current.getMonth() + 1);
-      renderCalendar();
-    });
+  document.addEventListener("click", () => {
+    yearDropdown.classList.remove("active");
+  });
 
-    tags.forEach(tag => {
-      tag.addEventListener("click", () => {
-        let type = tag.dataset.type;
-
-        if (type === "today") selectedDate = new Date();
-        if (type === "yesterday") selectedDate = new Date(Date.now() - 86400000);
-        if (type === "tomorrow") selectedDate = new Date(Date.now() + 86400000);
-
-          current = new Date(selectedDate);
-          renderCalendar();
-      });
-    });
   renderCalendar();
+  setYearDropdownHeight(datePicker);
+   
 }
+
+function setYearDropdownHeight(datePicker) {
+  const calendar = datePicker.querySelector(".datepicker-calendar");
+  const yearDropdown = datePicker.querySelector(".year-dropdown");
+
+  if (calendar && yearDropdown) {
+    yearDropdown.style.height = `${calendar.offsetHeight}px`;
+  }
+}
+
+window.addEventListener("resize", () => {
+  document.querySelectorAll(".datepicker").forEach(dp => {
+    setYearDropdownHeight(dp);
+  });
+});
+
 
 const datepicker=step1.querySelector(".datepicker");
 
@@ -308,7 +288,7 @@ function getSelectedDate(datePicker){
         selectedDatee=padZero(Number(d.textContent))
       }
     })
-    selectedYear=Number(MonthArr[1])
+
 
     const parentEl=datePicker.parentElement;
     const dateInp=parentEl.querySelector(".date-input");
@@ -353,8 +333,6 @@ document.addEventListener("click", (e) => {
 //Validate detail form
 const detailForm=step1.querySelector(".detail-form");
 const detailInputs=detailForm.querySelectorAll("input");
-
-
 
 function validateDetailForm(){
   let isValid = true;
@@ -474,7 +452,7 @@ function validatePassword(passwordVal, formGroup, errorElement){
       return false;
   } else if (!/[A-Z]/.test(passwordVal)) {
       formGroup.classList.add("error");
-      errorElement.textContent = "Need 1 uppercase letter";
+      errorElement.textContent = "Need one uppercase letter";
       return false;
   } else if (!/[0-9]/.test(passwordVal)) {
       formGroup.classList.add("error");
@@ -482,7 +460,7 @@ function validatePassword(passwordVal, formGroup, errorElement){
       return false;
   } else if (!/[!@#$%^&*(),.?":{}|<>]/.test(passwordVal)) {
       formGroup.classList.add("error");
-      errorElement.textContent = "Need 1 special character";
+      errorElement.textContent = "Need  atleast one special character";
       return false;
   } else {
       formGroup.classList.remove("error");
@@ -534,8 +512,8 @@ function validateMobile(mobileVal, formGroup, errorElement, inputElement) {
     inputElement.value = cleaned;
   }
   
-  if (cleaned.length > 13 && inputElement) {
-    inputElement.value = cleaned.slice(0, 13);
+  if (cleaned.length > 10 && inputElement) {
+    inputElement.value = cleaned.slice(0, 10);
     return false;
   }
   
@@ -543,13 +521,13 @@ function validateMobile(mobileVal, formGroup, errorElement, inputElement) {
 
   if (!digits.length) {
     formGroup.classList.add("error");
-    errorElement.textContent = "Please enter the mobile number";
+    errorElement.textContent = "please enter the mobile number";
     return false;
   }
 
-  if (digits.length < 11) {
+  if (digits.length < 10) {
     formGroup.classList.add("error");
-    errorElement.textContent = "Invalid mobile number";
+    errorElement.textContent = "please enter the valid mobile number";
     return false;
   }
 
@@ -668,7 +646,6 @@ continue1Btn.addEventListener('click',async()=>{
         "Failed to send verification email!"
       );
     }
-    scrollTop();
    
   }
 })
@@ -687,7 +664,7 @@ function showToast(toast, bgcolor, message) {
   }, 3000);
 }
 
-// Store all user data in a structured way
+//To Save all user data 
 function saveCompleteUserData(userId, sectionName, sectionData) {
   const users = getRegisteredUsers();
 
@@ -698,13 +675,15 @@ function saveCompleteUserData(userId, sectionName, sectionData) {
       userId: userId, 
       email: sectionData.email, 
       personalDetails: {},
-      artists: [],
+      artists: {},
       genres: [],
       profile: {},
       portfolio: {},
       personality: {},
-      pickout: {},
-      publish: {}
+      pickout: [],
+      workstyle:{},
+      publish: {},
+      
     };
     users.push(user);
   }
@@ -743,15 +722,15 @@ editEmailBtn.addEventListener('click',()=>{
   userMail.focus();
 })
 
-// const EMAILJS_CONFIG = {
-//   publicKey: 'caIP3a7BkCxjJ_Iqq',      
-//   serviceId: 'service_n7n2mwb',      
-//   templateId: 'template_n49deic'     
-// };
+const EMAILJS_CONFIG = {
+  publicKey: 'caIP3a7BkCxjJ_Iqq',      
+  serviceId: 'service_n7n2mwb',      
+  templateId: 'template_n49deic'     
+};
 
-// (function() {
-//   emailjs.init(EMAILJS_CONFIG.publicKey);
-// })();
+(function() {
+  emailjs.init(EMAILJS_CONFIG.publicKey);
+})();
 const resendBtn = step2.querySelector('.resend-btn');
 const codeInput= step2.querySelector('.verify-code');
 
@@ -761,114 +740,146 @@ function generateVerificationCode() {
 }
 
 // Send Email via EmailJS
-// async function sendVerificationEmail(email, code) {
-//   const toast=step1.querySelector(".toast-container")
-//   // const userName = email.split('@')[0];
+async function sendVerificationEmail(email, code) {
+  const toast=step1.querySelector(".toast-container")
+
+  const templateParams = {
+    to_email: email,
+    code: code
+  };
   
-//   const templateParams = {
-//     to_email: email,
-//     code: code
-//   };
-  
-//   try {
-//     const response = await emailjs.send(
-//       EMAILJS_CONFIG.serviceId,
-//       EMAILJS_CONFIG.templateId,
-//       templateParams
-//     );
+  try {
+    const response = await emailjs.send(
+      EMAILJS_CONFIG.serviceId,
+      EMAILJS_CONFIG.templateId,
+      templateParams
+    );
     
-//     return { success: true };
-//   } catch (error) {
-//     showToast(toast, "error", "Failed to send verification code")
-//     return { success: false, error: error.text || error.message };
-//   }
-// }
+    return { success: true };
+  } catch (error) {
+    showToast(toast, "error", "Failed to send verification code")
+    return { success: false, error: error.text || error.message };
+  }
+}
 
 
-// // Verification Code Input 
-// let prevValue = '';
+// Verification Code Input 
+let prevValue = '';
 
-// codeInput.addEventListener('input', () => {
-//   let codeVal = codeInput.value.replace(/\D/g, '');
+codeInput.addEventListener('input', () => {
+  let codeVal = codeInput.value.replace(/\D/g, '');
 
-//   if (codeVal.length > 4) {
-//     codeInput.value = prevValue;
-//     return;
-//   }
+  if (codeVal.length > 4) {
+    codeInput.value = prevValue;
+    return;
+  }
 
-//   prevValue = codeVal;
-//   codeInput.value = codeVal;
-//   validateVerificationCode(codeVal)
+  prevValue = codeVal;
+  codeInput.value = codeVal;
+  validateVerificationCode(codeVal)
 
-// });
+});
 
 
-// // Resend Code 
-// resendBtn.addEventListener('click', async () => {
-//   userMail.setAttribute("readonly",true);
-//   userData.email=userMail.value;
+// Resend Code 
+resendBtn.addEventListener('click', async () => {
+  userMail.setAttribute("readonly",true);
+  userData.email=userMail.value;
 
-//   verificationCode= generateVerificationCode();
+  verificationCode= generateVerificationCode();
 
-//   const result = await sendVerificationEmail(userMail.value, verificationCode);
-//   const toast=step2.querySelector(".toast-container");
-//   if (result.success) {
-//     codeInput.value = '';
-//     errorElement.textContent="";
-//     showToast(toast,"success","New code sent!");
-//   } else {
-//     codeInput.value = '';
-//     errorElement.textContent="";
-//     showToast(toast,"error","Failed to send new code!");
-//   }
+  const result = await sendVerificationEmail(userMail.value, verificationCode);
+  const toast=step2.querySelector(".toast-container");
+  if (result.success) {
+    codeInput.value = '';
+    errorElement.textContent="";
+    showToast(toast,"success","New code sent!");
+  } else {
+    codeInput.value = '';
+    errorElement.textContent="";
+    showToast(toast,"error","Failed to send new code!");
+  }
   
-// });
+});
 
-// function validateVerificationCode(codeVal) {
-//   const verifyWrapper = step2.querySelector(".email-verify-wrapper");
-//   const error = verifyWrapper.querySelector(".error");
-//   error.textContent = ''; 
-//   if (codeVal.length === 4) {
-//    if (codeVal.toString() === verificationCode.toString()) {
-//       error.textContent = "";
-//       return true;
-//     }
-//     else {
-//       error.textContent = 'Invalid code. Please try again.';
-//       return false;
-//     }
-//   }
+function validateVerificationCode(codeVal) {
+  const verifyWrapper = step2.querySelector(".email-verify-wrapper");
+  const error = verifyWrapper.querySelector(".error");
+  error.textContent = ''; 
+  if (codeVal==="") {
+    error.textContent="please enter the code"
+  }
+  else if (codeVal.length <4) {
+    error.textContent="please enter the valid code"
+  }
+  else if (codeVal.length === 4) {
+   if (codeVal.toString() === verificationCode.toString()) {
+      error.textContent = "";
+      return true;
+    }
+    else {
+      error.textContent = 'please enter the valid code';
+      return false;
+    }
+  }
 
 
-//   return false;
-// }
+  return false;
+}
 
-// continue2Btn.addEventListener('click', () => {
-//   const verifyWrapper=step2.querySelector(".email-verify-wrapper");
-//   const error=verifyWrapper.querySelector(".error");
-//   const codeVal=codeInput.value
-//   if (validateVerificationCode(codeVal)) {
-//     codeInput.value="";
-//     error.textContent="";
+continue2Btn.addEventListener('click', () => {
+  const verifyWrapper=step2.querySelector(".email-verify-wrapper");
+  const error=verifyWrapper.querySelector(".error");
+  const codeVal=codeInput.value
+  // if(codeVal==""){
+  //   error.textContent="please enter the code";
+  // }
+  if (validateVerificationCode(codeVal)) {
+    codeInput.value="";
+    error.textContent="";
     
-//     let userId = sessionStorage.getItem("currentUserId");
-//     if (!userId) {
-//         userId = generateUserId();
-//         sessionStorage.setItem("currentUserId", userId);
-//     } else {
-//       userId = Number(userId);
-//     }
-//     saveCompleteUserData(userId, "personalDetails", userData);
-//     step2.classList.remove("active");
-//     step3.classList.add("active");
-//   } 
-// });
+    let userId = sessionStorage.getItem("currentUserId");
+    if (!userId) {
+        userId = generateUserId();
+        sessionStorage.setItem("currentUserId", userId);
+    } else {
+      userId = Number(userId);
+    }
+    saveCompleteUserData(userId, "personalDetails", userData);
+    step2.classList.remove("active");
+    step3.classList.add("active");
+  } 
+});
 
+back2Btn.addEventListener('click',()=>{
+  step2.classList.remove("active");
+  step1.classList.add("active");
+})
 //Step 3 login
+const hexArr= [1,2,3,4,5,6,7,8,9,0,'a','b','c','d','e','f'];
+function generateToken(){
+  let token="";
+  for(let i=0; i<16; i++){
+    const rand=Math.floor(Math.random()*16)
+    token+=hexArr[rand];
+  }
+  return token;
+}
 
 const loginBtn=step3.querySelector(".login-btn");
 
 loginBtn.addEventListener("click",()=>{
+  const userId=sessionStorage.getItem("currentUserId")
+
+  const users = getRegisteredUsers();
+
+  const user=users.find(user=>user.userId== userId);
+
+  const loggedUser={
+    "email":user.email,
+    "loginToken":generateToken()
+  }
+  sessionStorage.setItem("loggedUser",JSON.stringify(loggedUser));
   step3.classList.remove("active");
   step4.classList.add("active");
 });
@@ -876,6 +887,7 @@ loginBtn.addEventListener("click",()=>{
 //step 4
 const artistInputs=step4.querySelectorAll("input[name='artist']");
 const artistChipContainer=step4.querySelector(".artist-chip-container");
+// const 
 const artistChips = {
   music: [
     "Singer","Composer","Songwriter","DJ","Rapper","Vocalist",
@@ -917,17 +929,24 @@ function renderArtistChips(artists){
 
 
 
-let selectedArtists=[];
+let selectedArtists={
+  "artist":"",
+  "selected":[]
+};
 function getSelectedArtists(){
+  artistInputs.forEach(inp=>{
+    if(inp.checked){
+      selectedArtists.artist=inp.dataset.artist;
+    }
+  })
+
   artistChipContainer.querySelectorAll(".chip").forEach(chip => {
   chip.addEventListener("click", () => {
     chip.classList.toggle("active");
 
-    selectedArtists = [...artistChipContainer.querySelectorAll(".chip")]
+    selectedArtists.selected = [...artistChipContainer.querySelectorAll(".chip")]
       .filter(c => c.classList.contains("active"))
       .map(c => c.textContent);
-
-    console.log(selectedArtists);
   });
   });
 }
@@ -935,16 +954,26 @@ function getSelectedArtists(){
 getSelectedArtists();
 
 continue3Btn.addEventListener("click",()=>{
-  if(selectedArtists.length>0){
-  
-  const userId = sessionStorage.getItem("currentUserId");
-  
+  const error=step4.querySelector(".error");
+  if(selectedArtists.selected.length==0){
+    error.textContent="please select atleast one artist"
+  }
+  else if(selectedArtists.selected.length>0){
+
+  error.textContent=""
+  artistChipContainer.querySelectorAll(".chip").forEach(chip=>chip.classList.remove("active"))
+  const userId = Number(sessionStorage.getItem("currentUserId"));
     saveCompleteUserData(userId, "artists", selectedArtists);
     step4.classList.remove("active");
     step5.classList.add("active");
   }
 })
 
+back3Btn.addEventListener('click',()=>{
+  step4.classList.remove("active");
+  step2.classList.add("active");
+  
+})
 //Step 5 
 const genreChips=step5.querySelectorAll(".genre-chip-container .chip");
 let selectedGenres=[];
@@ -961,16 +990,25 @@ genreChips.forEach(chip => {
 });
 
 continue4Btn.addEventListener("click",()=>{
-  if(selectedGenres.length>0){
-  
-  const userId = sessionStorage.getItem("currentUserId");
+  const error=step5.querySelector(".error");
+  if(selectedGenres.length==0){
+    error.textContent="please select atleast one genre"
+  }
+  else if(selectedGenres.length>0){
+  error.textContent=""
+  genreChips.forEach(chip=>chip.classList.remove("active"));
 
+  const userId = Number(sessionStorage.getItem("currentUserId"));
     saveCompleteUserData(userId, "genres", selectedGenres) ;
     step5.classList.remove("active");
     step6.classList.add("active");
   }
 })
 
+back4Btn.addEventListener('click',()=>{
+  step5.classList.remove("active");
+  step4.classList.add("active");
+})
 //Step 6
 const profieInputs=step6.querySelectorAll("input ,textarea");
 
@@ -996,11 +1034,9 @@ function validateProfileInputs(){
       const value = inp.value.trim();
 
       if(value === ""){
-        formGroup.classList.add("error");
         errorElement.textContent = `please enter the ${inp.name}`;
         isValid = false;
       } else {
-        formGroup.classList.remove("error");
         errorElement.textContent = "";
       }
     }
@@ -1015,7 +1051,6 @@ function delProfileInputData(){
     const formGroup = inp.closest(".form-group");
     const errorElement = formGroup.querySelector(".error")
     inp.value="";
-    formGroup.classList.remove("error");
     errorElement.textContent = "";
   })
   
@@ -1057,7 +1092,7 @@ function validatePhoto(input, formGroup, errorElement){
   const file = input.files[0];
 
   if(!file){
-    formGroup.classList.add("error");
+
     errorElement.textContent = "Please upload photo";
     return false;
   }
@@ -1065,20 +1100,18 @@ function validatePhoto(input, formGroup, errorElement){
   const validTypes = ["image/jpeg","image/png","image/webp"];
 
   if(!validTypes.includes(file.type)){
-    formGroup.classList.add("error");
+
     errorElement.textContent = "please upload the valid file";
     input.value="";
     return false;
   }
 
   if(file.size > 2*1024*1024){
-    formGroup.classList.add("error");
     errorElement.textContent = "Image must be below 2MB";
     input.value="";
     return false;
   }
 
-  formGroup.classList.remove("error");
   errorElement.textContent="";
   return true;
 }
@@ -1103,7 +1136,6 @@ function validateResume(input, formGroup, errorElement){
   // con
 
   if(!file){
-    formGroup.classList.remove("error");
     errorElement.textContent="";
     return true; 
   }
@@ -1115,14 +1147,13 @@ function validateResume(input, formGroup, errorElement){
   ];
 
   if(!validTypes.includes(file.type)){
-    formGroup.classList.add("error");
+
     errorElement.textContent="please upload the pdf file";
     input.value="";
     return false;
   }
 
   if(file.size > 5*1024*1024){
-    formGroup.classList.add("error");
     errorElement.textContent="Max 5MB";
     input.value="";
     return false;
@@ -1138,7 +1169,6 @@ function validateResume(input, formGroup, errorElement){
   const sizeKB = (file.size / 1024).toFixed(1);
   fileSize.textContent = `${sizeKB} KB`;
 
-  formGroup.classList.remove("error");
   errorElement.textContent="";
   return true;
 }
@@ -1161,39 +1191,18 @@ function resetResumeInput(){
   fileSize.textContent = "";
 }
 
-function fileToBase64(file){
-  return new Promise((resolve,reject)=>{
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = ()=> resolve(reader.result);
-    reader.onerror = err => reject(err);
-  });
-}
-
-
-continue5Btn.addEventListener('click',async()=>{
-  if (validateProfileInputs()) {
-    console.log("success")
-    
-    const profileData=await getProfileData();
-    let userId = sessionStorage.getItem("currentUserId");
-    if (!userId) {
-      userId = generateUserId();
-       sessionStorage.setItem("currentUserId", userId);
-    } else {
-      userId = Number(userId);
-    }
-    saveCompleteUserData(userId, "profile", profileData);
-    delProfileInputData();
-
-    step6.classList.remove("active");
-    step7.classList.add("active")
-  }
-})
+// function fileToBase64(file){
+//   return new Promise((resolve,reject)=>{
+//     const reader = new FileReader();
+//     reader.readAsDataURL(file);
+//     reader.onload = ()=> resolve(reader.result);
+//     reader.onerror = err => reject(err);
+//   });
+// }
 
 async function getProfileData(){
   const data = {
-    resume:{src:"",fileName:"",fileSize:""},
+    resume:{fileName:"",fileSize:""},
   };
 
   profieInputs.forEach(inp=>{
@@ -1202,16 +1211,11 @@ async function getProfileData(){
     }
   });
 
-  const photoFile = photoInput.files[0];
-  if(photoFile){
-    data.photo = await fileToBase64(photoFile);
-  }
-
+ 
   const resumeInput = step6.querySelector("#resume");
   const resumeFile = resumeInput.files[0];
 
   if(resumeFile){
-    data.resume.src=await fileToBase64(resumeFile);
     data.resume.fileName=resumeFile.name;
     const sizeKB = (resumeFile.size / 1024).toFixed(1);
     data.resume.fileSize = `${sizeKB} KB`;
@@ -1220,37 +1224,66 @@ async function getProfileData(){
   return data;
 }
 
+continue5Btn.addEventListener('click',async()=>{
+  if (validateProfileInputs()) {
+    console.log("success")
+    
+    const profileData=await getProfileData();
+    const userId = Number(sessionStorage.getItem("currentUserId"));
+
+    saveCompleteUserData(userId, "profile", profileData);
+    delProfileInputData();
+
+    step6.classList.remove("active");
+    step7.classList.add("active")
+  }
+})
+
+back5Btn.addEventListener('click',()=>{
+  step6.classList.remove("active");
+  step5.classList.add("active");
+})
+
+
 //Step 7
 
 const linksWrapper = step7.querySelector(".portfolio-links");
 const videoInput = step7.querySelector("#video");
 const portfolioContainer = document.querySelector(".portfolio-links");
-
 portfolioContainer.addEventListener("click", (e) => {
-  if (e.target.closest(".add-label")) {
+
+  if (e.target.closest(".add-link-btn")) {
 
     const inputs = portfolioContainer.querySelectorAll(".portfolio-input");
     const lastInput = inputs[inputs.length - 1];
 
-    if (lastInput.value.trim() === "") {
+    if (lastInput && lastInput.value.trim() === "") {
+      lastInput.focus();
+      return;
+    }
+    else  if (!urlRegex.test(lastInput.value)) {
       lastInput.focus();
       return;
     }
 
-
     const div = document.createElement("div");
     div.classList.add("portfolio-link");
 
-    div.innerHTML = `<div class="input-container">
-      <input type="url" name="portfolio-link[]" class="portfolio-input">
-      <span class="remove-link">✖</span>
+    div.innerHTML = `
+      <div class="input-container">
+        <input type="url" name="portfolio-link[]" class="portfolio-input">
+        <span class="remove-link">✖</span>
       </div>
       <p class="error"></p>
     `;
 
     portfolioContainer.appendChild(div);
+
+    const newInput = div.querySelector(".portfolio-input");
+    newInput.focus();
   }
 });
+
 
 const urlRegex = /^(https?:\/\/)?(www\.)?[a-zA-Z0-9\-]+\.[a-zA-Z]{2,}(\S*)$/;
 
@@ -1307,55 +1340,160 @@ function getAllLinks() {
 const previewContainer = document.querySelector(".video-preview-container");
 const videoError = videoInput.closest(".form-group").querySelector(".error");
 
-const MAX_SIZE = 20 * 1024 * 1024; // 20MB
+const MAX_SIZE = 20 * 1024 * 1024; 
 
 videoInput.addEventListener("change", () => {
-  const file = videoInput.files[0];
+  const files = videoInput.files;
 
-  previewContainer.innerHTML = "";
   videoError.textContent = "";
 
-  if (!file) return;
+  if (!files.length) return;
 
-  if (!file.type.startsWith("video/")) {
-    videoError.textContent = "Only video allowed";
-    videoInput.value = "";
-    return;
-  }
+  [...files].forEach(file => {
 
+    if (!file.type.startsWith("video/")) {
+      videoError.textContent = "please upload only video";
+      return;
+    }
 
-  if (file.size > MAX_SIZE) {
-    videoError.textContent = "Max size 20MB";
-    videoInput.value = "";
-    return;
-  }
+    if (file.size > MAX_SIZE) {
+      videoError.textContent = "Video size must be under 20MB";
+      return;
+    }
 
-  // preview
-  const url = URL.createObjectURL(file);
+    const url = URL.createObjectURL(file);
 
-  const wrapper = document.createElement("div");
-  wrapper.classList.add("video-item");
+    const wrapper = document.createElement("div");
+    wrapper.classList.add("video-item");
 
-  wrapper.innerHTML = `
-    <video src="${url}" controls></video>
-    <div class="video-info">
-      <span>${file.name}</span>
-      <span>${(file.size / 1024 / 1024).toFixed(2)} MB</span>
-      <button class="remove-video">Remove</button>
-    </div>
-  `;
+    wrapper.innerHTML = `
+      <video src="${url}" controls></video>
+      <div class="video-info">
+        <span class="name">${file.name}</span>
+        <span class="size">${(file.size / 1024 / 1024).toFixed(2)} MB</span>
+      </div>
+      <button class="remove-video-btn">Remove</button>
+    `;
 
-  previewContainer.appendChild(wrapper);
+    previewContainer.appendChild(wrapper);
+    removeVideo();
+   
+  });
+   function removeVideo(){
+      const removeVideoBtns=step7.querySelectorAll(".remove-video-btn");
+      removeVideoBtns.forEach(btn=>{
+        btn.addEventListener("click",()=>{
+          const videoItem=btn.parentElement;
+          videoItem.remove();
+        })
+      })
+    }
+
+  videoInput.value = "";
 });
 
-previewContainer.addEventListener("click", (e) => {
-  if (e.target.classList.contains("remove-video")) {
-    previewContainer.innerHTML = "";
-    videoInput.value = "";
-  }
-});
+function removePortfolioData(){
+  previewContainer.innerHTML="";
+  const portfolioLinks = portfolioContainer.querySelectorAll(".portfolio-link");
 
-//Step 8
+  portfolioLinks.forEach((link, index) => {
+    if (index !== 0) {
+      link.remove();
+    }
+    portfolioLinks[0].value="";
+  });
+
+  const errors=step7.querySelectorAll(".error");
+  errors.forEach(err=>err.innerHTML="");
+}
+
+
+
+function validatePortfolioData(data) {
+  const linksEmpty = !data || data.links.length==0;
+  const videosEmpty = !data || data.videos.length==0;
+
+  let hasError = false;
+
+  const inputs = portfolioContainer.querySelectorAll(".portfolio-input");
+    inputs.forEach(inp=>{
+      if(inp.value===""){
+        hasError=true;
+        showError(inp,"please enter the link");
+      }
+      else  if (!urlRegex.test(inp.value)) {
+        showError(inp, "please enter the valid link");
+        hasError=true;
+      }
+      else{
+        clearError(inp)
+      }
+  })
+
+
+  if (videosEmpty) {
+    hasError = true;
+    if (videoError) {
+      videoError.textContent = "Please upload the video";
+    }
+  }
+
+  return hasError;
+}
+
+
+
+function getPortfolioData(){
+  const data={};
+  const links = [];
+  document.querySelectorAll(".portfolio-input").forEach(input => {
+    const value = input.value.trim();
+
+    if (value !== "") {
+      links.push(value);
+    }
+  });
+
+  const videos = [];
+
+  document.querySelectorAll(".video-item").forEach(item => {
+    const name = item.querySelector(".name").textContent;
+    const sizeText = item.querySelector(".size").textContent;
+
+    videos.push({
+      name: name,
+      size: sizeText
+    });
+  });
+  
+    data.links=links;
+    data.videos=videos;
+    return data;
+  
+}
+
+continue6Btn.addEventListener("click", () => {
+  const portfolioData=getPortfolioData();
+
+  if(validatePortfolioData(portfolioData)){
+    return;
+  }
+  else{
+    const userId = Number(sessionStorage.getItem("currentUserId"));
+ 
+    saveCompleteUserData(userId, "portfolio", portfolioData);
+    removePortfolioData();
+  }
+  step7.classList.remove("active");
+  step8.classList.add("active");
+})
+
+back6Btn.addEventListener('click',()=>{
+  step7.classList.remove("active");
+  step6.classList.add("active");
+})
+
+//step 8
 const checkboxes = step8.querySelectorAll('.form-group input[type="checkbox"]');
 const error = step8.querySelector(".error");
 const descInputs=step8.querySelectorAll(".desc-input");
@@ -1378,9 +1516,11 @@ function handleCheck() {
       error.textContent="";
     });
     continue7Btn.removeAttribute("disabled");
+    continue7Btn.classList.remove("not-active");
   } else {
     checkboxes.forEach(cb => cb.disabled = false);
     descInputs.forEach(inp=>inp.classList.remove("active"));
+    continue7Btn.classList.add("not-active");
     continue7Btn.setAttribute("disabled", true);
     error.textContent="Please select atleast 3 inputs"
   }
@@ -1406,8 +1546,18 @@ function validatePersonality(){
   });
 
   if (isValid) {
-    error.textContent = "Please fill all the input fields";
+    error.textContent = "Please fill the appropriate input fields";
   } else {
+    checkboxes.forEach(cb =>{
+      cb.disabled = false;
+      cb.checked = false;  
+    })
+    descInputs.forEach(inp=>{
+      inp.classList.remove("active");
+      inp.value="";
+    });
+    continue7Btn.classList.add("not-active");
+    continue7Btn.setAttribute("disabled", true);
     error.textContent = "";
   }
 
@@ -1419,16 +1569,181 @@ continue7Btn.addEventListener('click', () => {
   const result = validatePersonality();
 
   if (!result.isValid) {
-     let userId = sessionStorage.getItem("currentUserId");
-    if (!userId) {
-      userId = generateUserId();
-       sessionStorage.setItem("currentUserId", userId);
-    } else {
-      userId = Number(userId);
-    }
+    const userId = Number(sessionStorage.getItem("currentUserId"));
     saveCompleteUserData(userId, "personality", result.data);
-    console.log("Stored:", result.data);
+    step8.classList.remove("active");
+    step9.classList.add("active");
   }
 });
 
+back7Btn.addEventListener('click',()=>{
+  step8.classList.remove("active");
+  step7.classList.add("active");
+})
 
+//step 9 
+
+const pickOutInputs=step9.querySelectorAll("input[type='range']");
+
+
+continue8Btn.addEventListener('click', () => {
+  const data=[];
+  const userId = Number(sessionStorage.getItem("currentUserId"));
+
+  pickOutInputs.forEach(inp=>data.push(Number(inp.value)))
+  saveCompleteUserData(userId, "pickout", data);
+  step9.classList.remove("active");
+  step10.classList.add("active");
+
+})
+
+back8Btn.addEventListener('click',()=>{
+  step9.classList.remove("active");
+  step8.classList.add("active");
+})
+
+//step 10
+
+const contactListItems=step10.querySelectorAll(".contact-list li");
+const scheduleListitems=step10.querySelectorAll(".schedule-list li");
+const goalChips=step10.querySelectorAll(".goals-container .chip");
+const placeChips=step10.querySelectorAll(".place-container .chip");
+
+
+contactListItems.forEach(li=>li.addEventListener('click',()=>{
+  contactListItems.forEach(item=>item.classList.remove("active"));
+  li.classList.add("active");
+}));
+
+scheduleListitems.forEach(li=>li.addEventListener('click',()=>{
+  scheduleListitems.forEach(item=>item.classList.remove("active"));
+  li.classList.add("active");
+}));
+
+goalChips.forEach(chip=>chip.addEventListener('click',()=>{
+  chip.classList.toggle("active");
+}));
+
+placeChips.forEach(chip=>chip.addEventListener('click',()=>{
+  placeChips.forEach(item=>item.classList.remove("active"));
+  chip.classList.add("active");
+}))
+
+function isSelected(items) {
+  return [...items].some(item => item.classList.contains("active"));
+}
+
+
+function validateWorkStyleData() {
+  const error = step10.querySelector(".error");
+
+  const isContactSelected = isSelected(contactListItems);
+  const isScheduleSelected = isSelected(scheduleListitems);
+  const isGoalSelected = isSelected(goalChips);
+  const isPlaceSelected = isSelected(placeChips);
+
+  if (!isContactSelected || !isScheduleSelected || !isGoalSelected || !isPlaceSelected) {
+    error.textContent = "Please select one option from each category.";
+    return false;
+  }
+
+  error.textContent = "";
+  return true;
+}
+
+function getWorkStyleData() {
+  return {
+    contact: [...contactListItems]
+    .find(li => li.classList.contains("active"))?.dataset.item || null,
+
+    time: [...scheduleListitems]
+    .find(li => li.classList.contains("active"))?.dataset.item || null,
+
+    goal: [...goalChips]
+    .filter(li => li.classList.contains("active"))
+    .map(li=>li.textContent),
+
+    place: [...placeChips]
+    .find(li => li.classList.contains("active"))?.textContent || null
+  };
+}
+
+function DelWorkStyleData(){
+  const error=step10.querySelector(".error")
+  contactListItems.forEach(item=>item.classList.remove("active"));
+  scheduleListitems.forEach(item=>item.classList.remove("active"));
+  goalChips.forEach(item=>item.classList.remove("active"));
+  placeChips.forEach(item=>item.classList.remove("active"));
+  error.textContent="";
+}
+
+continue9Btn.addEventListener('click', () => {
+  if(validateWorkStyleData()){
+    const data=getWorkStyleData();
+    DelWorkStyleData();
+    const userId = Number(sessionStorage.getItem("currentUserId"));
+ 
+    saveCompleteUserData(userId, "workstyle", data);
+    step10.classList.remove("active");
+    step11.classList.add("active");
+    }
+})
+
+back9Btn.addEventListener('click', () => {
+  step10.classList.remove("active");
+  step9.classList.add("active");
+})
+
+//step 11
+
+const publishCards=step11.querySelectorAll(".publish-card");
+
+publishCards.forEach(card=>card.addEventListener('click',()=>{
+  // publishCards.forEach(card=>card.classList.remove("active"));
+  card.classList.toggle("active");
+  validatePublishData();
+}));
+
+function validatePublishData(){
+  const error = step11.querySelector(".error");
+
+  const isValid = isSelected(publishCards);
+
+  if (!isValid) {
+    error.textContent = "Please select one option from each category.";
+  }
+  else{
+    error.textContent = "";
+  }
+  return isValid;
+}
+
+function getPublishData(){
+  const data={};
+  
+  data.publish= [...publishCards]
+  .find(card => card.classList.contains("active"))?.dataset.item || null,
+
+  publishCards.forEach(card=>card.classList.toggle("active"));
+
+  return data;
+}
+
+continue10Btn.addEventListener('click',()=>{
+  if(validatePublishData()){
+    const data=getPublishData();
+
+    const userId = Number(sessionStorage.getItem("currentUserId"));
+    
+    saveCompleteUserData(userId, "publish", data);
+    sessionStorage.removeItem("currentUserId");
+    loginBtn1.classList.add("not-active");
+    logoutBtn.classList.remove("not-active");
+    window.location.href="./artist-detail.html"
+  }
+})
+
+back10Btn.addEventListener('click',()=>{
+  step11.classList.remove("active");
+  step10.classList.add("active");
+})

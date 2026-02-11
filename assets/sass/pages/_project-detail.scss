@@ -1,7 +1,7 @@
 @use "../base/reset";
 @use "../abstracts/index" as *;
 @use "../layout/index" as *;
-
+@use "../layout/authenticate" as *;
 .intro-section{
     padding: clamp(25px, $fs-47px, $fs-47px) clamp(20px, $fs-120px, $fs-120px) 10px clamp(20px, $fs-100px, $fs-100px);
     .breadcrumb{

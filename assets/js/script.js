@@ -268,10 +268,12 @@ const validateEmail = (email) => {
     );
 }
 
+//prevent for redirect to the next page, if no user logged 
+
 const exploreBtn=document.querySelector(".explore-btn");
 
 exploreBtn.addEventListener('click',()=>{
-  if(!sessionStorage.getItem("loginToken")){
+  if(!sessionStorage.getItem("loggedUser")){
     loginOverLay.classList.add('active');
     body.classList.add("not-active");
   }
@@ -281,10 +283,22 @@ exploreBtn.addEventListener('click',()=>{
 const startBtn=document.querySelector(".start-btn");
 
 startBtn.addEventListener('click',()=>{
-  if(!sessionStorage.getItem("loginToken")){
+  if(!sessionStorage.getItem("loggedUser")){
     loginOverLay.classList.add('active');
     body.classList.add("not-active");
   }
 })
+
+const navLinks=document.querySelectorAll(".landing-header nav .nav-link");
+navLinks.forEach(link=>{
+  link.addEventListener('click',(e)=>{
+  if(!sessionStorage.getItem("loggedUser")){
+    e.preventDefault();
+    loginOverLay.classList.add('active');
+    body.classList.add("not-active");
+  }
+})
+})
+
 
 

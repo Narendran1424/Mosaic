@@ -11,6 +11,7 @@ body {
 
 body.not-active {
   overflow-y: hidden;
+  padding-right: var(--scrollbar-width, 0px);
 }
 
 a {
@@ -88,8 +89,8 @@ body {
 .register-form-section .card-wrapper .card-container {
   display: grid;
   grid-template-columns: 0.67fr 1fr 1fr 1fr;
-  grid-auto-flow: dense;
-  grid-auto-rows: 1px;
+  grid-auto-rows: minmax(0, auto);
+  height: 100%;
 }
 .register-form-section .card-wrapper .card-container .img-card {
   overflow: hidden;
@@ -178,10 +179,10 @@ body {
   height: 10px;
   border-radius: 10px;
 }
-.register-form-section .step .form-group .error {
+.register-form-section .step .form-group .error, .register-form-section .step .form-wrapper .error, .register-form-section .step .content-wrapper .error {
   position: absolute;
   margin-bottom: 0;
-  font-size: clamp(10px, 0.73vw, 0.73vw);
+  font-size: clamp(11px, 0.73vw, 0.73vw);
   color: #eb0808;
   margin-bottom: 0;
   width: 100%;
@@ -354,7 +355,7 @@ body {
   color: rgba(0, 0, 0, 0.8);
   border-bottom: 1px solid rgba(0, 0, 0, 0.1019607843);
   font-size: clamp(14px, 1.25vw, 1.25vw);
-  width: clamp(215px, 16.3vw, 16.3vw);
+  width: clamp(240px, 16.3vw, 16.3vw);
   position: relative;
   font-weight: 600;
   text-align: center;
@@ -364,7 +365,7 @@ body {
 }
 .register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker {
   position: absolute;
-  width: clamp(215px, 16.3vw, 16.3vw);
+  width: clamp(240px, 16.3vw, 16.3vw);
   background-color: #f5f5f5;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   padding: 0px;
@@ -393,7 +394,7 @@ body {
   border: none;
   margin: 0;
   padding: 0;
-  width: clamp(15px, 1.4065vw, 1.4065vw);
+  width: clamp(18px, 1.4065vw, 1.4065vw);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -437,6 +438,9 @@ body {
   max-height: 411px;
   overflow: visible;
 }
+.register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker.not-active {
+  visibility: hidden;
+}
 .register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker-top {
   margin-bottom: 20px;
 }
@@ -457,6 +461,55 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
+}
+.register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker-top .month-selector .year-wrapper {
+  display: flex;
+  align-items: center;
+  font-size: clamp(14px, 0.83vw, 0.83vw);
+  gap: 5px;
+}
+.register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker-top .month-selector .year-wrapper .month-name {
+  color: rgba(0, 0, 0, 0.8);
+}
+.register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker-top .month-selector .year-wrapper .year-select .year-toggle {
+  border: none;
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker-top .month-selector .year-wrapper .year-select .down-arrow {
+  width: clamp(13px, 1.304vw, 1.304vw);
+}
+.register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker-top .month-selector .year-wrapper .year-select .year-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 278px;
+  overflow-y: auto;
+  z-index: 20;
+  display: none;
+  margin-top: 20px;
+}
+.register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker-top .month-selector .year-wrapper .year-select .year-dropdown.active {
+  display: block;
+}
+.register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker-top .month-selector .year-wrapper .year-select .year-dropdown .year-item {
+  padding: 6px;
+  cursor: pointer;
+  border-bottom: 1px solid #cccccc;
+  padding: 6px;
+  text-align: center;
+  background-color: #f0efef;
+  font-size: clmap(13px, 0.79vw, 0.79vw);
+}
+.register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker-top .month-selector .year-wrapper .year-select .year-dropdown .year-item:hover {
+  background-color: #fff;
+  font-weight: 500;
 }
 .register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker-top .month-selector .arrow {
   display: flex;
@@ -464,12 +517,12 @@ body {
   justify-content: center;
   border: none;
   background-color: #fff;
-  width: 1.5vw;
-  height: 1.5vw;
+  width: clamp(17px, 1.5vw, 1.5vw);
+  height: clamp(17px, 1.5vw, 1.5vw);
   border-radius: 12px;
 }
 .register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker-top .month-selector .arrow img {
-  width: 1.2vw;
+  width: clamp(12px, 1.2vw, 1.2vw);
 }
 .register-form-section .step-1 .form-container .form-group .input-wrapper .date-btn-group {
   display: flex;
@@ -639,25 +692,32 @@ body {
   font-size: clamp(15px, 1.304vw, 1.304vw);
   color: black;
 }
-.register-form-section .step-4 .chip-container {
+.register-form-section .step-4 .content-wrapper {
+  position: relative;
+  padding-bottom: clamp(30px, 4.4vw, 4.4vw);
+}
+.register-form-section .step-4 .content-wrapper .chip-container {
   display: flex;
   column-gap: 15px;
   row-gap: clamp(10px, 1.05vw, 1.05vw);
   flex-wrap: wrap;
   justify-content: center;
-  padding: clamp(30px, 4.4vw, 4.4vw) clamp(30px, 6.8vw, 6.8vw);
+  padding: clamp(30px, 4.4vw, 4.4vw) clamp(30px, 6.8vw, 6.8vw) 0;
 }
-.register-form-section .step-4 .chip-container .chip {
+.register-form-section .step-4 .content-wrapper .chip-container .chip {
   font-size: clamp(13px, 1.15vw, 1.15vw);
   border: 1px solid rgba(0, 0, 0, 0.6);
   border-radius: 50px;
   color: rgba(0, 0, 0, 0.9019607843);
   padding: 8px clamp(20px, 2.067vw, 2.067vw);
 }
-.register-form-section .step-4 .chip-container .chip:hover, .register-form-section .step-4 .chip-container .chip.active {
+.register-form-section .step-4 .content-wrapper .chip-container .chip:hover, .register-form-section .step-4 .content-wrapper .chip-container .chip.active {
   background-color: black;
   color: #fff;
   cursor: default;
+}
+.register-form-section .step-4 .content-wrapper .error {
+  margin-top: 10px;
 }
 .register-form-section .step-4 .action-btn-container {
   align-self: flex-end;
@@ -680,31 +740,38 @@ body {
   font-size: clamp(28px, 2.61vw, 2.61vw);
   color: black;
 }
-.register-form-section .step-5 .chip-container {
+.register-form-section .step-5 .content-wrapper {
+  position: relative;
+  padding-bottom: clamp(30px, 9.9vw, 9.9vw);
+}
+.register-form-section .step-5 .content-wrapper .chip-container {
   display: flex;
   column-gap: 15px;
   row-gap: clamp(10px, 1.05vw, 1.05vw);
   justify-content: center;
   flex-wrap: wrap;
-  padding: clamp(30px, 4.4vw, 4.4vw) clamp(30px, 9.9vw, 9.9vw);
+  padding: clamp(30px, 4.4vw, 4.4vw) clamp(30px, 9.9vw, 9.9vw) 0;
 }
-.register-form-section .step-5 .chip-container .chip {
+.register-form-section .step-5 .content-wrapper .chip-container .chip {
   font-size: clamp(13px, 1.15vw, 1.15vw);
   border: 1px solid rgba(0, 0, 0, 0.6);
   border-radius: 50px;
   color: rgba(0, 0, 0, 0.9019607843);
   padding: 8px clamp(20px, 2.067vw, 2.067vw);
 }
-.register-form-section .step-5 .chip-container .chip.p-sm {
+.register-form-section .step-5 .content-wrapper .chip-container .chip.p-sm {
   padding: 8px clamp(10px, 1.05vw, 1.05vw);
 }
-.register-form-section .step-5 .chip-container .chip.p-md {
+.register-form-section .step-5 .content-wrapper .chip-container .chip.p-md {
   padding: 8px clamp(15px, 1.57vw, 1.57vw);
 }
-.register-form-section .step-5 .chip-container .chip:hover, .register-form-section .step-5 .chip-container .chip.active {
+.register-form-section .step-5 .content-wrapper .chip-container .chip:hover, .register-form-section .step-5 .content-wrapper .chip-container .chip.active {
   background-color: black;
   color: #fff;
   cursor: default;
+}
+.register-form-section .step-5 .content-wrapper .error {
+  margin-top: 10px;
 }
 .register-form-section .step-5 .action-btn-container {
   align-self: flex-end;
@@ -742,6 +809,7 @@ body {
   font-size: 14px;
   color: rgba(0, 0, 0, 0.6);
   line-height: 1;
+  margin-bottom: 2px;
 }
 .register-form-section .step-6 .form-wrapper .form-container .form-group .input-wrapper input, .register-form-section .step-6 .form-wrapper .form-container .form-group .input-wrapper textarea {
   border: none;
@@ -751,7 +819,7 @@ body {
   font-size: clamp(14px, 1.25vw, 1.25vw);
   font-weight: 600;
   text-align: center;
-  width: clamp(200px, 16.3vw, 16.3vw);
+  width: clamp(240px, 16.3vw, 16.3vw);
   padding: 0 20px;
 }
 .register-form-section .step-6 .form-wrapper .form-container .form-group .input-wrapper textarea {
@@ -773,6 +841,7 @@ body {
 .register-form-section .step-6 .form-wrapper .form-container .form-group .photo-wrapper {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: clamp(10px, 0.93vw, 0.93vw);
 }
 .register-form-section .step-6 .form-wrapper .form-container .form-group .photo-wrapper .img-wrapper {
@@ -789,8 +858,8 @@ body {
   border-radius: none;
   padding: 0;
   background-color: transparent;
-  width: clamp(60px, 9.6vw, 9.6vw);
-  height: clamp(60px, 7.05vw, 7.05vw);
+  width: clamp(120px, 9.6vw, 9.6vw);
+  height: clamp(100px, 7.05vw, 7.05vw);
 }
 .register-form-section .step-6 .form-wrapper .form-container .form-group .photo-wrapper .add-img {
   width: clamp(13px, 0.989vw, 0.989vw);
@@ -821,7 +890,7 @@ body {
 }
 .register-form-section .step-6 .form-wrapper .form-container .form-group .resume-wrapper .img-wrapper.active {
   background-color: transparent;
-  border-radius: none;
+  border-radius: 0;
   width: clamp(30px, 2.98vw, 2.98vw);
   height: clamp(30px, 2.98vw, 2.98vw);
 }
@@ -900,12 +969,16 @@ body {
 .register-form-section .step-7 .form-container .form-group {
   position: relative;
 }
-.register-form-section .step-7 .form-container .form-group .input-wrapper label {
+.register-form-section .step-7 .form-container .form-group .error {
+  margin-top: 10px;
+}
+.register-form-section .step-7 .form-container .form-group .input-wrapper h3 {
   display: block;
   text-align: center;
   font-size: 14px;
   color: rgba(0, 0, 0, 0.6);
   line-height: 1;
+  font-weight: normal;
 }
 .register-form-section .step-7 .form-container .form-group .input-wrapper .portfolio-links {
   display: flex;
@@ -935,7 +1008,7 @@ body {
   -webkit-text-fill-color: rgba(0, 0, 0, 0.8);
   transition: background-color 9999s ease-in-out 0s;
 }
-.register-form-section .step-7 .form-container .form-group .input-wrapper .portfolio-links .input-container .add-label {
+.register-form-section .step-7 .form-container .form-group .input-wrapper .portfolio-links .input-container .add-link-btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -943,8 +1016,9 @@ body {
   height: 20px;
   border-radius: 50%;
   background-color: black;
+  border: none;
 }
-.register-form-section .step-7 .form-container .form-group .input-wrapper .portfolio-links .input-container .add-label .add-img {
+.register-form-section .step-7 .form-container .form-group .input-wrapper .portfolio-links .input-container .add-link-btn .add-img {
   width: 9px;
   filter: invert(1);
 }
@@ -954,6 +1028,7 @@ body {
 .register-form-section .step-7 .form-container .form-group .input-wrapper .upload-group label {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: clamp(10px, 0.93vw, 0.93vw);
   color: black;
   font-size: clamp(15px, 1.25vw, 1.25vw);
@@ -973,19 +1048,53 @@ body {
   filter: invert(1);
 }
 .register-form-section .step-7 .form-container .form-group .video-preview-container {
-  margin-top: 10px;
+  margin-top: clamp(20px, 2.61vw, 2.61vw);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding-left: 8%;
 }
-.register-form-section .step-7 .form-container .form-group .video-item video {
-  width: 200px;
+.register-form-section .step-7 .form-container .form-group .video-preview-container .video-item {
+  width: clamp(120px, 14vw, 14vw);
+  display: flex;
+  flex-direction: column;
+}
+.register-form-section .step-7 .form-container .form-group .video-preview-container .video-item video {
+  width: 100%;
   height: 120px;
   object-fit: cover;
   border-radius: 8px;
 }
-.register-form-section .step-7 .form-container .form-group .video-info {
+.register-form-section .step-7 .form-container .form-group .video-preview-container .video-info {
   font-size: 12px;
   display: flex;
   gap: 10px;
   align-items: center;
+  margin: 10px 0;
+}
+.register-form-section .step-7 .form-container .form-group .video-preview-container .video-info .name {
+  text-wrap: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: clamp(13px, 0.89vw, 0.89vw);
+  color: rgba(0, 0, 0, 0.8);
+}
+.register-form-section .step-7 .form-container .form-group .video-preview-container .video-info .size {
+  text-wrap: nowrap;
+  font-size: clamp(11px, 0.83vw, 0.83vw);
+}
+.register-form-section .step-7 .form-container .form-group .video-preview-container .remove-video-btn {
+  font-size: clamp(14px, 0.89vw, 0.89vw);
+  padding: 2px clamp(10px, 0.79vw, 0.79vw);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  color: rgba(0, 0, 0, 0.8);
+  background-color: transparent;
+  border-radius: 30px;
+  margin-left: auto;
+}
+.register-form-section .step-7 .form-container .form-group .video-preview-container .remove-video-btn:hover {
+  color: rgba(255, 255, 255, 0.902);
+  background-color: black;
 }
 .register-form-section .step-7 .action-btn-container {
   align-self: flex-end;
@@ -1019,20 +1128,30 @@ body {
 .register-form-section .step-8 .form-container .form-group {
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+.register-form-section .step-8 .form-container .form-group .form-wrapper {
+  display: flex;
+  flex-direction: column;
   gap: clamp(12px, 1.57vw, 1.57vw);
 }
-.register-form-section .step-8 .form-container .form-group .input-wrapper {
+.register-form-section .step-8 .form-container .form-group .form-wrapper .input-wrapper {
   display: flex;
   align-items: flex-start;
   gap: clamp(10px, 0.79vw, 0.79vw);
 }
-.register-form-section .step-8 .form-container .form-group .input-wrapper label {
+.register-form-section .step-8 .form-container .form-group .form-wrapper .input-wrapper label {
   display: block;
   line-height: 1;
   color: #3f3f3f;
   font-size: clamp(13px, 0.83vw, 0.83vw);
 }
-.register-form-section .step-8 .form-container .form-group .input-wrapper input[type=checkbox] {
+.register-form-section .step-8 .form-container .form-group .form-wrapper .input-wrapper input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px #fff inset;
+  -webkit-text-fill-color: rgba(0, 0, 0, 0.8);
+  transition: background-color 9999s ease-in-out 0s;
+}
+.register-form-section .step-8 .form-container .form-group .form-wrapper .input-wrapper input[type=checkbox] {
   appearance: none;
   -webkit-appearance: none;
   width: clamp(14px, 0.989vw, 0.989vw);
@@ -1043,14 +1162,14 @@ body {
   position: relative;
   flex-shrink: 0;
 }
-.register-form-section .step-8 .form-container .form-group .input-wrapper input[type=checkbox]:checked {
+.register-form-section .step-8 .form-container .form-group .form-wrapper .input-wrapper input[type=checkbox]:checked {
   background-color: black;
   border-color: black;
 }
-.register-form-section .step-8 .form-container .form-group .input-wrapper input[type=checkbox]:checked ~ div .desc-input {
+.register-form-section .step-8 .form-container .form-group .form-wrapper .input-wrapper input[type=checkbox]:checked ~ div .desc-input {
   pointer-events: all;
 }
-.register-form-section .step-8 .form-container .form-group .input-wrapper input[type=checkbox]:checked::after {
+.register-form-section .step-8 .form-container .form-group .form-wrapper .input-wrapper input[type=checkbox]:checked::after {
   content: "✓";
   color: #fff;
   font-size: clamp(9px, 0.79vw, 0.79vw);
@@ -1061,18 +1180,17 @@ body {
   transform: translate(-50%, -45%) rotate(10deg);
   line-height: 1;
 }
-.register-form-section .step-8 .form-container .form-group .input-wrapper input[type=checkbox]:disabled {
+.register-form-section .step-8 .form-container .form-group .form-wrapper .input-wrapper input[type=checkbox]:disabled {
   border-color: rgba(0, 0, 0, 0.5019607843);
 }
-.register-form-section .step-8 .form-container .form-group .input-wrapper input[type=checkbox]:disabled ~ div label {
+.register-form-section .step-8 .form-container .form-group .form-wrapper .input-wrapper input[type=checkbox]:disabled ~ div label {
   opacity: 0.5;
-  cursor: not-allowed;
 }
-.register-form-section .step-8 .form-container .form-group .input-wrapper input[type=checkbox]:disabled ~ div .desc-input {
+.register-form-section .step-8 .form-container .form-group .form-wrapper .input-wrapper input[type=checkbox]:disabled ~ div .desc-input {
   opacity: 0.5;
   pointer-events: none;
 }
-.register-form-section .step-8 .form-container .form-group .input-wrapper .desc-input {
+.register-form-section .step-8 .form-container .form-group .form-wrapper .input-wrapper .desc-input {
   border: none;
   outline: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1019607843);
@@ -1084,8 +1202,8 @@ body {
   pointer-events: none;
 }
 .register-form-section .step-8 .form-container .form-group .error {
-  font-size: 14px;
-  margin-bottom: 0;
+  margin-top: auto;
+  bottom: -25px;
 }
 .register-form-section .step-8 .action-btn-container {
   align-self: flex-end;
@@ -1115,6 +1233,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: clamp(25px, 3.67vw, 3.67vw);
+  position: relative;
 }
 .register-form-section .step-9 .form-wrapper .form-group label {
   display: block;
@@ -1148,7 +1267,6 @@ body {
   background: black;
   border-radius: 50%;
   margin-top: -6px;
-  cursor: ew-resize;
 }
 .register-form-section .step-9 .form-wrapper .form-group .input-container .content-container {
   display: flex;
@@ -1194,6 +1312,9 @@ body {
 .register-form-section .step-9 .form-wrapper .form-group .input-container.p-sm .center-text {
   padding-right: 4%;
 }
+.register-form-section .step-9 .form-wrapper .error {
+  bottom: -25px;
+}
 .register-form-section .step-9 .action-btn-container {
   align-self: flex-end;
   padding: clamp(25px, 2.34vw, 2.34vw) clamp(20px, 3.91vw, 3.91vw) clamp(20px, 2.34vw, 2.34vw);
@@ -1221,6 +1342,7 @@ body {
   flex-direction: column;
   align-items: center;
   gap: clamp(25px, 3.6vw, 3.6vw);
+  position: relative;
 }
 .register-form-section .step-10 .content-wrapper .content-container h3 {
   color: black;
@@ -1286,6 +1408,10 @@ body {
   color: rgba(255, 255, 255, 0.902);
   cursor: default;
 }
+.register-form-section .step-10 .content-wrapper .error {
+  top: 100%;
+  margin-top: 10px;
+}
 .register-form-section .step-10 .action-btn-container {
   align-self: flex-end;
   padding: clamp(25px, 2.34vw, 2.34vw) clamp(20px, 3.91vw, 3.91vw) clamp(20px, 2.34vw, 2.34vw);
@@ -1308,6 +1434,9 @@ body {
   color: black;
   text-align: center;
   line-height: 1.3;
+}
+.register-form-section .step-11 .content-wrapper {
+  position: relative;
 }
 .register-form-section .step-11 .card-container {
   display: flex;
