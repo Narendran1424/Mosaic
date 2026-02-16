@@ -52,6 +52,9 @@
           color: $black;
         }
       }
+      &.not-active{
+        display: none;
+      }
     }
     .hover-wrapper {
       padding-top: 5%;
@@ -187,35 +190,84 @@
           }
         }
       }
+      &.active{
+        display: block;
+      }
     }
   }
-  .artist-card-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-column-gap: clamp(12px, $fs-27px, $fs-27px);
-    grid-row-gap: clamp(25px, $fs-70px, $fs-70px);
+  .artist-card-wrapper{
     width: 40.75%;
-    .artist-card {
-      .img-wrapper {
-        height: clamp(160px, $fs-280px, $fs-280px);
-        img {
-          display: block;
-          object-fit: cover;
-          width: 100%;
-          height: 100%;
+    .not-found{
+      text-align: center;
+      margin-top: 20px;
+      font-size: clamp(13px, $fs-18px, $fs-18px);
+      color: $black-0c;
+    }
+    .artist-card-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-column-gap: clamp(12px, $fs-27px, $fs-27px);
+      grid-row-gap: clamp(25px, $fs-70px, $fs-70px);
+      
+      .artist-card {
+        .img-wrapper {
+          height: clamp(160px, $fs-280px, $fs-280px);
+          img {
+            display: block;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        h3 {
+          font-size: clamp(15px, $fs-22px, $fs-22px);
+          margin-top: 14px;
+          margin-bottom: 3px;
+          color: $black-f2;
+        }
+        p {
+          color: $black-80;
+          margin-bottom: 0;
+          font-size: clamp(13px, $fs-16px, $fs-16px);
         }
       }
-
-      h3 {
-        font-size: clamp(15px, $fs-22px, $fs-22px);
-        margin-top: 14px;
-        margin-bottom: 3px;
-        color: $black-f2;
-      }
-      p {
-        color: $black-80;
-        margin-bottom: 0;
-        font-size: clamp(13px, $fs-16px, $fs-16px);
+    }
+    .pagination{
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      padding: clamp(35px, $fs-70px, $fs-70px) 0 clamp(10px, $fs-40px, $fs-40px);
+      gap: 10px;
+      flex-wrap: wrap;
+      button{
+        border: none;
+        background-color: transparent;
+        font-size: clamp(11px, $fs-18px, $fs-18px);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 1;
+     
+        &.page{
+          width: 28px;
+          height: 28px;
+          line-height: 1;
+          &:hover,&.active {
+            background-color: $black-0c;
+            border-radius: 50%;
+            color: $white;
+          }
+        }
+        &.prev,&.next{
+          border: 1px solid transparent;
+          padding: 6px;
+          &:hover{
+            border: 1px solid $black-0c;
+            color: $black;
+          }
+        }
       }
     }
   }

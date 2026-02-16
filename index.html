@@ -646,16 +646,29 @@
       <div class="reset-container">
         <img src="./assets/images/logo.webp" class="logo" alt="logo">
           <h2 class="reset-header">Reset Password</h2>
-          <div class="input-wrapper">
+          <div class="input-wrapper  email-wrapper active">
               <div class="form-group">
                 <input type="text" name="reset-email" class="reset-email" placeholder="Email Address">
               </div>
               <p class="error"></p>
           </div>
-          <button class="reset-btn">Send Reset Link</button>
+          <div class="input-wrapper password-wrapper not-active">
+              <div class="form-group">
+                <input type="text" name="reset-password" class="reset-password" placeholder="New Password">
+              </div>
+              <p class="error"></p>
+          </div>
+          <div class="input-wrapper password-wrapper crt-password-wrapper not-active">
+              <div class="form-group">
+                <input type="text" name="confirm-password" class="confirm-password" placeholder="Confirm Password">
+              </div>
+              <p class="error"></p>
+          </div>
 
+          <button  type="button" class="reset-btn">Verify Email</button>
+          <button type="button" class="update-password-btn not-active">Update Password</button>
         
-            <p class="login-text">Back to <a href="#" class="login-btn">Login</a> / <a href="#" class="register-btn">Register</a> </p>
+          <p class="login-text">Back to <a href="#" class="login-btn">Login</a> / <a href="#" class="register-btn">Register</a> </p>
         
           <div class="authenticate-toast-container reset-toast-container">
             <p>Signup Successful!</p>
@@ -729,7 +742,7 @@
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/header.js"></script>
     <script src="./assets/js/authenticate.js"></script>
-    
+    <script src="./assets/js/global.js"></script>
     <script src="./assets/bootstrap/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

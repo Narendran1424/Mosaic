@@ -59,7 +59,7 @@
             <div class="filter-dropdown">
               <ul class="main-menu">
                 <li class="menu-item">
-                  <div class="text-uppercase">
+                  <div class="text-uppercase filter-toggle">
                     <img src="./assets/images/music.webp" alt="music" /> Music
                     <img
                       src="./assets/images/downarrow.webp"
@@ -69,7 +69,7 @@
                   </div>
                   <ul class="sub-menu">
                     <li class="submenu-item">
-                      <div>
+                      <div class="filter-label">
                         Categories
                         <img
                           src="./assets/images/downarrow.webp"
@@ -77,7 +77,7 @@
                           alt="downarrow"
                         />
                       </div>
-                      <ul class="child-menu">
+                      <ul class="child-menu category-list">
                         <li>singer</li>
                         <li>composer</li>
                         <li>songwriter</li>
@@ -93,7 +93,7 @@
                   </ul>
                   <ul class="sub-menu">
                     <li class="submenu-item">
-                      <div>
+                      <div class="filter-label">
                         Genre
                         <img
                           src="./assets/images/downarrow.webp"
@@ -101,7 +101,7 @@
                           alt="downarrow"
                         />
                       </div>
-                      <ul class="child-menu">
+                      <ul class="child-menu genre-list">
                         <li>Pop</li>
                         <li>hiphop</li>
                         <li>EDM</li>
@@ -117,7 +117,7 @@
                   </ul>
                 </li>
                 <li class="menu-item">
-                  <div class="text-uppercase">
+                  <div class="text-uppercase filter-toggle">
                     <img
                       src="./assets/images/dance.webp"
                       class="dance"
@@ -132,7 +132,7 @@
                   </div>
                   <ul class="sub-menu">
                     <li class="submenu-item">
-                      <div>
+                      <div class="filter-label">
                         Categories
                         <img
                           src="./assets/images/downarrow.webp"
@@ -140,11 +140,14 @@
                           alt="downarrow"
                         />
                       </div>
+                       <ul class="child-menu category-list">
+
+                       </ul>
                     </li>
                   </ul>
                   <ul class="sub-menu">
                     <li class="submenu-item">
-                      <div>
+                      <div class="filter-label">
                         Genre
                         <img
                           src="./assets/images/downarrow.webp"
@@ -152,12 +155,15 @@
                           alt="downarrow"
                         />
                       </div>
+                      <ul class="child-menu genre-list">
+
+                      </ul>
                     </li>
                   </ul>
                 </li>
 
                 <li class="menu-item">
-                  <div class="text-uppercase">
+                  <div class="text-uppercase filter-toggle">
                     <img
                       src="./assets/images/flim.webp"
                       class="flim"
@@ -172,7 +178,7 @@
                   </div>
                   <ul class="sub-menu">
                     <li class="submenu-item">
-                      <div>
+                      <div class="filter-label">
                         Categories
                         <img
                           src="./assets/images/downarrow.webp"
@@ -180,11 +186,14 @@
                           alt="downarrow"
                         />
                       </div>
+                       <ul class="child-menu category-list">
+
+                       </ul>
                     </li>
                   </ul>
                   <ul class="sub-menu">
                     <li class="submenu-item">
-                      <div>
+                      <div class="filter-label">
                         Genre
                         <img
                           src="./assets/images/downarrow.webp"
@@ -192,6 +201,7 @@
                           alt="downarrow"
                         />
                       </div>
+                      <ul class="child-menu genre-list"></ul>
                     </li>
                   </ul>
                 </li>
@@ -206,7 +216,7 @@
               <input
                 type="text"
                 name="search"
-                id="search"
+                id="search" class="search-input"
                 placeholder="Search..."
               />
             </div>
@@ -221,6 +231,13 @@
                 class="arrow-img"
                 alt="downarrow"
               />
+            </div>
+            <div class="sort-dropdown">
+              <ul class="sort-dropdown-list">
+                <li class="sort-dropdown-list-item">Music</li>
+                <li class="sort-dropdown-list-item">Dance</li>
+                <li class="sort-dropdown-list-item">Film</li>
+              </ul>
             </div>
           </div>
         </div>
@@ -279,7 +296,7 @@
                 <div class="artist-details">
                   <div class="detail-wrapper">
                     <div class="detail-item">
-                      <p class="count">152+</p>
+                      <p class="count connection">152+</p>
                       <p class="text">Connections</p>
                     </div>
                     <div class="detail-item">
@@ -300,17 +317,18 @@
             </div>
           </div>
         </div>
-        <div class="artist-card-container">
-          <a href="./artist-detail.html" class="artist-card">
-            <div class="img-wrapper">
-              <img
-                src="./assets/images/artist/artistimg1.webp"
-                alt="artistimg1"
-              />
+        <div class="artist-card-wrapper">
+          <div class="artist-card-container">
+            <a href="./artist-detail.html" class="artist-card">
+              <div class="img-wrapper">
+                <img
+                  src="./assets/images/artist/artistimg1.webp"
+                  alt="artistimg1"
+                />
             </div>
-            <h3>Rosaline</h3>
-            <p>Guitarist</p>
-          </a>
+            <h3 class="name">Rosaline</h3>
+              <p class="role">Guitarist</p>
+            </a>
           <a href="./artist-detail.html" class="artist-card">
             <div class="img-wrapper">
               <img
@@ -318,8 +336,8 @@
                 alt="artistimg2"
               />
             </div>
-            <h3>Rosaline</h3>
-            <p>Guitarist</p>
+              <h3 class="name">caludia grey</h3>
+              <p class="role">Violinist</p>
           </a>
           <a href="./artist-detail.html" class="artist-card">
             <div class="img-wrapper">
@@ -328,8 +346,8 @@
                 alt="artistimg3"
               />
             </div>
-            <h3>Rosaline</h3>
-            <p>Guitarist</p>
+            <h3 class="name">Rose Mary</h3>
+              <p class="role">Pianist</p>
           </a>
 
           <a href="./artist-detail.html" class="artist-card">
@@ -339,8 +357,8 @@
                 alt="artistimg4"
               />
             </div>
-            <h3>Rosaline</h3>
-            <p>Guitarist</p>
+             <h3 class="name">Robinson</h3>
+              <p class="role">Keyboardist</p>
           </a>
           <a href="./artist-detail.html" class="artist-card">
             <div class="img-wrapper">
@@ -349,8 +367,8 @@
                 alt="artistimg5"
               />
             </div>
-            <h3>Rosaline</h3>
-            <p>Guitarist</p>
+             <h3 class="name">Magdalene</h3>
+              <p class="role">Guitarist</p>
           </a>
 
           <a href="./artist-detail.html" class="artist-card">
@@ -360,8 +378,8 @@
                 alt="artistimg6"
               />
             </div>
-            <h3>Rosaline</h3>
-            <p>Guitarist</p>
+            <h3 class="name">Michael</h3>
+            <p class="role">Guitarist</p>
           </a>
           <a href="./artist-detail.html" class="artist-card">
             <div class="img-wrapper">
@@ -370,30 +388,35 @@
                 alt="artistimg7"
               />
             </div>
-            <h3>Rosaline</h3>
-            <p>Guitarist</p>
+            <h3 class="name">Richard</h3>
+            <p class="role">Singer</p>
           </a>
           <a href="./artist-detail.html" class="artist-card">
             <div class="img-wrapper">
               <img
                 src="./assets/images/artist/artistimg8.webp"
-                alt="artistimg1"
+                alt="artistimg8"
               />
             </div>
-            <h3>Rosaline</h3>
-            <p>Guitarist</p>
+              <h3 class="name">Jane</h3>
+              <p class="role">Guitarist</p>
           </a>
           <a href="./artist-detail.html" class="artist-card">
             <div class="img-wrapper">
               <img
                 src="./assets/images/artist/artistimg9.webp"
-                alt="artistimg1"
+                alt="artistimg9"
               />
             </div>
-            <h3>Rosaline</h3>
-            <p>Guitarist</p>
+           <h3 class="name">Mark</h3>
+          <p class="role">Guitarist</p>
           </a>
+          </div>
+          <div class="pagination">
+            <button class="page ">2</button><button class="page active">1</button><button class="page ">3</button><button class="page ">4</button><button class="page ">5</button><span class="dots">...</span><button class="page ">28</button><button class="next">Next</button>
+          </div>
         </div>
+        
       </section>
     </main>
     <footer>
@@ -554,16 +577,29 @@
       <div class="reset-container">
         <img src="./assets/images/logo.webp" class="logo" alt="logo">
           <h2 class="reset-header">Reset Password</h2>
-          <div class="input-wrapper">
+          <div class="input-wrapper  email-wrapper active">
               <div class="form-group">
                 <input type="text" name="reset-email" class="reset-email" placeholder="Email Address">
               </div>
               <p class="error"></p>
           </div>
-          <button class="reset-btn">Send Reset Link</button>
+          <div class="input-wrapper password-wrapper not-active">
+              <div class="form-group">
+                <input type="text" name="reset-password" class="reset-password" placeholder="New Password">
+              </div>
+              <p class="error"></p>
+          </div>
+          <div class="input-wrapper password-wrapper crt-password-wrapper not-active">
+              <div class="form-group">
+                <input type="text" name="confirm-password" class="confirm-password" placeholder="Confirm Password">
+              </div>
+              <p class="error"></p>
+          </div>
 
+          <button  type="button" class="reset-btn">Verify Email</button>
+          <button type="button" class="update-password-btn not-active">Update Password</button>
         
-            <p class="login-text">Back to <a href="#" class="login-btn">Login</a> / <a href="#" class="register-btn">Register</a> </p>
+          <p class="login-text">Back to <a href="#" class="login-btn">Login</a> / <a href="#" class="register-btn">Register</a> </p>
         
           <div class="authenticate-toast-container reset-toast-container">
             <p>Signup Successful!</p>
@@ -636,5 +672,6 @@
     <script src="./assets/js/check-valid.js"></script>
     <script src="./assets/js/authenticate.js"></script>
     <script src="./assets/js/header.js"></script>
+    <script src="./assets/js/artist.js"></script>
   </body>
 </html>

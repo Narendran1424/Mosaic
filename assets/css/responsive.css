@@ -143,6 +143,13 @@
   .reset-overlay .reset-container {
     width: 55%;
   }
+  .logout-overlay .logout-container {
+    min-height: clamp(140px, 12.76vw, 12.76vw);
+  }
+  .logout-overlay .logout-container .logout-close-btn {
+    top: 15px;
+    right: 15px;
+  }
   .plan-overlay .plan-header {
     line-height: 1.3;
   }

@@ -1257,11 +1257,11 @@ footer .copyright-container div a:hover {
   display: flex;
   gap: clamp(17px, 2.34vw, 2.34vw);
 }
-.artist-section .artist-header-container .btn-container button {
+.artist-section .artist-header-container .btn-container a, .artist-section .artist-header-container .btn-container button {
   background-color: transparent;
   border: none;
 }
-.artist-section .artist-header-container .btn-container button img {
+.artist-section .artist-header-container .btn-container a img, .artist-section .artist-header-container .btn-container button img {
   width: clamp(17px, 1.61vw, 1.61vw);
 }
 .artist-section .artist-body-container {
@@ -1305,12 +1305,45 @@ footer .copyright-container div a:hover {
   color: rgba(0, 0, 0, 0.4);
   text-transform: uppercase;
   display: flex;
+  position: relative;
 }
 .artist-section .artist-body-container .left-wrapper .resume-wrapper .file-info .file-name {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+.artist-section .artist-body-container .left-wrapper .resume-wrapper .file-info .tooltip {
+  visibility: hidden;
+  width: fit-content;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+  padding: 10px;
+  position: absolute;
+  z-index: 2;
+  bottom: 23px;
+  left: 0;
+  font-size: 15px;
+  text-wrap: nowrap;
+  opacity: 1;
+}
+.artist-section .artist-body-container .left-wrapper .resume-wrapper .file-info .tooltip::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  bottom: -5px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid rgba(0, 0, 0, 0.8);
+}
+.artist-section .artist-body-container .left-wrapper .resume-wrapper .file-info.active .file-name {
   flex: 1;
+}
+.artist-section .artist-body-container .left-wrapper .resume-wrapper .file-info.active:hover .tooltip {
+  visibility: visible;
 }
 .artist-section .artist-body-container .content-wrapper {
   padding-right: clamp(10px, 0.93vw, 0.93vw);
@@ -1344,7 +1377,7 @@ footer .copyright-container div a:hover {
   margin-bottom: 0;
   text-transform: capitalize;
 }
-.artist-section .artist-body-container .content-wrapper .content-container .user-info P .artist {
+.artist-section .artist-body-container .content-wrapper .content-container .user-info P .user-role {
   padding-right: 10px;
 }
 .artist-section .artist-body-container .content-wrapper .content-container .user-info P .city {
@@ -1355,14 +1388,13 @@ footer .copyright-container div a:hover {
   padding: 10px clamp(15px, 1.75vw, 1.75vw);
   border-radius: 50px;
   margin-bottom: 5px;
-  background-color: #fff;
-  color: rgba(0, 0, 0, 0.8);
+  background-color: black;
+  color: #fff;
   border: 2px solid rgba(0, 0, 0, 0.5019607843);
 }
 .artist-section .artist-body-container .content-wrapper .content-container .user-info .connect-btn:hover {
-  background-color: black;
-  border: 2px solid transparent;
-  color: #fff;
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.8);
 }
 .artist-section .artist-body-container .content-wrapper .content-container .bio-wrapper {
   padding-bottom: clamp(16px, 1.4065vw, 1.4065vw);
@@ -1760,11 +1792,19 @@ footer .copyright-container div a:hover {
 .featured-section .content-wrapper .artist-card-container .artist-card .img-wrapper {
   display: block;
   height: clamp(160px, 14.59vw, 14.59vw);
+  overflow: hidden;
 }
 .featured-section .content-wrapper .artist-card-container .artist-card .img-wrapper img {
   object-fit: cover;
   width: 100%;
   height: 100%;
+  transition: transform 0.6s ease-in;
+}
+.featured-section .content-wrapper .artist-card-container .artist-card .img-wrapper:hover {
+  cursor: pointer;
+}
+.featured-section .content-wrapper .artist-card-container .artist-card .img-wrapper:hover img {
+  transform: scale(1.12);
 }
 .featured-section .content-wrapper .artist-card-container .artist-card .name {
   font-size: clamp(15px, 1.15vw, 1.15vw);

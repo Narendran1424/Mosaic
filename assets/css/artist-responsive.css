@@ -143,6 +143,13 @@
   .reset-overlay .reset-container {
     width: 55%;
   }
+  .logout-overlay .logout-container {
+    min-height: clamp(140px, 12.76vw, 12.76vw);
+  }
+  .logout-overlay .logout-container .logout-close-btn {
+    top: 15px;
+    right: 15px;
+  }
   .plan-overlay .plan-header {
     line-height: 1.3;
   }
@@ -441,6 +448,12 @@
     width: 15px;
   }
 }
+@media screen and (max-width: 1600px) {
+  .artist-section .artist-card-wrapper .pagination button.page {
+    width: 26px;
+    height: 26px;
+  }
+}
 @media screen and (max-width: 1400px) {
   .artist-section .left-wrapper .hover-wrapper .artist-profile .artist-details {
     gap: clamp(15px, 2.067vw, 2.067vw);
@@ -451,6 +464,10 @@
   .artist-section .left-wrapper .hover-wrapper .artist-profile .artist-details .detail-wrapper .detail-item .text {
     font-size: 13px;
     margin-top: 5px;
+  }
+  .artist-section .artist-card-wrapper .pagination button.page {
+    width: 22px;
+    height: 22px;
   }
 }
 @media screen and (max-width: 1200px) {
@@ -464,7 +481,7 @@
   .artist-section .left-wrapper .hover-wrapper .artist-profile .artist-details .detail-wrapper .detail-item .text {
     margin-top: 4px;
   }
-  .artist-section .artist-card-container {
+  .artist-section .artist-card-wrapper {
     width: 42%;
   }
 }
@@ -484,14 +501,14 @@
     padding: 3px clamp(12px, 1.15vw, 1.15vw);
     font-size: 13px;
   }
-  .artist-section .artist-card-container .artist-card .img-wrapper {
+  .artist-section .artist-card-wrapper {
+    width: 46%;
+  }
+  .artist-section .artist-card-wrapper .artist-card-container .artist-card .img-wrapper {
     height: clamp(135px, 14.59vw, 14.59vw);
   }
-  .artist-section .artist-card-container .artist-card p {
+  .artist-section .artist-card-wrapper .artist-card-container .artist-card p {
     font-size: 12px;
-  }
-  .artist-section .artist-card-container {
-    width: 46%;
   }
 }
 @media screen and (max-width: 768px) {
@@ -549,14 +566,17 @@
     font-size: 13px;
     margin-top: 5px;
   }
-  .artist-section .artist-card-container {
+  .artist-section .artist-card-wrapper {
     width: 100%;
   }
-  .artist-section .artist-card-container .artist-card .img-wrapper {
+  .artist-section .artist-card-wrapper .artist-card-container .artist-card .img-wrapper {
     height: clamp(140px, 30.73vw, 30.73vw);
   }
-  .artist-section .artist-card-container .artist-card p {
+  .artist-section .artist-card-wrapper .artist-card-container .artist-card p {
     font-size: 12px;
+  }
+  .artist-section .artist-card-wrapper .pagination {
+    justify-content: center;
   }
 }
 @media screen and (max-width: 600px) {
@@ -585,13 +605,13 @@
     flex-wrap: wrap;
     gap: clamp(15px, 3.6vw, 3.6vw);
   }
-  .artist-section .artist-card-container {
-    width: 100%;
+  .artist-section .artist-card-wrapper .pagination {
+    padding: 30px 0 10px;
   }
-  .artist-section .artist-card-container .artist-card .img-wrapper {
+  .artist-section .artist-card-wrapper .pagination .artist-card-container .artist-card .img-wrapper {
     height: clamp(140px, 30.73vw, 30.73vw);
   }
-  .artist-section .artist-card-container .artist-card p {
+  .artist-section .artist-card-wrapper .pagination .artist-card-container .artist-card p {
     font-size: 12px;
   }
 }
@@ -619,13 +639,20 @@
     flex-wrap: wrap;
     gap: clamp(15px, 3.6vw, 3.6vw);
   }
-  .artist-section .artist-card-container {
+  .artist-section .artist-card-wrapper .pagination button.page {
+    width: 20px;
+    height: 20px;
+  }
+  .artist-section .artist-card-wrapper .pagination button.preve, .artist-section .artist-card-wrapper .pagination button.next {
+    padding: 5px;
+  }
+  .artist-section .artist-card-wrapper .artist-card-container {
     grid-template-columns: repeat(2, 1fr);
   }
-  .artist-section .artist-card-container .artist-card .img-wrapper {
+  .artist-section .artist-card-wrapper .artist-card-container .artist-card .img-wrapper {
     height: clamp(140px, 33.34vw, 33.34vw);
   }
-  .artist-section .artist-card-container .artist-card .img-wrapper img {
+  .artist-section .artist-card-wrapper .artist-card-container .artist-card .img-wrapper img {
     object-fit: fill;
   }
 }

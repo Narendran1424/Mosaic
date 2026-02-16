@@ -66,6 +66,18 @@
   .register-form-section .step-6 .form-wrapper .form-container .form-group .resume-wrapper .opt-text {
     font-size: 13px;
   }
+  .register-form-section .step-7 .form-container .form-group .video-preview-container .video-info .tooltip {
+    border-radius: 3px;
+    bottom: 20px;
+    font-size: 13px;
+  }
+  .register-form-section .step-7 .form-container .form-group .video-preview-container .video-info .tooltip:after {
+    left: 6px;
+    bottom: -4px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid black;
+  }
   .register-form-section .step-9 .form-wrapper .form-group label {
     font-size: 15px;
   }
@@ -185,6 +197,18 @@
   }
   .register-form-section .step-7 .form-container .form-group .input-wrapper .upload-group label .img-wrapper .add-img {
     width: 10px;
+  }
+  .register-form-section .step-7 .form-container .form-group .video-preview-container .video-info .tooltip {
+    border-radius: 3px;
+    bottom: 20px;
+    font-size: 13px;
+  }
+  .register-form-section .step-7 .form-container .form-group .video-preview-container .video-info .tooltip:after {
+    left: 6px;
+    bottom: -4px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid black;
   }
   .register-form-section .step-9 .form-wrapper .form-group label {
     font-size: 14px;

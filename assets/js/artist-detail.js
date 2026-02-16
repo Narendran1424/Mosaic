@@ -5,11 +5,14 @@ const city=artistSection.querySelector(".city");
 const age=userName.querySelector(".age")
 const bioText=artistSection.querySelector(".bio-text"); 
 const genreContainer=artistSection.querySelector(".genre-container");
+const artistImg=artistSection.querySelector(".artist-img");
 const fileInfo=document.querySelector(".resume-wrapper .file-info");
+const fileTooltip=fileInfo.querySelector(".tooltip");
 
 const worksContainer=document.querySelector(".works-container");
 
 const contactText=document.querySelector(".contact-text");
+const contactImg=document.querySelector(".contact-img")
 const timeImg=document.querySelector(".time-img");
 const timeText=document.querySelector(".time-text");
 const goalText=document.querySelector(".goal-text");
@@ -25,50 +28,111 @@ const rangeInputs=perSonalitySection.querySelectorAll("input[type='range']");
 
 const featuredSection=document.querySelector(".featured-section");
 const seeMore=featuredSection.querySelector(".see-more-link");
-const artistCards=featuredSection.querySelectorAll(".artist-card-container .artist-card");
+const artistCardContainer=featuredSection.querySelector(".artist-card-container")
+
 const contentWrapper=featuredSection.querySelector(".content-wrapper");
 
-//check, if user logged
-const loggeduser=JSON.parse(sessionStorage.getItem("loggedUser"));
+const shareBtn=document.querySelector(".share-btn");
 
-if(loggeduser){
-  const loggedMail=loggeduser.email;
-  const users=JSON.parse(sessionStorage.getItem("registeredUsers"));
-  const user=users.find(user=>user.email == loggedMail)
-  displayLoggedData(user)
+//check, if user logged
+const artists=JSON.parse(sessionStorage.getItem("artists"));
+let artistId=JSON.parse(sessionStorage.getItem("selectedId"));
+
+
+function renderArtists() {
+  if (!artists) return;
+  artistCardContainer.innerHTML="";
+  artistCardContainer.innerHTML = artists.map((artist, index) => `
+    <div class="artist-card ${index >= 5 ? "hidden" : ""}" 
+         data-id="${artist.id}">
+         
+      <div class="img-wrapper">
+        <img 
+          src="./assets/images/artist/artistimg${((artist.id - 1) % 20) + 1}.webp" 
+          alt="artistimg${((artist.id - 1) % 20) + 1}"
+        />
+      </div>
+
+      <h3 class="name">${artist.name}</h3>
+      <p class="role">${artist.role}</p>
+
+    </div>
+  `).join("");
+  
 }
 
-function displayLoggedData(data){
+renderArtists();
+
+const artistCards=artistCardContainer.querySelectorAll(".artist-card");
+
+toggleArtists(artistCards);
+
+//function for see more button
+function toggleArtists(artistCards) {
+  seeMore.addEventListener("click", (e) => {
+    e.preventDefault();
+    const expanded = seeMore.classList.toggle("active");
+
+    artistCards.forEach((card, i) => {
+      card.classList.toggle("hidden", !expanded && i > 4);
+    });
+    if(window.innerWidth>1024){
+      contentWrapper.classList.toggle("not-active");
+    }
+    
+    seeMore.innerHTML = expanded
+      ? `See Less <img src="./assets/images/arrow.webp" alt="arrow">`
+      : `See More <img src="./assets/images/arrow.webp" alt="arrow">`;
+  }); 
+}
+
+artistCards.forEach(card=>{
+  card.addEventListener("click",()=>{
+    sessionStorage.setItem("selectedId",card.dataset.id)
+    window.location.href="./artist-detail.html";
+  })
+})
+
+
+function handleLayout() {
+  if (seeMore.classList.contains("active") && window.innerWidth > 1024) {
+    contentWrapper.classList.add("not-active");
+  } else {
+    contentWrapper.classList.remove("not-active");
+  }
+}
+
+window.addEventListener("resize",()=>{
+  handleLayout();
+  checkEllipsis();
+});
+
+handleLayout();
+
+if(artistId){
+  const artist=artists.find(artist=>artist.id == artistId)
+  displaySelected(artist)
+}
+
+function displaySelected(data){
   displayArtistData(data);
   displayWorkStyleData(data);
   displayPortfolioData(data);
   displayPersonality(data);
-  console.log(data)
-}
 
-function padZero(num){
-  if(num > 9){
-    return num;
-  }
-  else{
-    return "0"+num;
-  }
 }
 
 
 function  displayArtistData(data){
-  const userDetail=data.personalDetails;
-  const profileData=data.profile;
 
-  breadCrumbText.textContent=userDetail.username;
-  city.textContent=userDetail.place;
+  breadCrumbText.textContent=data.name;
+  userName.innerHTML=`${data.name} <span>(Female <span class="age">${data.age}</span>)</span>`;
 
-  const birthDate=userDetail["birth-date"];
-  const userAge=padZero(Number(new Date().getFullYear())-birthDate.split("-")[0]);
-  age.textContent=userAge;
-
-  userName.innerHTML=`${userDetail.username} <span>(Female <span class="age">${userAge}</span>)</span>`;
-  bioText.textContent=profileData.description;
+  artistImg.src=`./assets/images/artist/artistimg${((data.id - 1) % 20) + 1}.webp`;
+  artistImg.alt=`artistimg${((data.id - 1) % 20) + 1}`
+  city.textContent=data.city;
+  
+  bioText.textContent=data.description;
 
   const counts=artistSection.querySelectorAll(".user-stat .count");
   counts.forEach(count=>{
@@ -86,47 +150,58 @@ function  displayArtistData(data){
     genreContainer.innerHTML+=`<div class="genre text-capitalize">${genre}</div>`;
   })
 
-  fileInfo.innerHTML=`<span class="file-name">${profileData.resume.fileName}</span>(<span class="file-size">${profileData.resume.fileSize}</span>)`
+  
+  if(data.resume){
+    fileInfo.innerHTML=`<span class="file-name">${data.resume.fileName}</span>(<span class="file-size">${data.resume.fileSize}</span>)<span class="tooltip">${profileData.resume.fileName}</span>`;
+  }
+  
   const fileName=fileInfo.querySelector(".file-name");
-  requestAnimationFrame(() => {
     if (fileName.scrollWidth > fileName.clientWidth) {
-      fileName.title = fileName.textContent;
+      fileTooltip.textContent= fileName.textContent;
+      fileInfo.classList.add("active");
     } else {
-      fileName.removeAttribute("title");
+      fileInfo.classList.remove("active");
     }
-  });
+
 }
 
 
 function checkEllipsis(){
-  const fileName=document.querySelector(".file-name");
-    if (fileName.scrollWidth > fileName.clientWidth) {
-      fileName.title = fileName.textContent;   
-    } else {
-      fileName.removeAttribute("title");  
-    } 
+  const fileName=fileInfo.querySelector(".file-name");
+  
+  if (fileName.scrollWidth > fileName.clientWidth) {
+    fileInfo.classList.add("active")  
+  } else {
+    fileInfo.classList.remove("active");  
+  } 
 }
-
-window.addEventListener("resize", checkEllipsis);
 
 
 //display workstyle data
 function displayWorkStyleData(data){
-  const workStyle=data.workstyle;
-
-  if(workStyle.time=="night"){
-    timeImg.src=`./assets/images/${workStyle.time}.png`;
-    timeImg.alt=`${workStyle.time}`;
+  console.log(data.contact)
+  if(data.time=="night"){
+    console.log("true")
+    timeImg.src=`./assets/images/${data.time}.png`;
+    timeImg.alt=`${data.time}`;
   }
+
   else{
     timeImg.src="./assets/images/day.png";
     timeImg.alt=`day`;
   }
-
-  contactText.textContent=workStyle.contact;
-  timeText.textContent=workStyle.time;
-  goalText.textContent=workStyle.goal.join(', ');
-  placeText.textContent=workStyle.place;
+  if(data.contact=="phone"){
+    contactImg.classList.add("call-img");
+  }
+  else{
+    contactImg.classList.remove("call-img");
+  }
+  contactImg.src=`./assets/images/${data.contact=="mail"?"more":data.contact}.png`
+  contactImg.alt=`data.contact`;
+  contactText.textContent=data.contact;
+  timeText.textContent=data.time;
+  goalText.textContent=data.goal.join(', ');
+  placeText.textContent=data.work;
 
 }
 
@@ -138,7 +213,7 @@ function displayPortfolioData(data){
   const titles=["New York Concert", "LA Event", "London Vibes","Music on the Go", "Album 404","New Year Event"]
   const year=Number(new Date().getFullYear());
 
-  const length=data.portfolio.videos.length;
+  const length=data.videoCount;
 
   videoCount.textContent=`${length} ${length==1?"Video":"Videos"}`
   
@@ -157,13 +232,11 @@ function displayPortfolioData(data){
               <p class="date">${month} ${year-Math.floor(Math.random()*5)}</p>
             </div>`
   }
-
 }
-
 
 function displayPersonality(data){
   const personality=data.personality;
-  const rangeValues=data.pickout;
+  const rangeValues=data.pickOut;
   
   leftWrapper.innerHTML="";
   personality.forEach(per=>{
@@ -178,35 +251,26 @@ function displayPersonality(data){
   })
 }
 
-const visibleCount = 4;
 
-seeMore.addEventListener("click", (e) => {
-  
-  e.preventDefault();
 
-  const expanded = seeMore.classList.toggle("active");
 
-  artistCards.forEach((card, i) => {
-    card.classList.toggle("hidden", !expanded && i > visibleCount);
-  });
-  if(window.innerWidth>1024){
-    contentWrapper.classList.toggle("not-active");
-  }
-  
-  seeMore.innerHTML = expanded
-    ? `See Less <img src="./assets/images/arrow.webp" alt="arrow">`
-    : `See More <img src="./assets/images/arrow.webp" alt="arrow">`;
-});
 
-function handleLayout() {
-  if (seeMore.classList.contains("active") && window.innerWidth > 1024) {
-    contentWrapper.classList.add("not-active");
-  } else {
-    contentWrapper.classList.remove("not-active");
-  }
+
+
+if(navigator.share){
+  shareBtn.addEventListener('click',async()=>{
+    try{
+      await navigator.share({
+        title:'Mosaic',
+        text:breadCrumbText.textContent,
+        url:window.location.href,
+
+      })
+    }
+    catch(err){
+      console.log(err);
+    }
+  })
+
 }
 
-window.addEventListener("resize", handleLayout);
-handleLayout();
-window.addEventListener("resize", handleLayout);
-handleLayout(); 

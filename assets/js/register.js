@@ -1,3 +1,6 @@
+const loginBtn1=document.querySelector(".login-btn-1");
+const logoutBtn=document.querySelector(".logout-btn");
+const planOverlay=document.querySelector(".plan-overlay");
 
 const step1=document.querySelector(".step-1");
 const step2=document.querySelector(".step-2");
@@ -239,9 +242,9 @@ function createDatepicker(datePicker) {
     });
   });
 
-  document.addEventListener("click", () => {
-    yearDropdown.classList.remove("active");
-  });
+  // document.addEventListener("click", () => {
+  //   yearDropdown.classList.remove("active");
+  // });
 
   renderCalendar();
   setYearDropdownHeight(datePicker);
@@ -321,13 +324,16 @@ dateText.addEventListener("click", () => {
 
 
 document.addEventListener("click", (e) => {
-  document.querySelectorAll(".datepicker.active").forEach(dp => {
+  const dp=document.querySelector(".datepicker.active");
+    if (!dp) return;
     const trigger = dp._trigger;
 
     if (!trigger.contains(e.target) && !dp.contains(e.target)) {
       dp.classList.remove("active");
+      dp.querySelector(".year-dropdown").classList.remove("active");
+      dp.querySelector(".datepicker-calendar").classList.remove("not-active");
     }
-  });
+
 });
 
 //Validate detail form
@@ -337,7 +343,7 @@ const detailInputs=detailForm.querySelectorAll("input");
 function validateDetailForm(){
   let isValid = true;
   detailInputs.forEach((input) => {
-    const value = input.value.trim();
+    const value = input.value.trim().toLowerCase();
     const formGroup = input.closest(".form-group");
     const errorElement = formGroup.querySelector(".error");
     
@@ -614,13 +620,15 @@ function getdetailFormData() {
 
 //delete all the data from the form inputs
 function delFormData(){
-    detailForm.reset();
-    detailInputs.forEach(input=>{
-      const inputWrapper=input.closest(".input-wrapper");
-      inputWrapper.classList.remove("error");
-      input.value="";
-    })
-    createDatepicker(datepicker)
+  detailForm.reset();
+  detailInputs.forEach(input=>{
+    const inputWrapper=input.closest(".input-wrapper");
+    inputWrapper.classList.remove("error");
+    input.value="";
+  })
+  createDatepicker(datepicker)
+  selectedYear=Number(new Date().getFullYear())
+  datepicker.querySelector(".year-toggle").innerHTML=`${new Date().getFullYear()} <img class="down-arrow" src="./assets/images/down-arrow.png" alt="down arrow">`
   dateText.childNodes[0].textContent="yyyy-mm-dd";
 }
 //Form submit function
@@ -629,15 +637,17 @@ let verificationCode;
 continue1Btn.addEventListener('click',async()=>{
   if (validateDetailForm()) {
     userData  = getdetailFormData();
-    delFormData();
+    
     
     verificationCode=generateVerificationCode();
     const result = await sendVerificationEmail(userData.email, verificationCode);
+    continue1Btn.removeAttribute("disabled");
     const toast=step1.querySelector(".toast-container");
     if (result.success) {
       userMail.value=userData.email;
       step1.classList.remove("active");
       step2.classList.add("active");
+      delFormData();
     }
     else{
       showToast(
@@ -649,6 +659,7 @@ continue1Btn.addEventListener('click',async()=>{
    
   }
 })
+
 function showToast(toast, bgcolor, message) {
   const html=document.documentElement
   html.scrollTo({ top: 0, behavior: "smooth" });
@@ -664,6 +675,11 @@ function showToast(toast, bgcolor, message) {
   }, 3000);
 }
 
+back1Btn.addEventListener("click",()=>{
+  window.location.href="./index.html"
+  body.classList.add("not-active")
+  planOverlay.classList.add("active");
+})
 //To Save all user data 
 function saveCompleteUserData(userId, sectionName, sectionData) {
   const users = getRegisteredUsers();
@@ -707,10 +723,10 @@ function setRegisteredUsers(users) {
   sessionStorage.setItem("registeredUsers", JSON.stringify(users));
 }
 
-function isEmailRegistered(email) {
+function isEmailRegistered(emailVal) {
   const users = getRegisteredUsers();
   return users.some(
-    user => user.email.toLowerCase() === email.toLowerCase().trim()
+    user => user.email === emailVal
   );
 }
 
@@ -747,7 +763,7 @@ async function sendVerificationEmail(email, code) {
     to_email: email,
     code: code
   };
-  
+  continue1Btn.setAttribute("disabled","true");
   try {
     const response = await emailjs.send(
       EMAILJS_CONFIG.serviceId,
@@ -855,16 +871,8 @@ back2Btn.addEventListener('click',()=>{
   step2.classList.remove("active");
   step1.classList.add("active");
 })
+
 //Step 3 login
-const hexArr= [1,2,3,4,5,6,7,8,9,0,'a','b','c','d','e','f'];
-function generateToken(){
-  let token="";
-  for(let i=0; i<16; i++){
-    const rand=Math.floor(Math.random()*16)
-    token+=hexArr[rand];
-  }
-  return token;
-}
 
 const loginBtn=step3.querySelector(".login-btn");
 
@@ -877,7 +885,7 @@ loginBtn.addEventListener("click",()=>{
 
   const loggedUser={
     "email":user.email,
-    "loginToken":generateToken()
+    "password":user.personalDetails.password,
   }
   sessionStorage.setItem("loggedUser",JSON.stringify(loggedUser));
   step3.classList.remove("active");
@@ -913,6 +921,7 @@ artistInputs.forEach(inp=>{
         if(checkedArtist==key){
           const arr=artistChips[key];
           renderArtistChips(arr)
+          renderGenreChips();
         }
       }
     }
@@ -942,12 +951,13 @@ function getSelectedArtists(){
 
   artistChipContainer.querySelectorAll(".chip").forEach(chip => {
   chip.addEventListener("click", () => {
-    chip.classList.toggle("active");
+    artistChipContainer.querySelectorAll(".chip").forEach(chip => chip.classList.remove("active"));
+    chip.classList.add("active");
 
     selectedArtists.selected = [...artistChipContainer.querySelectorAll(".chip")]
-      .filter(c => c.classList.contains("active"))
-      .map(c => c.textContent);
-  });
+      .find(c => c.classList.contains("active"))?.textContent
+
+  })
   });
 }
 
@@ -975,19 +985,61 @@ back3Btn.addEventListener('click',()=>{
   
 })
 //Step 5 
-const genreChips=step5.querySelectorAll(".genre-chip-container .chip");
+const genreChipContainer=document.querySelector(".genre-chip-container")
+
+
+const genreChips = {
+  music: [
+  "Pop","Hiphop","EDM","World","Jazz","Folk",
+  "R & B","Blues","Country","Audio Engineer","Studio Musician","Musician","Classical","Rock" 
+],
+
+    dance: [
+    "Ballet Dancer","Contemporary","Hip Hop","Kathak",
+    "Bharatanatyam","Salsa","Jazz Dance","Folk Dance",
+    "Choreographer","Freestyle","Breakdance","Kuchipudi"
+  ],
+
+  film: [
+    "Actor","Director","Producer","Cinematographer",
+    "Screenwriter","Editor","Playback Singer",
+    "Stunt Artist","Art Director","Costume Designer",
+    "Film Composer","Assistant Director"
+  ]
+};
+
 let selectedGenres=[];
-genreChips.forEach(chip => {
-  chip.addEventListener("click", () => {
-    chip.classList.toggle("active");
 
-    selectedGenres = [...genreChips]
-      .filter(c => c.classList.contains("active"))
-      .map(c => c.textContent);
+function renderGenreChips(){
+  if(selectedArtists.artist){
+    let selected=selectedArtists.artist;
 
-    console.log(selectedGenres);
-  });
+    for(let key in genreChips){
+      if(key == selected){
+        genreChipContainer.innerHTML="";
+        const genres=genreChips[key];
+        genres.forEach(genre=>{
+          genreChipContainer.innerHTML+=`<div class="chip">${genre}</div>`
+        })
+      }
+    }
+  }
+
+}
+renderGenreChips();
+
+genreChipContainer.addEventListener("click", (e) => {
+  const chip = e.target.closest(".chip");
+  if (!chip) return;
+
+  chip.classList.toggle("active");
+
+  selectedGenres = [...genreChipContainer.querySelectorAll(".chip.active")]
+    .map(c => c.textContent);
+
+  console.log(selectedGenres);
 });
+
 
 continue4Btn.addEventListener("click",()=>{
   const error=step5.querySelector(".error");
@@ -996,7 +1048,7 @@ continue4Btn.addEventListener("click",()=>{
   }
   else if(selectedGenres.length>0){
   error.textContent=""
-  genreChips.forEach(chip=>chip.classList.remove("active"));
+  genreChipContainer.querySelectorAll(".chip").forEach(chip=>chip.classList.remove("active"));
 
   const userId = Number(sessionStorage.getItem("currentUserId"));
     saveCompleteUserData(userId, "genres", selectedGenres) ;
@@ -1226,8 +1278,7 @@ async function getProfileData(){
 
 continue5Btn.addEventListener('click',async()=>{
   if (validateProfileInputs()) {
-    console.log("success")
-    
+
     const profileData=await getProfileData();
     const userId = Number(sessionStorage.getItem("currentUserId"));
 
@@ -1371,6 +1422,7 @@ videoInput.addEventListener("change", () => {
       <div class="video-info">
         <span class="name">${file.name}</span>
         <span class="size">${(file.size / 1024 / 1024).toFixed(2)} MB</span>
+        <span class="tooltip">${file.name}</span>
       </div>
       <button class="remove-video-btn">Remove</button>
     `;
@@ -1718,28 +1770,37 @@ function validatePublishData(){
   return isValid;
 }
 
-function getPublishData(){
-  const data={};
-  
-  data.publish= [...publishCards]
-  .find(card => card.classList.contains("active"))?.dataset.item || null,
+function getPublishData() {
+  const data = [];
 
-  publishCards.forEach(card=>card.classList.toggle("active"));
+  const selected = [...publishCards]
+    .find(card => card.classList.contains("active"))?.dataset.item;
+
+  if (selected) {
+    data.push(selected);
+  }
 
   return data;
 }
+
 
 continue10Btn.addEventListener('click',()=>{
   if(validatePublishData()){
     const data=getPublishData();
 
-    const userId = Number(sessionStorage.getItem("currentUserId"));
+    const userId = Number(sessionStorage.getItem("selectedId"));
     
     saveCompleteUserData(userId, "publish", data);
-    sessionStorage.removeItem("currentUserId");
+    sessionStorage.removeItem("selectedId");
+    const users=getRegisteredUsers();
+    const loggedUser=JSON.parse(sessionStorage.getItem("loggedUser"));
+    const user=users.filter(user=>user.email==loggedUser.email);
+    addData(user)
+  
+    window.location.href="./artist.html"
     loginBtn1.classList.add("not-active");
     logoutBtn.classList.remove("not-active");
-    window.location.href="./artist-detail.html"
+
   }
 })
 
@@ -1747,3 +1808,37 @@ back10Btn.addEventListener('click',()=>{
   step11.classList.remove("active");
   step10.classList.add("active");
 })
+
+if(sessionStorage.getItem("selectedId")){
+  sessionStorage.removeItem("selectedId")
+}
+
+function addData(user){
+let artists=JSON.parse(sessionStorage.getItem("artists"));
+const data={};
+
+const birthYear=user.personalDetails["birth-date"].split("-")[0];
+const userAge=new Date().getFullYear() - birthYear;
+data.id=artists.length+1;
+data.name=user.personalDetails.username;
+data.category=user.artists.artist;
+data.role=user.artists.selected;
+data.videoCount=user.portfolio.videos.length;
+data.city=user.personalDetails.place;
+data.genres=user.genres;
+data.age=Number(userAge.toString().padStart(2,"0"));
+data.gender=Math.floor(Math.random()*2)==0?"Male":"Female",
+data.pickOut=user.pickout;
+data.contact=user.workstyle.contact;
+data.time=user.workstyle.time;
+data.goal=user.workstyle.goal;
+data.work=user.workstyle.place;
+data.description=user.profile.description;
+data.personality=user.personality
+data.resume=user.resume;
+
+artists.push(data)
+sessionStorage.setItem("artists",JSON.stringify(artists))
+
+}
+

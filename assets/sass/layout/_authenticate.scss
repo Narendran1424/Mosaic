@@ -344,9 +344,18 @@
                 font-size:clamp(11px, $fs-16px, $fs-16px);
                 margin-top: 4px;
             }
+            &.not-active{
+                display: none;
+            }
+            &.active{
+                display: block;
+            }
+            &.crt-password-wrapper{
+                margin-top: clamp(25px, $fs-50px, $fs-50px);
+            }
             
         }
-        .reset-btn{
+        button{
             text-align: center;
             font-size: clamp(14px, $fs-20px, $fs-20px);
             width: 100%;
@@ -362,6 +371,9 @@
                 color: $white-e6;
                 font-weight: 600;
             }
+            &.not-active{
+                display: none;
+            }   
         }
         .login-text{
             padding-top: clamp(15px, $fs-22px, $fs-22px);

@@ -312,71 +312,75 @@ body{
                             cursor: pointer;
                             outline: none;
                         }
-                        .datepicker-calendar
-                        .days {
-                            display: grid;
-                            grid-template-columns: repeat(7, 1fr);
-                            grid-row-gap: 15px;
-                            margin-top: 15px;
-                            margin-bottom: 20px;
-                        }
-                        .dates {
-                            display: grid;
-                            grid-template-columns: repeat(7, 1fr);
-                            grid-row-gap: $fs-14px;
-                        }
-                        .date {
-                            justify-self: center;
-                            border: none;
-                            margin: 0;
-                            padding: 0;
-                            width: clamp(18px, $fs-27px, $fs-27px);
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            background-color: transparent;
-                            border: 2px solid transparent;
-                            cursor: pointer;
-                            display: block;
-                            font-size: clamp(10px, $fs-16px, $fs-16px);
-                            font-weight: 500;
-                            &:focus {
-                                border: 2px solid $black-35;
-                                font-weight: 600;
+                        .datepicker-calendar{
+                            visibility: visible;
+                            .days {
+                                display: grid;
+                                grid-template-columns: repeat(7, 1fr);
+                                grid-row-gap: 15px;
+                                margin-top: 15px;
+                                margin-bottom: 20px;
                             }
-                            &.faded {
-                                color: $grey-a6;
+                            .dates {
+                                display: grid;
+                                grid-template-columns: repeat(7, 1fr);
+                                grid-row-gap: $fs-14px;
+                            }
+                            .date {
+                                justify-self: center;
+                                border: none;
+                                margin: 0;
+                                padding: 0;
+                                width: clamp(18px, $fs-27px, $fs-27px);
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                background-color: transparent;
+                                border: 2px solid transparent;
+                                cursor: pointer;
+                                display: block;
+                                font-size: clamp(10px, $fs-16px, $fs-16px);
+                                font-weight: 500;
                                 &:focus {
-                                    color: $grey-a6;
-                                    border: 2px solid transparent;
-                                    pointer-events: none;
-                                    font-weight: 500;
-                                    background-color: transparent;
+                                    border: 2px solid $black-35;
+                                    font-weight: 600;
                                 }
+                                &.faded {
+                                    color: $grey-a6;
+                                    &:focus {
+                                        color: $grey-a6;
+                                        border: 2px solid transparent;
+                                        pointer-events: none;
+                                        font-weight: 500;
+                                        background-color: transparent;
+                                    }
+                                }
+                                &.current-date {
+                                    border: 2px solid $black-0c;
+                                }
+                                &.current-day {
+                                    color: $white;
+                                    border: 2px solid $black-0c;
+                                    background-color: $blue-fd;
+                                }
+                                
                             }
-                            &.current-date {
-                                border: 2px solid $black-0c;
-                            }
-                            &.current-day {
-                                color: $white;
-                                border: 2px solid $black-0c;
-                                background-color: $blue-fd;
+                            .day {
+                                color: $grey-25;
+                                font-weight: 500;
+                                font-size: $fs-14px;
+                                justify-self: center;
                             }
                             
-                        }
-                        .day {
-                            color: $grey-25;
-                            font-weight: 500;
-                            font-size: $fs-14px;
-                            justify-self: center;
+                            &.not-active{
+                                visibility: hidden;
+                            }
                         }
                         &.active {
                             padding: clamp(8px, $fs-15px, 8px);
                             max-height: 411px;
                             overflow: visible;
-                        }
-                        &.not-active{
-                            visibility: hidden;
+                                
                         }
                     }
                 
@@ -489,7 +493,9 @@ body{
             // /
             
         }
-        
+        .action-btn-container .continue-btn:disabled{
+            opacity: 0.5;
+        }
     }
     .step-1.active{
         display: flex;
@@ -1080,7 +1086,39 @@ body{
                             text-wrap: nowrap;
                             font-size: clamp(11px, $fs-16px, $fs-16px);
                         }
-                       
+                        .tooltip{
+                            visibility: hidden;
+                            width: fit-content;
+                            background-color: $black;
+                            color: $white;
+                            text-align: center;
+                            border-radius: 4px;
+                            padding: 10px;
+                            position: absolute;
+                            z-index: 999;
+                            bottom: 23px;
+                            bottom: 0;
+                            font-size: 15px;
+                            text-wrap: nowrap;
+                            opacity: 1;
+
+                            &::after{
+                                content: "";
+                                position: absolute;
+                                left: 10px;
+                                bottom: -5px;
+                                width: 0;
+                                height: 0;
+                                border-left: 6px solid transparent;
+                                border-right: 6px solid transparent;
+                                border-top: 6px solid $black-0c;
+                            }
+                        }
+                        &:hover{
+                            .tooltip{
+                                visibility: visible;
+                            }
+                        }
                         
                     }
                     .remove-video-btn{

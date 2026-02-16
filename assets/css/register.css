@@ -377,6 +377,9 @@ body {
   cursor: pointer;
   outline: none;
 }
+.register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker .datepicker-calendar {
+  visibility: visible;
+}
 .register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker .datepicker-calendar .days {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
@@ -384,12 +387,12 @@ body {
   margin-top: 15px;
   margin-bottom: 20px;
 }
-.register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker .dates {
+.register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker .datepicker-calendar .dates {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-row-gap: 0.73vw;
 }
-.register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker .date {
+.register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker .datepicker-calendar .date {
   justify-self: center;
   border: none;
   margin: 0;
@@ -405,41 +408,41 @@ body {
   font-size: clamp(10px, 0.83vw, 0.83vw);
   font-weight: 500;
 }
-.register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker .date:focus {
+.register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker .datepicker-calendar .date:focus {
   border: 2px solid rgba(53, 53, 53, 0.8);
   font-weight: 600;
 }
-.register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker .date.faded {
+.register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker .datepicker-calendar .date.faded {
   color: #999fa6;
 }
-.register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker .date.faded:focus {
+.register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker .datepicker-calendar .date.faded:focus {
   color: #999fa6;
   border: 2px solid transparent;
   pointer-events: none;
   font-weight: 500;
   background-color: transparent;
 }
-.register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker .date.current-date {
+.register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker .datepicker-calendar .date.current-date {
   border: 2px solid rgba(0, 0, 0, 0.8);
 }
-.register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker .date.current-day {
+.register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker .datepicker-calendar .date.current-day {
   color: #fff;
   border: 2px solid rgba(0, 0, 0, 0.8);
   background-color: #008ffd;
 }
-.register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker .day {
+.register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker .datepicker-calendar .day {
   color: #1f1f25;
   font-weight: 500;
   font-size: 0.73vw;
   justify-self: center;
 }
+.register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker .datepicker-calendar.not-active {
+  visibility: hidden;
+}
 .register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker.active {
   padding: clamp(8px, 0.79vw, 8px);
   max-height: 411px;
   overflow: visible;
-}
-.register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker.not-active {
-  visibility: hidden;
 }
 .register-form-section .step-1 .form-container .form-group .input-wrapper .datepicker-top {
   margin-bottom: 20px;
@@ -534,6 +537,9 @@ body {
 }
 .register-form-section .step-1 .form-container .form-group .input-wrapper .date-btn-group button {
   display: block;
+}
+.register-form-section .step-1 .action-btn-container .continue-btn:disabled {
+  opacity: 0.5;
 }
 .register-form-section .step-1.active {
   display: flex;
@@ -1082,6 +1088,36 @@ body {
 .register-form-section .step-7 .form-container .form-group .video-preview-container .video-info .size {
   text-wrap: nowrap;
   font-size: clamp(11px, 0.83vw, 0.83vw);
+}
+.register-form-section .step-7 .form-container .form-group .video-preview-container .video-info .tooltip {
+  visibility: hidden;
+  width: fit-content;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 4px;
+  padding: 10px;
+  position: absolute;
+  z-index: 999;
+  bottom: 23px;
+  bottom: 0;
+  font-size: 15px;
+  text-wrap: nowrap;
+  opacity: 1;
+}
+.register-form-section .step-7 .form-container .form-group .video-preview-container .video-info .tooltip::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  bottom: -5px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid rgba(0, 0, 0, 0.8);
+}
+.register-form-section .step-7 .form-container .form-group .video-preview-container .video-info:hover .tooltip {
+  visibility: visible;
 }
 .register-form-section .step-7 .form-container .form-group .video-preview-container .remove-video-btn {
   font-size: clamp(14px, 0.89vw, 0.89vw);

@@ -3,40 +3,61 @@
 @use "../layout/authenticate-responsive" as *;
 
 @media screen and (max-width:1600px){
-    .artist-section .artist-body-container
-        .content-wrapper .content-container{
-        .user-info{
-             margin-bottom: clamp(20px, $fs-58px, $fs-58px);
-            h2{
-                margin-top: 0;
+    .artist-section .artist-body-container{
+        .left-wrapper .resume-wrapper .file-info .tooltip{
+            border-radius: 3px;
+            bottom: 20px;
+            font-size: 13px;
+            &::after{
+                left: 6px;
+                bottom: -4px;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-top: 5px solid $black;
             }
-                .connect-btn{
-                padding: 9px clamp(15px, $fs-34px, $fs-34px);
-            }
-        } 
-        
-        .genre-container .genre {
-            padding: 5px clamp(14px, $fs-31px, $fs-31px);
         }
-    }  
+        .content-wrapper .content-container{
+            .user-info{
+                margin-bottom: clamp(20px, $fs-58px, $fs-58px);
+                h2{
+                    margin-top: 0;
+                }
+                    .connect-btn{
+                    padding: 9px clamp(15px, $fs-34px, $fs-34px);
+                }
+            } 
+            
+            .genre-container .genre {
+                padding: 5px clamp(14px, $fs-31px, $fs-31px);
+            }
+        }  
+    }
+        
     
 
 }
 
 @media screen and (max-width:1400px){
-    .artist-section .artist-body-container 
-    .content-wrapper .content-container
-    .user-info{
-        .connect-btn{
-            padding: 8px clamp(18px, $fs-34px, $fs-34px);
+    .artist-section .artist-body-container {
+        .left-wrapper .resume-wrapper .file-info .tooltip{
+            border-radius: 3px;
+            bottom: 20px;
+            font-size: 12px;
+            padding: 8px 10px;
         }
-        p .city{
-            padding-left: 8px;
-        }
-        p .artist{
-            padding-right: 8px;
-        }
-    } 
+        .content-wrapper .content-container
+        .user-info{
+            .connect-btn{
+                padding: 8px clamp(18px, $fs-34px, $fs-34px);
+            }
+            p .city{
+                padding-left: 8px;
+            }
+            p .user-role{
+                padding-right: 8px;
+            }
+        } 
+    }
     .portfolio-section .portfolio-body-container
     .video-container {
         width: 46%;
@@ -452,7 +473,7 @@
                 margin-bottom: 0;
             }
             .btn-container{
-                button img{
+                a img,button img{
                     height: 17px;
                 }
             }

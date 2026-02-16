@@ -1,22 +1,34 @@
 @use "../abstracts/variables" as *;
 @use "../layout/authenticate-responsive" as *;
 
-@media screen and (max-width:1400px){
-    .artist-section .left-wrapper .hover-wrapper
-    .artist-profile{
-        .artist-details{
-            gap: clamp(15px, $fs-40px, $fs-40px);
-            .detail-wrapper{
-                gap: clamp(15px, $fs-40px, $fs-40px);
-                .detail-item
-                .text{
-                    font-size: 13px;
-                    margin-top: 5px;
-                } 
-            }  
-        }
-         
+@media screen and (max-width:1600px){
+    .artist-section .artist-card-wrapper .pagination button.page{
+        width: 26px;
+        height: 26px;
     } 
+}
+@media screen and (max-width:1400px){
+    .artist-section{ 
+        .left-wrapper .hover-wrapper
+        .artist-profile{
+            .artist-details{
+                gap: clamp(15px, $fs-40px, $fs-40px);
+                .detail-wrapper{
+                    gap: clamp(15px, $fs-40px, $fs-40px);
+                    .detail-item
+                    .text{
+                        font-size: 13px;
+                        margin-top: 5px;
+                    } 
+                }  
+            }
+        }
+        .artist-card-wrapper .pagination button.page{
+            width: 22px;
+            height: 22px;
+        }
+    } 
+
     
 }
 
@@ -39,7 +51,8 @@
             }
             
         } 
-        .artist-card-container{
+
+        .artist-card-wrapper{
             width: 42%;
         }
     }
@@ -74,16 +87,19 @@
                 }
             }
         }
-        .artist-card-container{
-            .artist-card{
-                .img-wrapper{
-                    height: clamp(135px, $fs-280px, $fs-280px);
-                }
-                p{
-                    font-size: 12px;
-                }
-            } 
+        .artist-card-wrapper{
             width: 46%;
+            .artist-card-container{
+                .artist-card{
+                    .img-wrapper{
+                        height: clamp(135px, $fs-280px, $fs-280px);
+                    }
+                    p{
+                        font-size: 12px;
+                    }
+                } 
+            
+            }
         }
     } 
 }
@@ -150,17 +166,23 @@
             }
           }
         }
-        .artist-card-container{
+        .artist-card-wrapper{
             width: 100%;
-            .artist-card{
-                .img-wrapper{
-                    height: clamp(140px, $fs-590px, $fs-590px);
-                }
-                p{
-                    font-size: 12px;
-                }
-            } 
-            
+            .artist-card-container{
+                
+                .artist-card{
+                    .img-wrapper{
+                        height: clamp(140px, $fs-590px, $fs-590px);
+                    }
+                    p{
+                        font-size: 12px;
+                    }
+                } 
+                
+            }
+            .pagination{
+                justify-content: center;
+            }
         }
     } 
 }
@@ -199,17 +221,20 @@
             }
           }
         }
-        .artist-card-container{
-            width: 100%;
-            .artist-card{
-                .img-wrapper{
-                    height: clamp(140px, $fs-590px, $fs-590px);
-                }
-                p{
-                    font-size: 12px;
-                }
-            } 
-            
+        .artist-card-wrapper .pagination{
+            padding: 30px 0 10px;
+        
+            .artist-card-container{
+                .artist-card{
+                    .img-wrapper{
+                        height: clamp(140px, $fs-590px, $fs-590px);
+                    }
+                    p{
+                        font-size: 12px;
+                    }
+                } 
+                
+            }
         }
     } 
 }
@@ -248,13 +273,24 @@
             }
           }
         }
-        .artist-card-container{
-            grid-template-columns: repeat(2,1fr);
-            .artist-card{
-                .img-wrapper{
-                    height: clamp(140px, $fs-640px, $fs-640px);
-                    img{
-                        object-fit: fill;
+        .artist-card-wrapper{
+            .pagination{ 
+                button.page{
+                    width: 20px;
+                    height: 20px;
+                }
+                button.preve, button.next{
+                    padding: 5px;
+                }
+            }
+            .artist-card-container{
+                grid-template-columns: repeat(2,1fr);
+                .artist-card{
+                    .img-wrapper{
+                        height: clamp(140px, $fs-640px, $fs-640px);
+                        img{
+                            object-fit: fill;
+                        }
                     }
                 }
             }

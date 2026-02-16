@@ -143,6 +143,13 @@
   .reset-overlay .reset-container {
     width: 55%;
   }
+  .logout-overlay .logout-container {
+    min-height: clamp(140px, 12.76vw, 12.76vw);
+  }
+  .logout-overlay .logout-container .logout-close-btn {
+    top: 15px;
+    right: 15px;
+  }
   .plan-overlay .plan-header {
     line-height: 1.3;
   }
@@ -442,6 +449,18 @@
   }
 }
 @media screen and (max-width: 1600px) {
+  .artist-section .artist-body-container .left-wrapper .resume-wrapper .file-info .tooltip {
+    border-radius: 3px;
+    bottom: 20px;
+    font-size: 13px;
+  }
+  .artist-section .artist-body-container .left-wrapper .resume-wrapper .file-info .tooltip::after {
+    left: 6px;
+    bottom: -4px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid black;
+  }
   .artist-section .artist-body-container .content-wrapper .content-container .user-info {
     margin-bottom: clamp(20px, 3.04vw, 3.04vw);
   }
@@ -456,6 +475,12 @@
   }
 }
 @media screen and (max-width: 1400px) {
+  .artist-section .artist-body-container .left-wrapper .resume-wrapper .file-info .tooltip {
+    border-radius: 3px;
+    bottom: 20px;
+    font-size: 12px;
+    padding: 8px 10px;
+  }
   .artist-section .artist-body-container .content-wrapper .content-container .user-info .connect-btn {
     padding: 8px clamp(18px, 1.75vw, 1.75vw);
   }

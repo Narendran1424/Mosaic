@@ -928,7 +928,16 @@ footer .copyright-container div a:hover {
   font-size: clamp(11px, 0.83vw, 0.83vw);
   margin-top: 4px;
 }
-.reset-overlay .reset-container .reset-btn {
+.reset-overlay .reset-container .input-wrapper.not-active {
+  display: none;
+}
+.reset-overlay .reset-container .input-wrapper.active {
+  display: block;
+}
+.reset-overlay .reset-container .input-wrapper.crt-password-wrapper {
+  margin-top: clamp(25px, 2.61vw, 2.61vw);
+}
+.reset-overlay .reset-container button {
   text-align: center;
   font-size: clamp(14px, 1.05vw, 1.05vw);
   width: 100%;
@@ -940,10 +949,13 @@ footer .copyright-container div a:hover {
   color: rgba(0, 0, 0, 0.9490196078);
   margin-top: clamp(20px, 2.61vw, 2.61vw);
 }
-.reset-overlay .reset-container .reset-btn:hover {
+.reset-overlay .reset-container button:hover {
   background-color: black;
   color: rgba(255, 255, 255, 0.902);
   font-weight: 600;
+}
+.reset-overlay .reset-container button.not-active {
+  display: none;
 }
 .reset-overlay .reset-container .login-text {
   padding-top: clamp(15px, 1.15vw, 1.15vw);

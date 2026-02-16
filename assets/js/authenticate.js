@@ -1,7 +1,7 @@
 const body=document.body;
 
 const loginBtn1=document.querySelector(".login-btn-1");
-const logoutBtn=document.querySelector(".logout-btn")
+const logoutBtn=document.querySelector(".logout-btn");
 
 const loginOverLay=document.querySelector(".login-overlay");
 const loginContainer=document.querySelector(".login-container");
@@ -113,7 +113,7 @@ function ValidateLoginForm(){
         success=false;
     }
         
-    if(!validatePassword(passwordVal)){
+    if(!validatePassword(passwordVal,loginPassword)){
         success=false;
     }
     return success;
@@ -143,38 +143,28 @@ function validateloginMail(mailVal){
 }
 
 loginPassword.addEventListener('input',()=>{
-    if(!validatePassword(loginPassword.value)){
-    }
+    validatePassword(loginPassword.value,loginPassword)
 })
 
-const hexArr= [1,2,3,4,5,6,7,8,9,0,'a','b','c','d','e','f'];
-function generateToken(){
-    let token="";
-    for(let i=0; i<16; i++){
-        const rand=Math.floor(Math.random()*16)
-        token+=hexArr[rand];
-    }
-    return token;
-}
 
-function validatePassword(passwordVal){
+function validatePassword(passwordVal,input){
     if (passwordVal === "") {
-        setError(loginPassword,"please enter the password");
+        setError(input,"please enter the password");
         return false;
     } else if (passwordVal.length < 8) {
-        setError(loginPassword,"Min 8 characters required");
+        setError(input,"Min 8 characters required");
         return false;
     } else if (!/[A-Z]/.test(passwordVal)) {
-        setError(loginPassword,"Need atleast one uppercase letter");
+        setError(input,"Need atleast one uppercase letter");
         return false;
     } else if (!/[0-9]/.test(passwordVal)) {
-        setError(loginPassword,"Password must contain atleast one number");
+        setError(input,"Password must contain atleast one number");
         return false;
     } else if (!/[!@#$%^&*(),.?":{}|<>]/.test(passwordVal)) {
-        setError(loginPassword,"Need  atleast one special character");
+        setError(input,"Need  atleast one special character");
         return false;
     } else {
-        setSuccess(loginPassword)
+        setSuccess(input)
         return true;
     }
 }
@@ -232,7 +222,7 @@ function validateLoginData(){
     else{
         const loggedUser={
             "email":mailVal,
-            "loginToken":generateToken()
+            "password":matchedUser.personalDetails.password,
         }
         sessionStorage.setItem("loggedUser",JSON.stringify(loggedUser));
         loginForm.reset();
@@ -261,6 +251,7 @@ forgotLink.addEventListener("click",()=>{
 })
 const resetMail=resetOverlay.querySelector(".reset-email");
 const resetBtn=resetOverlay.querySelector(".reset-btn");
+const updatePasswordBtn=resetOverlay.querySelector(".update-password-btn");
 
 function validateResetMail(mailVal){
     if (mailVal === "") {
@@ -277,23 +268,107 @@ function validateResetMail(mailVal){
     }
     
 }
+const mailWrapper=resetOverlay.querySelector(".email-wrapper");
+const passwordWrappers=resetOverlay.querySelectorAll(".password-wrapper");
+const resetPassword=resetOverlay.querySelector(".reset-password");
+const crtPassword=resetOverlay.querySelector(".confirm-password");
+let loggedData;
+let matchedUser;
 
 resetMail.addEventListener('input',()=>{
     validateResetMail(resetMail.value)
 })
+resetPassword.addEventListener("input", () => {
+    validatePassword(resetPassword.value, resetPassword);
+
+    if (crtPassword.value !== "") {
+        checkPasswordMatch();
+    }
+});
+
+crtPassword.addEventListener("input", () => {
+    validatePassword(crtPassword.value, crtPassword);
+    checkPasswordMatch();
+});
+
+function checkPasswordMatch(){
+    if(crtPassword.value === "") return;
+
+    if(resetPassword.value !== crtPassword.value){
+        setError(crtPassword,"Passwords do not match");
+        return false;
+    } else {
+        setSuccess(crtPassword);
+        return true;
+    }
+}
+
+
 resetBtn.addEventListener('click',()=>{
     if(validateResetMail(resetMail.value)){ 
-        showAuthenticateToast(".reset-toast-container","success","Reset link sent to your email!");
-        setTimeout(()=>{
-            resetMail.value="";
-            
-            resetOverlay.classList.remove("active");
-            body.classList.remove("not-active");
-        },2000)
+        const mailVal=resetMail.value;
+        loggedData=JSON.parse(sessionStorage.getItem("registeredUsers")) || [];
+        matchedUser = loggedData.find(user => user.email === mailVal)
+        if (!matchedUser) {
+            showAuthenticateToast(".reset-toast-container","error","Account not found. Please register first!");
+            return;
+        } 
+        else if(matchedUser){
+            mailWrapper.classList.add("not-active");
+            mailWrapper.classList.remove("active");
+            passwordWrappers.forEach(wrapper=>{
+                wrapper.classList.remove("not-active");
+                wrapper.classList.add("active");
+            })
+            resetBtn.classList.add("not-active");
+            updatePasswordBtn.classList.remove("not-active");
+        }  
     }
-    
-    
 })
+
+function resetPasswordHandler(){
+    const newPass = resetPassword.value;
+    const confirmPass = crtPassword.value;
+
+    const valid1 = validatePassword(newPass, resetPassword);
+    const valid2 = validatePassword(confirmPass, crtPassword);
+
+    if(!valid1 || !valid2) return;
+
+    if(!checkPasswordMatch()) return;
+
+    matchedUser.personalDetails.password = newPass;
+
+    sessionStorage.setItem("registeredUsers", JSON.stringify(loggedData));
+
+    showAuthenticateToast(
+        ".reset-toast-container","success","Password reset successful!"
+    );
+    resetUI()
+}
+function resetUI(){
+
+    resetMail.value = "";
+    resetPassword.value = "";
+    crtPassword.value = "";
+
+    passwordWrappers.forEach(wrapper=>{
+        wrapper.classList.add("not-active");
+        wrapper.classList.remove("active");
+    });
+
+    mailWrapper.classList.remove("not-active");
+    mailWrapper.classList.add("active");
+
+    updatePasswordBtn.classList.add("not-active");
+    resetBtn.classList.remove("not-active");
+    resetOverlay.classList.remove('active');
+    body.classList.remove("not-active");
+
+}
+
+
+updatePasswordBtn.addEventListener("click", resetPasswordHandler);
 
 resetOverlay.addEventListener('click',(e)=>{
     if(!e.target.closest(".reset-container")){
@@ -374,7 +449,7 @@ logoutOverlay.addEventListener("click", (e) => {
 });
 
 
-console.log(logoutBtn)
+
 function displayAuthenticationBtns(){
     if(JSON.parse(sessionStorage.getItem("loggedUser"))){
         logoutBtn.classList.remove("not-active");

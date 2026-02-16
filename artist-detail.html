@@ -36,7 +36,7 @@
         <nav>
           <ul>
             <li><a href="./artist.html" class="nav-link active">Artists</a></li>
-            <li><a href="#" class="nav-link">Projects</a></li>
+            <li><a href="./projects.html" class="nav-link">Projects</a></li>
           </ul>
         </nav>
         <button type="button" class="login-btn-1 login-btn auth-btn">Login</button>
@@ -62,10 +62,10 @@
             </ol>
           </nav>
           <div class="btn-container">
-            <button type="button">
+            <a href="./assets/files/Narendran Resume.pdf" download>
               <img src="./assets/images/download.png" alt="download" />
-            </button>
-            <button type="button">
+            </a>
+            <button type="button" class="share-btn">
               <img src="./assets/images/share.png" alt="share" />
             </button>
           </div>
@@ -81,7 +81,7 @@
               <img src="./assets/images/pdf.png" alt="pdf" />
               <div>
                 <p class="resume-text">Resume</p>
-                <p class="file-info"><span class="file-name">DOC.856.PDF</span><span>(500KB)</span></p>
+                <p class="file-info"><span class="file-name">DOC.856.PDF</span><span class="file-size">(500KB)</span><span class="tooltip">fghgfhfghghf</span></p>
               </div>
             </div>
           </div>
@@ -91,7 +91,7 @@
                 <div>
                   <h2 class="username">Caludia Grey <span>(Female <span class="age">21</span>)</span></h2>
                   <p>
-                    <span class="artist">Violinist</span> |
+                    <span class="user-role">Violinist</span> |
                     <span class="city">New York</span>
                   </p>
                 </div>
@@ -140,7 +140,7 @@
             <div class="img-wrapper">
               <img
                 src="./assets/images/workstyle1.png"
-                class="call-img"
+                class="call-img contact-img"
                 alt="workstyle1"
               />
             </div>
@@ -339,7 +339,7 @@
                 unfamiliar styles? ...</label
               >
               <div class="input-container">
-                <input type="range" name="experiment" id="experiment" readonly/>
+                <input type="range" name="experiment" id="experiment" disabled/>
                 <div class="content-container">
                   <p>Let's stick to a plan please</p>
                   <p class="center-text">Neutral</p>
@@ -353,7 +353,7 @@
                 a project done?</label
               >
               <div class="input-container">
-                <input type="range" name="focus" id="focus" readonly/>
+                <input type="range" name="focus" id="focus" disabled/>
                 <div class="content-container">
                   <p>
                     Strongly disagree (at the end of the day, deliverables
@@ -370,7 +370,7 @@
             <div class="form-group">
               <label for="introvert">Introvert or Extrovert</label>
               <div class="input-container introvert-container">
-                <input type="range" name="introvert" id="introvert" readonly/>
+                <input type="range" name="introvert" id="introvert" disabled/>
                 <div class="content-container">
                   <p>I need alone time</p>
                   <p class="center-text">Neutral</p>
@@ -383,7 +383,7 @@
                 >Better to generate a lot of ideas or focus on one?</label
               >
               <div class="input-container p-sm">
-                <input type="range" name="ideas" id="ideas" readonly/>
+                <input type="range" name="ideas" id="ideas" disabled/>
                 <div class="content-container">
                   <p>You must stick to one</p>
                   <p class="center-text">Neutral</p>
@@ -394,7 +394,7 @@
             <div class="form-group">
               <label for="simplicity">Simplicity or Complexity</label>
               <div class="input-container">
-                <input type="range" name="simplicity" id="simplicity" readonly/>
+                <input type="range" name="simplicity" id="simplicity" disabled/>
                 <div class="content-container simple-container">
                   <p>Everything must be planned and regulated</p>
                   <p class="center-text">Neutral</p>
@@ -431,8 +431,8 @@
                   alt="artistimg2"
                 />
               </div>
-              <h3 class="name">Rosaline</h3>
-              <p class="role">Guitarist</p>
+              <h3 class="name">caludia grey</h3>
+              <p class="role">Violinist</p>
             </div>
             <div class="artist-card">
               <div class="img-wrapper">
@@ -441,8 +441,8 @@
                   alt="artistimg3"
                 />
               </div>
-              <h3 class="name">Rosaline</h3>
-              <p class="role">Guitarist</p>
+              <h3 class="name">Rose Mary</h3>
+              <p class="role">Pianist</p>
             </div>
             <div class="artist-card">
               <div class="img-wrapper">
@@ -451,8 +451,8 @@
                   alt="artistimg4"
                 />
               </div>
-              <h3 class="name">Rosaline</h3>
-              <p class="role">Guitarist</p>
+              <h3 class="name">Robinson</h3>
+              <p class="role">Keyboardist</p>
             </div>
             <div class="artist-card">
               <div class="img-wrapper">
@@ -461,7 +461,7 @@
                   alt="artistimg5"
                 />
               </div>
-              <h3 class="name">Rosaline</h3>
+              <h3 class="name">Magdalene</h3>
               <p class="role">Guitarist</p>
             </div>
             <div class="artist-card hidden">
@@ -471,7 +471,7 @@
                   alt="artistimg6"
                 />
               </div>
-              <h3 class="name">Rosaline</h3>
+              <h3 class="name">Michael</h3>
               <p class="role">Guitarist</p>
 
             </div>
@@ -482,8 +482,8 @@
                   alt="artistimg7"
                 />
               </div>
-              <h3 class="name">Rosaline</h3>
-              <p class="role">Guitarist</p>
+              <h3 class="name">Richard</h3>
+              <p class="role">Singer</p>
 
             </div>
             <div class="artist-card hidden">
@@ -493,7 +493,7 @@
                   alt="artistimg8"
                 />
               </div>
-              <h3 class="name">Rosaline</h3>
+              <h3 class="name">Jane</h3>
               <p class="role">Guitarist</p>
 
             </div>
@@ -504,7 +504,7 @@
                   alt="artistimg9"
                 />
               </div>
-              <h3 class="name">Rosaline</h3>
+              <h3 class="name">Mark</h3>
               <p class="role">Guitarist</p>
 
             </div>
@@ -515,7 +515,7 @@
                   alt="artistimg10"
                 />
               </div>
-              <h3 class="name">Rosaline</h3>
+              <h3 class="name">Ann</h3>
               <p class="role">Guitarist</p>
 
             </div>
@@ -526,7 +526,7 @@
                   alt="artistimg11"
                 />
               </div>
-              <h3 class="name">Rosaline</h3>
+              <h3 class="name">Madleyn</h3>
               <p class="role">Guitarist</p>
 
             </div>
@@ -537,7 +537,7 @@
                   alt="artistimg12"
                 />
               </div>
-              <h3 class="name">Rosaline</h3>
+              <h3 class="name">Alex</h3>
               <p class="role">Guitarist</p>
 
             </div>
@@ -548,7 +548,7 @@
                   alt="artistimg13"
                 />
               </div>
-              <h3 class="name">Rosaline</h3>
+              <h3 class="name">Sam</h3>
               <p class="role">Guitarist</p>
 
             </div>
@@ -794,16 +794,29 @@
       <div class="reset-container">
         <img src="./assets/images/logo.webp" class="logo" alt="logo">
           <h2 class="reset-header">Reset Password</h2>
-          <div class="input-wrapper">
+          <div class="input-wrapper  email-wrapper active">
               <div class="form-group">
                 <input type="text" name="reset-email" class="reset-email" placeholder="Email Address">
               </div>
               <p class="error"></p>
           </div>
-          <button class="reset-btn">Send Reset Link</button>
+          <div class="input-wrapper password-wrapper not-active">
+              <div class="form-group">
+                <input type="text" name="reset-password" class="reset-password" placeholder="New Password">
+              </div>
+              <p class="error"></p>
+          </div>
+          <div class="input-wrapper password-wrapper crt-password-wrapper not-active">
+              <div class="form-group">
+                <input type="text" name="confirm-password" class="confirm-password" placeholder="Confirm Password">
+              </div>
+              <p class="error"></p>
+          </div>
 
+          <button  type="button" class="reset-btn">Verify Email</button>
+          <button type="button" class="update-password-btn not-active">Update Password</button>
         
-            <p class="login-text">Back to <a href="#" class="login-btn">Login</a> / <a href="#" class="register-btn">Register</a> </p>
+          <p class="login-text">Back to <a href="#" class="login-btn">Login</a> / <a href="#" class="register-btn">Register</a> </p>
         
           <div class="authenticate-toast-container reset-toast-container">
             <p>Signup Successful!</p>
