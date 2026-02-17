@@ -69,13 +69,11 @@
               transition: transform 0.3s ease;
               justify-self: flex-end;
               margin-left: auto;
-            }
-           
-            &:hover,&.active {
-              img.down-arrow {
+               &.active {
                 transform: rotate(180deg);
               }
             }
+            
           }
           .sub-menu {
             list-style: none;
@@ -87,6 +85,8 @@
             width: fit-content;
             max-height: 0;
             transition:transform 0.3s ease, max-height 0.3s ease;
+            overflow-y: scroll;
+            scrollbar-width: none;
             .submenu-item {
               >div {
                 display: inline-flex;
@@ -107,7 +107,77 @@
                   }
                 }
               }
+              &.active {
+                .child-menu {
+                    visibility: visible;
+                    transform: translateY(0);
+                    max-height: 479px;
+                }
             }
+            }
+            .checkbox-wrapper{
+                padding-top: clamp(10px, $fs-20px, $fs-20px);
+                display: flex;
+                align-items: center;
+                gap: clamp(12px, $fs-18px, $fs-18px);
+                input[type="checkbox"]{
+                    appearance: none;        
+                    -webkit-appearance: none;
+                    width: clamp(15px, $fs-22px, $fs-22px);
+                    height: clamp(15px, $fs-22px, $fs-22px);
+                    border: 1px solid $black;
+                    border-radius: 4px;
+                    padding: 0;
+                    position: relative;
+
+                    &:checked {
+                        background-color: $black;
+                        border-color: $black;
+
+                        &::after {
+                            content: "✓";                
+                            color: #fff;
+                            font-size:clamp(12px, $fs-18px, $fs-18px);
+                            font-weight: 700;
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -45%) rotate(10deg);
+                            line-height: 1;
+                        }
+                        &+label{
+                            color: $black;
+                            font-weight: 400;
+                        }
+                    }
+
+                    
+                }
+                label{
+                    color: $grey;
+                    font-size: clamp(14px, $fs-24px, $fs-24px);
+                    font-weight: 300;
+                    cursor: pointer;
+                    text-transform: capitalize;
+                }   
+
+                &:last-of-type{
+                    margin-bottom: clamp(12px, $fs-23px, $fs-23px);
+                }
+            }
+            .skill{
+                color: $grey;
+                font-size: clamp(14px, $fs-24px, $fs-24px);
+                font-weight: 300;
+                cursor: pointer;
+                text-transform: capitalize;
+                padding-top: clamp(10px, $fs-20px, $fs-20px);
+                &:hover,&.active{
+                    color: $black;
+                    font-weight: 400;
+                }
+            }
+
             .child-menu {
               list-style: none;
               padding: 0;
@@ -121,12 +191,13 @@
               transform: translateY(-100%);
               max-height: 0;
               transition:transform 0.3s ease, max-height 0.3s ease;
+              overflow-y: auto;
+              scrollbar-width: none;
               li{
                 color: $grey;
                 font-size: clamp(14px, $fs-24px, $fs-24px);
                 font-weight: 300;
                 cursor: pointer;
-
                 text-transform: capitalize;
                 &:last-of-type{
                     margin-bottom: clamp(10px, $fs-18px, $fs-18px);
@@ -138,15 +209,9 @@
               }
               
             }
-            &:hover,&.active {
-                .child-menu {
-                    visibility: visible;
-                    transform: translateY(0);
-                    max-height: 479px;
-                }
-            }
+            
           }
-          &:hover,&.active {
+          &.active {
             .sub-menu {
                 opacity: 1;
               visibility: visible;

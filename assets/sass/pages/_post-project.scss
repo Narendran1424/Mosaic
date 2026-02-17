@@ -190,6 +190,11 @@
                         border-bottom: 1px solid $grey-e6;
                         padding-bottom: 10px;
                     }
+                     input:-webkit-autofill {
+                        -webkit-box-shadow: 0 0 0 1000px #fff inset ;
+                        -webkit-text-fill-color: $black-0c;
+                        transition: background-color 9999s ease-in-out 0s;
+                    }
                     input[type="file"]{
                         display: none;
                     }
@@ -225,21 +230,42 @@
                         display: flex;
                         align-items: center;
                         justify-content: center;
+                         &.active{
+                            border-radius: none;
+                            padding: 0;
+                            background-color: transparent;
+                            width: 100%;
+                            // width: clamp(120px, $fs-220px, $fs-220px);
+                            height: clamp(100px, $fs-311px, $fs-311px);
+                        }
                     }
                     .add-img{
                         width: clamp(12px, $fs-25px, $fs-25px);
                         filter: invert(1);
+                        &.active{
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            filter: invert(0);
+                        }
                     }
                     .flyer-label{
                         font-weight: 500;
                         color: $black;
                         font-size: clamp(18px, $fs-32px, $fs-32px);
                     }
+                    .flyer-text.not-active{
+                        display: none;
+                    }
 
                 }
                 .error{
                     position: absolute;
                     margin-bottom: 0;
+                    font-size: clamp(11px, $fs-14px, $fs-14px);
+                    color: $red-08;
+                    margin-bottom: 0;
+                    margin-top: 7px;
                 }
             }
             .post-project-btn{

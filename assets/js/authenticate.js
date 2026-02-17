@@ -423,6 +423,7 @@ confirmLogoutBtn.addEventListener('click',()=>{
         <p class="logout-msg success">You have been securely logged out. Thank you for using our service. See you soon!</p>`;
         loginBtn1.classList.remove("not-active");
         logoutBtn.classList.add("not-active");
+        // window.locat
     }
     else{
         logoutContentContainer.classList.add("not-active");
@@ -434,6 +435,7 @@ confirmLogoutBtn.addEventListener('click',()=>{
     }
     setTimeout(() => {
         closeLogout();
+        window.location.href="./index.html"
     }, 2000);
 })
 

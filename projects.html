@@ -59,125 +59,39 @@
             <div class="filter-dropdown">
               <ul class="main-menu">
                 <li class="menu-item">
-                  <div  class="text-uppercase"
-                    ><img src="./assets/images/music.webp" alt="music" /> Music
+                  <div  class="text-uppercase"> City
                     <img
                       src="./assets/images/downarrow.webp"
                       class="down-arrow"
                       alt="downarrow"
                   /></div>
-                  <ul class="sub-menu">
-                    <li class="submenu-item">
-                      <div
-                        >Categories
-                        <img
-                          src="./assets/images/downarrow.webp"
-                          class="down-arrow"
-                          alt="downarrow"
-                      /></div>
-                      <ul class="child-menu">
-                        <li>singer</li>
-                        <li>composer</li>
-                        <li>songwriter</li>
-                        <li>rapper</li>
-                        <li>vocalist</li>
-                        <li>instrumentalist</li>
-                        <li>producer</li>
-                        <li>audio engineer</li>
-                        <li>studio musician</li>
-                        <li>other</li>
-                      </ul>
-                    </li>
-                  </ul>
-                  <ul class="sub-menu">
-                    <li class="submenu-item">
-                      <div 
-                        >Genre
-                        <img
-                          src="./assets/images/downarrow.webp"
-                          class="down-arrow"
-                          alt="downarrow"
-                      /></div>
-                      <ul class="child-menu">
-                        <li>Pop</li>
-                        <li>hiphop</li>
-                        <li>EDM</li>
-                        <li>world</li>
-                        <li>folk</li>
-                        <li>R&B</li>
-                        <li>classical</li>
-                        <li>world</li>
-                        <li>rock</li>
-                        <li>other</li>
-                      </ul>
+                  <ul class="sub-menu city-menu">
+                      <div class="checkbox-wrapper">
+                        <input type="checkbox" name="texas" id="texas">
+                        <label for="texas">Texas</label>
+                      </div>
+                   
+                      <div class="checkbox-wrapper">
+                        <input type="checkbox" name="texas" id="texas">
+                        <label for="texas">Texas</label>
+                        
+                      </div>
                     </li>
                   </ul>
                 </li>
                 <li class="menu-item">
                   <div class="text-uppercase"
-                    ><img src="./assets/images/dance.webp" class="dance" alt="dance" /> Dance
+                    > Skills
                     <img
                       src="./assets/images/downarrow.webp"
                       class="down-arrow"
                       alt="downarrow"
                   /></div>
-                  <ul class="sub-menu">
-                    <li class="submenu-item">
-                      <div>Categories
-                        <img
-                          src="./assets/images/downarrow.webp"
-                          class="down-arrow"
-                          alt="downarrow"
-                        />
-                      </div>
-                      
-                    </li>
-                  </ul>
-                  <ul class="sub-menu">
-                    <li class="submenu-item">
-                      <div>Genre 
-                        <img
-                        src="./assets/images/downarrow.webp"
-                        class="down-arrow"
-                        alt="downarrow"
-                        />
-                      </div>
-                      
-                    </li>
+                  <ul class="sub-menu skill-menu">
+                    <li class="skill">Vocalist</li>
                   </ul>
                 </li>
 
-                <li class="menu-item">
-                  <div  class="text-uppercase"
-                    ><img src="./assets/images/flim.webp" class="flim" alt="flim"/> Film
-                    <img
-                      src="./assets/images/downarrow.webp"
-                      class="down-arrow"
-                      alt="downarrow"
-                  /></div>
-                  <ul class="sub-menu">
-                    <li class="submenu-item">
-                      <div 
-                        >Categories
-                        <img
-                          src="./assets/images/downarrow.webp"
-                          class="down-arrow"
-                          alt="downarrow"
-                      /></div>
-                    </li>
-                  </ul>
-                  <ul class="sub-menu">
-                    <li class="submenu-item">
-                      <div 
-                        >Genre
-                        <img
-                          src="./assets/images/downarrow.webp"
-                          class="down-arrow"
-                          alt="downarrow"
-                      /></div>
-                    </li>
-                  </ul>
-                </li>
               </ul>
             </div>
           </div>
@@ -190,7 +104,7 @@
                 type="text"
                 name="search"
                 id="search"
-                placeholder="Search..."
+                placeholder="Search..." class="search-input"
               />
             </div>
           </div>
@@ -205,6 +119,14 @@
                 alt="downarrow"
               />
             </div>
+            <div class="sort-dropdown">
+              <ul class="sort-dropdown-list">
+                <li class="sort-dropdown-list-item" data-sort="default">Default</li>
+                <li class="sort-dropdown-list-item" data-sort="ascending">A-Z</li>
+                <li class="sort-dropdown-list-item" data-sort="descending">Z-A</li>
+                
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -214,7 +136,6 @@
             <a href="./post-project.html" class="post-project-btn">Post A Project</a>
         </div>
         <div class="projects-card-container">
-          <div class="grid-column grid-column-1">
             <div class="project-card">
                 <div class="card-header">
                   <img src="./assets/images/projects/projectsimg1.webp" alt="projectsimg1">
@@ -227,7 +148,7 @@
                 </div>
             </div>
             <div class="project-card">
-                <div class="card-header">
+                <div class="card-header h-sm">
                   <img src="./assets/images/projects/projectsimg5.webp" alt="projectsimg5">
                 </div>
                 <h3 class="card-title">Looking for Producer For Hip Hop Track</h3>
@@ -238,7 +159,7 @@
                 </div>
             </div>
             <div class="project-card">
-                <div class="card-header">
+                <div class="card-header h-sm">
                   <img src="./assets/images/projects/projectsimg9.webp" alt="projectsimg9">
                 </div>
                 <h3 class="card-title">Looking for Producer For Hip Hop Track</h3>
@@ -248,10 +169,8 @@
                     <p class="location"><img src="./assets/images/location.webp" class="location" alt="location"> Austin</p>
                 </div>
             </div>
-          </div>
-          <div class="grid-column grid-column-2">
             <div class="project-card">
-                <div class="card-header h-sm">
+                <div class="card-header">
                   <img src="./assets/images/projects/projectsimg2.webp" alt="projectsimg2">
                 </div>
                 <h3 class="card-title">Hiring Music Producer for EDM Collaboration.</h3>
@@ -262,7 +181,7 @@
                 </div>
             </div>
             <div class="project-card">
-                <div class="card-header h-sm">
+                <div class="card-header">
                   <img src="./assets/images/projects/projectsimg6.webp" alt="projectsimg6">
                 </div>
                 <h3 class="card-title">Hiring Music Producer for EDM Collaboration.</h3>
@@ -294,10 +213,8 @@
                     <p class="location"><img src="./assets/images/location.webp" class="location" alt="location"> Austin</p>
                 </div>
             </div>
-          </div>
-          <div class="grid-column grid-column-3">
             <div class="project-card">
-                <div class="card-header h-sm">
+                <div class="card-header">
                   <img src="./assets/images/projects/projectsimg3.webp" alt="projectsimg3">
                 </div>
                 <h3 class="card-title">Auditioning Dancers for Music Video Choreography</h3>
@@ -308,7 +225,7 @@
                 </div>
             </div>
             <div class="project-card">
-                <div class="card-header h-sm">
+                <div class="card-header">
                   <img src="./assets/images/projects/projectsimg7.webp" alt="projectsimg7">
                 </div>
                 <h3 class="card-title">Auditioning Dancers for Music Video Choreography</h3>
@@ -340,8 +257,7 @@
                     <p class="location"><img src="./assets/images/location.webp" class="location" alt="location"> Austin</p>
                 </div>
             </div>
-          </div>
-          <div class="grid-column grid-column-4">
+
             <div class="project-card">
                 <div class="card-header">
                   <img src="./assets/images/projects/projectsimg4.webp" alt="projectsimg4">
@@ -354,7 +270,7 @@
                 </div>
             </div>
              <div class="project-card">
-                <div class="card-header">
+                <div class="card-header h-sm">
                   <img src="./assets/images/projects/projectsimg8.webp" alt="projectsimg8">
                 </div>
                 <h3 class="card-title">Indie Film Director Needed</h3>
@@ -365,7 +281,7 @@
                 </div>
             </div>
              <div class="project-card">
-                <div class="card-header">
+                <div class="card-header h-sm">
                   <img src="./assets/images/projects/projectsimg12.webp" alt="projectsimg12">
                 </div>
                 <h3 class="card-title">Indie Film Director Needed</h3>
@@ -375,8 +291,7 @@
                     <p class="location"><img src="./assets/images/location.webp" class="location" alt="location"> Austin</p>
                 </div>
             </div>
-          </div>
-    </div>
+        </div>
       </section>
     </main>
     <footer>

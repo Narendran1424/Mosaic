@@ -39,7 +39,7 @@
         gap: clamp(15px, $fs-28px, $fs-28px);
         align-self: flex-end;
         padding-right: clamp(10px, $fs-20px, $fs-20px);
-        button {
+        a,button {
           border: 2px solid transparent;
           border-radius: 50px;
           background-color: transparent;
@@ -47,7 +47,7 @@
           font-size: clamp(15px, $fs-22px, $fs-22px);
           padding: 5px clamp(15px, $fs-30px, $fs-30px);
         }
-        button:hover {
+        a:hover,button:hover {
           border: 2px solid $black;
           color: $black;
         }

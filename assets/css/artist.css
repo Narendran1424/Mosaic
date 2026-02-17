@@ -135,22 +135,8 @@ a {
   font-weight: 500;
   position: relative;
 }
-.landing-header .header-actions nav ul li .nav-link.active {
+.landing-header .header-actions nav ul li .nav-link.active, .landing-header .header-actions nav ul li .nav-link:hover {
   color: black;
-}
-.landing-header .header-actions nav ul li .nav-link::after {
-  content: "";
-  position: absolute;
-  display: block;
-  bottom: 0px;
-  width: 100%;
-  transform: scale(0);
-  height: 1px;
-  background-color: black;
-  transition: transform 0.3s ease;
-}
-.landing-header .header-actions nav ul li .nav-link:hover::after {
-  transform: scale(1);
 }
 .landing-header .header-actions .auth-btn {
   font-size: clamp(12px, 0.93vw, 0.93vw);
@@ -928,7 +914,16 @@ footer .copyright-container div a:hover {
   font-size: clamp(11px, 0.83vw, 0.83vw);
   margin-top: 4px;
 }
-.reset-overlay .reset-container .reset-btn {
+.reset-overlay .reset-container .input-wrapper.not-active {
+  display: none;
+}
+.reset-overlay .reset-container .input-wrapper.active {
+  display: block;
+}
+.reset-overlay .reset-container .input-wrapper.crt-password-wrapper {
+  margin-top: clamp(25px, 2.61vw, 2.61vw);
+}
+.reset-overlay .reset-container button {
   text-align: center;
   font-size: clamp(14px, 1.05vw, 1.05vw);
   width: 100%;
@@ -940,10 +935,13 @@ footer .copyright-container div a:hover {
   color: rgba(0, 0, 0, 0.9490196078);
   margin-top: clamp(20px, 2.61vw, 2.61vw);
 }
-.reset-overlay .reset-container .reset-btn:hover {
+.reset-overlay .reset-container button:hover {
   background-color: black;
   color: rgba(255, 255, 255, 0.902);
   font-weight: 600;
+}
+.reset-overlay .reset-container button.not-active {
+  display: none;
 }
 .reset-overlay .reset-container .login-text {
   padding-top: clamp(15px, 1.15vw, 1.15vw);
@@ -1309,7 +1307,7 @@ footer .copyright-container div a:hover {
   justify-self: flex-end;
   margin-left: auto;
 }
-.filter-section .filter-wrapper .filter-dropdown .main-menu .menu-item > div:hover img.down-arrow, .filter-section .filter-wrapper .filter-dropdown .main-menu .menu-item > div.active img.down-arrow {
+.filter-section .filter-wrapper .filter-dropdown .main-menu .menu-item > div img.down-arrow.active {
   transform: rotate(180deg);
 }
 .filter-section .filter-wrapper .filter-dropdown .main-menu .menu-item .sub-menu {
@@ -1322,6 +1320,8 @@ footer .copyright-container div a:hover {
   width: fit-content;
   max-height: 0;
   transition: transform 0.3s ease, max-height 0.3s ease;
+  overflow-y: scroll;
+  scrollbar-width: none;
 }
 .filter-section .filter-wrapper .filter-dropdown .main-menu .menu-item .sub-menu .submenu-item > div {
   display: inline-flex;
@@ -1340,6 +1340,68 @@ footer .copyright-container div a:hover {
 .filter-section .filter-wrapper .filter-dropdown .main-menu .menu-item .sub-menu .submenu-item > div:hover img.down-arrow, .filter-section .filter-wrapper .filter-dropdown .main-menu .menu-item .sub-menu .submenu-item > div.active img.down-arrow {
   transform: rotate(180deg);
 }
+.filter-section .filter-wrapper .filter-dropdown .main-menu .menu-item .sub-menu .submenu-item.active .child-menu {
+  visibility: visible;
+  transform: translateY(0);
+  max-height: 479px;
+}
+.filter-section .filter-wrapper .filter-dropdown .main-menu .menu-item .sub-menu .checkbox-wrapper {
+  padding-top: clamp(10px, 1.05vw, 1.05vw);
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 0.93vw, 0.93vw);
+}
+.filter-section .filter-wrapper .filter-dropdown .main-menu .menu-item .sub-menu .checkbox-wrapper input[type=checkbox] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: clamp(15px, 1.15vw, 1.15vw);
+  height: clamp(15px, 1.15vw, 1.15vw);
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 0;
+  position: relative;
+}
+.filter-section .filter-wrapper .filter-dropdown .main-menu .menu-item .sub-menu .checkbox-wrapper input[type=checkbox]:checked {
+  background-color: black;
+  border-color: black;
+}
+.filter-section .filter-wrapper .filter-dropdown .main-menu .menu-item .sub-menu .checkbox-wrapper input[type=checkbox]:checked::after {
+  content: "✓";
+  color: #fff;
+  font-size: clamp(12px, 0.93vw, 0.93vw);
+  font-weight: 700;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -45%) rotate(10deg);
+  line-height: 1;
+}
+.filter-section .filter-wrapper .filter-dropdown .main-menu .menu-item .sub-menu .checkbox-wrapper input[type=checkbox]:checked + label {
+  color: black;
+  font-weight: 400;
+}
+.filter-section .filter-wrapper .filter-dropdown .main-menu .menu-item .sub-menu .checkbox-wrapper label {
+  color: grey;
+  font-size: clamp(14px, 1.25vw, 1.25vw);
+  font-weight: 300;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+.filter-section .filter-wrapper .filter-dropdown .main-menu .menu-item .sub-menu .checkbox-wrapper:last-of-type {
+  margin-bottom: clamp(12px, 1.2vw, 1.2vw);
+}
+.filter-section .filter-wrapper .filter-dropdown .main-menu .menu-item .sub-menu .skill {
+  color: grey;
+  font-size: clamp(14px, 1.25vw, 1.25vw);
+  font-weight: 300;
+  cursor: pointer;
+  text-transform: capitalize;
+  padding-top: clamp(10px, 1.05vw, 1.05vw);
+}
+.filter-section .filter-wrapper .filter-dropdown .main-menu .menu-item .sub-menu .skill:hover, .filter-section .filter-wrapper .filter-dropdown .main-menu .menu-item .sub-menu .skill.active {
+  color: black;
+  font-weight: 400;
+}
 .filter-section .filter-wrapper .filter-dropdown .main-menu .menu-item .sub-menu .child-menu {
   list-style: none;
   padding: 0;
@@ -1353,6 +1415,8 @@ footer .copyright-container div a:hover {
   transform: translateY(-100%);
   max-height: 0;
   transition: transform 0.3s ease, max-height 0.3s ease;
+  overflow-y: auto;
+  scrollbar-width: none;
 }
 .filter-section .filter-wrapper .filter-dropdown .main-menu .menu-item .sub-menu .child-menu li {
   color: grey;
@@ -1368,12 +1432,7 @@ footer .copyright-container div a:hover {
   color: black;
   font-weight: 400;
 }
-.filter-section .filter-wrapper .filter-dropdown .main-menu .menu-item .sub-menu:hover .child-menu, .filter-section .filter-wrapper .filter-dropdown .main-menu .menu-item .sub-menu.active .child-menu {
-  visibility: visible;
-  transform: translateY(0);
-  max-height: 479px;
-}
-.filter-section .filter-wrapper .filter-dropdown .main-menu .menu-item:hover .sub-menu, .filter-section .filter-wrapper .filter-dropdown .main-menu .menu-item.active .sub-menu {
+.filter-section .filter-wrapper .filter-dropdown .main-menu .menu-item.active .sub-menu {
   opacity: 1;
   visibility: visible;
   max-height: 576px;
@@ -1681,7 +1740,7 @@ footer .copyright-container div a:hover {
   align-self: flex-end;
   padding-right: clamp(10px, 1.05vw, 1.05vw);
 }
-.artist-section .left-wrapper .content-container .artist-btn-container button {
+.artist-section .left-wrapper .content-container .artist-btn-container a, .artist-section .left-wrapper .content-container .artist-btn-container button {
   border: 2px solid transparent;
   border-radius: 50px;
   background-color: transparent;
@@ -1689,7 +1748,7 @@ footer .copyright-container div a:hover {
   font-size: clamp(15px, 1.15vw, 1.15vw);
   padding: 5px clamp(15px, 1.57vw, 1.57vw);
 }
-.artist-section .left-wrapper .content-container .artist-btn-container button:hover {
+.artist-section .left-wrapper .content-container .artist-btn-container a:hover, .artist-section .left-wrapper .content-container .artist-btn-container button:hover {
   border: 2px solid black;
   color: black;
 }

@@ -28,56 +28,29 @@ const genres=[
   ]
 ]
 
-/*Filter Bar */
-const filterBtn = document.querySelector(".filter-btn");
-const filterDropdown = document.querySelector(".filter-dropdown");
-const categoryList=document.querySelectorAll(".category-list");
-const genreList=document.querySelectorAll(".genre-list");
+const menuItems = document.querySelectorAll(".menu-item");
 
-categoryList.forEach((list,i)=>{
-  const catArr=categories[i];
-  list.innerHTML="";
-  catArr.forEach(cat=>{
-    list.innerHTML+=`<li class="child-menu-item filter-role">${cat}</li>`
-  })
-})
+menuItems.forEach((menuItem, index) => {
+  const categoryList = menuItem.querySelector(".category-list");
+  const genreList    = menuItem.querySelector(".genre-list");
 
-genreList.forEach((list,i)=>{
-  const genreArr=genres[i];
-  list.innerHTML="";
-  genreArr.forEach(genre=>{
-    list.innerHTML+=`<li class="child-menu-item filter-genre">${genre}</li>`
-  })
-})
+  categoryList.innerHTML = "";
+  categories[index].forEach(cat => {
+    const li = document.createElement("li");
+    li.classList.add("child-menu-item");
+    li.textContent = cat;
+    categoryList.appendChild(li);
+  });
 
-
-filterBtn.addEventListener("click", () => {
-  filterDropdown.classList.toggle("active");
-});
-const filterListItems=filterDropdown.querySelectorAll(".child-menu-item");
-filterListItems.forEach(item=>{
-   item.addEventListener("click",()=>{
-    item.classList.toggle("active");
-    applyFilters()
-   })
-})
-/*Sort Btn*/
-const sortBtn = document.querySelector(".sort-btn");
-const sortDropdown = document.querySelector(".sort-dropdown");
-const sortListItems=sortDropdown.querySelectorAll(".sort-dropdown-list-item");
-
-sortBtn.addEventListener("click", () => {
-  sortDropdown.classList.toggle("active");
+  genreList.innerHTML = "";
+  genres[index].forEach(genre => {
+    const li = document.createElement("li");
+    li.classList.add("child-menu-item");
+    li.textContent = genre;
+    genreList.appendChild(li);
+  });
 });
 
-
-sortListItems.forEach(item=>{
-  item.addEventListener("click",()=>{
-    sortListItems.forEach(item=>item.classList.remove("active"));
-    item.classList.add("active");
-    applyFilters();
-  })
-})
 
 /*Render data from json */
 const artists=JSON.parse(sessionStorage.getItem("artists"));
@@ -174,114 +147,175 @@ renderPagination();
 renderArtists();
 
 /*Filter functions */
-let filtered=filteredArtists;
-let selectedFilters=[]
-function applyFilters() {
-  selectedFilters = []; 
-  const searchInput = document.querySelector(".search-input");
 
-  searchInput.addEventListener("input", (e) => {
-    let searchTerm = e.target.value.toLowerCase().trim();
 
-    if (searchTerm) {
+let originalArtists = [...artists];
+let currentSort = "default";
+const filterBtn=document.querySelector(".filter-btn")
+const filterDropdown = document.querySelector(".filter-dropdown");
+const searchInput = document.querySelector(".search-input");
+const sortItems = document.querySelectorAll(".sort-dropdown-list-item");
 
-      filteredArtists = artists.filter(artist => {
+filterBtn.addEventListener("click",()=>{
+  filterDropdown.classList.toggle("active")
+})
 
-        const genres = artist.genres || [];
+//menu click
 
-        return (
-          artist.name.toLowerCase().includes(searchTerm) ||
-          artist.role.toLowerCase().includes(searchTerm) ||
-          artist.city.toLowerCase().includes(searchTerm) ||
-          genres.some(genre =>
-            genre.toLowerCase().includes(searchTerm)
-          )
-        );
+document.querySelectorAll(".menu-item").forEach(menu => {
 
-      });
+  const header = menu.querySelector(":scope > .filter-toggle");
 
-    } else {
-      filteredArtists = [...artists]; 
-    }
+  header.addEventListener("click", () => {
 
-    currentPage = 1;
-    renderPagination();
-    renderArtists();
+    document.querySelectorAll(".menu-item").forEach(m=>{
+      if(m!==menu){
+        m.classList.remove("active");
+
+        m.querySelectorAll(".child-menu-item")
+          .forEach(li=>li.classList.remove("active"));
+      }
+    });
+
+    menu.classList.toggle("active");
+    applyFilters();
   });
-  const listItems=filterDropdown.querySelectorAll(".child-menu-item");
-  let activeItems=[...listItems].filter(item=>item.classList.contains("active"))
 
-  activeItems.forEach(item => {
+  // open sub section
+  menu.querySelectorAll(".submenu-item").forEach(sub=>{
+    const subHead = sub.querySelector(".filter-label");
 
-  const value = item.textContent.trim();
+    subHead.addEventListener("click", e=>{
+      e.stopPropagation();
 
-  const type = item.classList.contains("filter-role")? "role": "genre";
+      sub.parentElement.querySelectorAll(".submenu-item")
+        .forEach(s=>{
+          if(s!==sub) s.classList.remove("active");
+        });
 
-  const mainType = item
-  .closest(".menu-item")
-  .querySelector(".filter-toggle")
-  .childNodes[2]  
-  .textContent
-  .trim();
-
-
-  const subCat=type=="role"?"role":"genres"
-  
-  
-  let obj={
-    "category":mainType,
-    "subcategory":subCat,
-    "value":value
-  }
-  
-  selectedFilters.push(obj);
-  console.log(selectedFilters)
+      sub.classList.toggle("active");
+    });
+  });
 
 });
 
-console.log(document.querySelector(".filter-toggle").childNodes[2].textContent)
-filterArtists()
-}
+//filter
+filterDropdown.addEventListener("click", e=>{
+
+  if(!e.target.classList.contains("child-menu-item")) return;
+
+  e.target.classList.toggle("active");
+  applyFilters();
+});
+
+//search
+searchInput.addEventListener("input", applyFilters);
+
+//sort
+sortBtn.addEventListener("click",()=>{
+  sortDropdown.classList.toggle('active');
+})
+
+sortItems.forEach(item=>{
+  item.addEventListener("click", ()=>{
+    sortItems.forEach(i=>i.classList.remove("active"));
+    item.classList.add("active");
+
+    currentSort = item.dataset.sort;
+    applySort();
+    renderArtists();
+  });
+});
 
 
-function filterArtists() {
+//filter
+function applyFilters(){
 
-  filteredArtists = artists.filter(artist => {
+  const activeMenu = document.querySelector(".menu-item.active");
 
-    const categoryFilters = selectedFilters.filter(f => f.category).map(f => f.category);
+  if(!activeMenu){
+    filteredArtists = [...originalArtists];
+    applySearch();
+    applySort();
+    renderArtists();
+    renderPagination();
+    return;
+  }
 
-    if (categoryFilters.length &&
-      !categoryFilters.includes(artist.category)) {
+  const mainCategory = activeMenu
+    .querySelector(".filter-toggle")
+    .childNodes[2].nodeValue.trim();
+
+  const roleFilters = [
+    ...activeMenu.querySelectorAll(".category-list .child-menu-item.active")
+  ].map(li=>li.textContent.trim());
+
+
+  const genreFilters = [
+    ...activeMenu.querySelectorAll(".genre-list .child-menu-item.active")
+  ].map(li=>li.textContent.trim());
+
+  filteredArtists = originalArtists.filter(artist=>{
+
+  
+    if(artist.category !== mainCategory) return false;
+
+
+    if(roleFilters.length && !roleFilters.includes(artist.role)){
       return false;
     }
 
-    const roleFilters = selectedFilters
-      .filter(f => f.subcategory === "role")
-      .map(f => f.value);
+  
+    if(genreFilters.length){
+      if(!artist.genres) return false;
 
-    if (roleFilters.length &&
-        !roleFilters.includes(artist.role)) {
-      return false;
-    }
+      const match = artist.genres.some(g =>
+        genreFilters.includes(g)
+      );
 
-    const genreFilters = selectedFilters
-      .filter(f => f.subcategory === "genres")
-      .map(f => f.value);
-
-    if (genreFilters.length &&
-        !artist.genres.some(g => genreFilters.includes(g))) {
-      return false;
+      if(!match) return false;
     }
 
     return true;
   });
 
+  applySearch();
+  applySort();
   renderArtists();
   renderPagination();
 }
 
-applyFilters()
+//search function
 
+function applySearch(){
+
+  const term = searchInput.value.toLowerCase().trim();
+  if(!term) return;
+
+  filteredArtists = filteredArtists.filter(a =>
+    a.name.toLowerCase().includes(term) ||
+    a.role.toLowerCase().includes(term) ||
+    a.city.toLowerCase().includes(term) ||
+    a.genres?.some(g => g.toLowerCase().includes(term))
+  );
+}
+
+//apply sort
+
+function applySort(){
+
+  if(currentSort==="ascending"){
+    filteredArtists.sort((a,b)=>
+      a.name.localeCompare(b.name)
+    );
+  }
+
+  if(currentSort==="descending"){
+    filteredArtists.sort((a,b)=>
+      b.name.localeCompare(a.name)
+    );
+  }
+}
 /*click event for cards */
 function selectCards(){
   const artistCards=document.querySelectorAll(".artist-card");

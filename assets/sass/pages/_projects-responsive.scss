@@ -7,7 +7,7 @@
             padding: 8px clamp(16px, $fs-36px, $fs-36px);
         }
         .projects-card-container 
-        .grid-column .project-card .card-footer p{
+        .project-card .card-footer p{
             img {
                 width: clamp(18px, $fs-24px, $fs-24px);
             }
@@ -25,7 +25,7 @@
             padding: 7px clamp(16px, $fs-36px, $fs-36px);
         }
         .projects-card-container 
-        .grid-column .project-card{
+        .project-card{
             .card-title{
                 font-size: clamp(16px, $fs-29px, $fs-29px);
             }
@@ -44,7 +44,7 @@
 
 @media screen and (max-width:1200px){
     .projects .projects-card-container 
-    .grid-column .project-card{
+    .project-card{
         .card-title{
             font-size: clamp(16px, $fs-29px, $fs-29px);
         }
@@ -80,12 +80,8 @@
             }
         }
         .projects-card-container{
-            display: block;
-            column-count: 3;
-            .grid-column{
-                    display: contents;
                  .project-card{
-                    break-inside: avoid;
+                    flex: 0 1 calc(33% - clamp(20px, $fs-50px, $fs-50px));
                     margin-bottom: clamp(24px, $fs-50px, $fs-50px);
                 .card-title{
                     font-size: clamp(16px, $fs-29px, $fs-29px);
@@ -104,11 +100,7 @@
                 } 
                 
             } 
-            } 
-            .grid-column-4{
-                flex-direction: row;
-                grid-column:span 3;
-            }
+            
         } 
     }
 }
@@ -118,9 +110,9 @@
         padding: 8px clamp(20px, $fs-80px, $fs-80px);
 
         .projects-card-container{
-            display: block;
-            column-count: 2;
-            .grid-column .project-card{
+        
+            .project-card{
+                flex: 0 1 calc(50% - clamp(20px, $fs-50px, $fs-50px));
                 .card-header{
                     height: $fs-615px;
                 }
@@ -151,8 +143,8 @@
      
         }
         .projects-card-container{
-            column-count: 1;
-            .grid-column .project-card{
+            .project-card{
+                flex: 0 1 calc(100% - clamp(20px, $fs-50px, $fs-50px));
                 .card-header,.card-header.h-sm{
                     height: auto;
                     img{

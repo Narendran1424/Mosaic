@@ -1794,7 +1794,7 @@ continue10Btn.addEventListener('click',()=>{
     sessionStorage.removeItem("selectedId");
     const users=getRegisteredUsers();
     const loggedUser=JSON.parse(sessionStorage.getItem("loggedUser"));
-    const user=users.filter(user=>user.email==loggedUser.email);
+    const user=users.find(user=>user.email==loggedUser.email);
     addData(user)
   
     window.location.href="./artist.html"
@@ -1818,6 +1818,7 @@ let artists=JSON.parse(sessionStorage.getItem("artists"));
 const data={};
 
 const birthYear=user.personalDetails["birth-date"].split("-")[0];
+
 const userAge=new Date().getFullYear() - birthYear;
 data.id=artists.length+1;
 data.name=user.personalDetails.username;

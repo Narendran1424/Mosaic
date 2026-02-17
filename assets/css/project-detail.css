@@ -135,22 +135,8 @@ a {
   font-weight: 500;
   position: relative;
 }
-.landing-header .header-actions nav ul li .nav-link.active {
+.landing-header .header-actions nav ul li .nav-link.active, .landing-header .header-actions nav ul li .nav-link:hover {
   color: black;
-}
-.landing-header .header-actions nav ul li .nav-link::after {
-  content: "";
-  position: absolute;
-  display: block;
-  bottom: 0px;
-  width: 100%;
-  transform: scale(0);
-  height: 1px;
-  background-color: black;
-  transition: transform 0.3s ease;
-}
-.landing-header .header-actions nav ul li .nav-link:hover::after {
-  transform: scale(1);
 }
 .landing-header .header-actions .auth-btn {
   font-size: clamp(12px, 0.93vw, 0.93vw);
@@ -928,7 +914,16 @@ footer .copyright-container div a:hover {
   font-size: clamp(11px, 0.83vw, 0.83vw);
   margin-top: 4px;
 }
-.reset-overlay .reset-container .reset-btn {
+.reset-overlay .reset-container .input-wrapper.not-active {
+  display: none;
+}
+.reset-overlay .reset-container .input-wrapper.active {
+  display: block;
+}
+.reset-overlay .reset-container .input-wrapper.crt-password-wrapper {
+  margin-top: clamp(25px, 2.61vw, 2.61vw);
+}
+.reset-overlay .reset-container button {
   text-align: center;
   font-size: clamp(14px, 1.05vw, 1.05vw);
   width: 100%;
@@ -940,10 +935,13 @@ footer .copyright-container div a:hover {
   color: rgba(0, 0, 0, 0.9490196078);
   margin-top: clamp(20px, 2.61vw, 2.61vw);
 }
-.reset-overlay .reset-container .reset-btn:hover {
+.reset-overlay .reset-container button:hover {
   background-color: black;
   color: rgba(255, 255, 255, 0.902);
   font-weight: 600;
+}
+.reset-overlay .reset-container button.not-active {
+  display: none;
 }
 .reset-overlay .reset-container .login-text {
   padding-top: clamp(15px, 1.15vw, 1.15vw);
@@ -957,6 +955,97 @@ footer .copyright-container div a:hover {
 }
 
 .reset-overlay.active {
+  display: flex;
+}
+
+.logout-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7019607843);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow-y: scroll;
+  z-index: 5;
+}
+.logout-overlay .logout-container {
+  background: #fff;
+  padding: clamp(20px, 2.067vw, 2.067vw) clamp(20px, 3.6vw, 3.6vw);
+  max-width: clamp(400px, 33.34vw, 33.34vw);
+  min-height: clamp(175px, 12.76vw, 12.76vw);
+  width: 90%;
+  text-align: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.logout-overlay .logout-container .logout-close-btn {
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+.logout-overlay .logout-container .logout-close-btn img {
+  width: clamp(14px, 1.1vw, 1.1vw);
+}
+.logout-overlay .logout-content-container h3 {
+  margin-bottom: clamp(15px, 0.83vw, 0.83vw);
+  font-size: clamp(18px, 1.57vw, 1.57vw);
+}
+.logout-overlay .logout-content-container p {
+  margin-bottom: clamp(15px, 0.83vw, 0.83vw);
+  font-size: clamp(13px, 0.83vw, 0.83vw);
+}
+.logout-overlay .logout-content-container .btn-container button {
+  margin-top: clamp(10px, 1.05vw, 1.05vw);
+  padding: clamp(6px, 0.73vw, 0.73vw) clamp(14px, 1.36vw, 1.36vw);
+  cursor: pointer;
+  border: transparent;
+  font-size: clamp(12px, 0.83vw, 16px);
+}
+.logout-overlay .logout-content-container .btn-container button.confirm-btn {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: rgb(209, 208, 208);
+  margin-left: clamp(10px, 1.57vw, 1.57vw);
+}
+.logout-overlay .logout-content-container .btn-container button.confirm-btn:hover {
+  background-color: rgba(0, 0, 0, 0.9490196078);
+}
+.logout-overlay .logout-content-container .btn-container button.cancel-btn {
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.7019607843);
+  color: black;
+}
+.logout-overlay .logout-content-container .btn-container button.cancel-btn:hover {
+  background-color: rgba(222, 221, 224, 0.5019607843);
+}
+.logout-overlay .logout-content-container.not-active {
+  display: none;
+}
+.logout-overlay .logout-success-container h3 {
+  margin-bottom: clamp(10px, 0.83vw, 0.83vw);
+  font-size: clamp(15px, 1.36vw, 1.36vw);
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.8);
+}
+.logout-overlay .logout-success-container .logout-msg {
+  font-size: clamp(13px, 0.93vw, 0.93vw);
+  line-height: 1.5;
+  margin-top: clamp(10px, 0.989vw, 0.989vw);
+  font-weight: 500;
+}
+.logout-overlay .logout-success-container .logout-msg.success {
+  color: #19762d;
+}
+.logout-overlay .logout-success-container .logout-msg.failed {
+  color: #eb0808;
+}
+.logout-overlay.active {
   display: flex;
 }
 
